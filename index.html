@@ -79,16 +79,226 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="min-h-screen flex items-center justify-center">
-        <div class="text-center">
-            <h1 class="text-6xl font-bold mb-4 gradient-text">Biotech & Data Science</h1>
-            <p class="text-xl text-gray-400">Exploring the intersection of AI, Biotechnology and Data Analysis</p>
-            <div class="mt-8">
-                <canvas id="hero-graph" class="mx-auto" width="400" height="200"></canvas>
-            </div>
-        </div>
+<!-- Hero Section -->
+<div class="min-h-screen flex items-center justify-center relative">
+    <canvas id="hero-canvas"></canvas>
+    <div class="text-center z-10">
+        <h1 class="text-6xl font-bold mb-4 gradient-text">Biotech & Data Science</h1>
+        <p class="text-xl text-gray-400">Exploring the intersection of AI, Microscopy, and Data Analysis</p>
     </div>
+</div>
+
+<script>
+    class DNAAnimation {
+        constructor() {
+            this.canvas = document.getElementById('hero-canvas');
+            this.width = 800;
+            this.height = 400;
+            this.canvas.width = this.width;
+            this.canvas.height = this.height;
+            this.ctx = this.canvas.getContext('2d');
+            
+            this.points = [];
+            this.graphPoints = [];
+            this.isDNA = true;
+            this.transitionProgress = 0;
+            this.colorTransitionProgress = 0;
+            
+            this.numPoints = 50;
+            this.wavelength = 500;
+            this.amplitude = 100;
+            
+            // Color schemes
+            this.dnaColors = [
+                {r: 255, g: 0, b: 0},    // Red (A)
+                {r: 0, g: 255, b: 0},     // Green (T)
+                {r: 0, g: 0, b: 255},     // Blue (C)
+                {r: 255, g: 255, b: 0}    // Yellow (G)
+            ];
+            
+            this.graphColor = {r: 0, g: 255, b: 157}; // #00ff9d
+            
+            this.initPoints();
+            this.initGraphPoints();
+            this.startAnimation();
+        }
+        
+        initPoints() {
+            for (let i = 0; i < this.numPoints; i++) {
+                const x = (i / this.numPoints) * this.wavelength;
+                const y1 = Math.sin(x * 0.05) * this.amplitude;
+                const y2 = Math.sin(x * 0.05 + Math.PI) * this.amplitude;
+                
+                const color1 = this.dnaColors[Math.floor(Math.random() * this.dnaColors.length)];
+                const color2 = this.dnaColors[Math.floor(Math.random() * this.dnaColors.length)];
+                
+                this.points.push({
+                    x: x,
+                    y1: y1,
+                    y2: y2,
+                    targetY1: y1,
+                    targetY2: y2,
+                    color1: { ...color1 },
+                    color2: { ...color2 },
+                    targetColor1: { ...color1 },
+                    targetColor2: { ...color2 }
+                });
+            }
+        }
+        
+        initGraphPoints() {
+            for (let i = 0; i < this.numPoints; i++) {
+                const x = (i / this.numPoints) * this.wavelength;
+                const y = Math.sin(x * 0.02) * 50 + 
+                         Math.cos(x * 0.03) * 30 +
+                         Math.sin(x * 0.01) * 20;
+                this.graphPoints.push({
+                    x: x,
+                    y: y
+                });
+            }
+        }
+        
+        startAnimation() {
+            const duration = 2;
+            const totalCycleDuration = 5;
+            
+            const timeline = gsap.timeline({
+                repeat: -1,
+                onRepeat: () => {
+                    // Update target positions and colors before next cycle
+                    this.points.forEach(point => {
+                        if (this.isDNA) {
+                            const color1 = this.dnaColors[Math.floor(Math.random() * this.dnaColors.length)];
+                            const color2 = this.dnaColors[Math.floor(Math.random() * this.dnaColors.length)];
+                            point.targetColor1 = { ...color1 };
+                            point.targetColor2 = { ...color2 };
+                        }
+                    });
+                }
+            });
+            
+            // Create the animation sequence
+            timeline
+                .to(this, {
+                    transitionProgress: 1,
+                    duration: duration,
+                    ease: "power2.inOut"
+                })
+                .to(this, {
+                    duration: totalCycleDuration - duration * 2
+                })
+                .to(this, {
+                    transitionProgress: 0,
+                    duration: duration,
+                    ease: "power2.inOut"
+                });
+            
+            this.animate();
+        }
+        
+        lerpColor(color1, color2, t) {
+            return {
+                r: color1.r + (color2.r - color1.r) * t,
+                g: color1.g + (color2.g - color1.g) * t,
+                b: color1.b + (color2.b - color1.b) * t
+            };
+        }
+        
+        lerp(start, end, t) {
+            return start * (1 - t) + end * t;
+        }
+        
+        drawFrame() {
+            this.ctx.clearRect(0, 0, this.width, this.height);
+            this.ctx.save();
+            this.ctx.translate(this.width / 2 - this.wavelength / 2, this.height / 2);
+            
+            // Draw connecting lines
+            this.ctx.beginPath();
+            this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+            
+            for (let i = 0; i < this.points.length; i++) {
+                const point = this.points[i];
+                const graphPoint = this.graphPoints[i];
+                
+                const y1 = this.lerp(point.y1, graphPoint.y, this.transitionProgress);
+                const y2 = this.lerp(point.y2, graphPoint.y, this.transitionProgress);
+                
+                if (i === 0) {
+                    this.ctx.moveTo(point.x, y1);
+                } else {
+                    this.ctx.lineTo(point.x, y1);
+                }
+            }
+            
+            this.ctx.stroke();
+            
+            // Draw nodes and connections
+            for (let i = 0; i < this.points.length; i++) {
+                const point = this.points[i];
+                const graphPoint = this.graphPoints[i];
+                
+                const y1 = this.lerp(point.y1, graphPoint.y, this.transitionProgress);
+                const y2 = this.lerp(point.y2, graphPoint.y, this.transitionProgress);
+                
+                // Draw base pair connections
+                if (this.transitionProgress < 1) {
+                    this.ctx.beginPath();
+                    this.ctx.strokeStyle = `rgba(255, 255, 255, ${1 - this.transitionProgress})`;
+                    this.ctx.moveTo(point.x, y1);
+                    this.ctx.lineTo(point.x, y2);
+                    this.ctx.stroke();
+                }
+                
+                // Interpolate colors
+                const color1 = this.lerpColor(
+                    point.color1,
+                    this.transitionProgress < 0.5 ? point.targetColor1 : this.graphColor,
+                    this.transitionProgress
+                );
+                
+                const color2 = this.lerpColor(
+                    point.color2,
+                    this.transitionProgress < 0.5 ? point.targetColor2 : this.graphColor,
+                    this.transitionProgress
+                );
+                
+                // Draw nodes
+                this.ctx.beginPath();
+                this.ctx.fillStyle = `rgb(${color1.r}, ${color1.g}, ${color1.b})`;
+                this.ctx.arc(point.x, y1, 5, 0, Math.PI * 2);
+                this.ctx.fill();
+                
+                if (this.transitionProgress < 1) {
+                    this.ctx.beginPath();
+                    this.ctx.fillStyle = `rgb(${color2.r}, ${color2.g}, ${color2.b})`;
+                    this.ctx.arc(point.x, y2, 5, 0, Math.PI * 2);
+                    this.ctx.fill();
+                }
+            }
+            
+            this.ctx.restore();
+        }
+        
+        animate() {
+            // Update DNA wave movement
+            const time = Date.now() * 0.001;
+            this.points.forEach(point => {
+                point.y1 = Math.sin(point.x * 0.05 + time) * this.amplitude;
+                point.y2 = Math.sin(point.x * 0.05 + Math.PI + time) * this.amplitude;
+            });
+            
+            this.drawFrame();
+            requestAnimationFrame(() => this.animate());
+        }
+    }
+
+    // Initialize the animation when the page loads
+    window.addEventListener('load', () => {
+        new DNAAnimation();
+    });
+</script>
 
     <!-- Research Section -->
     <section id="research" class="py-20">
@@ -246,5 +456,39 @@
             reveal();
         });
     </script>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Biotech & Data Science</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    
+    <style>
+        #hero-canvas {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #00ff9d, #00b8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 5s ease infinite;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    
 </body>
 </html>
