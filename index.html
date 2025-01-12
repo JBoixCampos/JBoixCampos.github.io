@@ -81,15 +81,11 @@
 
 <!-- Hero Section -->
 <div class="min-h-screen flex items-center justify-center relative">
+    <canvas id="hero-canvas"></canvas>
     <div class="text-center z-10">
         <h1 class="text-6xl font-bold mb-4 gradient-text">Biotech & Data Science</h1>
         <p class="text-xl text-gray-400">Exploring the intersection of AI, Microscopy, and Data Analysis</p>
     </div>
-</div>
-
-<!-- DNA Animation Section (moved below Hero) -->
-<div class="min-h-screen flex items-center justify-center relative">
-    <canvas id="hero-canvas"></canvas>
 </div>
 
 <script>
@@ -332,21 +328,133 @@
     <section id="projects" class="py-20">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-4xl font-bold mb-12 text-center gradient-text reveal">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card p-6 rounded-xl reveal">
-                    <h3 class="text-xl font-semibold mb-4">AI-Powered Microscopy</h3>
-                    <p class="text-gray-400">Integrating AI algorithms for efficient analysis.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card rounded-xl overflow-hidden reveal">
+                    <div class="relative">
+                        <img src="/api/placeholder/600/400" alt="Project 1" class="w-full h-48 object-cover"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Deep Learning for Cell Analysis</h3>
+                        <p class="text-gray-400 mb-4">Automated analysis of microscopy images using CNN</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">Python</span>
+                            <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">TensorFlow</span>
+                            <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">OpenCV</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="card p-6 rounded-xl reveal">
-                    <h3 class="text-xl font-semibold mb-4">Next-Gen Data Models</h3>
-                    <p class="text-gray-400">Building more accurate predictive models for research.</p>
-                </div>
-                <div class="card p-6 rounded-xl reveal">
-                    <h3 class="text-xl font-semibold mb-4">Advanced Visualization</h3>
-                    <p class="text-gray-400">Creating intuitive data visualizations for complex data.</p>
-                </div>
+                <!-- Add more project cards as needed -->
             </div>
         </div>
     </section>
+
+    <script>
+        // Background Animation with Three.js
+        function initBackground() {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('background-animation'), alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            // Create particles
+            const geometry = new THREE.BufferGeometry();
+            const vertices = [];
+            for (let i = 0; i < 5000; i++) {
+                vertices.push(
+                    Math.random() * 2000 - 1000,
+                    Math.random() * 2000 - 1000,
+                    Math.random() * 2000 - 1000
+                );
+            }
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            const material = new THREE.PointsMaterial({ color: 0x00ff9d, size: 2 });
+            const points = new THREE.Points(geometry, material);
+            scene.add(points);
+
+            camera.position.z = 1000;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                points.rotation.x += 0.0002;
+                points.rotation.y += 0.0002;
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+
+        // Scroll animations
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize charts
+        function initCharts() {
+            // Hero graph
+            new Chart(document.getElementById('hero-graph'), {
+                type: 'line',
+                data: {
+                    labels: Array.from({length: 12}, (_, i) => i + 1),
+                    datasets: [{
+                        label: 'Research Impact',
+                        data: Array.from({length: 12}, () => Math.random() * 100),
+                        borderColor: '#00ff9d',
+                        tension: 0.4,
+                        fill: false
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        y: { display: false },
+                        x: { display: false }
+                    }
+                }
+            });
+
+            // Research charts
+            document.querySelectorAll('.research-chart').forEach(canvas => {
+                new Chart(canvas, {
+                    type: 'radar',
+                    data: {
+                        labels: ['Impact', 'Innovation', 'Complexity', 'Progress', 'Publication'],
+                        datasets: [{
+                            data: Array.from({length: 5}, () => Math.random() * 100),
+                            backgroundColor: 'rgba(0, 255, 157, 0.2)',
+                            borderColor: '#00ff9d',
+                        }]
+                    },
+                    options: {
+                        plugins: { legend: { display: false } },
+                        scales: {
+                            r: { 
+                                ticks: { display: false },
+                                grid: { color: 'rgba(255, 255, 255, 0.1)' }
+                            }
+                        }
+                    }
+                });
+            });
+        }
+
+        // Initialize everything
+        window.addEventListener('load', () => {
+            initBackground();
+            initCharts();
+            window.addEventListener('scroll', reveal);
+            reveal();
+        });
+    </script>
 </body>
 </html>
