@@ -360,14 +360,13 @@
             // Create particles with different shapes (squares, circles, triangles)
             const material = new THREE.PointsMaterial({ color: 0x00ff9d, size: 2 });
             const geometry = new THREE.Group();  // Using a group to hold different shapes
-            const particles = [];  // To store particle positions for later line connections
     
-            for (let i = 0; i < 20000; i++) {  // Increased number of points
+            for (let i = 0; i < 10000; i++) {  // Increased number of points
                 // Create random position for the particle
                 const x = Math.random() * 2000 - 1000;
                 const y = Math.random() * 2000 - 1000;
                 const z = Math.random() * 2000 - 1000;
-    
+                
                 // Randomly choose between square, circle, or triangle
                 const shapeType = Math.floor(Math.random() * 3);
                 let shape;
@@ -389,41 +388,12 @@
                 // Create a mesh for the shape
                 const mesh = new THREE.Mesh(shape, material);
                 mesh.position.set(x, y, z);
-                particles.push(mesh.position);  // Store the position of each particle
     
                 // Add to the scene
                 geometry.add(mesh);
             }
     
             scene.add(geometry);
-    
-            // Line material
-            const lineMaterial = new THREE.LineBasicMaterial({ color: 0x00ff9d, opacity: 0.5 });
-    
-            // Function to create random lines
-            function createRandomLine() {
-                const idx1 = Math.floor(Math.random() * particles.length);
-                const idx2 = Math.floor(Math.random() * particles.length);
-    
-                if (idx1 !== idx2) {  // Avoid connecting the same particle to itself
-                    const material = new THREE.LineBasicMaterial({ color: 0x00ff9d, opacity: 0.5 });
-                    const geometry = new THREE.BufferGeometry().setFromPoints([particles[idx1], particles[idx2]]);
-                    const line = new THREE.Line(geometry, material);
-                    scene.add(line);
-                }
-            }
-    
-            // Randomly create lines at intervals
-            function addLinesRandomly() {
-                const interval = Math.floor(Math.random() * 2000) + 1000; // Random interval between 1 and 3 seconds
-                createRandomLine();  // Create one line at each interval
-    
-                setTimeout(addLinesRandomly, interval);  // Recursively call to add more lines
-            }
-    
-            // Start adding random lines
-            addLinesRandomly();
-    
             camera.position.z = 1000;
     
             function animate() {
@@ -508,7 +478,6 @@
             reveal();
         });
     </script>
-    
     
 </body>
 </html>
