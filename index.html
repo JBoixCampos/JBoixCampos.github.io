@@ -83,7 +83,7 @@
 <div class="min-h-screen flex items-center justify-center relative">
     <canvas id="hero-canvas"></canvas>
     <div class="text-center z-10">
-        <h1 class="text-6xl font-bold mb-4 gradient-text">Biotech & Data Science</h1>
+        <h1 class="text-6xl font-bold mb-4 gradient-text">Web under development hehe</h1>
         <p class="text-xl text-gray-400">Exploring the intersection of AI, Microscopy, and Data Analysis</p>
     </div>
 </div>
@@ -356,33 +356,55 @@
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('background-animation'), alpha: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
-
-            // Create particles
-            const geometry = new THREE.BufferGeometry();
-            const vertices = [];
-            for (let i = 0; i < 15000; i++) {
-                vertices.push(
-                    Math.random() * 2000 - 1000,
-                    Math.random() * 2000 - 1000,
-                    Math.random() * 2000 - 1000
-                );
-            }
-            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+    
+            // Create particles with different shapes (squares, circles, triangles)
             const material = new THREE.PointsMaterial({ color: 0x00ff9d, size: 2 });
-            const points = new THREE.Points(geometry, material);
-            scene.add(points);
-
+            const geometry = new THREE.Group();  // Using a group to hold different shapes
+    
+            for (let i = 0; i < 20000; i++) {  // Increased number of points
+                // Create random position for the particle
+                const x = Math.random() * 2000 - 1000;
+                const y = Math.random() * 2000 - 1000;
+                const z = Math.random() * 2000 - 1000;
+                
+                // Randomly choose between square, circle, or triangle
+                const shapeType = Math.floor(Math.random() * 3);
+                let shape;
+    
+                if (shapeType === 0) {  // Square
+                    shape = new THREE.PlaneGeometry(2, 2);
+                } else if (shapeType === 1) {  // Circle
+                    shape = new THREE.CircleGeometry(2, 32);
+                } else {  // Triangle
+                    shape = new THREE.BufferGeometry();
+                    const vertices = new Float32Array([
+                        0, 2, 0,  // Top vertex
+                        -2, -2, 0,  // Bottom left
+                        2, -2, 0  // Bottom right
+                    ]);
+                    shape.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+                }
+    
+                // Create a mesh for the shape
+                const mesh = new THREE.Mesh(shape, material);
+                mesh.position.set(x, y, z);
+    
+                // Add to the scene
+                geometry.add(mesh);
+            }
+    
+            scene.add(geometry);
             camera.position.z = 1000;
-
+    
             function animate() {
                 requestAnimationFrame(animate);
-                points.rotation.x += 0.0002;
-                points.rotation.y += 0.0002;
+                geometry.rotation.x += 0.0002;
+                geometry.rotation.y += 0.0002;
                 renderer.render(scene, camera);
             }
             animate();
         }
-
+    
         // Scroll animations
         function reveal() {
             const reveals = document.querySelectorAll('.reveal');
@@ -394,7 +416,7 @@
                 }
             });
         }
-
+    
         // Initialize charts
         function initCharts() {
             // Hero graph
@@ -422,7 +444,7 @@
                     }
                 }
             });
-
+    
             // Research charts
             document.querySelectorAll('.research-chart').forEach(canvas => {
                 new Chart(canvas, {
@@ -447,7 +469,7 @@
                 });
             });
         }
-
+    
         // Initialize everything
         window.addEventListener('load', () => {
             initBackground();
@@ -456,5 +478,6 @@
             reveal();
         });
     </script>
+    
 </body>
 </html>
