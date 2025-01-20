@@ -72,7 +72,7 @@
                 <div class="gradient-text text-xl font-bold">Javier Boix Campos</div>
                 <div class="flex space-x-8">
                     <a href="about.html#about" class="hover:text-blue-400 transition-colors">About</a>
-                    <a href="index.html#experience" class="hover:text-blue-400 transition-colors">Programming Experience</a>
+                    <a href="index.html#experience" class="hover:text-blue-400 transition-colors">All my Projects</a>
                     <a href="index.html#projects" class="hover:text-blue-400 transition-colors">Featured Projects</a>
                     <a href="index.html#contact" class="hover:text-blue-400 transition-colors">Contact</a>
                 </div>
@@ -90,7 +90,7 @@
     <div class="min-h-screen flex flex-col items-center justify-center relative">
         <div class="text-center z-10">
             <h1 class="text-6xl font-bold mb-4 gradient-text">Welcome!</h1>
-            <p class="text-xl text-gray-400 mb-8">Thank you for visiting. Explore my recent projects and learn more about my work. You can also connect with me on various social platforms.</p>            
+            <p class="text-xl text-gray-400 mb-8">Explore my recent projects and learn more about my work. You can also connect with me on various social platforms.</p>            
         </div>
         <div class="h-20"></div> 
         <div class="absolute inset-0 flex items-center justify-center">
@@ -264,7 +264,7 @@
     <!-- Programming Experience Section with Tabs -->
     <section id="experience" class="py-20">
         <div class="max-w-6xl mx-auto px-s4">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">Programming Experience</h2>
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">All my Projects</h2>
             
             <!-- Tabs -->
             <div class="flex justify-center mb-8">
@@ -478,63 +478,9 @@
             });
         }
 
-        // Initialize charts
-        function initCharts() {
-            // Hero graph
-            new Chart(document.getElementById('hero-graph'), {
-                type: 'line',
-                data: {
-                    labels: Array.from({length: 12}, (_, i) => i + 1),
-                    datasets: [{
-                        label: 'Research Impact',
-                        data: Array.from({length: 12}, () => Math.random() * 100),
-                        borderColor: '#00ff9d',
-                        tension: 0.4,
-                        fill: false
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { display: false }
-                    },
-                    scales: {
-                        y: { display: false },
-                        x: { display: false }
-                    }
-                }
-            });
-
-            // Research charts
-            document.querySelectorAll('.research-chart').forEach(canvas => {
-                new Chart(canvas, {
-                    type: 'radar',
-                    data: {
-                        labels: ['Impact', 'Innovation', 'Complexity', 'Progress', 'Publication'],
-                        datasets: [{
-                            data: Array.from({length: 5}, () => Math.random() * 100),
-                            backgroundColor: 'rgba(0, 255, 157, 0.2)',
-                            borderColor: '#00ff9d',
-                        }]
-                    },
-                    options: {
-                        plugins: { legend: { display: false } },
-                        scales: {
-                            r: { 
-                                ticks: { display: false },
-                                grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                            }
-                        }
-                    }
-                });
-            });
-        }
-
         // Initialize everything
         window.addEventListener('load', () => {
             initBackground();
-            initCharts();
             window.addEventListener('scroll', reveal);
             reveal();
         });
