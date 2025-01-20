@@ -262,23 +262,23 @@
 
     <!-- Programming Experience Section with Tabs -->
     <section id="experience" class="py-20">
-        <div class="max-w-6xl mx-auto px-s4">
+        <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">All my Projects</h2>
             
             <!-- Tabs -->
             <div class="flex justify-center mb-8">
-                <button class="tab-button active" data-tab="cell-migration">Cell Migration</button>
-                <button class="tab-button" data-tab="fluorescence">Fluorescence Imaging</button>
-                <button class="tab-button" data-tab="multivariate">Multivariate Analysis</button>
-                <button class="tab-button" data-tab="image-analysis">Image Analysis</button>
-                <button class="tab-button" data-tab="time-series">Time Series</button>
-                <button class="tab-button" data-tab="optimization">Optimization</button>
-                <button class="tab-button" data-tab="automation">Automation</button>
+                <button class="tab-button active" data-tab="cell-migration" aria-controls="cell-migration">Cell Migration</button>
+                <button class="tab-button" data-tab="fluorescence" aria-controls="fluorescence">Fluorescence Imaging</button>
+                <button class="tab-button" data-tab="multivariate" aria-controls="multivariate">Multivariate Analysis</button>
+                <button class="tab-button" data-tab="image-analysis" aria-controls="image-analysis">Image Analysis</button>
+                <button class="tab-button" data-tab="time-series" aria-controls="time-series">Time Series</button>
+                <button class="tab-button" data-tab="optimization" aria-controls="optimization">Optimization</button>
+                <button class="tab-button" data-tab="automation" aria-controls="automation">Automation</button>
             </div>
-
+    
             <!-- Tab Content -->
             <div class="tab-content">
-                <div class="tab active" id="cell-migration">
+                <div class="tab active" id="cell-migration" role="tabpanel" aria-labelledby="cell-migration">
                     <h3 class="text-xl font-semibold mb-4">Cell Migration Data Analysis</h3>
                     <ul class="list-disc list-inside text-gray-400">
                         <li>
@@ -290,21 +290,21 @@
                         <li>Developed an interactive density plot per frame for cell migration data. - <strong>R</strong></li>
                     </ul>
                 </div>
-                <div class="tab" id="fluorescence">
+                <div class="tab" id="fluorescence" role="tabpanel" aria-labelledby="fluorescence">
                     <h3 class="text-xl font-semibold mb-4">Fluorescence Imaging and Microscopy</h3>
                     <ul class="list-disc list-inside text-gray-400">
                         <li>Developed and validated a neural network architecture to improve fluorescence microscopy. - <strong>Python, R</strong></li>
                         <li>Developed an analysis pipeline for filtering and obtaining average intensities of mitochondria from fluorescence imaging. - <strong>Python</strong></li>
                     </ul>
                 </div>
-                <div class="tab" id="multivariate">
+                <div class="tab" id="multivariate" role="tabpanel" aria-labelledby="multivariate">
                     <h3 class="text-xl font-semibold mb-4">Multivariate Data Analysis and Machine Learning</h3>
                     <ul class="list-disc list-inside text-gray-400">
                         <li>Performed multivariate data analysis (PCA, LASSO, ANOVA…) on the migration of HIV-infected cells. - <strong>R</strong></li>
                         <li>Applied machine learning methods to predict and understand why a telecommunications company's customers churn. - <strong>R</strong></li>
                     </ul>
                 </div>
-                <div class="tab" id="image-analysis">
+                <div class="tab" id="image-analysis" role="tabpanel" aria-labelledby="image-analysis">
                     <h3 class="text-xl font-semibold mb-4">Image Analysis and Segmentation</h3>
                     <ul class="list-disc list-inside text-gray-400">
                         <li>Developed a multivariate image analysis for the automatic characterization and error detection on ceramic surfaces. - <strong>R</strong></li>
@@ -312,14 +312,14 @@
                         <li>Applied Multivariate Curve Resolution to hyperspectral images to reconstruct the original spectra of chemical components in a sample. - <strong>R</strong></li>
                     </ul>
                 </div>
-                <div class="tab" id="time-series">
+                <div class="tab" id="time-series" role="tabpanel" aria-labelledby="time-series">
                     <h3 class="text-xl font-semibold mb-4">Time Series and Predictive Modelling</h3>
                     <ul class="list-disc list-inside text-gray-400">
                         <li>Modelled a time series to predict the presence of atmospheric CO2. - <strong>R</strong></li>
                         <li>Performed exploratory and predictive analysis on the relationship between economic characteristics and keywords present on company websites. - <strong>R</strong></li>
                     </ul>
                 </div>
-                <div class="tab" id="optimization">
+                <div class="tab" id="optimization" role="tabpanel" aria-labelledby="optimization">
                     <h3 class="text-xl font-semibold mb-4">Optimization and Heuristics</h3>
                     <ul class="list-disc list-inside text-gray-400">                
                         <li>
@@ -332,7 +332,7 @@
                         <li>Developed and compared three different metaheuristics to propose a solution to the permutation flow-shop scheduling problem. - <strong>VBA</strong></li>
                     </ul>
                 </div>
-                <div class="tab" id="automation">
+                <div class="tab" id="automation" role="tabpanel" aria-labelledby="automation">
                     <h3 class="text-xl font-semibold mb-4">Automation and Macros</h3>
                     <ul class="list-disc list-inside text-gray-400">
                         <li>Developed various macros to automate bureaucratic processes in companies, such as automatic filling of reports. - <strong>VBA</strong></li>
@@ -343,35 +343,17 @@
             </div>
         </div>
     </section>
-
+    
     <script>
         const tabButtons = document.querySelectorAll('.tab-button');
         const tabs = document.querySelectorAll('.tab');
-
+    
         tabButtons.forEach(button => {
             button.addEventListener('click', () => {
                 // Remove active class from all buttons and tabs
                 tabButtons.forEach(btn => btn.classList.remove('active'));
                 tabs.forEach(tab => tab.classList.remove('active'));
-
-                // Add active class to the clicked button and corresponding tab
-                button.classList.add('active');
-                const tabId = button.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-    </script>
-
-    <script>
-        const tabBotones = document.querySelectorAll('.tab-button');
-        const pestanas = document.querySelectorAll('.tab');
-
-        tabBotones.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons and tabs
-                tabBotones.forEach(btn => btn.classList.remove('active'));
-                pestanas.forEach(tab => tab.classList.remove('active'));
-
+    
                 // Add active class to the clicked button and corresponding tab
                 button.classList.add('active');
                 const tabId = button.getAttribute('data-tab');
@@ -380,6 +362,7 @@
         });
     </script>
     
+
 
     <!-- Projects Section with 3D elements -->
     <section id="projects" class="py-20">
