@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Biotech & Data Science</title>
+    <title>JBoixCampos - Biotech & Data Science</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
     <!-- Adding three.js for background animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -65,257 +65,363 @@
     <canvas id="background-animation"></canvas>
 
     <!-- Navigation -->
+    <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="gradient-text text-xl font-bold">Javier Boix Campos</div>
                 <div class="flex space-x-8">
-                    <a href="#about" class="hover:text-blue-400 transition-colors">About</a>
-                    <a href="#research" class="hover:text-blue-400 transition-colors">Research</a>
-                    <a href="#projects" class="hover:text-blue-400 transition-colors">Projects</a>
-                    <a href="#contact" class="hover:text-blue-400 transition-colors">Contact</a>
+                    <a href="about.html#about" class="hover:text-blue-400 transition-colors">About</a>
+                    <a href="index.html#experience" class="hover:text-blue-400 transition-colors">Programming Experience</a>
+                    <a href="index.html#projects" class="hover:text-blue-400 transition-colors">Featured Projects</a>
+                    <a href="index.html#contact" class="hover:text-blue-400 transition-colors">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
-
-<!-- Hero Section -->
-<div class="min-h-screen flex flex-col items-center justify-center relative">
-    <div class="text-center z-10">
-        <h1 class="text-6xl font-bold mb-4 gradient-text">Web under development hehe</h1>
-        <p class="text-xl text-gray-400 mb-8">Exploring the intersection of AI, Microscopy, and Data Analysis</p>
-    </div>
-    <div class="h-20"></div> 
-    <div class="absolute inset-0 flex items-center justify-center">
-        <canvas id="hero-canvas"></canvas>
-    </div>
-</div>
-
-
-<script>
-    class DNAAnimation {
-        constructor() {
-            this.canvas = document.getElementById('hero-canvas');
-            this.ctx = this.canvas.getContext('2d');
-
-            this.resizeCanvas();
-
-            this.points = [];
-            this.numPoints = 30;
-            this.wavelength = 750;
-            this.amplitude = 100;
-            this.transitionProgress = 0;
-            this.isDNA = true;
-
-            this.colors = [
-                { h: 210, s: 100, l: 50 },
-                { h: 120, s: 100, l: 50 },
-                { h: 240, s: 100, l: 50 },
-                { h: 180, s: 100, l: 50 }
-            ];
-            this.mouse = { x: 0, y: 0 }; // Store mouse position
-            this.initPoints();
-            this.animate();
-
-            // Track mouse movement
-            this.canvas.addEventListener('mousemove', (event) => {
-                const rect = this.canvas.getBoundingClientRect();
-                this.mouse.x = event.clientX - rect.left;
-                this.mouse.y = event.clientY - rect.top;
-            });
-
-            // Resize canvas on window resize
-            window.addEventListener('resize', () => this.resizeCanvas());
+    
+    <script>
+        function openAbout() {
+            window.open('about.html', '_blank'); // Replace 'about.html' with the actual URL of your About page
         }
+    </script>
 
-        resizeCanvas() {
-            this.width = window.innerWidth * 0.8;
-            this.height = window.innerHeight * 0.6;
-            this.canvas.width = this.width;
-            this.canvas.height = this.height;
+    <!-- Hero Section -->
+    <div class="min-h-screen flex flex-col items-center justify-center relative">
+        <div class="text-center z-10">
+            <h1 class="text-6xl font-bold mb-4 gradient-text">Web under development hehe</h1>
+            <p class="text-xl text-gray-400 mb-8">Exploring the intersection of AI, Microscopy, and Data Analysis</p>
+        </div>
+        <div class="h-20"></div> 
+        <div class="absolute inset-0 flex items-center justify-center">
+            <canvas id="hero-canvas"></canvas>
+        </div>
+    </div>
 
-            this.centerX = this.width / 2;
-            this.centerY = this.height / 2;
+    <!-- DNA Animation -->
+    <script>
+        class DNAAnimation {
+            constructor() {
+                this.canvas = document.getElementById('hero-canvas');
+                this.ctx = this.canvas.getContext('2d');
 
-            this.initPoints();
-        }
+                this.resizeCanvas();
 
-        initPoints() {
-            this.points = [];
-            for (let i = 0; i < this.numPoints; i++) {
-                const x = (i / this.numPoints) * this.wavelength;
-                const y1 = Math.sin(x * 0.05) * this.amplitude;
-                const y2 = Math.sin(x * 0.05 + Math.PI) * this.amplitude;
+                this.points = [];
+                this.numPoints = 30;
+                this.wavelength = 750;
+                this.amplitude = 100;
+                this.transitionProgress = 0;
+                this.isDNA = true;
 
-                const color1 = this.colors[Math.floor(Math.random() * this.colors.length)];
-                const color2 = this.colors[Math.floor(Math.random() * this.colors.length)];
+                this.colors = [
+                    { h: 210, s: 100, l: 50 },
+                    { h: 120, s: 100, l: 50 },
+                    { h: 240, s: 100, l: 50 },
+                    { h: 180, s: 100, l: 50 }
+                ];
+                this.mouse = { x: 0, y: 0 }; // Store mouse position
+                this.initPoints();
+                this.animate();
 
-                this.points.push({
-                    x: x,
-                    y1: y1,
-                    y2: y2,
-                    color1: { ...color1 },
-                    color2: { ...color2 },
+                // Track mouse movement
+                this.canvas.addEventListener('mousemove', (event) => {
+                    const rect = this.canvas.getBoundingClientRect();
+                    this.mouse.x = event.clientX - rect.left;
+                    this.mouse.y = event.clientY - rect.top;
                 });
+
+                // Resize canvas on window resize
+                window.addEventListener('resize', () => this.resizeCanvas());
             }
-        }
 
-        drawFrame() {
-            this.ctx.clearRect(0, 0, this.width, this.height);
-            this.ctx.save();
-            this.ctx.translate(this.centerX - this.wavelength / 2, this.centerY);
+            resizeCanvas() {
+                this.width = window.innerWidth * 0.8;
+                this.height = window.innerHeight * 0.6;
+                this.canvas.width = this.width;
+                this.canvas.height = this.height;
 
-            // Draw connecting lines
-            this.ctx.beginPath();
-            this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-            for (let i = 0; i < this.points.length; i++) {
-                const point = this.points[i];
-                if (i === 0) {
-                    this.ctx.moveTo(point.x, point.y1);
-                } else {
-                    this.ctx.lineTo(point.x, point.y1);
+                this.centerX = this.width / 2;
+                this.centerY = this.height / 2;
+
+                this.initPoints();
+            }
+
+            initPoints() {
+                this.points = [];
+                for (let i = 0; i < this.numPoints; i++) {
+                    const x = (i / this.numPoints) * this.wavelength;
+                    const y1 = Math.sin(x * 0.05) * this.amplitude;
+                    const y2 = Math.sin(x * 0.05 + Math.PI) * this.amplitude;
+
+                    const color1 = this.colors[Math.floor(Math.random() * this.colors.length)];
+                    const color2 = this.colors[Math.floor(Math.random() * this.colors.length)];
+
+                    this.points.push({
+                        x: x,
+                        y1: y1,
+                        y2: y2,
+                        color1: { ...color1 },
+                        color2: { ...color2 },
+                    });
                 }
             }
-            this.ctx.stroke();
 
-            // Draw nodes
-            for (let i = 0; i < this.points.length; i++) {
-                const point = this.points[i];
+            drawFrame() {
+                this.ctx.clearRect(0, 0, this.width, this.height);
+                this.ctx.save();
+                this.ctx.translate(this.centerX - this.wavelength / 2, this.centerY);
 
-                // Interpolate colors
-                const gradient = this.ctx.createLinearGradient(0, point.y1, 0, point.y2);
-                const color1 = this.hslToString(point.color1);
-                const color2 = this.hslToString(point.color2);
-                gradient.addColorStop(0, color1);
-                gradient.addColorStop(1, color2);
-
-                // Draw connection lines with gradient
+                // Draw connecting lines
                 this.ctx.beginPath();
-                this.ctx.strokeStyle = gradient;
-                this.ctx.moveTo(point.x, point.y1);
-                this.ctx.lineTo(point.x, point.y2);
+                this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+                for (let i = 0; i < this.points.length; i++) {
+                    const point = this.points[i];
+                    if (i === 0) {
+                        this.ctx.moveTo(point.x, point.y1);
+                    } else {
+                        this.ctx.lineTo(point.x, point.y1);
+                    }
+                }
                 this.ctx.stroke();
 
-                // Draw glowing nodes
-                this.drawGlowingNode(point.x, point.y1, color1);
-                this.drawGlowingNode(point.x, point.y2, color2);
+                // Draw nodes
+                for (let i = 0; i < this.points.length; i++) {
+                    const point = this.points[i];
+
+                    // Interpolate colors
+                    const gradient = this.ctx.createLinearGradient(0, point.y1, 0, point.y2);
+                    const color1 = this.hslToString(point.color1);
+                    const color2 = this.hslToString(point.color2);
+                    gradient.addColorStop(0, color1);
+                    gradient.addColorStop(1, color2);
+
+                    // Draw connection lines with gradient
+                    this.ctx.beginPath();
+                    this.ctx.strokeStyle = gradient;
+                    this.ctx.moveTo(point.x, point.y1);
+                    this.ctx.lineTo(point.x, point.y2);
+                    this.ctx.stroke();
+
+                    // Draw glowing nodes
+                    this.drawGlowingNode(point.x, point.y1, color1);
+                    this.drawGlowingNode(point.x, point.y2, color2);
+                }
+
+                this.ctx.restore();
             }
 
-            this.ctx.restore();
-        }
+            drawGlowingNode(x, y, color) {
+                const distance = Math.sqrt(
+                    Math.pow(this.mouse.x - (this.centerX - this.wavelength / 2 + x), 2) +
+                    Math.pow(this.mouse.y - (this.centerY + y), 2)
+                );
 
-        drawGlowingNode(x, y, color) {
-            const distance = Math.sqrt(
-                Math.pow(this.mouse.x - (this.centerX - this.wavelength / 2 + x), 2) +
-                Math.pow(this.mouse.y - (this.centerY + y), 2)
-            );
+                const maxDistance = 50; // Distance threshold for scaling
+                const minRadius = 6; // Base radius
+                const maxRadius = 12; // Enlarged radius
 
-            const maxDistance = 50; // Distance threshold for scaling
-            const minRadius = 6; // Base radius
-            const maxRadius = 12; // Enlarged radius
+                const radius = distance < maxDistance
+                    ? minRadius + (1 - distance / maxDistance) * (maxRadius - minRadius)
+                    : minRadius;
 
-            const radius = distance < maxDistance
-                ? minRadius + (1 - distance / maxDistance) * (maxRadius - minRadius)
-                : minRadius;
-
-            this.ctx.beginPath();
-            this.ctx.arc(x, y, radius, 0, Math.PI * 2);
-            this.ctx.shadowColor = color;
-            this.ctx.shadowBlur = 15;
-            this.ctx.fillStyle = color;
-            this.ctx.fill();
-            this.ctx.shadowBlur = 0;
-        }
-
-        hslToString(hsl) {
-            return `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
-        }
-
-        animate() {
-            const time = Date.now() * 0.002;
-            for (let i = 0; i < this.points.length; i++) {
-                const point = this.points[i];
-                point.y1 = Math.sin(point.x * 0.05 + time) * this.amplitude;
-                point.y2 = Math.sin(point.x * 0.05 + Math.PI + time) * this.amplitude;
+                this.ctx.beginPath();
+                this.ctx.arc(x, y, radius, 0, Math.PI * 2);
+                this.ctx.shadowColor = color;
+                this.ctx.shadowBlur = 15;
+                this.ctx.fillStyle = color;
+                this.ctx.fill();
+                this.ctx.shadowBlur = 0;
             }
 
-            this.drawFrame();
-            requestAnimationFrame(() => this.animate());
+            hslToString(hsl) {
+                return `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+            }
+
+            animate() {
+                const time = Date.now() * 0.002;
+                for (let i = 0; i < this.points.length; i++) {
+                    const point = this.points[i];
+                    point.y1 = Math.sin(point.x * 0.05 + time) * this.amplitude;
+                    point.y2 = Math.sin(point.x * 0.05 + Math.PI + time) * this.amplitude;
+                }
+
+                this.drawFrame();
+                requestAnimationFrame(() => this.animate());
+            }
         }
-    }
 
-    // Initialize the animation when the page loads
-    window.addEventListener('load', () => {
-        const canvas = document.createElement('canvas');
-        canvas.id = 'hero-canvas';
-        document.body.appendChild(canvas);
+        // Initialize the animation when the page loads
+        window.addEventListener('load', () => {
+            const canvas = document.createElement('canvas');
+            canvas.id = 'hero-canvas';
+            document.body.appendChild(canvas);
 
-        new DNAAnimation();
-    });
-</script>
+            new DNAAnimation();
+        });
+    </script>
 
-
-    <!-- Research Section -->
-    <section id="research" class="py-20">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text reveal">Research Focus</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card p-6 rounded-xl reveal">
-                    <h3 class="text-xl font-semibold mb-4">AI in Microscopy</h3>
-                    <canvas class="research-chart mb-4" width="300" height="200"></canvas>
-                    <p class="text-gray-400">Advanced image analysis using deep learning</p>
-                </div>
-                <div class="card p-6 rounded-xl reveal">
-                    <h3 class="text-xl font-semibold mb-4">Data Analytics</h3>
-                    <canvas class="research-chart mb-4" width="300" height="200"></canvas>
-                    <p class="text-gray-400">Statistical modeling of biological systems</p>
-                </div>
-                <div class="card p-6 rounded-xl reveal">
-                    <h3 class="text-xl font-semibold mb-4">Microscopy Innovation</h3>
-                    <canvas class="research-chart mb-4" width="300" height="200"></canvas>
-                    <p class="text-gray-400">Novel imaging techniques development</p>
-                </div>
+    <!-- Programming Experience Section with Tabs -->
+    <section id="experience" class="py-20">
+        <div class="max-w-6xl mx-auto px-s4">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">Programming Experience</h2>
+            
+            <!-- Tabs -->
+            <div class="flex justify-center mb-8">
+                <button class="tab-button active" data-tab="cell-migration">Cell Migration</button>
+                <button class="tab-button" data-tab="fluorescence">Fluorescence Imaging</button>
+                <button class="tab-button" data-tab="multivariate">Multivariate Analysis</button>
+                <button class="tab-button" data-tab="image-analysis">Image Analysis</button>
+                <button class="tab-button" data-tab="time-series">Time Series</button>
+                <button class="tab-button" data-tab="optimization">Optimization</button>
+                <button class="tab-button" data-tab="automation">Automation</button>
             </div>
-        </div>
-    </section>
 
-    <!-- Projects Section with 3D elements -->
-    <section id="projects" class="py-20">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text reveal">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="card rounded-xl overflow-hidden reveal">
-                    <div class="relative">
-                        <img src="/api/placeholder/600/400" alt="Project 1" class="w-full h-48 object-cover"/>
-                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">Deep Learning for Cell Analysis</h3>
-                        <p class="text-gray-400 mb-4">Automated analysis of microscopy images using CNN</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">Python</span>
-                            <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">TensorFlow</span>
-                            <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">OpenCV</span>
-                        </div>
-                    </div>
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <div class="tab active" id="cell-migration">
+                    <h3 class="text-xl font-semibold mb-4">Cell Migration Data Analysis</h3>
+                    <ul class="list-disc list-inside text-gray-400">
+                        <li>
+                            Developed an analysis pipeline applying convolutional neural networks to cell migration data - <strong>Python</strong> 
+                            <a href="https://www.biorxiv.org/content/10.1101/2024.03.29.585638v2" class="text-blue-500 underline" target="_blank" rel="noopener noreferrer">[Link to paper]</a>
+                        </li>                        
+                        <li>Developed a pipeline for analysing directionality in cell migration data. - <strong>Python, R, VBA</strong></li>
+                        <li>Developed an analysis pipeline for obtaining mean speed per frame from cell migration data. - <strong>R</strong></li>
+                        <li>Developed an interactive density plot per frame for cell migration data. - <strong>R</strong></li>
+                    </ul>
                 </div>
-                <!-- Add more project cards as needed -->
+                <div class="tab" id="fluorescence">
+                    <h3 class="text-xl font-semibold mb-4">Fluorescence Imaging and Microscopy</h3>
+                    <ul class="list-disc list-inside text-gray-400">
+                        <li>Developed and validated a neural network architecture to improve fluorescence microscopy. - <strong>Python, R</strong></li>
+                        <li>Developed an analysis pipeline for filtering and obtaining average intensities of mitochondria from fluorescence imaging. - <strong>Python</strong></li>
+                    </ul>
+                </div>
+                <div class="tab" id="multivariate">
+                    <h3 class="text-xl font-semibold mb-4">Multivariate Data Analysis and Machine Learning</h3>
+                    <ul class="list-disc list-inside text-gray-400">
+                        <li>Performed multivariate data analysis (PCA, LASSO, ANOVA…) on the migration of HIV-infected cells. - <strong>R</strong></li>
+                        <li>Applied machine learning methods to predict and understand why a telecommunications company's customers churn. - <strong>R</strong></li>
+                    </ul>
+                </div>
+                <div class="tab" id="image-analysis">
+                    <h3 class="text-xl font-semibold mb-4">Image Analysis and Segmentation</h3>
+                    <ul class="list-disc list-inside text-gray-400">
+                        <li>Developed a multivariate image analysis for the automatic characterization and error detection on ceramic surfaces. - <strong>R</strong></li>
+                        <li>Developed an interactive tool for the segmentation of images in the latent space, both in 2D and 3D. - <strong>R</strong></li>
+                        <li>Applied Multivariate Curve Resolution to hyperspectral images to reconstruct the original spectra of chemical components in a sample. - <strong>R</strong></li>
+                    </ul>
+                </div>
+                <div class="tab" id="time-series">
+                    <h3 class="text-xl font-semibold mb-4">Time Series and Predictive Modelling</h3>
+                    <ul class="list-disc list-inside text-gray-400">
+                        <li>Modelled a time series to predict the presence of atmospheric CO2. - <strong>R</strong></li>
+                        <li>Performed exploratory and predictive analysis on the relationship between economic characteristics and keywords present on company websites. - <strong>R</strong></li>
+                    </ul>
+                </div>
+                <div class="tab" id="optimization">
+                    <h3 class="text-xl font-semibold mb-4">Optimization and Heuristics</h3>
+                    <ul class="list-disc list-inside text-gray-400">                
+                        <li>
+                            Applied metaheuristics to optimize walking paths in Valencia’s Fallas. - <strong>Python, VBA</strong> 
+                            <a href="https://www.linkedin.com/posts/javier-boix-campos_quina-%C3%A9s-la-ruta-perfecta-per-a-visitar-totes-activity-7176703931497017344-DU8H" class="text-blue-500 underline" target="_blank" rel="noopener noreferrer">[Link to media coverage]</a>
+                        </li> 
+                        <li>Performed various mathematical modelling and subsequent programming of business optimization problems. - <strong>VBA</strong></li>
+                        <li>Performed the mathematical modelling and two-year production planning of a company. – <strong>VBA</strong></li>
+                        <li>Developed and compared two different greedy randomized adaptive search heuristics to propose a solution to the maximum diversity problem. - <strong>VBA</strong></li>
+                        <li>Developed and compared three different metaheuristics to propose a solution to the permutation flow-shop scheduling problem. - <strong>VBA</strong></li>
+                    </ul>
+                </div>
+                <div class="tab" id="automation">
+                    <h3 class="text-xl font-semibold mb-4">Automation and Macros</h3>
+                    <ul class="list-disc list-inside text-gray-400">
+                        <li>Developed various macros to automate bureaucratic processes in companies, such as automatic filling of reports. - <strong>VBA</strong></li>
+                        <li>Created macros for updating text documents to a new format, streamlining document management. - <strong>VBA</strong></li>
+                        <li>Created an automated AI-controlled Youtube channel, which generates videos on trending topics and uploads them. - <strong>Python</strong></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
     <script>
-        // Background Animation with Three.js
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabs = document.querySelectorAll('.tab');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and tabs
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabs.forEach(tab => tab.classList.remove('active'));
+
+                // Add active class to the clicked button and corresponding tab
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+
+    <script>
+        const tabBotones = document.querySelectorAll('.tab-button');
+        const pestanas = document.querySelectorAll('.tab');
+
+        tabBotones.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons and tabs
+                tabBotones.forEach(btn => btn.classList.remove('active'));
+                pestanas.forEach(tab => tab.classList.remove('active'));
+
+                // Add active class to the clicked button and corresponding tab
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
+    
+
+    <!-- Projects Section with 3D elements -->
+    <section id="projects" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <a href="https://www.biorxiv.org/content/10.1101/2024.03.29.585638v2" target="_blank" class="block">
+                    <div class="card rounded-xl overflow-hidden reveal">
+                        <div class="relative">
+                            <img src="https://www.biorxiv.org/content/biorxiv/early/2024/08/07/2024.03.29.585638/F1.large.jpg?width=800&height=600&carousel=1" alt="Project 1" class="w-full h-48 object-cover"/>
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Shape dynamics and migration of branched cells on complex networks.</h3>
+                            <p class="text-gray-400 mb-4">Developed the pipeline for analysis of cell migration using neural networks.</p>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">Python</span>
+                                <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">R</span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>            
+                <!-- Add more project cards as needed -->
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Background Animation with Three.js -->
+    <script>
         function initBackground() {
             const scene = new THREE.Scene();
             const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
             const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('background-animation'), alpha: true });
             renderer.setSize(window.innerWidth, window.innerHeight);
-    
+
             // Create particles with different shapes (squares, circles, triangles)
             const material = new THREE.PointsMaterial({ color: 0x00ff9d, size: 2 });
             const geometry = new THREE.Group();  // Using a group to hold different shapes
-    
+
             for (let i = 0; i < 5000; i++) {  // Increased number of points
                 // Create random position for the particle
                 const x = Math.random() * 2000 - 1000;
@@ -325,7 +431,7 @@
                 // Randomly choose between square, circle, or triangle
                 const shapeType = Math.floor(Math.random() * 3);
                 let shape;
-    
+
                 if (shapeType === 0) {  // Square
                     shape = new THREE.PlaneGeometry(2, 2);
                 } else if (shapeType === 1) {  // Circle
@@ -339,18 +445,18 @@
                     ]);
                     shape.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
                 }
-    
+
                 // Create a mesh for the shape
                 const mesh = new THREE.Mesh(shape, material);
                 mesh.position.set(x, y, z);
-    
+
                 // Add to the scene
                 geometry.add(mesh);
             }
-    
+
             scene.add(geometry);
             camera.position.z = 1000;
-    
+
             function animate() {
                 requestAnimationFrame(animate);
                 geometry.rotation.x += 0.0002;
@@ -359,7 +465,7 @@
             }
             animate();
         }
-    
+
         // Scroll animations
         function reveal() {
             const reveals = document.querySelectorAll('.reveal');
@@ -371,7 +477,7 @@
                 }
             });
         }
-    
+
         // Initialize charts
         function initCharts() {
             // Hero graph
@@ -399,7 +505,7 @@
                     }
                 }
             });
-    
+
             // Research charts
             document.querySelectorAll('.research-chart').forEach(canvas => {
                 new Chart(canvas, {
@@ -424,7 +530,7 @@
                 });
             });
         }
-    
+
         // Initialize everything
         window.addEventListener('load', () => {
             initBackground();
@@ -433,6 +539,66 @@
             reveal();
         });
     </script>
+
+    <style>
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+        .tab-button {
+            background: transparent;
+            border: none;
+            color: #00ff9d;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .tab-button:hover {
+            background: rgba(0, 255, 157, 0.1);
+        }
+        .tab-button.active {
+            border-bottom: 2px solid #00ff9d;
+            font-weight: bold;
+        }
+    </style>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-800 py-6">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-gray-400 mb-4 text-left">Connect with me:</p>
+            <div class="flex items-center space-x-6 mb-4">
+                <a href="https://bsky.app/profile/jboixcampos.bsky.social" target="_blank" rel="noopener noreferrer" class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 60" class="h-6 w-6 inline-block">
+                        <path fill="#fcfcfc" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/JBoixCampos" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 inline-block">
+                        <g><path fill="#fcfcfc" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></g>
+                    </svg>
+                </a>
+                <a href="https://github.com/JBoixCampos" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 inline-block">
+                        <path fill="#fcfcfc" d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/javier-boix-campos" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 inline-block">
+                        <path fill="#fcfcfc" d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="text-gray-400 text-left">Email: <a href="mailto:javierboixcampos@gmail.com" class="hover:text-blue-400">javierboixcampos@gmail.com</a></p>
+            <p class="text-gray-500 mt-4 text-left">© 2025 Javier Boix Campos. All rights reserved.</p>
+        </div>
+    </footer>
     
+
+    
+    
+    
+    
+
 </body>
 </html>
