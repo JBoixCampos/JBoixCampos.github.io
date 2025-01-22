@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JBoixCampos - Biotech & Data Science</title>
+    
+    <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
-    <!-- Adding three.js for background animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <!-- Adding GSAP for smooth animations -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
-    <!-- Chart.js for dynamic graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
     <link rel="icon" href="https://www.svgrepo.com/show/396310/dna.svg" type="image/svg+xml">
+    
+    <!-- External JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js"></script>
 
+    <!-- Styles moved to separate stylesheet -->
     <style>
+        /* Base styles */
+        :root {
+            --primary-gradient: linear-gradient(45deg, #00ff9d, #00b8ff);
+            --card-background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Layout */
         #background-animation {
             position: fixed;
             top: 0;
@@ -23,35 +32,32 @@
             z-index: -1;
             opacity: 0.1;
         }
-        
+
+        /* Animations */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease;
         }
-        
+
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
+        /* Text effects */
         .gradient-text {
-            background: linear-gradient(45deg, #00ff9d, #00b8ff);
+            background: var(--primary-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
             animation: gradient 5s ease infinite;
         }
 
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
+        /* Cards */
         .card {
             backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
+            background: var(--card-background);
             border: 1px solid rgba(255, 255, 255, 0.2);
             transition: all 0.3s ease;
         }
@@ -60,14 +66,85 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
+
+        /* Tabs */
+        .tab {
+            display: none;
+        }
+
+        .tab.active {
+            display: block;
+        }
+
+        .tab-button {
+            background: transparent;
+            border: none;
+            color: #00ff9d;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .tab-button:hover {
+            background: rgba(0, 255, 157, 0.1);
+        }
+
+        .tab-button.active {
+            border-bottom: 2px solid #00ff9d;
+            font-weight: bold;
+        }
+
+        /* Animations */
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        body {
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        #background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none; /* Ensures clicks go through to content */
+        }
+
+        .main-wrapper {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content {
+            flex: 1 0 auto;
+            padding-bottom: 4rem; /* Add space before footer */
+        }
+
+        footer {
+            flex-shrink: 0; /* Prevents footer from shrinking */
+            width: 100%;
+            position: relative; /* Changed from fixed */
+            z-index: 2;
+        }
     </style>
 </head>
 <body class="bg-gray-900 text-white">
     <canvas id="background-animation"></canvas>
 
-    <!-- Navigation -->
-    <!-- Navigation -->
+    <div class="main-wrapper">
+
     <nav class="fixed w-full z-50 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg">
+        <!-- Navigation content -->
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="gradient-text text-xl font-bold">Javier Boix Campos</div>
@@ -79,23 +156,180 @@
             </div>
         </div>
     </nav>
-    
-    <script>
-        function openAbout() {
-            window.open('about.html', '_blank'); // Replace 'about.html' with the actual URL of your About page
-        }
-    </script>
 
-    <!-- Hero Section -->
-    <div class="min-h-screen flex flex-col items-center justify-center relative">
-        <div class="text-center z-10">
-            <h1 class="text-6xl font-bold mb-4 gradient-text">Welcome!</h1>
-            <p class="text-xl text-gray-400 mb-8">Explore my recent projects and learn more about my work. You can also connect with me on various social platforms.</p>            
+        <div class="content">
+            <!-- Hero Section -->
+            <section class="min-h-screen flex flex-col items-center justify-center relative">
+                <!-- Hero content -->
+                <div class="text-center z-10">
+                    <h1 class="text-6xl font-bold mb-4 gradient-text">Welcome!</h1>
+                    <p class="text-xl text-gray-400 mb-8">Explore my recent projects and learn more about my work. You can also connect with me on various social platforms.</p>
+                </div>
+                <div class="h-20"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <canvas id="hero-canvas"></canvas>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="py-20">
+                <div class="max-w-6xl mx-auto px-4">
+                    <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">All my Projects</h2>
+                    
+                    <!-- Tabs -->
+                    <div class="flex justify-center mb-8">
+                        <button class="tab-button active" data-tab="cell-migration" aria-controls="cell-migration">Cell Migration</button>
+                        <button class="tab-button" data-tab="fluorescence" aria-controls="fluorescence">Fluorescence Imaging</button>
+                        <button class="tab-button" data-tab="multivariate" aria-controls="multivariate">Multivariate Analysis</button>
+                        <button class="tab-button" data-tab="image-analysis" aria-controls="image-analysis">Image Analysis</button>
+                        <button class="tab-button" data-tab="time-series" aria-controls="time-series">Time Series</button>
+                        <button class="tab-button" data-tab="optimization" aria-controls="optimization">Optimization</button>
+                        <button class="tab-button" data-tab="automation" aria-controls="automation">Automation</button>
+                    </div>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+                        <div class="tab active" id="cell-migration" role="tabpanel" aria-labelledby="cell-migration">
+                            <h3 class="text-xl font-semibold mb-4">Cell Migration Data Analysis</h3>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>
+                                    Developed an analysis pipeline applying convolutional neural networks to cell migration data - <strong>Python</strong> 
+                                    <a href="https://www.biorxiv.org/content/10.1101/2024.03.29.585638v2" class="text-blue-500 underline" target="_blank" rel="noopener noreferrer">[Link to paper]</a>
+                                </li>                        
+                                <li>Developed a pipeline for analysing directionality in cell migration data. - <strong>Python, R, VBA</strong></li>
+                                <li>Developed an analysis pipeline for obtaining mean speed per frame from cell migration data. - <strong>R</strong></li>
+                                <li>Developed an interactive density plot per frame for cell migration data. - <strong>R</strong></li>
+                            </ul>
+                        </div>
+                        <div class="tab" id="fluorescence" role="tabpanel" aria-labelledby="fluorescence">
+                            <h3 class="text-xl font-semibold mb-4">Fluorescence Imaging and Microscopy</h3>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>Developed and validated a neural network architecture to improve fluorescence microscopy. - <strong>Python, R</strong></li>
+                                <li>Developed an analysis pipeline for filtering and obtaining average intensities of mitochondria from fluorescence imaging. - <strong>Python</strong></li>
+                            </ul>
+                        </div>
+                        <div class="tab" id="multivariate" role="tabpanel" aria-labelledby="multivariate">
+                            <h3 class="text-xl font-semibold mb-4">Multivariate Data Analysis and Machine Learning</h3>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>Performed multivariate data analysis (PCA, LASSO, ANOVA…) on the migration of HIV-infected cells. - <strong>R</strong></li>
+                                <li>Applied machine learning methods to predict and understand why a telecommunications company's customers churn. - <strong>R</strong></li>
+                            </ul>
+                        </div>
+                        <div class="tab" id="image-analysis" role="tabpanel" aria-labelledby="image-analysis">
+                            <h3 class="text-xl font-semibold mb-4">Image Analysis and Segmentation</h3>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>Developed a multivariate image analysis for the automatic characterization and error detection on ceramic surfaces. - <strong>R</strong></li>
+                                <li>Developed an interactive tool for the segmentation of images in the latent space, both in 2D and 3D. - <strong>R</strong></li>
+                                <li>Applied Multivariate Curve Resolution to hyperspectral images to reconstruct the original spectra of chemical components in a sample. - <strong>R</strong></li>
+                            </ul>
+                        </div>
+                        <div class="tab" id="time-series" role="tabpanel" aria-labelledby="time-series">
+                            <h3 class="text-xl font-semibold mb-4">Time Series and Predictive Modelling</h3>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>Modelled a time series to predict the presence of atmospheric CO2. - <strong>R</strong></li>
+                                <li>Performed exploratory and predictive analysis on the relationship between economic characteristics and keywords present on company websites. - <strong>R</strong></li>
+                            </ul>
+                        </div>
+                        <div class="tab" id="optimization" role="tabpanel" aria-labelledby="optimization">
+                            <h3 class="text-xl font-semibold mb-4">Optimization and Heuristics</h3>
+                            <ul class="list-disc list-inside text-gray-400">                
+                                <li>
+                                    Applied metaheuristics to optimize walking paths in Valencia’s Fallas. - <strong>Python, VBA</strong> 
+                                    <a href="https://www.linkedin.com/posts/javier-boix-campos_quina-%C3%A9s-la-ruta-perfecta-per-a-visitar-totes-activity-7176703931497017344-DU8H" class="text-blue-500 underline" target="_blank" rel="noopener noreferrer">[Link to media coverage]</a>
+                                </li> 
+                                <li>Performed various mathematical modelling and subsequent programming of business optimization problems. - <strong>VBA</strong></li>
+                                <li>Performed the mathematical modelling and two-year production planning of a company. – <strong>VBA</strong></li>
+                                <li>Developed and compared two different greedy randomized adaptive search heuristics to propose a solution to the maximum diversity problem. - <strong>VBA</strong></li>
+                                <li>Developed and compared three different metaheuristics to propose a solution to the permutation flow-shop scheduling problem. - <strong>VBA</strong></li>
+                            </ul>
+                        </div>
+                        <div class="tab" id="automation" role="tabpanel" aria-labelledby="automation">
+                            <h3 class="text-xl font-semibold mb-4">Automation and Macros</h3>
+                            <ul class="list-disc list-inside text-gray-400">
+                                <li>Developed various macros to automate bureaucratic processes in companies, such as automatic filling of reports. - <strong>VBA</strong></li>
+                                <li>Created macros for updating text documents to a new format, streamlining document management. - <strong>VBA</strong></li>
+                                <li>Created an automated AI-controlled Youtube channel, which generates videos on trending topics and uploads them. - <strong>Python</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <script>
+                const tabButtons = document.querySelectorAll('.tab-button');
+                const tabs = document.querySelectorAll('.tab');
+
+                tabButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        // Remove active class from all buttons and tabs
+                        tabButtons.forEach(btn => btn.classList.remove('active'));
+                        tabs.forEach(tab => tab.classList.remove('active'));
+
+                        // Add active class to the clicked button and corresponding tab
+                        button.classList.add('active');
+                        const tabId = button.getAttribute('data-tab');
+                        document.getElementById(tabId).classList.add('active');
+                    });
+                });
+            </script>
+
+            <!-- Projects Section -->
+            <section id="projects" class="py-20">
+                <div class="max-w-6xl mx-auto px-4">
+                    <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">Featured Projects</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <a href="https://www.biorxiv.org/content/10.1101/2024.03.29.585638v2" target="_blank" class="block">
+                            <div class="card rounded-xl overflow-hidden reveal">
+                                <div class="relative">
+                                    <img src="https://www.biorxiv.org/content/biorxiv/early/2024/08/07/2024.03.29.585638/F1.large.jpg?width=800&height=600&carousel=1" alt="Project 1" class="w-full h-48 object-cover"/>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2">Shape dynamics and migration of branched cells on complex networks.</h3>
+                                    <p class="text-gray-400 mb-4">Developed the pipeline for analysis of cell migration using neural networks.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">Python</span>
+                                        <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">R</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>            
+                        <!-- Add more project cards as needed -->
+                </div>
+            </section>
         </div>
-        <div class="h-20"></div> 
-        <div class="absolute inset-0 flex items-center justify-center">
-            <canvas id="hero-canvas"></canvas>
-        </div>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 py-6">
+            <div class="max-w-6xl mx-auto px-6">
+                <p class="text-gray-400 mb-4 text-left">Connect with me:</p>
+                <div class="flex items-center space-x-6 mb-4">
+                    <a href="https://bsky.app/profile/jboixcampos.bsky.social" target="_blank" rel="noopener noreferrer" class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 60" class="h-6 w-6 inline-block">
+                            <path fill="#fcfcfc" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/>
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/JBoixCampos" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 inline-block">
+                            <g><path fill="#fcfcfc" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></g>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/JBoixCampos" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 inline-block">
+                            <path fill="#fcfcfc" d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/javier-boix-campos" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 inline-block">
+                            <path fill="#fcfcfc" d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p class="text-gray-400 text-left">Email: <a href="mailto:javierboixcampos@gmail.com" class="hover:text-blue-400">javierboixcampos@gmail.com</a></p>
+                <p class="text-gray-500 mt-4 text-left">© 2025 Javier Boix Campos. All rights reserved.</p>
+            </div>
+        </footer>
     </div>
 
     <!-- DNA Animation -->
@@ -261,139 +495,7 @@
         });
     </script>
 
-    <!-- Programming Experience Section with Tabs -->
-    <section id="experience" class="py-20">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">All my Projects</h2>
-            
-            <!-- Tabs -->
-            <div class="flex justify-center mb-8">
-                <button class="tab-button active" data-tab="cell-migration" aria-controls="cell-migration">Cell Migration</button>
-                <button class="tab-button" data-tab="fluorescence" aria-controls="fluorescence">Fluorescence Imaging</button>
-                <button class="tab-button" data-tab="multivariate" aria-controls="multivariate">Multivariate Analysis</button>
-                <button class="tab-button" data-tab="image-analysis" aria-controls="image-analysis">Image Analysis</button>
-                <button class="tab-button" data-tab="time-series" aria-controls="time-series">Time Series</button>
-                <button class="tab-button" data-tab="optimization" aria-controls="optimization">Optimization</button>
-                <button class="tab-button" data-tab="automation" aria-controls="automation">Automation</button>
-            </div>
-    
-            <!-- Tab Content -->
-            <div class="tab-content">
-                <div class="tab active" id="cell-migration" role="tabpanel" aria-labelledby="cell-migration">
-                    <h3 class="text-xl font-semibold mb-4">Cell Migration Data Analysis</h3>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>
-                            Developed an analysis pipeline applying convolutional neural networks to cell migration data - <strong>Python</strong> 
-                            <a href="https://www.biorxiv.org/content/10.1101/2024.03.29.585638v2" class="text-blue-500 underline" target="_blank" rel="noopener noreferrer">[Link to paper]</a>
-                        </li>                        
-                        <li>Developed a pipeline for analysing directionality in cell migration data. - <strong>Python, R, VBA</strong></li>
-                        <li>Developed an analysis pipeline for obtaining mean speed per frame from cell migration data. - <strong>R</strong></li>
-                        <li>Developed an interactive density plot per frame for cell migration data. - <strong>R</strong></li>
-                    </ul>
-                </div>
-                <div class="tab" id="fluorescence" role="tabpanel" aria-labelledby="fluorescence">
-                    <h3 class="text-xl font-semibold mb-4">Fluorescence Imaging and Microscopy</h3>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>Developed and validated a neural network architecture to improve fluorescence microscopy. - <strong>Python, R</strong></li>
-                        <li>Developed an analysis pipeline for filtering and obtaining average intensities of mitochondria from fluorescence imaging. - <strong>Python</strong></li>
-                    </ul>
-                </div>
-                <div class="tab" id="multivariate" role="tabpanel" aria-labelledby="multivariate">
-                    <h3 class="text-xl font-semibold mb-4">Multivariate Data Analysis and Machine Learning</h3>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>Performed multivariate data analysis (PCA, LASSO, ANOVA…) on the migration of HIV-infected cells. - <strong>R</strong></li>
-                        <li>Applied machine learning methods to predict and understand why a telecommunications company's customers churn. - <strong>R</strong></li>
-                    </ul>
-                </div>
-                <div class="tab" id="image-analysis" role="tabpanel" aria-labelledby="image-analysis">
-                    <h3 class="text-xl font-semibold mb-4">Image Analysis and Segmentation</h3>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>Developed a multivariate image analysis for the automatic characterization and error detection on ceramic surfaces. - <strong>R</strong></li>
-                        <li>Developed an interactive tool for the segmentation of images in the latent space, both in 2D and 3D. - <strong>R</strong></li>
-                        <li>Applied Multivariate Curve Resolution to hyperspectral images to reconstruct the original spectra of chemical components in a sample. - <strong>R</strong></li>
-                    </ul>
-                </div>
-                <div class="tab" id="time-series" role="tabpanel" aria-labelledby="time-series">
-                    <h3 class="text-xl font-semibold mb-4">Time Series and Predictive Modelling</h3>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>Modelled a time series to predict the presence of atmospheric CO2. - <strong>R</strong></li>
-                        <li>Performed exploratory and predictive analysis on the relationship between economic characteristics and keywords present on company websites. - <strong>R</strong></li>
-                    </ul>
-                </div>
-                <div class="tab" id="optimization" role="tabpanel" aria-labelledby="optimization">
-                    <h3 class="text-xl font-semibold mb-4">Optimization and Heuristics</h3>
-                    <ul class="list-disc list-inside text-gray-400">                
-                        <li>
-                            Applied metaheuristics to optimize walking paths in Valencia’s Fallas. - <strong>Python, VBA</strong> 
-                            <a href="https://www.linkedin.com/posts/javier-boix-campos_quina-%C3%A9s-la-ruta-perfecta-per-a-visitar-totes-activity-7176703931497017344-DU8H" class="text-blue-500 underline" target="_blank" rel="noopener noreferrer">[Link to media coverage]</a>
-                        </li> 
-                        <li>Performed various mathematical modelling and subsequent programming of business optimization problems. - <strong>VBA</strong></li>
-                        <li>Performed the mathematical modelling and two-year production planning of a company. – <strong>VBA</strong></li>
-                        <li>Developed and compared two different greedy randomized adaptive search heuristics to propose a solution to the maximum diversity problem. - <strong>VBA</strong></li>
-                        <li>Developed and compared three different metaheuristics to propose a solution to the permutation flow-shop scheduling problem. - <strong>VBA</strong></li>
-                    </ul>
-                </div>
-                <div class="tab" id="automation" role="tabpanel" aria-labelledby="automation">
-                    <h3 class="text-xl font-semibold mb-4">Automation and Macros</h3>
-                    <ul class="list-disc list-inside text-gray-400">
-                        <li>Developed various macros to automate bureaucratic processes in companies, such as automatic filling of reports. - <strong>VBA</strong></li>
-                        <li>Created macros for updating text documents to a new format, streamlining document management. - <strong>VBA</strong></li>
-                        <li>Created an automated AI-controlled Youtube channel, which generates videos on trending topics and uploads them. - <strong>Python</strong></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <script>
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const tabs = document.querySelectorAll('.tab');
-    
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Remove active class from all buttons and tabs
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                tabs.forEach(tab => tab.classList.remove('active'));
-    
-                // Add active class to the clicked button and corresponding tab
-                button.classList.add('active');
-                const tabId = button.getAttribute('data-tab');
-                document.getElementById(tabId).classList.add('active');
-            });
-        });
-    </script>
-    
-
-
-    <!-- Projects Section with 3D elements -->
-    <section id="projects" class="py-20">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <a href="https://www.biorxiv.org/content/10.1101/2024.03.29.585638v2" target="_blank" class="block">
-                    <div class="card rounded-xl overflow-hidden reveal">
-                        <div class="relative">
-                            <img src="https://www.biorxiv.org/content/biorxiv/early/2024/08/07/2024.03.29.585638/F1.large.jpg?width=800&height=600&carousel=1" alt="Project 1" class="w-full h-48 object-cover"/>
-                            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold mb-2">Shape dynamics and migration of branched cells on complex networks.</h3>
-                            <p class="text-gray-400 mb-4">Developed the pipeline for analysis of cell migration using neural networks.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">Python</span>
-                                <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">R</span>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>            
-                <!-- Add more project cards as needed -->
-            </div>
-        </div>
-    </section>
-
-    
-    <!-- Background Animation with Three.js -->
+    <!-- Background Animation -->
     <script>
         function initBackground() {
             const scene = new THREE.Scene();
@@ -468,66 +570,6 @@
             reveal();
         });
     </script>
-
-    <style>
-        .tab {
-            display: none;
-        }
-        .tab.active {
-            display: block;
-        }
-        .tab-button {
-            background: transparent;
-            border: none;
-            color: #00ff9d;
-            padding: 10px 20px;
-            cursor: pointer;
-        }
-        .tab-button:hover {
-            background: rgba(0, 255, 157, 0.1);
-        }
-        .tab-button.active {
-            border-bottom: 2px solid #00ff9d;
-            font-weight: bold;
-        }
-    </style>
-
-    <!-- Footer Section -->
-    <footer class="bg-gray-800 py-6">
-        <div class="max-w-6xl mx-auto px-6">
-            <p class="text-gray-400 mb-4 text-left">Connect with me:</p>
-            <div class="flex items-center space-x-6 mb-4">
-                <a href="https://bsky.app/profile/jboixcampos.bsky.social" target="_blank" rel="noopener noreferrer" class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 60" class="h-6 w-6 inline-block">
-                        <path fill="#fcfcfc" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/>
-                    </svg>
-                </a>
-                <a href="https://twitter.com/JBoixCampos" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 inline-block">
-                        <g><path fill="#fcfcfc" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></g>
-                    </svg>
-                </a>
-                <a href="https://github.com/JBoixCampos" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 inline-block">
-                        <path fill="#fcfcfc" d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"/>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/javier-boix-campos" target="_blank" rel="noopener noreferrer">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 inline-block">
-                        <path fill="#fcfcfc" d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
-                    </svg>
-                </a>
-            </div>
-            <p class="text-gray-400 text-left">Email: <a href="mailto:javierboixcampos@gmail.com" class="hover:text-blue-400">javierboixcampos@gmail.com</a></p>
-            <p class="text-gray-500 mt-4 text-left">© 2025 Javier Boix Campos. All rights reserved.</p>
-        </div>
-    </footer>
     
-
-    
-    
-    
-    
-
 </body>
 </html>
