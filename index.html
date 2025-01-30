@@ -151,15 +151,12 @@
 <body class="bg-gray-900 text-white">
     <canvas id="background-animation"></canvas>
 
-    <div class="main-wrapper">
-
     <nav class="fixed w-full z-50 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg">
         <!-- Navigation content -->
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="gradient-text text-xl font-bold">Javier Boix Campos</div>
                 <div class="flex space-x-8">
-                    <a href="index.html#experience" class="hover:text-blue-400 transition-colors">Programming Experience</a>
                     <a href="index.html#projects" class="hover:text-blue-400 transition-colors">Featured Projects</a>
                     <a href="cv.html#about" class="hover:text-blue-400 transition-colors">CV</a>
                     <a href="about.html#about" class="hover:text-blue-400 transition-colors">About</a>
@@ -167,6 +164,8 @@
             </div>
         </div>
     </nav>
+
+    <div class="main-wrapper">
 
         <div class="content">
             <!-- Hero Section -->
@@ -196,6 +195,50 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="py-20">
+                <div class="max-w-6xl mx-auto px-4">
+                    <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">Featured Projects</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <a href="https://www.biorxiv.org/content/10.1101/2024.03.29.585638v2" target="_blank" class="block">
+                            <div class="card rounded-xl overflow-hidden reveal">
+                                <div class="relative">
+                                    <img src="https://www.biorxiv.org/content/biorxiv/early/2024/08/07/2024.03.29.585638/F1.large.jpg?width=800&height=600&carousel=1" alt="Project 1" class="w-full h-48 object-cover"/>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2">Shape dynamics and migration of branched cells on complex networks.</h3>
+                                    <p class="text-gray-400 mb-4">Developed the pipeline for analysis of cell migration using neural networks.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">Python</span>
+                                        <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">R</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <a href="#" target="_blank" class="block">
+                            <div class="card rounded-xl overflow-hidden reveal">
+                                <div class="relative">
+                                    <img src="https://i.imgur.com/MGqPG4k.png" alt="This Website" class="w-full h-48 object-cover"/>
+                                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-semibold mb-2">This website!</h3>
+                                    <p class="text-gray-400 mb-4">A personal project showcasing my work and skills.</p>
+                                    <div class="flex flex-wrap gap-2">
+                                        <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">HTML</span>
+                                        <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">CSS</span>
+                                        <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">JavaScript</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>            
+                        <!-- Add more project cards as needed -->
+                </div>
+            </section>
+            
             <!-- Experience Section -->
             <section id="experience" class="py-20">
                 <div class="max-w-6xl mx-auto px-4">
@@ -298,31 +341,7 @@
                 });
             </script>
 
-            <!-- Projects Section -->
-            <section id="projects" class="py-20">
-                <div class="max-w-6xl mx-auto px-4">
-                    <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">Featured Projects</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <a href="https://www.biorxiv.org/content/10.1101/2024.03.29.585638v2" target="_blank" class="block">
-                            <div class="card rounded-xl overflow-hidden reveal">
-                                <div class="relative">
-                                    <img src="https://www.biorxiv.org/content/biorxiv/early/2024/08/07/2024.03.29.585638/F1.large.jpg?width=800&height=600&carousel=1" alt="Project 1" class="w-full h-48 object-cover"/>
-                                    <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
-                                </div>
-                                <div class="p-6">
-                                    <h3 class="text-xl font-semibold mb-2">Shape dynamics and migration of branched cells on complex networks.</h3>
-                                    <p class="text-gray-400 mb-4">Developed the pipeline for analysis of cell migration using neural networks.</p>
-                                    <div class="flex flex-wrap gap-2">
-                                        <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">Python</span>
-                                        <span class="bg-blue-900 bg-opacity-50 px-3 py-1 rounded-full text-sm">R</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>            
-                        <!-- Add more project cards as needed -->
-                </div>
-            </section>
+
         </div>
 
         <!-- Footer -->
