@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JBoixCampos - CV</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <link rel="icon" href="https://www.svgrepo.com/show/396310/dna.svg" type="image/svg+xml">
+
+    <style>
+        #background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #00ff9d, #00b8ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: gradient 5s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <canvas id="background-animation"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-gray-900 bg-opacity-90 backdrop-filter backdrop-blur-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="gradient-text text-xl font-bold">Javier Boix Campos</div>
+                <div class="flex space-x-8">
+                    <a href="index.html#experience" class="hover:text-blue-400 transition-colors">Programming Experience</a>
+                    <a href="index.html#projects" class="hover:text-blue-400 transition-colors">Featured Projects</a>
+                    <a href="cv.html#about" class="hover:text-blue-400 transition-colors">CV</a>
+                    <a href="about.html#about" class="hover:text-blue-400 transition-colors">About</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- CV Content -->
+    <section class="min-h-screen py-20 pt-32">
+        <div class="max-w-6xl mx-auto px-4">
+            <h1 class="text-4xl font-bold mb-12 text-center gradient-text">Curriculum Vitae</h1>
+            
+            <!-- Contact Information -->
+            <div class="card rounded-xl p-6 mb-8 reveal">
+                <h2 class="text-2xl font-bold mb-4">Contact Information</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-gray-400">Email: <a href="mailto:javierboixcampos@gmail.com" class="text-blue-400">javierboixcampos@gmail.com</a></p>
+                        <p class="text-gray-400">Phone: +34 628653263</p>
+                    </div>
+                    <div>
+                        <p class="text-gray-400">Location: Valencia, Spain</p>
+                        <p class="text-gray-400">LinkedIn: <a href="https://www.linkedin.com/in/javier-boix-campos" class="text-blue-400">Javier Boix Campos</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Education -->
+            <div class="card rounded-xl p-6 mb-8 reveal">
+                <h2 class="text-2xl font-bold mb-4">Education</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="text-xl font-semibold">Master's in Data Analysis Engineering, Process Improvement and Decision Making</h3>
+                        <p class="text-gray-400">Polytechnic University of Valencia (UPV)</p>
+                        <p class="text-gray-400">Sep 2023 - Sep 2024</p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold">Bachelor's in Biotechnology</h3>
+                        <p class="text-gray-400">Polytechnic University of Valencia (UPV)</p>
+                        <p class="text-gray-400">Sep 2018 - Jun 2022</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Experience -->
+            <div class="card rounded-xl p-6 mb-8 reveal">
+                <h2 class="text-2xl font-bold mb-4">Work Experience</h2>
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-xl font-semibold">Bioinformatician</h3>
+                        <p class="text-blue-400">University Medical Center Hamburg-Eppendorf</p>
+                        <p class="text-gray-400">Hamburg, Germany | Nov 2022 - Present</p>
+                        <p class="text-gray-400">Developed neural network systems, programs, and analysis methods for cellular image analysis at the CellComM Lab.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold">AI Developer</h3>
+                        <p class="text-blue-400">Elite Sports 17 S.L.</p>
+                        <p class="text-gray-400">Valencia, Spain | Jul 2024 - October 2024</p>
+                        <p class="text-gray-400">Created advanced pipelines for analyzing various sports matches utilizing neural networks.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold">Akademia Mentor</h3>
+                        <p class="text-blue-400">Bankinter Innovation Foundation</p>
+                        <p class="text-gray-400">Spain | Oct 2023 - Jan 2024</p>
+                        <p class="text-gray-400">Mentoring and assisting students in developing artificial intelligence algorithms for the 2023-2024 Akademia program.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold">Student Coordinator</h3>
+                        <p class="text-blue-400">Institute of Molecular Recognition and Technological Development</p>
+                        <p class="text-gray-400">Valencia, Spain | Mar 2021 - Apr 2021</p>
+                        <p class="text-gray-400">Coordinated a trial for a biosensor for detecting SARS-CoV-2 validation.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold">PIAE+ Coordinator at the ETSIAMN</h3>
+                        <p class="text-blue-400">Polytechnic University of Valencia</p>
+                        <p class="text-gray-400">Valencia, Spain | Sep 2020 - Jul 2022</p>
+                        <p class="text-gray-400">Managed team, communication, workshop promotion, and database for the Comprehensive Student Accompaniment Program (PIAE+).</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold">Scientific Internship</h3>
+                        <p class="text-blue-400">Prince Felipe Research Center</p>
+                        <p class="text-gray-400">Valencia, Spain | Nov 2021 - Jul 2022</p>
+                        <p class="text-gray-400">Conducted Bachelor's Thesis on proteins involved in the metastatic process of lung cancer.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold">Scientific Internship</h3>
+                        <p class="text-blue-400">Institute for Plant Molecular and Cellular Biology</p>
+                        <p class="text-gray-400">Valencia, Spain | Mar 2021 - Jul 2021</p>
+                        <p class="text-gray-400">Isolated a gene involved in cell cycle regulation.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold">Member of the Biotechnology Academic Committee</h3>
+                        <p class="text-blue-400">Polytechnic University of Valencia</p>
+                        <p class="text-gray-400">Valencia, Spain | Oct 2019 - Jul 2022</p>
+                        <p class="text-gray-400">Collaborated with the management in decisions affecting the Biotechnology degree.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold">Speaker at the Open Days</h3>
+                        <p class="text-blue-400">Polytechnic University of Valencia</p>
+                        <p class="text-gray-400">Valencia, Spain | 2021 - 2022</p>
+                        <p class="text-gray-400">Spoke at the UPV Open Days, sharing experience and addressing doubts of prospective students.</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold">Private Tutor</h3>
+                        <p class="text-blue-400">Freelance</p>
+                        <p class="text-gray-400">Valencia, Spain | 2015 - 2025</p>
+                        <p class="text-gray-400">Provided private tutoring for students from secondary school to university level.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills -->
+            <div class="card rounded-xl p-6 mb-8 reveal">
+                <h2 class="text-2xl font-bold mb-4">Programming Languages</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="text-gray-400">Python (Advanced User)</div>
+                    <div class="text-gray-400">R (Advanced User)</div>
+                    <div class="text-gray-400">Visual Basic (Advanced User)</div>
+                </div>
+            </div>
+
+            <!-- Languages -->
+            <div class="card rounded-xl p-6 mb-8 reveal">
+                <h2 class="text-2xl font-bold mb-4">Languages</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="text-gray-400">Spanish (Native Speaker)</div>
+                    <div class="text-gray-400">Valencian (Native Speaker)</div>
+                    <div class="text-gray-400">English (TOEFL iBT: 105/120 [C2])</div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="card rounded-xl p-6 mb-8 reveal">
+                <h2 class="text-2xl font-bold mb-4">Licenses and Certifications</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="text-gray-400">Artificial Intelligence and Productivity (Google)</div>
+                    <div class="text-gray-400">Applicability of AI and Quantum Computing (Akademia Bankinter)</div>
+                    <div class="text-gray-400">Basic Python Concepts for Data Science (IBM)</div>
+                    <div class="text-gray-400">Python Essentials (IBM)</div>
+                    <div class="text-gray-400">PowerBI for business (UPV)</div>
+                    <div class="text-gray-400">Excel: Fundamentals and Tools (UPV)</div>
+                    <div class="text-gray-400">Excel: Data Management (UPV)</div>
+                    <div class="text-gray-400">Word: Formatting and Productivity Tools (UPV)</div>
+                    <div class="text-gray-400">Bioethics: Law, Medicine, and Ethics of Genetics and Reproductive Technologies (Harvard)</div>
+                    <div class="text-gray-400">Nutrition and Cancer (Wageningen)</div>
+                    <div class="text-gray-400">Viruses and How to Beat Them. Cells, Immunity, and Vaccines (Tel Aviv)</div>
+                    <div class="text-gray-400">Effective Time Management (UPV)</div>
+                    <div class="text-gray-400">Teamwork Keys (UPV)</div>
+                    <div class="text-gray-400">Scientific Information Retrieval (UPV)</div>
+                    <div class="text-gray-400">Attendee at the Annual Biotechnology Congress 2022 (BAC 2022) (FEBiotec)</div>
+                    <div class="text-gray-400">Attendee at the Biomedical Research Congress 2020 (CIB 2020)</div>
+                    <div class="text-gray-400">Driving License B (DGT)</div>
+                    <div class="text-gray-400">Cruise Sailing Navigation (GVA)</div>
+                    <div class="text-gray-400">Scientific Manuscripts Reviewing (American Chemical Society)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 py-6">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-gray-400 mb-4 text-left">Connect with me:</p>
+            <div class="flex items-center space-x-6 mb-4">
+                <a href="https://bsky.app/profile/jboixcampos.bsky.social" target="_blank" rel="noopener noreferrer" class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 60" class="h-6 w-6 inline-block">
+                        <path fill="#fcfcfc" d="M13.873 3.805C21.21 9.332 29.103 20.537 32 26.55v15.882c0-.338-.13.044-.41.867-1.512 4.456-7.418 21.847-20.923 7.944-7.111-7.32-3.819-14.64 9.125-16.85-7.405 1.264-15.73-.825-18.014-9.015C1.12 23.022 0 8.51 0 6.55 0-3.268 8.579-.182 13.873 3.805ZM50.127 3.805C42.79 9.332 34.897 20.537 32 26.55v15.882c0-.338.13.044.41.867 1.512 4.456 7.418 21.847 20.923 7.944 7.111-7.32 3.819-14.64-9.125-16.85 7.405 1.264 15.73-.825 18.014-9.015C62.88 23.022 64 8.51 64 6.55c0-9.818-8.578-6.732-13.873-2.745Z"/>
+                    </svg>
+                </a>
+                <a href="https://twitter.com/JBoixCampos" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" class="h-6 w-6 inline-block">
+                        <g><path fill="#fcfcfc" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></g>
+                    </svg>
+                </a>
+                <a href="https://github.com/JBoixCampos" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 inline-block">
+                        <path fill="#fcfcfc" d="M12.5.75C6.146.75 1 5.896 1 12.25c0 5.089 3.292 9.387 7.863 10.91.575.101.79-.244.79-.546 0-.273-.014-1.178-.014-2.142-2.889.532-3.636-.704-3.866-1.35-.13-.331-.69-1.352-1.18-1.625-.402-.216-.977-.748-.014-.762.906-.014 1.553.834 1.769 1.179 1.035 1.74 2.688 1.25 3.349.948.1-.747.402-1.25.733-1.538-2.559-.287-5.232-1.279-5.232-5.678 0-1.25.445-2.285 1.178-3.09-.115-.288-.517-1.467.115-3.048 0 0 .963-.302 3.163 1.179.92-.259 1.897-.388 2.875-.388.977 0 1.955.13 2.875.388 2.2-1.495 3.162-1.179 3.162-1.179.633 1.581.23 2.76.115 3.048.733.805 1.179 1.825 1.179 3.09 0 4.413-2.688 5.39-5.247 5.678.417.36.776 1.05.776 2.128 0 1.538-.014 2.774-.014 3.162 0 .302.216.662.79.547C20.709 21.637 24 17.324 24 12.25 24 5.896 18.854.75 12.5.75Z"/>
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/javier-boix-campos" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 inline-block">
+                        <path fill="#fcfcfc" d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="text-gray-400 text-left">Email: <a href="mailto:javierboixcampos@gmail.com" class="hover:text-blue-400">javierboixcampos@gmail.com</a></p>
+            <p class="text-gray-500 mt-4 text-left">© 2025 Javier Boix Campos. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Background Animation Script -->
+    <script>
+        function initBackground() {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('background-animation'), alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+
+            const material = new THREE.PointsMaterial({ color: 0x00ff9d, size: 2 });
+            const geometry = new THREE.Group();
+
+            for (let i = 0; i < 5000; i++) {
+                const x = Math.random() * 2000 - 1000;
+                const y = Math.random() * 2000 - 1000;
+                const z = Math.random() * 2000 - 1000;
+                
+                const shapeType = Math.floor(Math.random() * 3);
+                let shape;
+
+                if (shapeType === 0) {
+                    shape = new THREE.PlaneGeometry(2, 2);
+                } else if (shapeType === 1) {
+                    shape = new THREE.CircleGeometry(2, 32);
+                } else {
+                    shape = new THREE.BufferGeometry();
+                    const vertices = new Float32Array([
+                        0, 2, 0,
+                        -2, -2, 0,
+                        2, -2, 0
+                    ]);
+                    shape.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+                }
+
+                const mesh = new THREE.Mesh(shape, material);
+                mesh.position.set(x, y, z);
+                geometry.add(mesh);
+            }
+
+            scene.add(geometry);
+            camera.position.z = 1000;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                geometry.rotation.x += 0.0002;
+                geometry.rotation.y += 0.0002;
+                renderer.render(scene, camera);
+            }
+            animate();
+        }
+
+        function reveal() {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        }
+
+        // Initialize everything
+        window.addEventListener('load', () => {
+            initBackground();
+            window.addEventListener('scroll', reveal);
+            reveal();
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const canvas = document.getElementById('background-animation');
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>
