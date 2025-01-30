@@ -47,12 +47,12 @@
 
         /* Text effects */
         .gradient-text {
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            animation: gradient 5s ease infinite;
-        }
+        background: linear-gradient(45deg, #00ff9d, #00b8ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 30px rgba(0, 255, 157, 0.3);
+    }
 
         /* Cards */
         .card {
@@ -89,7 +89,7 @@
         }
 
         .tab-button.active {
-            border-bottom: 2px solid #00ff9d;
+            border-bottom: 2px solid #1b6b4c;
             font-weight: bold;
         }
 
@@ -98,6 +98,16 @@
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+
+        @keyframes glowPulse {
+            0% { filter: blur(3px) brightness(0.8); }
+            50% { filter: blur(3px) brightness(1); }
+            100% { filter: blur(3px) brightness(0.8); }
+        }
+
+        #hero-canvas {
+            animation: glowPulse 4s ease-in-out infinite;
         }
 
         body {
@@ -159,18 +169,32 @@
 
         <div class="content">
             <!-- Hero Section -->
-            <section class="min-h-screen flex flex-col items-center justify-center relative">
-                <!-- Hero content -->
-                <div class="text-center z-10">
-                    <h1 class="text-6xl font-bold mb-4 gradient-text">Welcome!</h1>
-                    <p class="text-xl text-gray-400 mb-8">Explore my recent projects and learn more about my work. You can also connect with me on various social platforms.</p>
-                </div>
-                <div class="h-20"></div>
-                <div class="absolute inset-0 flex items-center justify-center">
+            <section class="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+                <!-- DNA Animation Container -->
+                <div class="absolute inset-0 flex items-center justify-center opacity-70">
                     <canvas id="hero-canvas"></canvas>
                 </div>
+                
+                <!-- Hero content with enhanced glass effect -->
+                <div class="text-center z-10 p-12 rounded-2xl 
+                            backdrop-blur-xl 
+                            bg-gradient-to-br from-white/10 to-white/5
+                            border border-white/10
+                            shadow-[0_8px_32px_0_rgba(31,38,135,0.37)]
+                            hover:backdrop-blur-2xl hover:bg-white/20
+                            transition-all duration-300">
+                    <div class="relative">
+                        <!-- Glass reflection effect -->
+                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/50 to-transparent opacity-10"></div>
+                        
+                        <h1 class="text-6xl font-bold mb-4 gradient-text">Welcome!</h1>
+                        <p class="text-xl text-gray-300 mb-8 max-w-2xl">
+                            Explore my recent projects and learn more about my work. 
+                            You can also connect with me on various social platforms.
+                        </p>
+                    </div>
+                </div>
             </section>
-
             <!-- Experience Section -->
             <section id="experience" class="py-20">
                 <div class="max-w-6xl mx-auto px-4">
@@ -334,167 +358,116 @@
 
     <!-- DNA Animation -->
     <script>
-        class DNAAnimation {
-            constructor() {
-                this.canvas = document.getElementById('hero-canvas');
-                this.ctx = this.canvas.getContext('2d');
-
-                this.resizeCanvas();
-
-                this.points = [];
-                this.numPoints = 30;
-                this.wavelength = 750;
-                this.amplitude = 100;
-                this.transitionProgress = 0;
-                this.isDNA = true;
-
-                this.colors = [
-                    { h: 210, s: 100, l: 50 },
-                    { h: 120, s: 100, l: 50 },
-                    { h: 240, s: 100, l: 50 },
-                    { h: 180, s: 100, l: 50 }
-                ];
-                this.mouse = { x: 0, y: 0 }; // Store mouse position
-                this.initPoints();
-                this.animate();
-
-                // Track mouse movement
-                this.canvas.addEventListener('mousemove', (event) => {
-                    const rect = this.canvas.getBoundingClientRect();
-                    this.mouse.x = event.clientX - rect.left;
-                    this.mouse.y = event.clientY - rect.top;
-                });
-
-                // Resize canvas on window resize
-                window.addEventListener('resize', () => this.resizeCanvas());
+        function createDNA() {
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ 
+                alpha: true, 
+                canvas: document.getElementById('hero-canvas'),
+                antialias: true
+            });
+            
+            function updateSize() {
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
             }
-
-            resizeCanvas() {
-                this.width = window.innerWidth * 0.8;
-                this.height = window.innerHeight * 0.6;
-                this.canvas.width = this.width;
-                this.canvas.height = this.height;
-
-                this.centerX = this.width / 2;
-                this.centerY = this.height / 2;
-
-                this.initPoints();
-            }
-
-            initPoints() {
-                this.points = [];
-                for (let i = 0; i < this.numPoints; i++) {
-                    const x = (i / this.numPoints) * this.wavelength;
-                    const y1 = Math.sin(x * 0.05) * this.amplitude;
-                    const y2 = Math.sin(x * 0.05 + Math.PI) * this.amplitude;
-
-                    const color1 = this.colors[Math.floor(Math.random() * this.colors.length)];
-                    const color2 = this.colors[Math.floor(Math.random() * this.colors.length)];
-
-                    this.points.push({
-                        x: x,
-                        y1: y1,
-                        y2: y2,
-                        color1: { ...color1 },
-                        color2: { ...color2 },
-                    });
+            window.addEventListener('resize', updateSize);
+            updateSize();
+            
+            const group = new THREE.Group();
+            scene.add(group);
+            
+            // Increase the number of points for more detail
+            const numPoints = 60;
+            const amplitude = 45;
+            const spacing = 7;
+            
+            // Enhanced material with stronger glow
+            const material = new THREE.MeshPhysicalMaterial({ 
+                emissive: 0x00ff9d,
+                emissiveIntensity: 0.8,
+                metalness: 0.9,
+                roughness: 0.1,
+                clearcoat: 1.0,
+                clearcoatRoughness: 0.1
+            });
+            
+            const lineMaterial = new THREE.LineBasicMaterial({ 
+                color: 0x00ff9d,
+                opacity: 0.4,
+                transparent: true
+            });
+            
+            for (let i = 0; i < numPoints; i++) {
+                const angle = i * (Math.PI / 8);
+                
+                const x1 = Math.sin(angle) * amplitude;
+                const x2 = -Math.sin(angle) * amplitude;
+                const y = i * spacing - (numPoints * spacing) / 2;
+                const z = Math.cos(angle) * amplitude;
+                
+                // Varied sphere sizes for more visual interest
+                const sphereGeometry = new THREE.SphereGeometry(1.2 + Math.random() * 0.8, 32, 32);
+                const sphere1 = new THREE.Mesh(sphereGeometry, material);
+                const sphere2 = new THREE.Mesh(sphereGeometry, material);
+                
+                sphere1.position.set(x1, y, z);
+                sphere2.position.set(x2, y, -z);
+                
+                group.add(sphere1);
+                group.add(sphere2);
+                
+                if (i < numPoints - 1) {
+                    const nextAngle = (i + 1) * (Math.PI / 8);
+                    const nextX1 = Math.sin(nextAngle) * amplitude;
+                    const nextY = (i + 1) * spacing - (numPoints * spacing) / 2;
+                    const nextZ = Math.cos(nextAngle) * amplitude;
+                    
+                    const lineGeometry = new THREE.BufferGeometry().setFromPoints([
+                        new THREE.Vector3(x1, y, z),
+                        new THREE.Vector3(nextX1, nextY, nextZ)
+                    ]);
+                    const line = new THREE.Line(lineGeometry, lineMaterial);
+                    group.add(line);
                 }
             }
-
-            drawFrame() {
-                this.ctx.clearRect(0, 0, this.width, this.height);
-                this.ctx.save();
-                this.ctx.translate(this.centerX - this.wavelength / 2, this.centerY);
-
-                // Draw connecting lines
-                this.ctx.beginPath();
-                this.ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
-                for (let i = 0; i < this.points.length; i++) {
-                    const point = this.points[i];
-                    if (i === 0) {
-                        this.ctx.moveTo(point.x, point.y1);
-                    } else {
-                        this.ctx.lineTo(point.x, point.y1);
-                    }
-                }
-                this.ctx.stroke();
-
-                // Draw nodes
-                for (let i = 0; i < this.points.length; i++) {
-                    const point = this.points[i];
-
-                    // Interpolate colors
-                    const gradient = this.ctx.createLinearGradient(0, point.y1, 0, point.y2);
-                    const color1 = this.hslToString(point.color1);
-                    const color2 = this.hslToString(point.color2);
-                    gradient.addColorStop(0, color1);
-                    gradient.addColorStop(1, color2);
-
-                    // Draw connection lines with gradient
-                    this.ctx.beginPath();
-                    this.ctx.strokeStyle = gradient;
-                    this.ctx.moveTo(point.x, point.y1);
-                    this.ctx.lineTo(point.x, point.y2);
-                    this.ctx.stroke();
-
-                    // Draw glowing nodes
-                    this.drawGlowingNode(point.x, point.y1, color1);
-                    this.drawGlowingNode(point.x, point.y2, color2);
-                }
-
-                this.ctx.restore();
+            
+            // Enhanced lighting setup
+            const mainLight = new THREE.PointLight(0xffffff, 2, 300);
+            mainLight.position.set(0, 10, -20);
+            scene.add(mainLight);
+            
+            const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+            scene.add(ambientLight);
+            
+            // Add a subtle bloom effect
+            const bloomLight = new THREE.PointLight(0x00ff9d, 0.5, 200);
+            bloomLight.position.set(-50, 0, 50);
+            scene.add(bloomLight);
+            
+            camera.position.x = 200;
+            camera.position.y = 0;
+            camera.position.z = 0;
+            camera.lookAt(0, 0, 0);
+            
+            group.rotation.x = Math.PI / 2;
+            
+            function animate() {
+                requestAnimationFrame(animate);
+                group.rotation.y += 0.003;
+                
+                // Add subtle floating movement
+                group.position.y = Math.sin(Date.now() * 0.001) * 5;
+                
+                renderer.render(scene, camera);
             }
-
-            drawGlowingNode(x, y, color) {
-                const distance = Math.sqrt(
-                    Math.pow(this.mouse.x - (this.centerX - this.wavelength / 2 + x), 2) +
-                    Math.pow(this.mouse.y - (this.centerY + y), 2)
-                );
-
-                const maxDistance = 50; // Distance threshold for scaling
-                const minRadius = 6; // Base radius
-                const maxRadius = 12; // Enlarged radius
-
-                const radius = distance < maxDistance
-                    ? minRadius + (1 - distance / maxDistance) * (maxRadius - minRadius)
-                    : minRadius;
-
-                this.ctx.beginPath();
-                this.ctx.arc(x, y, radius, 0, Math.PI * 2);
-                this.ctx.shadowColor = color;
-                this.ctx.shadowBlur = 15;
-                this.ctx.fillStyle = color;
-                this.ctx.fill();
-                this.ctx.shadowBlur = 0;
-            }
-
-            hslToString(hsl) {
-                return `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
-            }
-
-            animate() {
-                const time = Date.now() * 0.002;
-                for (let i = 0; i < this.points.length; i++) {
-                    const point = this.points[i];
-                    point.y1 = Math.sin(point.x * 0.05 + time) * this.amplitude;
-                    point.y2 = Math.sin(point.x * 0.05 + Math.PI + time) * this.amplitude;
-                }
-
-                this.drawFrame();
-                requestAnimationFrame(() => this.animate());
-            }
+            
+            animate();
         }
-
-        // Initialize the animation when the page loads
-        window.addEventListener('load', () => {
-            const canvas = document.createElement('canvas');
-            canvas.id = 'hero-canvas';
-            document.body.appendChild(canvas);
-
-            new DNAAnimation();
-        });
-    </script>
-
+        
+        window.addEventListener('load', createDNA);
+        </script>
     <!-- Background Animation -->
     <script>
         function initBackground() {
