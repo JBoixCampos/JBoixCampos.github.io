@@ -52,8 +52,23 @@
         background-clip: text;
         color: transparent;
         text-shadow: 0 0 30px rgba(0, 255, 157, 0.3);
-    }
+        }
 
+        .glow-link {
+            position: relative;
+            color: white; /* Default color */
+            text-shadow: 0 0 10px rgba(0, 255, 157, 0.5),
+                        0 0 20px rgba(0, 255, 157, 0.4),
+                        0 0 30px rgba(0, 255, 157, 0.3);
+            transition: text-shadow 0.3s ease-in-out;
+        }
+
+        .glow-link:hover {
+            text-shadow: 0 0 20px rgba(0, 255, 157, 0.7),
+                        0 0 30px rgba(0, 255, 157, 0.6),
+                        0 0 40px rgba(0, 255, 157, 0.5);
+        }
+        
         /* Cards */
         .card {
             backdrop-filter: blur(10px);
@@ -155,7 +170,7 @@
         <!-- Navigation content -->
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
-                <div class="gradient-text text-xl font-bold">Javier Boix Campos</div>
+                <a href="index.html" class="gradient-text text-xl font-bold">Javier Boix Campos</a>
                 <div class="flex space-x-8">
                     <a href="index.html#projects" class="hover:text-blue-400 transition-colors">Featured Projects</a>
                     <a href="cv.html#about" class="hover:text-blue-400 transition-colors">CV</a>
