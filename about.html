@@ -92,45 +92,61 @@
         </div>
     </nav>
 
-    <!-- About Content -->
-    <section class="min-h-screen py-20 pt-32">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">About Me</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="card rounded-xl overflow-hidden reveal">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-4">Javier Boix Campos</h3>
-                        <p class="text-gray-400 mb-4">
-                            I am a passionate researcher and data scientist with a strong background in biotechnology and data analysis. My work focuses on the intersection of artificial intelligence, microscopy, and data science, where I strive to develop innovative solutions to complex biological problems.
-                        </p>
-                        <p class="text-gray-400 mb-4">
-                            With expertise in programming languages such as Python, R, and VBA, I have developed various analytical pipelines and machine learning models to enhance our understanding of biological processes. My experience includes working on projects related to cell migration analysis, fluorescence imaging, and multivariate data analysis.
-                        </p>
-                        <p class="text-gray-400 mb-4">
-                            I am committed to continuous learning and staying updated with the latest advancements in technology and science. I believe in the power of collaboration and am always eager to connect with like-minded individuals to share knowledge and explore new ideas.
-                        </p>
-                    </div>
+<!-- About Content -->
+<section class="min-h-screen py-20 pt-32">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-12 text-center gradient-text leading-tight">About Me</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Left Card with About Content -->
+            <div class="card rounded-xl overflow-hidden reveal">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-4">Javier Boix Campos</h3>
+                    <p class="text-gray-400 mb-4">
+                        I'm fascinated by the potential of data to transform biology and medicine. As a bioinformatician and data scientist, I'm passionate about using my skills to contribute to discoveries that make a real difference in people's lives.
+                    </p>
+                    <p class="text-gray-400 mb-4">
+                        My background in biotechnology, combined with my love for data analysis, allows me to bridge the gap between the biological world and the power of computation. I've had the opportunity to work on some really interesting projects, from analyzing cellular images to developing AI-driven solutions for biological research.
+                    </p>
+                    <p class="text-gray-400 mb-4">
+                        I'm always excited to collaborate with others who share my passion for pushing the boundaries of bioinformatics.  Let's connect and chat about how we can make a positive impact together!
+                    </p>
                 </div>
-                <div class="card rounded-xl overflow-hidden reveal">
-                    <div class="p-6">
-                        <h3 class="text-2xl font-semibold mb-4">My Interests</h3>
-                        <ul class="list-disc list-inside text-gray-400">
-                            <li>Artificial Intelligence and Machine Learning</li>
-                            <li>Data Visualization and Analysis</li>
-                            <li>Microscopy and Imaging Techniques</li>
-                            <li>Biological Data Interpretation</li>
-                            <li>Scientific Research and Development</li>
-                        </ul>
-                        <h3 class="text-2xl font-semibold mt-6 mb-4">Get in Touch</h3>
-                        <p class="text-gray-400">
-                            I am always open to new opportunities and collaborations. Feel free to reach out to me via email at 
-                            <a href="mailto:javierboixcampos@gmail.com" class="text-blue-500 underline">javierboixcampos@gmail.com</a>.
-                        </p>
+            </div>
+
+            <!-- Right Card with Interests -->
+            <div class="card rounded-xl overflow-hidden reveal">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-4">What I'm Passionate About</h3>
+                    <ul class="list-disc list-inside text-gray-400">
+                        <li>Uncovering hidden patterns in biological data 🧬</li>
+                        <li>Developing AI-driven solutions for biomedical research 🤖</li>
+                        <li>Visualizing complex biological information in compelling ways 📊</li>
+                        <li>Exploring the intersection of microscopy and data science 🔬</li>
+                        <li>Contributing to impactful discoveries in the life sciences 🌱</li>
+                    </ul>
+                    <h3 class="text-2xl font-semibold mt-6 mb-4">Let's Connect!</h3>
+                    <p class="text-gray-400">
+                        I'm always open to new opportunities and collaborations. Feel free to drop me a line at <a href="mailto:javierboixcampos@gmail.com" class="text-blue-500 underline">javierboixcampos@gmail.com</a> ;)
+                    </p>
+                </div>
+            </div>
+
+            <!-- Easter Egg Game Card (Occupies Two Columns) -->
+            <div class="card rounded-xl overflow-hidden bg-gradient-to-r from-blue-500 to-indigo-600 shadow-lg col-span-2">
+                <div class="p-6">
+                    <h3 class="text-2xl font-semibold mb-4 text-white text-center">Keep the mouse pressed and move it down here! 👀</h3>
+                    <div class="relative w-full h-80 rounded-lg overflow-hidden">
+                        <!-- Canvas for the Easter Egg Game -->
+                        <canvas id="easteregg-game" class="w-full h-full"></canvas>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+
 
     <!-- Footer -->
     <footer class="bg-gray-800 py-6">
@@ -239,5 +255,126 @@
             renderer.setSize(window.innerWidth, window.innerHeight);
         });
     </script>
+
+    <!-- Easter egg Script -->
+    <script>
+        // Get the canvas for the Easter Egg Game
+        const canvas = document.getElementById('easteregg-game');
+        const ctx = canvas.getContext('2d');
+    
+        let particles = [];
+        const numParticles = 0;
+        let waveHeight = 60; // Wave height for the particle motion
+        const waveFrequency = 0.04; // Wave frequency
+        const mouse = { x: 0, y: 0 };
+        let isMousePressed = false; // Track mouse press state
+    
+        // Adjust canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = 300;
+    
+        // Particle constructor function
+        function Particle(x, y, angle, color) {
+            this.x = x;
+            this.y = y;
+            this.size = Math.random() * 3 + 1; // Random size for each particle
+            this.speed = Math.random() * 1 + 0.5; // Random speed for each particle
+            this.angle = angle;
+            this.color = color || 'rgba(0, 255, 157, 0.8)';
+        }
+    
+        // Create a wave of particles
+        function createParticles() {
+            for (let i = 0; i < numParticles; i++) {
+                const x = i * (canvas.width / numParticles);
+                const angle = (i * waveFrequency) + Math.random();
+                particles.push(new Particle(x, canvas.height / 2, angle));
+            }
+        }
+    
+        // Draw particles and simulate wave
+        function updateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            particles.forEach(p => {
+                // Update the angle for the wave motion
+                p.angle += waveFrequency;
+    
+                // Update particle position to simulate wave
+                p.y = canvas.height / 2 + Math.sin(p.angle) * waveHeight;
+    
+                // Add some mouse interaction (grab particles)
+                let dx = p.x - mouse.x;
+                let dy = p.y - mouse.y;
+                let dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 100) {
+                    p.y -= (100 - dist) * 0.2; // Push particles away when mouse is near
+                    p.color = 'rgba(255, 0, 0, 0.8)'; // Change color when mouse is near
+                } else {
+                    p.color = 'rgba(0, 255, 157, 0.8)'; // Reset to original color
+                }
+    
+                // Draw particle
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fillStyle = p.color;
+                ctx.fill();
+            });
+        }
+    
+        // Update mouse position
+        canvas.addEventListener('mousemove', (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+    
+            if (isMousePressed) {
+                // Continuously create particles while mouse is pressed
+                const color = `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.8)`;
+                const x = e.clientX;
+                const y = e.clientY;
+                particles.push(new Particle(x, y, Math.random() * Math.PI * 2, color));
+            }
+        });
+    
+        // Detect mouse down and start continuous particle creation
+        canvas.addEventListener('mousedown', () => {
+            isMousePressed = true;
+        });
+    
+        // Detect mouse up and stop continuous particle creation
+        canvas.addEventListener('mouseup', () => {
+            isMousePressed = false;
+        });
+    
+        // Resize canvas when window size changes
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = 300;
+        });
+    
+        // Animation loop
+        function animate() {
+            updateParticles();
+            requestAnimationFrame(animate);
+        }
+    
+        // Initialize everything
+        createParticles();
+        animate();
+    
+        // Keyboard controls for wave height adjustment
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowUp') {
+                waveHeight += 5; // Increase wave height
+            } else if (e.key === 'ArrowDown') {
+                waveHeight = Math.max(5, waveHeight - 5); // Decrease wave height (with a minimum limit)
+            }
+        });
+    </script>
+    
+    
+
+        
+        
 </body>
 </html>
