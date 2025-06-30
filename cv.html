@@ -1,0 +1,1283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javier Boix Campos - CV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://www.svgrepo.com/show/396310/dna.svg" type="image/svg+xml">
+    
+    <style>
+        /* ===== CSS VARIABLES ===== */
+        :root {
+            /* Colors matching your portfolio */
+            --primary-gradient: linear-gradient(135deg, #00ff9d, #00b8ff);
+            --primary-color: #00ff9d;
+            --secondary-color: #00b8ff;
+            --accent-color: #1b6b4c;
+            
+            /* Background colors */
+            --bg-primary: #0a0f1c;
+            --bg-secondary: #111827;
+            --bg-card: #1a202c;
+            --bg-dark: #0f172a;
+            
+            /* Text colors */
+            --text-primary: #ffffff;
+            --text-secondary: #e2e8f0;
+            --text-muted: #94a3b8;
+            --text-accent: #cbd5e0;
+            
+            /* Glass morphism - more refined */
+            --glass-bg: rgba(255, 255, 255, 0.08);
+            --glass-border: rgba(255, 255, 255, 0.12);
+            --glass-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.6);
+            --glass-shadow-hover: 0 25px 60px -12px rgba(0, 255, 157, 0.15);
+            
+            /* Other */
+            --border-radius: 1.25rem;
+            --border-radius-sm: 0.75rem;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            
+            /* Spacing system */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+        }
+
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Subtle background pattern */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 255, 157, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 184, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        /* ===== GLASS MORPHISM - REFINED ===== */
+        .glass-card {
+            backdrop-filter: blur(20px);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            box-shadow: var(--glass-shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            pointer-events: none;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--glass-shadow-hover);
+            border-color: rgba(0, 255, 157, 0.2);
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 15, 28, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--space-md) var(--space-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: var(--space-xl);
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            font-size: 0.95rem;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gradient);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        /* ===== CV CONTENT ===== */
+        .cv-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: calc(80px + var(--space-xl)) var(--space-lg) var(--space-xl);
+        }
+
+        /* ===== HEADER SECTION ===== */
+        .cv-header {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: var(--space-2xl);
+            align-items: start;
+            padding: var(--space-2xl);
+        }
+
+        .personal-info h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: var(--space-md);
+            line-height: 1.1;
+        }
+
+        .cv-subtitle {
+            font-size: 1.4rem;
+            color: var(--text-accent);
+            margin-bottom: var(--space-lg);
+            font-weight: 500;
+        }
+
+        .cv-summary {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 600px;
+        }
+
+        .contact-info {
+            display: grid;
+            gap: var(--space-md);
+            min-width: 280px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            padding: var(--space-sm);
+            border-radius: var(--border-radius-sm);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 255, 157, 0.2);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 255, 157, 0.3);
+        }
+
+        .contact-details {
+            flex: 1;
+        }
+
+        .contact-details strong {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .contact-details a,
+        .contact-details span {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .contact-details a:hover {
+            color: var(--primary-color);
+        }
+
+        /* ===== SECTION STYLING ===== */
+        .cv-section {
+            margin-bottom: var(--space-2xl);
+        }
+
+        .cv-section-content {
+            padding: var(--space-2xl);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xl);
+            position: relative;
+        }
+
+        .section-title i {
+            font-size: 1.5rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
+
+        /* ===== EXPERIENCE/EDUCATION ITEMS ===== */
+        .timeline {
+            position: relative;
+            padding-left: var(--space-xl);
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-gradient);
+            border-radius: 1px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: var(--space-xl);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--border-radius);
+            padding: var(--space-lg);
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(0, 255, 157, 0.15);
+            transform: translateX(8px);
+        }
+
+        .item-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-xs);
+        }
+
+        .item-company {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: var(--space-xs);
+        }
+
+        .item-details {
+            display: flex;
+            gap: var(--space-lg);
+            margin-bottom: var(--space-md);
+            flex-wrap: wrap;
+        }
+
+        .item-detail {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .item-detail i {
+            color: var(--primary-color);
+            font-size: 0.85rem;
+        }
+
+        .item-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        /* ===== SKILLS GRID ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .skill-item {
+            background: rgba(0, 255, 157, 0.08);
+            border: 1px solid rgba(0, 255, 157, 0.2);
+            padding: var(--space-lg);
+            border-radius: var(--border-radius-sm);
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: var(--transition);
+        }
+
+        .skill-item:hover::before {
+            left: 100%;
+        }
+
+        .skill-item:hover {
+            background: rgba(0, 255, 157, 0.12);
+            border-color: rgba(0, 255, 157, 0.3);
+            transform: translateY(-4px);
+        }
+
+        .skill-item i {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: var(--space-sm);
+            display: block;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        .skill-level {
+            color: var(--text-accent);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* ===== LANGUAGES GRID ===== */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-md);
+        }
+
+        .language-item {
+            text-align: center;
+            padding: var(--space-xl);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .language-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 255, 157, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .language-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: var(--space-sm);
+        }
+
+        .language-level {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* ===== CERTIFICATIONS ===== */
+        .certifications-category {
+            margin-bottom: var(--space-xl);
+        }
+
+        .category-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-lg);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid rgba(0, 255, 157, 0.2);
+        }
+
+        .category-title i {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-size: 1.2rem;
+        }
+
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: var(--space-sm);
+        }
+
+        .certification-item {
+            color: var(--text-secondary);
+            padding: var(--space-md);
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            line-height: 1.5;
+        }
+
+        .certification-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 255, 157, 0.15);
+            color: var(--text-primary);
+        }
+
+        /* ===== PRINT BUTTON ===== */
+        .print-btn {
+            position: fixed;
+            bottom: var(--space-lg);
+            right: var(--space-lg);
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: var(--space-md) var(--space-lg);
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(0, 255, 157, 0.4);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            z-index: 1000;
+            font-size: 0.95rem;
+            backdrop-filter: blur(20px);
+        }
+
+        .print-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0, 255, 157, 0.5);
+        }
+
+        .print-btn:active {
+            transform: translateY(-1px);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 1024px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                gap: var(--space-xl);
+            }
+
+            .contact-info {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                min-width: auto;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                padding: calc(80px + var(--space-lg)) var(--space-md) var(--space-lg);
+            }
+
+            .header-content,
+            .cv-section-content {
+                padding: var(--space-lg);
+            }
+
+            .personal-info h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .timeline {
+                padding-left: var(--space-lg);
+            }
+
+            .timeline-item::before {
+                left: -23px;
+            }
+
+            .item-details {
+                flex-direction: column;
+                gap: var(--space-sm);
+            }
+
+            .skills-grid,
+            .languages-grid,
+            .certifications-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .print-btn {
+                bottom: var(--space-md);
+                right: var(--space-md);
+                padding: var(--space-sm) var(--space-md);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cv-container {
+                padding: calc(80px + var(--space-md)) var(--space-sm) var(--space-md);
+            }
+
+            .personal-info h1 {
+                font-size: 2rem;
+            }
+
+            .cv-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            body::before {
+                display: none;
+            }
+
+            .navbar,
+            .print-btn {
+                display: none !important;
+            }
+
+            .cv-container {
+                padding: 0;
+                max-width: none;
+            }
+
+            .glass-card {
+                background: white !important;
+                border: 1px solid #e2e8f0 !important;
+                box-shadow: none !important;
+                backdrop-filter: none !important;
+            }
+
+            .glass-card::before {
+                display: none;
+            }
+
+            .gradient-text,
+            .section-title i,
+            .category-title i {
+                color: #1a365d !important;
+                background: none !important;
+                -webkit-background-clip: initial !important;
+                background-clip: initial !important;
+            }
+
+            .section-title,
+            .item-title,
+            .item-company,
+            .language-name,
+            .skill-name {
+                color: #1a365d !important;
+            }
+
+            .text-primary {
+                color: #2d3748 !important;
+            }
+
+            .text-secondary {
+                color: #4a5568 !important;
+            }
+
+            .text-muted {
+                color: #718096 !important;
+            }
+
+            .timeline::before {
+                background: #cbd5e0 !important;
+            }
+
+            .timeline-item::before {
+                background: #4299e1 !important;
+                border-color: white !important;
+                box-shadow: 0 0 0 3px #bee3f8 !important;
+            }
+
+            .contact-icon {
+                background: #4299e1 !important;
+            }
+
+            .skill-item {
+                background: #f7fafc !important;
+                border-color: #e2e8f0 !important;
+            }
+
+            .certification-item,
+            .language-item {
+                background: #f7fafc !important;
+                border-color: #e2e8f0 !important;
+            }
+
+            .section-title::after {
+                background: #4299e1 !important;
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ===== HIGH CONTRAST MODE ===== */
+        @media (prefers-contrast: high) {
+            :root {
+                --glass-bg: rgba(255, 255, 255, 0.15);
+                --glass-border: rgba(255, 255, 255, 0.3);
+                --text-muted: #a0a9c0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Javier Boix Campos</a>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- CV Content -->
+    <div class="cv-container">
+        <!-- Header -->
+        <div class="cv-header reveal">
+            <div class="glass-card">
+                <div class="header-content">
+                    <div class="personal-info">
+                        <h1 class="gradient-text">Javier Boix Campos</h1>
+                        <p class="cv-subtitle">Biotech & Data Science Specialist</p>
+                        <p class="cv-summary">
+                            Passionate bioinformatician and data scientist with expertise in neural networks, cell migration analysis, and genetic technology development. Currently serving as Tech Lead at Innovare Genetics, leading digital solutions development and regulatory compliance for genetic technologies.
+                        </p>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <strong>Email</strong>
+                                <a href="mailto:javierboixcampos@gmail.com">javierboixcampos@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <strong>Location</strong>
+                                <span>Valencia, Spain</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <strong>LinkedIn</strong>
+                                <a href="https://www.linkedin.com/in/javier-boix-campos" target="_blank">Javier Boix Campos</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Work Experience -->
+        <div class="cv-section reveal">
+            <div class="glass-card cv-section-content">
+                <h2 class="section-title">
+                    <i class="fas fa-briefcase"></i>
+                    Professional Experience
+                </h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3 class="item-title">Tech Lead</h3>
+                        <p class="item-company">Innovare Genetics</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                Oct 2024 - Present
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Hybrid
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Lead digital solutions development and technical team coordination while contributing to strategic product decisions and European regulatory validation for genetic technology. Drive full-stack development of internal and external solutions, manage technical roadmap planning, and author CE-IVD/MDR compliance documentation.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3 class="item-title">Scientific Assistant</h3>
+                        <p class="item-company">University Medical Center Hamburg-Eppendorf</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                Nov 2022 - Present
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Hamburg, Germany
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Develop neural network systems and analysis methods for cellular image analysis at CellComM Lab. Create innovative computational approaches to understand complex biological processes through advanced data analysis techniques.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3 class="item-title">AI Developer</h3>
+                        <p class="item-company">Elite Sports 17 S.L.</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                Jul 2024 - Oct 2024
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Valencia, Spain
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Created advanced machine learning pipelines for sports match analysis utilizing neural networks. Developed algorithms to extract performance insights and improve analytics capabilities for sports data.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3 class="item-title">Akademia Mentor</h3>
+                        <p class="item-company">Bankinter Innovation Foundation</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                Oct 2023 - Jan 2024
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Spain
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Mentored students in developing artificial intelligence algorithms for the 2023-2024 Akademia program. Guided participants through complex AI concepts and practical implementation challenges.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3 class="item-title">Scientific Intern</h3>
+                        <p class="item-company">Prince Felipe Research Center</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                Nov 2021 - Jul 2022
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Valencia, Spain
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Conducted Bachelor's Thesis research on proteins involved in lung cancer metastatic processes within the Oncogenic Signaling group. Performed cell culture, western blots, proliferation and wound healing assays to investigate cancer mechanisms.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3 class="item-title">PIAE+ Coordinator</h3>
+                        <p class="item-company">Polytechnic University of Valencia</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                Sep 2020 - Jul 2022
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Valencia, Spain
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Managed team coordination, communication, and database operations for the Comprehensive Student Accompaniment Program (PIAE+) at ETSIAMN. Promoted workshops and supported student success initiatives.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3 class="item-title">Scientific Intern</h3>
+                        <p class="item-company">Institute for Plant Molecular and Cellular Biology</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                Mar 2021 - Jul 2021
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Valencia, Spain
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Isolated genes involved in cell cycle regulation within the Ionic Homeostasis, Cellular Stress and Genomics group. Performed genome extractions, cloning, and gene expression verification techniques.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3 class="item-title">Student Coordinator</h3>
+                        <p class="item-company">Institute of Molecular Recognition and Technological Development</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                Mar 2021 - Apr 2021
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Valencia, Spain
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Coordinated validation trials for SARS-CoV-2 detection biosensors. Managed project logistics and supported research validation processes for COVID-19 diagnostic technology.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3 class="item-title">Member of the Biotechnology Academic Committee</h3>
+                        <p class="item-company">Polytechnic University of Valencia</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                Oct 2019 - Jul 2022
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Valencia, Spain
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Collaborated with management on strategic decisions affecting the Biotechnology degree program. Participated in academic policy development and curriculum enhancement initiatives.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3 class="item-title">Speaker at the Open Days</h3>
+                        <p class="item-company">Polytechnic University of Valencia</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                2021 - 2022
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Valencia, Spain
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Presented at university recruitment events, sharing academic experiences and addressing prospective student inquiries. Represented the biotechnology program and provided guidance to incoming students.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3 class="item-title">Private Tutor</h3>
+                        <p class="item-company">Freelance</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                2015 - 2025
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Valencia, Spain
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Provide personalized academic support for students from secondary school to university level. Specialize in science and mathematics subjects, adapting teaching methods to individual learning styles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education -->
+        <div class="cv-section reveal">
+            <div class="glass-card cv-section-content">
+                <h2 class="section-title">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
+                </h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3 class="item-title">Master's in Data Analysis Engineering, Process Improvement and Decision Making</h3>
+                        <p class="item-company">Polytechnic University of Valencia (UPV)</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                Sep 2023 - Sep 2024
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Valencia, Spain
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Advanced study in data analysis engineering with focus on process optimization and decision-making methodologies. Specialized in machine learning, statistical modeling, and business intelligence applications.
+                        </p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <h3 class="item-title">Bachelor's in Biotechnology</h3>
+                        <p class="item-company">Polytechnic University of Valencia (UPV)</p>
+                        <div class="item-details">
+                            <span class="item-detail">
+                                <i class="fas fa-calendar"></i>
+                                Sep 2018 - Jun 2022
+                            </span>
+                            <span class="item-detail">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Valencia, Spain
+                            </span>
+                        </div>
+                        <p class="item-description">
+                            Comprehensive education in biotechnology encompassing molecular biology, genetics, bioprocessing, and bioengineering. Strong foundation in both theoretical principles and practical laboratory techniques.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Programming Languages -->
+        <div class="cv-section reveal">
+            <div class="glass-card cv-section-content">
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i>
+                    Technical Skills
+                </h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="fab fa-python"></i>
+                        <div class="skill-name">Python</div>
+                        <div class="skill-level">Advanced User</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-r-project"></i>
+                        <div class="skill-name">R</div>
+                        <div class="skill-level">Advanced User</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fas fa-file-code"></i>
+                        <div class="skill-name">Visual Basic</div>
+                        <div class="skill-level">Advanced User</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-js"></i>
+                        <div class="skill-name">JavaScript</div>
+                        <div class="skill-level">Intermediate User</div>
+                    </div>
+                    <div class="skill-item">
+                        <i class="fab fa-html5"></i>
+                        <div class="skill-name">HTML/CSS</div>
+                        <div class="skill-level">Intermediate User</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="cv-section reveal">
+            <div class="glass-card cv-section-content">
+                <h2 class="section-title">
+                    <i class="fas fa-globe"></i>
+                    Languages
+                </h2>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <div class="language-name">Spanish</div>
+                        <div class="language-level">Native Speaker</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">Valencian</div>
+                        <div class="language-level">Native Speaker</div>
+                    </div>
+                    <div class="language-item">
+                        <div class="language-name">English</div>
+                        <div class="language-level">TOEFL iBT Score: 105/120<br>[Cambridge Equivalent: C2]</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Licenses and Certifications -->
+        <div class="cv-section reveal">
+            <div class="glass-card cv-section-content">
+                <h2 class="section-title">
+                    <i class="fas fa-certificate"></i>
+                    Licenses and Certifications
+                </h2>
+                
+                <div class="certifications-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-robot"></i>
+                        AI and Data Science
+                    </h3>
+                    <div class="certifications-grid">
+                        <div class="certification-item">Artificial Intelligence and Productivity (Google)</div>
+                        <div class="certification-item">Applicability of AI and Quantum Computing (Akademia Bankinter)</div>
+                        <div class="certification-item">Basic Python Concepts for Data Science (IBM)</div>
+                        <div class="certification-item">Python Essentials (IBM)</div>
+                    </div>
+                </div>
+
+                <div class="certifications-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-chart-bar"></i>
+                        Business and Productivity
+                    </h3>
+                    <div class="certifications-grid">
+                        <div class="certification-item">PowerBI for Business (UPV)</div>
+                        <div class="certification-item">Excel: Fundamentals and Tools (UPV)</div>
+                        <div class="certification-item">Excel: Data Management (UPV)</div>
+                        <div class="certification-item">Word: Formatting and Productivity Tools (UPV)</div>
+                    </div>
+                </div>
+
+                <div class="certifications-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-dna"></i>
+                        Health and Ethics
+                    </h3>
+                    <div class="certifications-grid">
+                        <div class="certification-item">Bioethics: Law, Medicine, and Ethics of Genetics and Reproductive Technologies (Harvard)</div>
+                        <div class="certification-item">Nutrition and Cancer (Wageningen)</div>
+                        <div class="certification-item">Viruses and How to Beat Them. Cells, Immunity, and Vaccines (Tel Aviv)</div>
+                        <div class="certification-item">Scientific Manuscripts Reviewing (American Chemical Society)</div>
+                    </div>
+                </div>
+
+                <div class="certifications-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-users"></i>
+                        Professional Development
+                    </h3>
+                    <div class="certifications-grid">
+                        <div class="certification-item">Attendee at the Annual Biotechnology Congress 2022 (BAC 2022) - FEBiotec</div>
+                        <div class="certification-item">Attendee at the Biomedical Research Congress 2020 (CIB 2020) - CIB</div>
+                        <div class="certification-item">Effective Time Management (UPV)</div>
+                        <div class="certification-item">Teamwork Keys (UPV)</div>
+                        <div class="certification-item">Scientific Information Retrieval (UPV)</div>
+                    </div>
+                </div>
+
+                <div class="certifications-category">
+                    <h3 class="category-title">
+                        <i class="fas fa-cogs"></i>
+                        Miscellaneous
+                    </h3>
+                    <div class="certifications-grid">
+                        <div class="certification-item">Driving License B (DGT)</div>
+                        <div class="certification-item">Cruise Sailing Navigation (GVA)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Print Button -->
+    <button class="print-btn" onclick="window.print()">
+        <i class="fas fa-print"></i>
+        Print CV
+    </button>
+
+    <script>
+        // ===== SCROLL REVEAL ANIMATIONS =====
+        function initScrollReveal() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+            
+            const elementsToReveal = document.querySelectorAll('.reveal');
+            elementsToReveal.forEach(el => observer.observe(el));
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', initScrollReveal);
+    </script>
+</body>
+</html>
