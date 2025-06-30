@@ -1,0 +1,295 @@
+{
+  "selectedTemplate": 1,
+  "headings": {
+    "education": "Education",
+    "awards": "Licenses and Certifications",
+    "work": "Work Experience",
+    "projects": "Languages",
+    "skills": "Programming Languages"
+  },
+  "education": [
+    {
+      "institution": "Polytechnic University of Valencia (UPV)",
+      "studyType": "Master's in Data Analysis Engineering, Process Improvement and Decision Making",
+      "startDate": "Sep 2023",
+      "endDate": "Sep 2024"
+    },
+    {
+      "institution": "Polytechnic University of Valencia (UPV)",
+      "studyType": "Bachelor's in Biotechnology",
+      "startDate": "Sep 2018",
+      "endDate": "Jun 2022"
+    }
+  ],
+  "work": [
+    {
+      "location": "Hybrid",
+      "position": "Tech Lead",
+      "website": "",
+      "endDate": "Present",
+      "highlights": [
+        "As Tech Lead at Innovare Genetics, I lead the development of digital solutions while coordinating technical teams, contributing to strategic product decisions, and contributing to the European regulatory validation process for our genetic technology.",
+        "Main responsibilities: Full stack development of internal and external solutions, technical team coordination and roadmap planning, involvement in business and product strategy decisions, research and integration of new technological advances, authoring of technical and regulatory documentation (CE-IVD / MDR)."
+      ],
+      "company": "Innovare Genetics",
+      "startDate": "Oct 2024"
+    },
+    {
+      "location": "Hamburg, Germany",
+      "position": "Scientific Assistant",
+      "website": "",
+      "endDate": "Present",
+      "highlights": [
+        "Developed neural network systems, programs, and analysis methods for cellular image analysis at the CellComM Lab."
+      ],
+      "company": "University Medical Center Hamburg-Eppendorf",
+      "startDate": "Nov 2022"
+    },
+    {
+      "location": "Valencia, Spain",
+      "position": "AI Developer",
+      "website": "",
+      "endDate": "October 2024",
+      "highlights": [
+        "Created advanced pipelines for analyzing various sports matches utilizing neural networks."
+      ],
+      "company": "Elite Sports 17 S.L.",
+      "startDate": "Jul 2024"
+    },
+    {
+      "company": "Bankinter Innovation Foundation",
+      "position": "Akademia Mentor",
+      "startDate": "Oct 2023",
+      "endDate": "Jan 2024",
+      "location": "Spain",
+      "highlights": [
+        "Mentored and assisted students in developing artificial intelligence algorithms for the 2023-2024 Akademia program."
+      ]
+    },
+    {
+      "highlights": [
+        "Coordinated a trial for a biosensor for detecting SARS-CoV-2 validation at the Institute of Molecular Recognition and Technological Development."
+      ],
+      "company": "Institute of Molecular Recognition and Technological Development",
+      "position": "Student Coordinator",
+      "location": "Valencia, Spain",
+      "startDate": "Mar 2021",
+      "endDate": "Apr 2021"
+    },
+    {
+      "highlights": [
+        "Managed team, communication, workshop promotion, and database for the Comprehensive Student Accompaniment Program (PIAE+) at the Polytechnic University of Valencia."
+      ],
+      "company": "Polytechnic University of Valencia",
+      "position": "PIAE+ Coordinator at the ETSIAMN",
+      "location": "Valencia, Spain",
+      "startDate": "Sep 2020",
+      "endDate": "Jul 2022"
+    },
+    {
+      "highlights": [
+        "Conducted my Bachelor's Thesis on proteins involved in the metastatic process of lung cancer within the 'Oncogenic Signaling' research group. Responsibilities included cell culture, western blots, proliferation and wound healing assays."
+      ],
+      "company": "Prince Felipe Research Center",
+      "position": "Scientific Intern",
+      "location": "Valencia, Spain",
+      "startDate": "Nov 2021",
+      "endDate": "Jul 2022"
+    },
+    {
+      "highlights": [
+        "Isolated a gene involved in cell cycle regulation within the 'Ionic homeostasis, cellular stress and genomics' research group. Responsibilities included genome extractions, cloning and gene expression verification."
+      ],
+      "company": "Institute for Plant Molecular and Cellular Biology",
+      "position": "Scientific Intern",
+      "endDate": "Jul 2021",
+      "startDate": "Mar 2021",
+      "location": "Valencia, Spain"
+    },
+    {
+      "highlights": [
+        "Collaborated with management on decisions affecting the Biotechnology degree at the Polytechnic University of Valencia."
+      ],
+      "company": "Polytechnic University of Valencia",
+      "position": "Member of the Biotechnology Academic Committee",
+      "location": "Valencia, Spain",
+      "startDate": "Oct 2019",
+      "endDate": "Jul 2022"
+    },
+    {
+      "highlights": [
+        "Spoke at the UPV Open Days in 2021 and 2022, sharing experience and addressing doubts of prospective students."
+      ],
+      "company": "Polytechnic University of Valencia",
+      "position": "Speaker at the Open Days",
+      "location": "Valencia, Spain",
+      "startDate": "2021",
+      "endDate": "2022"
+    },
+    {
+      "highlights": [
+        "Provide private tutoring for students from secondary school to university level."
+      ],
+      "company": "Freelance",
+      "position": "Private Tutor",
+      "location": "Valencia, Spain",
+      "startDate": "2015",
+      "endDate": "2025"
+    }
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "level": "",
+      "keywords": [
+        "Advanced User"
+      ]
+    },
+    {
+      "keywords": [
+        "Advanced User"
+      ],
+      "name": "R"
+    },
+    {
+      "keywords": [
+        "Advanced User"
+      ],
+      "name": "Visual Basic"
+    },
+    {
+      "keywords": [
+        "Intermediate User"
+      ],
+      "name": "JavaScript"
+    },
+    {
+      "keywords": [
+        "Intermediate User"
+      ],
+      "name": "HTML/CSS"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Spanish",
+      "url": "Native Speaker",
+      "keywords": [
+        ""
+      ]
+    },
+    {
+      "keywords": [
+        ""
+      ],
+      "name": "Valencian",
+      "url": "Native Speaker"
+    },
+    {
+      "keywords": [
+        ""
+      ],
+      "name": "English",
+      "url": "TOEFL iBT Score: 105/120 [Cambridge Equivalent: C2]"
+    }
+  ],
+  "awards": [
+    {
+      "title": "Artificial Intelligence and Productivity",
+      "awarder": "Google",
+      "summary": ""
+    },
+    {
+      "title": "Applicability of AI and Quantum Computing",
+      "awarder": "Akademia Bankinter"
+    },
+    {
+      "title": "Basic Python Concepts for Data Science",
+      "awarder": "IBM"
+    },
+    {
+      "title": "Python Essentials",
+      "awarder": "IBM"
+    },
+    {
+      "title": "PowerBI for Business",
+      "awarder": "UPV"
+    },
+    {
+      "title": "Excel: Fundamentals and Tools",
+      "awarder": "UPV"
+    },
+    {
+      "title": "Excel: Data Management",
+      "awarder": "UPV"
+    },
+    {
+      "title": "Word: Formatting and Productivity Tools",
+      "awarder": "UPV"
+    },
+    {
+      "title": "Bioethics: Law, Medicine, and Ethics of Genetics and Reproductive Technologies",
+      "awarder": "Harvard",
+      "summary": ""
+    },
+    {
+      "title": "Nutrition and Cancer",
+      "awarder": "Wageningen"
+    },
+    {
+      "title": "Viruses and How to Beat Them. Cells, Immunity, and Vaccines",
+      "awarder": "Tel Aviv"
+    },
+    {
+      "title": "Effective Time Management",
+      "awarder": "UPV"
+    },
+    {
+      "title": "Teamwork Keys",
+      "awarder": "UPV"
+    },
+    {
+      "title": "Scientific Information Retrieval",
+      "awarder": "UPV"
+    },
+    {
+      "title": "Attendee at the Annual Biotechnology Congress 2022 (BAC 2022)",
+      "awarder": "FEBiotec"
+    },
+    {
+      "title": "Attendee at the Biomedical Research Congress 2020 (CIB 2020)",
+      "awarder": "CIB"
+    },
+    {
+      "title": "Driving License B",
+      "awarder": "DGT"
+    },
+    {
+      "title": "Cruise Sailing Navigation",
+      "awarder": "GVA"
+    },
+    {
+      "title": "Scientific Manuscripts Reviewing",
+      "awarder": "American Chemical Society"
+    }
+  ],
+  "basics": {
+    "name": "Javier Boix Campos",
+    "email": "javierboixcampos@gmail.com",
+    "phone": "+34 628653263",
+    "website": "www.linkedin.com/in/javier-boix-campos",
+    "location": {
+      "address": "Valencia, Spain"
+    },
+    "summary": "Passionate bioinformatician and data scientist with expertise in neural networks, cell migration analysis, and genetic technology development. Currently serving as Tech Lead at Innovare Genetics, leading digital solutions development and regulatory compliance for genetic technologies."
+  },
+  "sections": [
+    "templates",
+    "profile",
+    "education",
+    "work",
+    "skills",
+    "projects",
+    "awards"
+  ]
+}
