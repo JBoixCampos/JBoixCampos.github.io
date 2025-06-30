@@ -649,6 +649,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initPerformanceOptimizations();
     initEasterEggs();
     initProjectCardEffects();
+    initCVViewer(); // Add this line
     
     // Add loaded class for CSS transitions
     document.body.classList.add('loaded');
@@ -704,3 +705,484 @@ function preloadCriticalResources() {
 
 preloadCriticalResources();
 
+// ===== CV FUNCTIONALITY =====
+function initCVViewer() {
+    const viewCVBtn = document.getElementById('view-cv-btn');
+    
+    if (viewCVBtn) {
+        viewCVBtn.addEventListener('click', async () => {
+            try {
+                showNotification('Loading CV...', 'info');
+                await loadAndDisplayCV();
+            } catch (error) {
+                console.error('Error loading CV:', error);
+                showNotification('Error loading CV. Please try again.', 'error');
+            }
+        });
+    }
+}
+
+async function loadAndDisplayCV() {
+    try {
+        const response = await fetch('./assets/cv.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const cvData = await response.json();
+        const formattedCV = formatCVData(cvData);
+        openCVInNewTab(formattedCV);
+        showNotification('CV opened in new tab!', 'success');
+    } catch (error) {
+        console.error('Failed to load CV:', error);
+        throw error;
+    }
+}
+
+function formatCVData(cvData) {
+    const { basics, education, work, skills, projects, awards } = cvData;
+    
+    return `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${basics.name} - CV</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        ${getCVStyles()}
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <!-- Header -->
+        <header class="cv-header glass-card">
+            <div class="header-content">
+                <h1 class="gradient-text">${basics.name}</h1>
+                <p class="subtitle">${basics.summary}</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:${basics.email}">${basics.email}</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>${basics.phone}</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>${basics.location.address}</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="https://${basics.website}" target="_blank">${basics.website}</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="cv-content">
+            <!-- Education -->
+            <section class="cv-section glass-card">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                ${education.map(edu => `
+                    <div class="item">
+                        <h3>${edu.studyType}</h3>
+                        <h4>${edu.institution}</h4>
+                        <p class="date">${edu.startDate} - ${edu.endDate}</p>
+                    </div>
+                `).join('')}
+            </section>
+
+            <!-- Work Experience -->
+            <section class="cv-section glass-card">
+                <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
+                ${work.map(job => `
+                    <div class="item">
+                        <h3>${job.position}</h3>
+                        <h4>${job.company}</h4>
+                        <p class="date">${job.startDate} - ${job.endDate} | ${job.location}</p>
+                        ${job.highlights ? `
+                            <ul>
+                                ${job.highlights.map(highlight => `<li>${highlight}</li>`).join('')}
+                            </ul>
+                        ` : ''}
+                    </div>
+                `).join('')}
+            </section>
+
+            <!-- Programming Languages -->
+            <section class="cv-section glass-card">
+                <h2><i class="fas fa-code"></i> Programming Languages</h2>
+                <div class="skills-grid">
+                    ${skills.map(skill => `
+                        <div class="skill-item">
+                            <span class="skill-name">${skill.name}</span>
+                            <span class="skill-level">${skill.keywords[0]}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </section>
+
+            <!-- Languages -->
+            <section class="cv-section glass-card">
+                <h2><i class="fas fa-language"></i> Languages</h2>
+                <div class="languages-grid">
+                    ${projects.map(lang => `
+                        <div class="language-item">
+                            <span class="language-name">${lang.name}</span>
+                            <span class="language-level">${lang.url}</span>
+                        </div>
+                    `).join('')}
+                </div>
+            </section>
+
+            <!-- Licenses and Certifications -->
+            <section class="cv-section glass-card">
+                <h2><i class="fas fa-certificate"></i> Licenses and Certifications</h2>
+                <div class="awards-grid">
+                    ${awards.map(award => `
+                        <div class="award-item">
+                            <h4>${award.title}</h4>
+                            <p>${award.awarder}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </section>
+        </div>
+
+        <!-- Print Button -->
+        <div class="print-section">
+            <button onclick="window.print()" class="btn btn-primary">
+                <i class="fas fa-print"></i>
+                Print CV
+            </button>
+        </div>
+    </div>
+</body>
+</html>`;
+}
+
+function getCVStyles() {
+    return `
+        :root {
+            --primary-gradient: linear-gradient(45deg, #00ff9d, #00b8ff);
+            --primary-color: #00ff9d;
+            --secondary-color: #00b8ff;
+            --bg-primary: #111827;
+            --bg-secondary: #1f2937;
+            --text-primary: #ffffff;
+            --text-secondary: #d1d5db;
+            --text-muted: #9ca3af;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            --border-radius: 1rem;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .glass-card {
+            backdrop-filter: blur(20px);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            box-shadow: var(--glass-shadow);
+            margin-bottom: 2rem;
+        }
+
+        .gradient-text {
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 30px rgba(0, 255, 157, 0.3);
+        }
+
+        .cv-header {
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .cv-header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-secondary);
+            justify-content: center;
+        }
+
+        .contact-item i {
+            color: var(--primary-color);
+            width: 20px;
+        }
+
+        .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-item a:hover {
+            color: var(--primary-color);
+        }
+
+        .cv-section {
+            padding: 2.5rem;
+        }
+
+        .cv-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .item h3 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .item h4 {
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .item ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .item li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .item li::before {
+            content: '▸';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .skills-grid, .languages-grid, .awards-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .skills-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        }
+
+        .languages-grid {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        .awards-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+
+        .skill-item, .language-item, .award-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+        }
+
+        .skill-item:hover, .language-item:hover, .award-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary-color);
+        }
+
+        .skill-name, .language-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+
+        .skill-level, .language-level {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .award-item h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .award-item p {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .print-section {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-primary {
+            background: var(--primary-gradient);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 255, 157, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 255, 157, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .cv-container {
+                padding: 1rem;
+            }
+
+            .cv-header {
+                padding: 2rem;
+            }
+
+            .cv-header h1 {
+                font-size: 2rem;
+            }
+
+            .cv-section {
+                padding: 1.5rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+
+            .skills-grid, .languages-grid, .awards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: black;
+            }
+
+            .glass-card {
+                background: white;
+                border: 1px solid #ddd;
+                box-shadow: none;
+                backdrop-filter: none;
+            }
+
+            .gradient-text {
+                color: #000 !important;
+                background: none !important;
+                -webkit-background-clip: unset !important;
+                background-clip: unset !important;
+            }
+
+            .print-section {
+                display: none;
+            }
+
+            .cv-section h2 {
+                color: #333;
+            }
+
+            .item h4, .award-item p {
+                color: #666;
+            }
+
+            .contact-item i {
+                color: #666;
+            }
+        }
+    `;
+}
+
+function openCVInNewTab(htmlContent) {
+    const newTab = window.open('', '_blank');
+    newTab.document.write(htmlContent);
+    newTab.document.close();
+}
