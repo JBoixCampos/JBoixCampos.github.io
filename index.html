@@ -517,9 +517,9 @@
                     <i class="fas fa-microscope"></i>
                     Explore Research
                 </a>
-                <button onclick="generateCVPDF()" class="btn btn-secondary">
-                    <i class="fas fa-download"></i>
-                    Download CV
+                <button onclick="showCVPage()" class="btn btn-secondary">
+                    <i class="fas fa-user"></i>
+                    View CV
                 </button>
                 <a href="#contact" class="btn btn-secondary">
                     <i class="fas fa-envelope"></i>
@@ -1001,6 +1001,20 @@
         </div>
     </section>
 
+    <section id="cv-section" class="cv-section" style="display: none;">
+        <div class="container">
+            <div class="cv-header">
+                <h2 class="section-title">Curriculum Vitae</h2>
+                <button onclick="hideCVPage()" class="close-cv-btn">
+                    <i class="fas fa-times"></i>
+                    Close
+                </button>
+            </div>
+            <div id="cv-content" class="cv-dynamic-content">
+                <!-- CV content will be loaded here dynamically -->
+            </div>
+        </div>
+    </section>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">

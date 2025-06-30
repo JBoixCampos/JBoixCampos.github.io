@@ -703,3 +703,156 @@ function preloadCriticalResources() {
 }
 
 preloadCriticalResources();
+
+// Function to show CV page
+function showCVPage() {
+    console.log('Loading CV page...');
+    
+    try {
+        // Generate CV content from embedded data
+        const cvContent = generateCVPageHTML(cvData);
+        
+        // Insert content
+        document.getElementById('cv-content').innerHTML = cvContent;
+        
+        // Show the CV section
+        document.getElementById('cv-section').style.display = 'block';
+        
+        // Smooth scroll to CV section
+        document.getElementById('cv-section').scrollIntoView({ 
+            behavior: 'smooth' 
+        });
+        
+    } catch (error) {
+        console.error('Error loading CV:', error);
+        alert('Error loading CV. Please try again.');
+    }
+}
+
+// Function to hide CV page
+function hideCVPage() {
+    document.getElementById('cv-section').style.display = 'none';
+    
+    // Scroll back to top
+    window.scrollTo({ 
+        top: 0, 
+        behavior: 'smooth' 
+    });
+}
+
+// Function to generate CV page HTML (matches your site style)
+function generateCVPageHTML(cv) {
+    return `
+        <!-- CV Header Card -->
+        <div class="cv-intro-card glass-card">
+            <div class="cv-name">${cv.basics?.name || 'Javier Boix Campos'}</div>
+            <div class="cv-title">Tech Lead & Bioinformatician</div>
+            <div class="cv-contact-info">
+                <div class="cv-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>${cv.basics?.email || ''}</span>
+                </div>
+                <div class="cv-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>${cv.basics?.phone || ''}</span>
+                </div>
+                <div class="cv-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>${cv.basics?.location?.address || ''}</span>
+                </div>
+                ${cv.basics?.website ? `
+                <div class="cv-contact-item">
+                    <i class="fas fa-globe"></i>
+                    <span>${cv.basics.website}</span>
+                </div>
+                ` : ''}
+            </div>
+            ${cv.basics?.summary ? `
+            <div class="cv-summary">
+                ${cv.basics.summary}
+            </div>
+            ` : ''}
+        </div>
+
+        <!-- Work Experience -->
+        <div class="cv-section-block">
+            <h3 class="cv-section-title">
+                <i class="fas fa-briefcase"></i>
+                ${cv.headings?.work || 'Work Experience'}
+            </h3>
+            ${cv.work?.map(job => `
+                <div class="cv-experience-item">
+                    <div class="cv-job-title">${job.position}</div>
+                    <div class="cv-company">${job.company}</div>
+                    <div class="cv-date-location">
+                        <span><i class="fas fa-calendar"></i> ${job.startDate} - ${job.endDate || 'Present'}</span>
+                        ${job.location ? `<span><i class="fas fa-map-marker-alt"></i> ${job.location}</span>` : ''}
+                    </div>
+                    <div class="cv-description">${job.highlights ? job.highlights.join(' ') : (job.summary || '')}</div>
+                </div>
+            `).join('') || ''}
+        </div>
+
+        <!-- Education -->
+        <div class="cv-section-block">
+            <h3 class="cv-section-title">
+                <i class="fas fa-graduation-cap"></i>
+                ${cv.headings?.education || 'Education'}
+            </h3>
+            ${cv.education?.map(edu => `
+                <div class="cv-experience-item">
+                    <div class="cv-job-title">${edu.studyType}</div>
+                    <div class="cv-company">${edu.institution}</div>
+                    <div class="cv-date-location">
+                        <span><i class="fas fa-calendar"></i> ${edu.startDate} - ${edu.endDate}</span>
+                    </div>
+                </div>
+            `).join('') || ''}
+        </div>
+
+        <!-- Skills -->
+        <div class="cv-section-block">
+            <h3 class="cv-section-title">
+                <i class="fas fa-code"></i>
+                ${cv.headings?.skills || 'Programming Languages'}
+            </h3>
+            <div class="cv-skills-grid">
+                ${cv.skills?.map(skill => `
+                    <div class="cv-skill-item">${skill.name}</div>
+                `).join('') || ''}
+            </div>
+        </div>
+
+        <!-- Languages -->
+        <div class="cv-section-block">
+            <h3 class="cv-section-title">
+                <i class="fas fa-language"></i>
+                ${cv.headings?.projects || 'Languages'}
+            </h3>
+            <div class="cv-languages-list">
+                ${cv.projects?.map(lang => `
+                    <div class="cv-language-item">
+                        <div class="cv-language-name">${lang.name}</div>
+                        <div class="cv-language-level">${lang.url}</div>
+                    </div>
+                `).join('') || ''}
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="cv-section-block">
+            <h3 class="cv-section-title">
+                <i class="fas fa-certificate"></i>
+                ${cv.headings?.awards || 'Licenses and Certifications'}
+            </h3>
+            <div class="cv-awards-grid">
+                ${cv.awards?.map(award => `
+                    <div class="cv-award-item">
+                        <div class="cv-award-title">${award.title}</div>
+                        <div class="cv-award-provider">${award.awarder}</div>
+                    </div>
+                `).join('') || ''}
+            </div>
+        </div>
+    `;
+}
