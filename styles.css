@@ -942,19 +942,30 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .floating-card {
-    display: none;
+  /* COMPLETE HIDING OF FLOATING ELEMENTS */
+  .hero-floating-elements {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
 
-  /* Hide ALL floating cards specifically */
+  .floating-card {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
+  /* Target each floating card specifically */
   .floating-card:nth-child(1),
   .floating-card:nth-child(2),
   .floating-card:nth-child(3) {
     display: none !important;
-  }
-
-  .hero-floating-elements {
-    display: none;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
   }
 }
 
@@ -992,14 +1003,29 @@ body {
     grid-template-columns: 1fr;
   }
 
+  /* COMPLETE HIDING OF FLOATING ELEMENTS */
+  .hero-floating-elements {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  .floating-card {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
   .floating-card:nth-child(1),
   .floating-card:nth-child(2),
   .floating-card:nth-child(3) {
     display: none !important;
-  }
-
-  .hero-floating-elements {
-    display: none;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
   }
 }
 
