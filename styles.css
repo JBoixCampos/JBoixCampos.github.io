@@ -946,6 +946,13 @@ body {
     display: none;
   }
 
+  /* Hide ALL floating cards specifically */
+  .floating-card:nth-child(1),
+  .floating-card:nth-child(2),
+  .floating-card:nth-child(3) {
+    display: none !important;
+  }
+
   .hero-floating-elements {
     display: none;
   }
@@ -983,6 +990,16 @@ body {
 
   .stats-container {
     grid-template-columns: 1fr;
+  }
+
+  .floating-card:nth-child(1),
+  .floating-card:nth-child(2),
+  .floating-card:nth-child(3) {
+    display: none !important;
+  }
+
+  .hero-floating-elements {
+    display: none;
   }
 }
 
@@ -1035,61 +1052,4 @@ body {
     justify-content: center;
     opacity: 0.7;
     z-index: 1; /* Behind the content */
-}
-
-
-/* ===== ENHANCED MOBILE OPTIMIZATIONS ===== */
-
-/* Navigation - Make text larger on mobile */
-@media (max-width: 768px) {
-    .nav-menu a {
-        font-size: 4rem; /* Increased from default */
-        font-weight: 600;
-    }
-    
-    .nav-brand {
-        font-size: 4rem; /* Larger brand name */
-    }
-}
-
-/* Hero Section - Larger buttons and better spacing */
-@media (max-width: 768px) {
-    .hero-buttons {
-        flex-direction: column;
-        gap: var(--space-lg);
-        width: 100%;
-        align-items: stretch;
-    }
-    
-    .btn {
-        padding: 2rem 2rem; /* Larger touch targets */
-        font-size: 2rem; /* Larger text */
-        font-weight: 600;
-        min-height: 56px; /* Minimum recommended touch target */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: var(--space-sm);
-    }
-    
-    .btn i {
-        font-size: 2rem;
-    }
-}
-
-/* Remove floating cards on mobile (hide data analysis and bioinformatics) */
-@media (max-width: 768px) {
-    .floating-card:nth-child(1) {
-        display: none;
-    }
-}
-@media (max-width: 768px) {
-    .floating-card:nth-child(2) {
-        display: none;
-    }
-}
-@media (max-width: 768px) {
-    .floating-card:nth-child(3) {
-        display: none;
-    }
 }
