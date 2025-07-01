@@ -879,9 +879,152 @@ body {
   }
 }
 
+
+/* Enhanced Mobile Typography */
+@media (max-width: 768px) {
+  /* Increase base font size for better readability */
+  html {
+    font-size: 18px; /* Up from 16px */
+  }
+  
+  .hero-title {
+    font-size: 2.8rem; /* Up from 2.5rem */
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1.4rem; /* Up from 1.2rem */
+  }
+
+  .hero-description {
+    font-size: 1.2rem; /* Up from 1.1rem */
+    line-height: 1.6;
+  }
+
+  .section-title {
+    font-size: 2.8rem; /* Up from 2.5rem */
+  }
+
+  /* Improve button text size */
+  .btn {
+    font-size: 1.1rem;
+    padding: 1.2rem 2.4rem;
+  }
+
+  /* Navigation text */
+  .nav-menu a {
+    font-size: 1.2rem;
+  }
+
+  /* Project cards text */
+  .project-content h3 {
+    font-size: 1.6rem;
+  }
+
+  .project-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile-friendly floating cards */
+@media (max-width: 768px) {
+  .hero-floating-elements {
+    display: flex; /* Change from display: none */
+    position: static; /* Remove absolute positioning */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+
+  .floating-card {
+    position: static; /* Remove absolute positioning */
+    display: flex; /* Change from display: none */
+    flex-direction: row; /* Horizontal layout for mobile */
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    margin: 0;
+    animation: none; /* Remove floating animation */
+    min-width: 0;
+    flex: 1;
+    max-width: none;
+  }
+
+  .floating-card i {
+    font-size: 1.5rem;
+  }
+
+  .floating-card span {
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+}
+
+/* Better touch targets for mobile */
+@media (max-width: 768px) {
+  /* Minimum 44px touch targets */
+  .btn {
+    min-height: 44px;
+    padding: 1.2rem 2rem;
+  }
+
+  .nav-menu a {
+    padding: 1rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .tab-button {
+    min-height: 44px;
+    padding: 1rem 1.5rem;
+  }
+
+  .social-link {
+    min-height: 80px;
+    padding: 1.5rem;
+  }
+
+  .project-link {
+    min-height: 44px;
+    padding: 0.75rem 0;
+  }
+}
+
+/* Better mobile navigation */
 @media (max-width: 768px) {
   .hamburger {
+    width: 44px;
+    height: 44px;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-primary);
+    transition: var(--transition);
+    border-radius: 2px;
   }
 
   .nav-menu {
@@ -889,15 +1032,16 @@ body {
     top: 100%;
     left: 0;
     width: 100%;
-    background: rgba(17, 24, 39, 0.95);
+    background: rgba(17, 24, 39, 0.98);
     backdrop-filter: blur(20px);
     flex-direction: column;
     padding: 2rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    gap: 0;
     transform: translateY(-100%);
     transition: var(--transition);
     opacity: 0;
     visibility: hidden;
+    z-index: 999;
   }
 
   .nav-menu.active {
@@ -906,83 +1050,117 @@ body {
     visibility: visible;
   }
 
-  .hero-title {
-    font-size: 2.5rem;
+  .nav-menu li {
+    width: 100%;
+    border-bottom: 1px solid var(--glass-border);
   }
 
-  .section-title {
-    font-size: 2.5rem;
-  }
-
-  .project-card.featured {
-    grid-column: span 1;
-    grid-template-columns: 1fr;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .tab-buttons {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-
-  .project-item {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  .stats-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .social-links {
-    grid-template-columns: 1fr;
-  }
-
-  .floating-card {
-    display: none;
-  }
-
-  .hero-floating-elements {
-    display: none;
+  .nav-menu a {
+    width: 100%;
+    padding: 1.5rem 0;
+    font-size: 1.2rem;
+    justify-content: center;
   }
 }
 
-@media (max-width: 480px) {
+/* Mobile layout improvements */
+@media (max-width: 768px) {
+  /* Better spacing for mobile */
   .container {
-    padding: 0 1rem;
+    padding: 0 1.5rem;
   }
 
-  .nav-container {
-    padding: 1rem;
+  /* Hero section improvements */
+  .hero {
+    min-height: 100vh;
+    padding: 2rem 0;
   }
 
-  .hero-title {
-    font-size: 2rem;
+  .hero-content {
+    padding: 2rem;
+    text-align: center;
   }
 
-  .hero-subtitle {
-    font-size: 1.2rem;
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
   }
 
-  .section-title {
-    font-size: 2rem;
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
   }
 
+  /* Section spacing */
+  .about,
+  .projects,
+  .experience,
+  .contact {
+    padding: 4rem 0;
+  }
+
+  /* Card improvements */
   .glass-card {
     padding: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  /* Project cards */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .project-image {
+    height: 200px;
+  }
+}
+
+/* Additional mobile improvements */
+@media (max-width: 768px) {
+  /* Remove hover effects that don't work on touch */
+  .glass-card:hover {
+    transform: none;
+  }
+
+  /* Better focus states for accessibility */
+  .btn:focus,
+  .nav-menu a:focus,
+  .tab-button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+  }
+
+  /* Optimize images for mobile */
+  .project-image img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Better contact section */
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .contact-info {
+    text-align: center;
+  }
+
+  /* Tab buttons for mobile */
+  .tab-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
   }
 
   .tab-button {
-    padding: 0.75rem 1rem;
     font-size: 0.9rem;
-  }
-
-  .stats-container {
-    grid-template-columns: 1fr;
+    padding: 1rem 0.75rem;
   }
 }
 
@@ -1037,141 +1215,3 @@ body {
     z-index: 1; /* Behind the content */
 }
 
-
-/* ===== MOBILE-ONLY OPTIMIZATIONS ===== */
-/* These rules ONLY apply to screens 768px and smaller */
-
-@media (max-width: 768px) {
-  /* FONT SIZE IMPROVEMENTS - Mobile Only */
-  html {
-    font-size: 18px; /* Desktop stays 16px */
-  }
-  
-  .hero-title {
-    font-size: 2.8rem !important; /* Override existing mobile rule */
-  }
-
-  .hero-subtitle {
-    font-size: 1.4rem !important; /* Override existing mobile rule */
-  }
-
-  .hero-description {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-
-  .section-title {
-    font-size: 2.8rem !important; /* Override existing mobile rule */
-  }
-
-  /* FLOATING CARDS - Mobile Only Fix */
-  .hero-floating-elements {
-    display: flex !important; /* Override the display: none */
-    position: static;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 2rem;
-    padding: 0 1rem;
-    height: auto;
-  }
-
-  .floating-card {
-    position: static !important; /* Override absolute positioning */
-    display: flex !important; /* Override display: none */
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    padding: 1rem 1.5rem;
-    margin: 0;
-    animation: none;
-    min-width: 0;
-    flex: 1;
-    max-width: 150px;
-    top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-  }
-
-  .floating-card i {
-    font-size: 1.5rem;
-  }
-
-  .floating-card span {
-    font-size: 1rem;
-    white-space: nowrap;
-  }
-
-  /* BETTER TOUCH TARGETS - Mobile Only */
-  .btn {
-    font-size: 1.1rem;
-    padding: 1.2rem 2.4rem;
-    min-height: 44px;
-  }
-
-  .nav-menu a {
-    font-size: 1.2rem;
-    padding: 1.5rem 0;
-  }
-
-  /* HERO IMPROVEMENTS - Mobile Only */
-  .hero-content {
-    text-align: center;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-
-  .hero-buttons .btn {
-    width: 100%;
-    max-width: 280px;
-    justify-content: center;
-  }
-
-  /* PROJECT CARDS - Mobile Only */
-  .project-content h3 {
-    font-size: 1.6rem;
-  }
-
-  .project-content p {
-    font-size: 1.1rem;
-  }
-
-  /* CONTACT SECTION - Mobile Only */
-  .contact-info {
-    text-align: center;
-  }
-
-  /* TAB BUTTONS - Mobile Only */
-  .tab-button {
-    font-size: 1rem;
-    min-height: 44px;
-  }
-}
-
-/* Even smaller phones - 480px and below only */
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 2.4rem !important;
-  }
-
-  .hero-subtitle {
-    font-size: 1.3rem !important;
-  }
-
-  .section-title {
-    font-size: 2.2rem !important;
-  }
-
-  .floating-card {
-    max-width: 120px;
-    padding: 0.75rem 1rem;
-  }
-
-  .floating-card span {
-    font-size: 0.9rem;
-  }
-}

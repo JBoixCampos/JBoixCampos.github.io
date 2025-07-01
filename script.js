@@ -650,6 +650,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initEasterEggs();
     initProjectCardEffects();
     initCVViewer();
+    initMobileOptimizations();
     
     // Add loaded class for CSS transitions
     document.body.classList.add('loaded');
@@ -1352,4 +1353,24 @@ function getCVStyles() {
             }
         }
     `;
+}
+
+function initMobileOptimizations() {
+  // Reduce animation complexity on mobile
+  if (utils.isMobile()) {
+    // Disable heavy 3D effects
+    const glassCards = document.querySelectorAll('.glass-card');
+    glassCards.forEach(card => {
+      card.style.transform = 'none';
+      card.addEventListener('mousemove', (e) => {
+        e.preventDefault();
+      });
+    });
+
+    // Simplify background animation
+    const canvas = document.getElementById('background-animation');
+    if (canvas) {
+      canvas.style.opacity = '0.05';
+    }
+  }
 }
