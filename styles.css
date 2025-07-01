@@ -1036,3 +1036,218 @@ body {
     opacity: 0.7;
     z-index: 1; /* Behind the content */
 }
+
+
+/* ===== ENHANCED MOBILE OPTIMIZATIONS ===== */
+
+/* Navigation - Make text larger on mobile */
+@media (max-width: 768px) {
+    .nav-menu a {
+        font-size: 4rem; /* Increased from default */
+        font-weight: 600;
+    }
+    
+    .nav-brand {
+        font-size: 4rem; /* Larger brand name */
+    }
+}
+
+/* Hero Section - Larger buttons and better spacing */
+@media (max-width: 768px) {
+    .hero-buttons {
+        flex-direction: column;
+        gap: var(--space-lg);
+        width: 100%;
+        align-items: stretch;
+    }
+    
+    .btn {
+        padding: 2rem 2rem; /* Larger touch targets */
+        font-size: 2rem; /* Larger text */
+        font-weight: 600;
+        min-height: 56px; /* Minimum recommended touch target */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-sm);
+    }
+    
+    .btn i {
+        font-size: 2rem;
+    }
+}
+
+/* Remove floating cards on mobile (hide data analysis and bioinformatics) */
+@media (max-width: 768px) {
+    .floating-card:nth-child(1), /* Data analysis card */
+    .floating-card:nth-child(2), /* Data analysis card */
+    .floating-card:nth-child(3) { /* Bioinformatics card */
+        display: none;
+    }
+}
+
+/* About Section - Larger text for "What drives me" */
+@media (max-width: 768px) {
+    .passion-list ul li {
+        font-size: 3rem; /* Increased from default */
+        line-height: 1.6;
+        margin-bottom: var(--space-sm);
+        padding: var(--space-sm) 0;
+    }
+    
+    .passion-list h4 {
+        font-size: 3rem;
+        margin-bottom: var(--space-md);
+    }
+    
+    .passion-list ul li i {
+        font-size: 3rem;
+        margin-right: var(--space-sm);
+    }
+}
+
+/* Research Portfolio - Larger tab buttons */
+@media (max-width: 768px) {
+    .tab-buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+        margin-bottom: var(--space-lg);
+    }
+    
+    .tab-button {
+        padding: var(--space-md);
+        font-size: 3rem; /* Larger font */
+        font-weight: 600;
+        min-height: 60px; /* Larger touch targets */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-xs);
+        text-align: center;
+        line-height: 1.3;
+    }
+    
+    .tab-button i {
+        font-size: 3rem;
+        margin-bottom: var(--space-xs);
+    }
+}
+
+/* Contact Section - Larger text */
+@media (max-width: 768px) {
+    .contact-details h4 {
+        font-size: 3rem; /* Larger labels */
+        font-weight: 700;
+        margin-bottom: var(--space-xs);
+    }
+    
+    .contact-details a,
+    .contact-details span {
+        font-size: 3rem; /* Larger contact info */
+        font-weight: 500;
+        line-height: 1.4;
+    }
+    
+    .contact-icon {
+        width: 50px; /* Larger icons */
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .contact-item {
+        padding: var(--space-lg);
+        gap: var(--space-lg);
+    }
+}
+
+/* Social Media Links - Larger text and icons */
+@media (max-width: 768px) {
+    .social-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+        margin-top: var(--space-xl);
+    }
+    
+    .social-link {
+        padding: var(--space-lg);
+        font-size: 2rem; /* Larger text */
+        font-weight: 600;
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--space-sm);
+        text-align: center;
+        border-radius: var(--border-radius);
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        transition: var(--transition);
+    }
+    
+    .social-link i {
+        font-size: 2rem; /* Larger icons */
+    }
+    
+    .social-link:hover {
+        background: rgba(255, 255, 255, 0.12);
+        border-color: rgba(0, 255, 157, 0.3);
+        transform: translateY(-2px);
+    }
+}
+
+/* Additional mobile improvements */
+@media (max-width: 480px) {
+    /* Even smaller screens - single column layouts */
+    .tab-buttons {
+        grid-template-columns: 1fr;
+    }
+    
+    .social-links {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Larger base font size for very small screens */
+    body {
+        font-size: 18px; /* Increased base size */
+    }
+    
+    .hero-title {
+        font-size: 2.2rem; /* Adjust hero title */
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .hero-description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+}
+
+/* Ensure touch targets meet accessibility standards */
+@media (max-width: 768px) {
+    /* All interactive elements should be at least 44px */
+    button,
+    .btn,
+    .tab-button,
+    .social-link,
+    .contact-item,
+    .nav-menu a {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Improve spacing between interactive elements */
+    .nav-menu {
+        gap: var(--space-md);
+    }
+    
+    .hero-buttons > * + * {
+        margin-top: var(--space-md);
+    }
+}
