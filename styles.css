@@ -882,8 +882,9 @@ body {
 
 /* ===== ENHANCED MOBILE OPTIMIZATIONS ===== */
 
+/* Keep only Neural Networks floating card on mobile */
 @media (max-width: 768px) {
-  .hero-floating-elements {
+  .floating-card {
     display: none !important;
   }
 }
