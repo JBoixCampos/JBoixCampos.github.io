@@ -1157,18 +1157,18 @@ body {
 /* ===== EXTRA SMALL SCREENS ===== */
 @media (max-width: 480px) {
   .social-links {
-    grid-template-columns: repeat(2, 1fr); /* 2x2 grid on very small screens */
+    grid-template-columns: repeat(3, 1fr); /* 2x2 grid on very small screens */
     gap: 1.5rem;
     max-width: 200px;
   }
 
   .social-link {
-    min-height: 80px !important;
-    min-width: 80px !important;
+    min-height: 120px !important;
+    min-width: 120px !important;
   }
 
   .social-link i {
-    font-size: 2rem !important;
+    font-size: 3rem !important;
   }
 }
 
@@ -1188,21 +1188,21 @@ body {
   }
 
   .tab-button {
-    font-size: 1.1rem !important;
+    font-size: 2rem !important;
     padding: 1.3rem 0.8rem !important;
   }
 
   .hero-buttons .btn {
-    font-size: 1.2rem !important;
+    font-size: 2rem !important;
     padding: 1.4rem 2.4rem !important;
   }
 
   .social-link i {
-    font-size: 1.8rem !important;
+    font-size: 3rem !important;
   }
 
   .social-link span {
-    font-size: 1.1rem !important;
+    font-size: 3rem !important;
   }
 }
 
