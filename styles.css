@@ -882,24 +882,9 @@ body {
 
 /* ===== ENHANCED MOBILE OPTIMIZATIONS ===== */
 
-/* Remove floating cards for data analysis and bioinformatics */
-.floating-card:nth-child(1), /* Bioinformatics */
-.floating-card:nth-child(3)  /* Data Analysis */ {
-  display: none !important;
-}
-
-/* Keep only Neural Networks floating card on mobile */
 @media (max-width: 768px) {
-  .floating-card:nth-child(2) { /* Neural Networks */
-    position: static;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.5rem 2rem;
-    margin: 2rem auto 0;
-    animation: none;
-    max-width: 300px;
+  .hero-floating-elements {
+    display: none !important;
   }
 }
 
