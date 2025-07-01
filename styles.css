@@ -880,14 +880,6 @@ body {
 }
 
 
-/* ===== ENHANCED MOBILE OPTIMIZATIONS ===== */
-
-/* Keep only Neural Networks floating card on mobile */
-@media (max-width: 768px) {
-  .floating-card {
-    display: none !important;
-  }
-}
 
 /* ===== ENHANCED MOBILE TYPOGRAPHY ===== */
 @media (max-width: 768px) {
