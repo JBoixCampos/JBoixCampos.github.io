@@ -25,10 +25,12 @@ function toggleMobileMenu() {
 // Event listeners for mobile menu
 hamburger?.addEventListener('click', toggleMobileMenu);
 
-// Close mobile menu when clicking on a link
+// Close mobile menu when clicking on a link (only for internal anchor links)
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        if (navMenu.classList.contains('active')) {
+    link.addEventListener('click', (e) => {
+        // Only close mobile menu for internal anchor links (starting with #)
+        // Let external links (like cv.html) work normally
+        if (navMenu.classList.contains('active') && link.getAttribute('href').startsWith('#')) {
             toggleMobileMenu();
         }
     });
@@ -285,22 +287,27 @@ function initBackgroundAnimation() {
 
 // ===== TABS FUNCTIONALITY =====
 function initTabs() {
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabs = document.querySelectorAll('.tab');
+    // Handle tabs for each portfolio section independently
+    const tabContainers = document.querySelectorAll('.tabs-container');
+    
+    tabContainers.forEach(container => {
+        const tabButtons = container.querySelectorAll('.tab-button');
+        const tabs = container.querySelectorAll('.tab');
 
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Remove active class from all buttons and tabs
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabs.forEach(tab => tab.classList.remove('active'));
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from buttons and tabs within this container only
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabs.forEach(tab => tab.classList.remove('active'));
 
-            // Add active class to clicked button and corresponding tab
-            button.classList.add('active');
-            const tabId = button.getAttribute('data-tab');
-            const targetTab = document.getElementById(tabId);
-            if (targetTab) {
-                targetTab.classList.add('active');
-            }
+                // Add active class to clicked button and corresponding tab
+                button.classList.add('active');
+                const tabId = button.getAttribute('data-tab');
+                const targetTab = container.querySelector(`#${tabId}`);
+                if (targetTab) {
+                    targetTab.classList.add('active');
+                }
+            });
         });
     });
 }
@@ -651,6 +658,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initProjectCardEffects();
     initCVViewer();
     initMobileOptimizations();
+    
+    // Skills section is now handled by CSS only
     
     // Add loaded class for CSS transitions
     document.body.classList.add('loaded');
@@ -1373,4 +1382,283 @@ function initMobileOptimizations() {
       canvas.style.opacity = '0.05';
     }
   }
+}
+
+// ===== SKILLS CHARTS AND ANIMATIONS =====
+function initSkillsChart() {
+    const canvas = document.getElementById('skillsChart');
+    if (!canvas) return;
+    
+    const ctx = canvas.getContext('2d');
+    
+    // Set canvas size
+    canvas.width = 300;
+    canvas.height = 300;
+    
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const radius = 120;
+    
+    // Skills data
+    const skills = [
+        { name: 'Python/R', value: 35, color: '#00ff9d' },
+        { name: 'Data Science', value: 25, color: '#00b8ff' },
+        { name: 'ML/AI', value: 20, color: '#8b5cf6' },
+        { name: 'Cloud/DevOps', value: 12, color: '#fbbf24' },
+        { name: 'Web Dev', value: 8, color: '#ef4444' }
+    ];
+    
+    let currentAngle = 0;
+    let animationProgress = 0;
+    
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        if (animationProgress < 1) {
+            animationProgress += 0.02;
+        }
+        
+        const progress = easeOutCubic(Math.min(animationProgress, 1));
+        
+        skills.forEach((skill, index) => {
+            const sliceAngle = (skill.value / 100) * 2 * Math.PI * progress;
+            
+            // Draw slice
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.arc(centerX, centerY, radius, currentAngle, currentAngle + sliceAngle);
+            ctx.closePath();
+            
+            // Create gradient
+            const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
+            gradient.addColorStop(0, skill.color + '40');
+            gradient.addColorStop(1, skill.color);
+            
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            
+            // Draw border
+            ctx.strokeStyle = skill.color;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+            
+            // Draw label
+            if (progress > 0.5) {
+                const labelAngle = currentAngle + sliceAngle / 2;
+                const labelX = centerX + Math.cos(labelAngle) * (radius + 30);
+                const labelY = centerY + Math.sin(labelAngle) * (radius + 30);
+                
+                ctx.fillStyle = '#ffffff';
+                ctx.font = '12px Inter, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(skill.name, labelX, labelY);
+                ctx.fillText(`${skill.value}%`, labelX, labelY + 15);
+            }
+            
+            currentAngle += sliceAngle;
+        });
+        
+        if (animationProgress < 1) {
+            requestAnimationFrame(animate);
+        }
+    }
+    
+    // Start animation when chart comes into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animate();
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+    
+    observer.observe(canvas);
+}
+
+function initSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-bar-fill');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const bar = entry.target;
+                const percentage = bar.dataset.percentage;
+                
+                setTimeout(() => {
+                    bar.style.width = percentage + '%';
+                }, 200);
+                
+                observer.unobserve(bar);
+            }
+        });
+    }, { threshold: 0.5 });
+    
+    skillBars.forEach(bar => observer.observe(bar));
+}
+
+function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+}
+
+// ===== INTERACTIVE CHART SELECTOR =====
+function initInteractiveCharts() {
+    const canvas = document.getElementById('interactiveChart');
+    const chartButtons = document.querySelectorAll('.chart-btn');
+    
+    if (!canvas || !chartButtons.length) return;
+    
+    const ctx = canvas.getContext('2d');
+    canvas.width = 350;
+    canvas.height = 350;
+    
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const radius = 140;
+    
+    // Different chart data sets
+    const chartData = {
+        category: {
+            title: 'Skills by Category',
+            data: [
+                { name: 'Data Science', value: 40, color: '#00ff9d' },
+                { name: 'Programming', value: 30, color: '#00b8ff' },
+                { name: 'AI/ML', value: 20, color: '#8b5cf6' },
+                { name: 'Cloud/DevOps', value: 10, color: '#fbbf24' }
+            ]
+        },
+        proficiency: {
+            title: 'Skills by Proficiency Level',
+            data: [
+                { name: 'Advanced', value: 45, color: '#00ff9d' },
+                { name: 'Intermediate', value: 35, color: '#fbbf24' },
+                { name: 'Beginner', value: 20, color: '#8b5cf6' }
+            ]
+        },
+        usage: {
+            title: 'Skills by Daily Usage',
+            data: [
+                { name: 'Daily', value: 50, color: '#00ff9d' },
+                { name: 'Weekly', value: 30, color: '#00b8ff' },
+                { name: 'Monthly', value: 15, color: '#fbbf24' },
+                { name: 'Occasionally', value: 5, color: '#ef4444' }
+            ]
+        },
+        projects: {
+            title: 'Skills by Project Count',
+            data: [
+                { name: 'Python Projects', value: 35, color: '#00ff9d' },
+                { name: 'R Projects', value: 25, color: '#00b8ff' },
+                { name: 'Web Projects', value: 20, color: '#8b5cf6' },
+                { name: 'ML Projects', value: 15, color: '#fbbf24' },
+                { name: 'Other', value: 5, color: '#ef4444' }
+            ]
+        }
+    };
+    
+    let currentChart = 'category';
+    let animationProgress = 0;
+    let isAnimating = false;
+    
+    function drawChart(chartType) {
+        const chart = chartData[chartType];
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        if (animationProgress < 1) {
+            animationProgress += 0.03;
+        }
+        
+        const progress = easeOutCubic(Math.min(animationProgress, 1));
+        let currentAngle = -Math.PI / 2; // Start from top
+        
+        chart.data.forEach((slice, index) => {
+            const sliceAngle = (slice.value / 100) * 2 * Math.PI * progress;
+            
+            // Draw slice
+            ctx.beginPath();
+            ctx.moveTo(centerX, centerY);
+            ctx.arc(centerX, centerY, radius, currentAngle, currentAngle + sliceAngle);
+            ctx.closePath();
+            
+            // Create gradient
+            const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, radius);
+            gradient.addColorStop(0, slice.color + '60');
+            gradient.addColorStop(1, slice.color);
+            
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            
+            // Draw border
+            ctx.strokeStyle = slice.color;
+            ctx.lineWidth = 3;
+            ctx.stroke();
+            
+            // Draw label
+            if (progress > 0.3) {
+                const labelAngle = currentAngle + sliceAngle / 2;
+                const labelX = centerX + Math.cos(labelAngle) * (radius + 40);
+                const labelY = centerY + Math.sin(labelAngle) * (radius + 40);
+                
+                ctx.fillStyle = '#ffffff';
+                ctx.font = 'bold 11px Inter, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.fillText(slice.name, labelX, labelY);
+                ctx.font = '10px Inter, sans-serif';
+                ctx.fillText(`${slice.value}%`, labelX, labelY + 15);
+            }
+            
+            currentAngle += sliceAngle;
+        });
+        
+        // Draw center title
+        if (progress > 0.7) {
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 14px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            ctx.fillText(chart.title, centerX, centerY - 10);
+        }
+        
+        if (animationProgress < 1) {
+            requestAnimationFrame(() => drawChart(chartType));
+        } else {
+            isAnimating = false;
+        }
+    }
+    
+    function switchChart(newChartType) {
+        if (isAnimating || newChartType === currentChart) return;
+        
+        currentChart = newChartType;
+        animationProgress = 0;
+        isAnimating = true;
+        
+        // Update button states
+        chartButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.dataset.chart === newChartType) {
+                btn.classList.add('active');
+            }
+        });
+        
+        drawChart(newChartType);
+    }
+    
+    // Add click listeners to buttons
+    chartButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            switchChart(btn.dataset.chart);
+        });
+    });
+    
+    // Initialize with first chart when it comes into view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                switchChart('category');
+                observer.unobserve(entry.target);
+            }
+        });
+    });
+    
+    observer.observe(canvas);
 }

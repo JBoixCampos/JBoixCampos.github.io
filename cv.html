@@ -405,63 +405,148 @@
             font-size: 1.05rem;
         }
 
-        /* ===== SKILLS GRID ===== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--space-md);
-        }
-
-        .skill-item {
-            background: rgba(0, 255, 157, 0.08);
-            border: 1px solid rgba(0, 255, 157, 0.2);
-            padding: var(--space-lg);
-            border-radius: var(--border-radius-sm);
-            text-align: center;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+        /* ===== TECHNOLOGY STACK STYLES ===== */
+        .skills-legend {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-xl);
+            padding: var(--space-md) var(--space-lg);
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: var(--space-xl);
             transition: var(--transition);
         }
 
-        .skill-item:hover::before {
-            left: 100%;
+        .skills-legend:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(0, 255, 157, 0.2);
         }
 
-        .skill-item:hover {
-            background: rgba(0, 255, 157, 0.12);
-            border-color: rgba(0, 255, 157, 0.3);
-            transform: translateY(-4px);
-        }
-
-        .skill-item i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: var(--space-sm);
-            display: block;
-        }
-
-        .skill-name {
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
+            font-size: 1rem;
+            color: var(--text-secondary);
             font-weight: 600;
+        }
+
+        .legend-color {
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .legend-color::before {
+            content: '•';
+            font-size: 8px;
+            font-weight: bold;
+        }
+
+        .legend-color.advanced {
+            background: rgba(0, 255, 157, 0.15);
+            border-color: rgba(0, 255, 157, 0.3);
+        }
+
+        .legend-color.advanced::before {
+            color: #00ff9d;
+        }
+
+        .legend-color.intermediate {
+            background: rgba(251, 191, 36, 0.15);
+            border-color: rgba(251, 191, 36, 0.3);
+        }
+
+        .legend-color.intermediate::before {
+            color: #fbbf24;
+        }
+
+        .legend-color.beginner {
+            background: rgba(139, 92, 246, 0.15);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .legend-color.beginner::before {
+            color: #8b5cf6;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: var(--space-lg);
+        }
+
+        .tech-category {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--border-radius);
+            padding: var(--space-lg);
+            transition: var(--transition);
+        }
+
+        .tech-category:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(0, 255, 157, 0.2);
+        }
+
+        .tech-category h4 {
             color: var(--text-primary);
             font-size: 1.1rem;
-            margin-bottom: var(--space-xs);
+            font-weight: 600;
+            margin-bottom: var(--space-md);
+            display: flex;
+            align-items: center;
+            gap: var(--space-xs);
         }
 
-        .skill-level {
-            color: var(--text-accent);
-            font-size: 0.9rem;
-            font-weight: 500;
+        .tech-category h4 i {
+            color: var(--primary-color);
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-sm);
+        }
+
+        .tech-tag {
+            padding: var(--space-sm) var(--space-md);
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: default;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tech-tag.advanced {
+            background: rgba(0, 255, 157, 0.15);
+            color: #00ff9d;
+            border: 1px solid rgba(0, 255, 157, 0.3);
+        }
+
+        .tech-tag.intermediate {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .tech-tag.beginner {
+            background: rgba(139, 92, 246, 0.15);
+            color: #8b5cf6;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .tech-tag:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         /* ===== LANGUAGES GRID ===== */
@@ -548,36 +633,6 @@
             color: var(--text-primary);
         }
 
-        /* ===== PRINT BUTTON ===== */
-        .print-btn {
-            position: fixed;
-            bottom: var(--space-lg);
-            right: var(--space-lg);
-            background: var(--primary-gradient);
-            color: white;
-            border: none;
-            padding: var(--space-md) var(--space-lg);
-            border-radius: 50px;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 8px 25px rgba(0, 255, 157, 0.4);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: var(--space-sm);
-            z-index: 1000;
-            font-size: 0.95rem;
-            backdrop-filter: blur(20px);
-        }
-
-        .print-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 255, 157, 0.5);
-        }
-
-        .print-btn:active {
-            transform: translateY(-1px);
-        }
 
         /* ===== ANIMATIONS ===== */
         @keyframes fadeInUp {
@@ -614,8 +669,9 @@
                 min-width: auto;
             }
 
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            .tech-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
             }
         }
 
@@ -650,21 +706,43 @@
                 gap: var(--space-sm);
             }
 
-            .skills-grid,
+            .tech-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(5, 1fr);
+            }
+            
             .languages-grid,
             .certifications-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .tech-categories {
+                padding: var(--space-lg);
+            }
+
+            .tech-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-md);
+            }
+
+            .skills-legend {
+                gap: var(--space-sm);
+                padding: var(--space-xs) var(--space-sm);
+            }
+
+            .legend-item {
+                font-size: 0.8rem;
+            }
+
+            .tech-category {
+                padding: var(--space-md);
             }
 
             .nav-menu {
                 display: none;
             }
 
-            .print-btn {
-                bottom: var(--space-md);
-                right: var(--space-md);
-                padding: var(--space-sm) var(--space-md);
-            }
         }
 
         @media (max-width: 480px) {
@@ -696,8 +774,7 @@
                 display: none;
             }
 
-            .navbar,
-            .print-btn {
+            .navbar {
                 display: none !important;
             }
 
@@ -799,14 +876,22 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-brand">Javier Boix Campos</a>
+            <div class="nav-brand gradient-text">Javier Boix Campos</div>
             <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#experience">Research</a></li>
+                <li><a href="index.html#developer-portfolio">Developer</a></li>
+                <li><a href="index.html#technologies">Skills</a></li>
+                <li><a href="cv.html" target="_blank">CV</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </nav>
 
@@ -1114,38 +1199,89 @@
             </div>
         </div>
 
-        <!-- Programming Languages -->
+        <!-- Technologies & Skills -->
         <div class="cv-section reveal">
             <div class="glass-card cv-section-content">
                 <h2 class="section-title">
-                    <i class="fas fa-code"></i>
-                    Technical Skills
+                    <i class="fas fa-layer-group"></i>
+                    Technologies & Skills
                 </h2>
-                <div class="skills-grid">
-                    <div class="skill-item">
-                        <i class="fab fa-python"></i>
-                        <div class="skill-name">Python</div>
-                        <div class="skill-level">Advanced User</div>
+                
+                <!-- Skills Legend -->
+                <div class="skills-legend">
+                    <span class="legend-item">
+                        <span class="legend-color advanced"></span>
+                        Advanced
+                    </span>
+                    <span class="legend-item">
+                        <span class="legend-color intermediate"></span>
+                        Intermediate
+                    </span>
+                    <span class="legend-item">
+                        <span class="legend-color beginner"></span>
+                        Beginner
+                    </span>
+                </div>
+                
+                <div class="tech-grid">
+                    <div class="tech-category">
+                        <h4><i class="fas fa-code"></i> Programming</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag advanced">Python</span>
+                            <span class="tech-tag advanced">R</span>
+                            <span class="tech-tag advanced">VBA</span>
+                            <span class="tech-tag intermediate">JavaScript</span>
+                            <span class="tech-tag intermediate">HTML/CSS</span>
+                            <span class="tech-tag beginner">SQL</span>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <i class="fab fa-r-project"></i>
-                        <div class="skill-name">R</div>
-                        <div class="skill-level">Advanced User</div>
+                    
+                    <div class="tech-category">
+                        <h4><i class="fas fa-brain"></i> AI & Data Science</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag advanced">Neural Networks</span>
+                            <span class="tech-tag advanced">Machine Learning</span>
+                            <span class="tech-tag advanced">Statistical Analysis</span>
+                            <span class="tech-tag advanced">Image Processing</span>
+                            <span class="tech-tag intermediate">Optimization</span>
+                            <span class="tech-tag beginner">NLP</span>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <i class="fas fa-file-code"></i>
-                        <div class="skill-name">Visual Basic</div>
-                        <div class="skill-level">Advanced User</div>
+                    
+                    <div class="tech-category">
+                        <h4><i class="fas fa-fire"></i> Frameworks</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag advanced">TensorFlow/PyTorch</span>
+                            <span class="tech-tag advanced">Plotly</span>
+                            <span class="tech-tag advanced">Shiny</span>
+                            <span class="tech-tag intermediate">Streamlit</span>
+                            <span class="tech-tag beginner">Three.js</span>
+                            <span class="tech-tag beginner">GSAP</span>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <i class="fab fa-js"></i>
-                        <div class="skill-name">JavaScript</div>
-                        <div class="skill-level">Intermediate User</div>
+                    
+                    <div class="tech-category">
+                        <h4><i class="fas fa-cloud"></i> Cloud & DevOps</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag intermediate">AWS</span>
+                            <span class="tech-tag intermediate">OVH</span>
+                            <span class="tech-tag intermediate">Git</span>
+                            <span class="tech-tag intermediate">Linux</span>
+                            <span class="tech-tag beginner">Docker</span>
+                            <span class="tech-tag beginner">CI/CD</span>
+                        </div>
                     </div>
-                    <div class="skill-item">
-                        <i class="fab fa-html5"></i>
-                        <div class="skill-name">HTML/CSS</div>
-                        <div class="skill-level">Intermediate User</div>
+                    
+                    <div class="tech-category">
+                        <h4><i class="fas fa-tools"></i> Tools</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag advanced">Excel</span>
+                            <span class="tech-tag advanced">Jupyter</span>
+                            <span class="tech-tag advanced">RStudio</span>
+                            <span class="tech-tag advanced">ImageJ/FIJI</span>
+                            <span class="tech-tag intermediate">Power BI</span>
+                            <span class="tech-tag intermediate">GitHub</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1250,11 +1386,6 @@
         </div>
     </div>
 
-    <!-- Print Button -->
-    <button class="print-btn" onclick="window.print()">
-        <i class="fas fa-print"></i>
-        Print CV
-    </button>
 
     <script>
         // ===== SCROLL REVEAL ANIMATIONS =====
