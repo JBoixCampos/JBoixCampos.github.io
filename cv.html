@@ -405,6 +405,117 @@
             font-size: 1.05rem;
         }
 
+        /* Job Highlights */
+        .job-highlights {
+            list-style: none;
+            margin: var(--space-md) 0;
+            padding: 0;
+        }
+
+        .job-highlights li {
+            position: relative;
+            padding-left: 1.75rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+
+        .job-highlights li::before {
+            content: '▶';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+            top: 0.2rem;
+        }
+
+        /* Experience Badges */
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: var(--space-md);
+            flex-wrap: wrap;
+            gap: var(--space-md);
+        }
+
+        .experience-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .startup-badge {
+            background: rgba(0, 255, 157, 0.15);
+            color: #00ff9d;
+            border: 1px solid rgba(0, 255, 157, 0.3);
+        }
+
+        .industry-badge {
+            background: rgba(139, 92, 246, 0.15);
+            color: #8b5cf6;
+            border: 1px solid rgba(139, 92, 246, 0.3);
+        }
+
+        .research-badge {
+            background: rgba(0, 184, 255, 0.15);
+            color: #00b8ff;
+            border: 1px solid rgba(0, 184, 255, 0.3);
+        }
+
+        .mentor-badge {
+            background: rgba(251, 191, 36, 0.15);
+            color: #fbbf24;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .academic-badge {
+            background: rgba(236, 72, 153, 0.15);
+            color: #ec4899;
+            border: 1px solid rgba(236, 72, 153, 0.3);
+        }
+
+        .intern-badge {
+            background: rgba(34, 197, 94, 0.15);
+            color: #22c55e;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        /* Tech Stack Section */
+        .tech-stack-section {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            flex-wrap: wrap;
+            margin-top: var(--space-md);
+            padding-top: var(--space-md);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tech-label {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .item-tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .item-tech-tags .tech-tag {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
+        }
+
         /* ===== TECHNOLOGY STACK STYLES ===== */
         .skills-legend {
             display: flex;
@@ -880,9 +991,8 @@
             <ul class="nav-menu">
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
                 <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="index.html#experience">Research</a></li>
-                <li><a href="index.html#developer-portfolio">Developer</a></li>
                 <li><a href="index.html#technologies">Skills</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
@@ -902,9 +1012,9 @@
                 <div class="header-content">
                     <div class="personal-info">
                         <h1 class="gradient-text">Javier Boix Campos</h1>
-                        <p class="cv-subtitle">Biotech & Data Science Specialist</p>
+                        <p class="cv-subtitle">AI for Healthcare & Life Sciences</p>
                         <p class="cv-summary">
-                            Passionate bioinformatician and data scientist with expertise in neural networks, cell migration analysis, and genetic technology development.
+                            ML Engineer and Technical Leader specializing in AI applications for healthcare and life sciences. Co-Founder & Tech Lead at Innovare Genetics and Bioinformatics Research Scientist at UKE Hamburg. I combine deep learning expertise with biotechnology domain knowledge.
                         </p>
                     </div>
                     <div class="contact-info">
@@ -961,13 +1071,17 @@
                                 <i class="fas fa-map-marker-alt"></i>
                                 Valencia, Spain
                             </span>
+                            <span class="item-detail">
+                                <i class="fas fa-star"></i>
+                                Grade: 10.0/10.0
+                            </span>
                         </div>
                         <p class="item-description">
                             Advanced study in data analysis engineering with focus on process optimization and decision-making methodologies. Specialized in machine learning, statistical modeling, and business intelligence applications.
                         </p>
                         <div style="margin-top: 1rem; padding: 1rem; background: rgba(0, 255, 157, 0.1); border-radius: 0.75rem; border-left: 4px solid var(--primary-color);">
                             <p style="color: var(--primary-color); font-weight: 600; margin-bottom: 0.5rem;">
-                                <i class="fas fa-trophy"></i> Best Academic Record | Cum Laude in Master's Thesis
+                                <i class="fas fa-trophy"></i> Valedictorian - Best Academic Record | Cum Laude in Master's Thesis
                             </p>
                             <p style="color: var(--text-secondary); margin-bottom: 0.75rem; font-style: italic;">
                                 "Design, implantation and validation of neural networks for the retrospective analysis of the cellular world independent of staining."
@@ -993,9 +1107,13 @@
                                 <i class="fas fa-map-marker-alt"></i>
                                 Valencia, Spain
                             </span>
+                            <span class="item-detail">
+                                <i class="fas fa-star"></i>
+                                Grade: 9.8/10.0
+                            </span>
                         </div>
                         <p class="item-description">
-                            Comprehensive education in biotechnology encompassing molecular biology, genetics, bioprocessing, and bioengineering. Strong foundation in both theoretical principles and practical laboratory techniques.
+                            Comprehensive education in biotechnology encompassing molecular biology, genetics, bioprocessing, and bioengineering. Strong foundation in both theoretical principles and practical laboratory techniques. Top of class performance throughout the program.
                         </p>
                     </div>
                 </div>
@@ -1013,8 +1131,16 @@
                 
                 <div class="timeline">
                     <div class="timeline-item">
-                        <h3 class="item-title">Tech Lead</h3>
-                        <p class="item-company">Innovare Genetics</p>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="item-title">Co-Founder & Tech Lead</h3>
+                                <p class="item-company">Innovare Genetics</p>
+                            </div>
+                            <span class="experience-badge startup-badge">
+                                <i class="fas fa-rocket"></i>
+                                Startup
+                            </span>
+                        </div>
                         <div class="item-details">
                             <span class="item-detail">
                                 <i class="fas fa-calendar"></i>
@@ -1022,17 +1148,35 @@
                             </span>
                             <span class="item-detail">
                                 <i class="fas fa-map-marker-alt"></i>
-                                Hybrid
+                                Madrid, Spain (Hybrid)
                             </span>
                         </div>
-                        <p class="item-description">
-                            Lead digital solutions development and technical team coordination while contributing to strategic product decisions and European regulatory validation for genetic technology. Drive full-stack development of internal and external solutions, manage technical roadmap planning, and author CE-IVD/MDR compliance documentation.
-                        </p>
+                        <ul class="job-highlights">
+                            <li>Co-founded healthtech startup and architected genetic analysis platform from scratch, leading full technical development toward CE-IVD/MDR certification and commercial launch</li>
+                            <li>Designed and directed validation studies while preparing comprehensive technical documentation for CE-IVD/MDR regulatory pathway, coordinating with notified bodies and clinical validators</li>
+                            <li>Built full-stack solutions including automated analysis pipelines, regulatory documentation systems, and external integrations, establishing technical foundation for company's product roadmap</li>
+                        </ul>
+                        <div class="tech-stack-section">
+                            <span class="tech-label">Technologies:</span>
+                            <div class="item-tech-tags">
+                                <span class="tech-tag advanced">Python</span>
+                                <span class="tech-tag intermediate">AWS</span>
+                                <span class="tech-tag intermediate">Docker</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="timeline-item">
-                        <h3 class="item-title">Scientific Assistant</h3>
-                        <p class="item-company">University Medical Center Hamburg-Eppendorf</p>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="item-title">Bioinformatics Research Scientist (Deep Learning)</h3>
+                                <p class="item-company">University Medical Center Hamburg-Eppendorf (UKE)</p>
+                            </div>
+                            <span class="experience-badge research-badge">
+                                <i class="fas fa-flask"></i>
+                                Research
+                            </span>
+                        </div>
                         <div class="item-details">
                             <span class="item-detail">
                                 <i class="fas fa-calendar"></i>
@@ -1040,17 +1184,37 @@
                             </span>
                             <span class="item-detail">
                                 <i class="fas fa-map-marker-alt"></i>
-                                Hamburg, Germany
+                                Hamburg, Germany (Hybrid)
                             </span>
                         </div>
-                        <p class="item-description">
-                            Develop neural network systems and analysis methods for cellular image analysis at the Sáez Lab. Create innovative computational approaches to understand complex biological processes through advanced data analysis techniques.
-                        </p>
+                        <ul class="job-highlights">
+                            <li>Design and implement custom CNN architectures for automated analysis of cell microscopy images, reducing manual analysis time by 95%+ while processing thousands of time-lapse images</li>
+                            <li>Develop end-to-end deep learning pipelines for cell dynamics analysis, including image quality enhancement models, directional migration tracking, and mitochondria quantification systems</li>
+                            <li>Apply multivariate statistical methods (PCA, LASSO, ANOVA) to analyze migration patterns in HIV-infected cells, enabling quantitative biological insights</li>
+                        </ul>
+                        <div class="tech-stack-section">
+                            <span class="tech-label">Technologies:</span>
+                            <div class="item-tech-tags">
+                                <span class="tech-tag advanced">PyTorch</span>
+                                <span class="tech-tag advanced">TensorFlow</span>
+                                <span class="tech-tag advanced">OpenCV</span>
+                                <span class="tech-tag advanced">Python</span>
+                                <span class="tech-tag advanced">Image Processing</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="timeline-item">
-                        <h3 class="item-title">AI Developer</h3>
-                        <p class="item-company">Elite Sports 17 S.L.</p>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="item-title">AI Developer</h3>
+                                <p class="item-company">Elite Sports 17 S.L.</p>
+                            </div>
+                            <span class="experience-badge industry-badge">
+                                <i class="fas fa-industry"></i>
+                                Industry
+                            </span>
+                        </div>
                         <div class="item-details">
                             <span class="item-detail">
                                 <i class="fas fa-calendar"></i>
@@ -1061,32 +1225,64 @@
                                 Valencia, Spain
                             </span>
                         </div>
-                        <p class="item-description">
-                            Created advanced machine learning pipelines for sports match analysis utilizing neural networks. Developed algorithms to extract performance insights and improve analytics capabilities for sports data.
-                        </p>
+                        <ul class="job-highlights">
+                            <li>Developed advanced machine learning pipelines for automated sports video analysis, implementing computer vision algorithms for player tracking and performance metrics extraction</li>
+                        </ul>
+                        <div class="tech-stack-section">
+                            <span class="tech-label">Technologies:</span>
+                            <div class="item-tech-tags">
+                                <span class="tech-tag advanced">Python</span>
+                                <span class="tech-tag advanced">Computer Vision</span>
+                                <span class="tech-tag advanced">ML Pipelines</span>
+                                <span class="tech-tag advanced">Video Analysis</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="timeline-item">
-                        <h3 class="item-title">Akademia Mentor</h3>
-                        <p class="item-company">Bankinter Innovation Foundation</p>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="item-title">AI Mentor & Project Evaluator</h3>
+                                <p class="item-company">Bankinter Innovation Foundation</p>
+                            </div>
+                            <span class="experience-badge mentor-badge">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                Mentorship
+                            </span>
+                        </div>
                         <div class="item-details">
                             <span class="item-detail">
                                 <i class="fas fa-calendar"></i>
-                                Oct 2023 - Jan 2024
+                                Oct 2023 - May 2025
                             </span>
                             <span class="item-detail">
                                 <i class="fas fa-map-marker-alt"></i>
-                                Spain
+                                Remote
                             </span>
                         </div>
-                        <p class="item-description">
-                            Mentored students in developing artificial intelligence algorithms for the 2023-2024 Akademia program. Guided participants through complex AI concepts and practical implementation challenges.
-                        </p>
+                        <ul class="job-highlights">
+                            <li>Mentored student teams in Akademia program (2023-24 and 2024-25 editions) on AI algorithm development, focusing on systematic problem-solving and model architecture design</li>
+                        </ul>
+                        <div class="tech-stack-section">
+                            <span class="tech-label">Technologies:</span>
+                            <div class="item-tech-tags">
+                                <span class="tech-tag advanced">Machine Learning</span>
+                                <span class="tech-tag advanced">Python</span>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="timeline-item">
-                        <h3 class="item-title">Scientific Intern</h3>
-                        <p class="item-company">Prince Felipe Research Center</p>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="item-title">Scientific Intern</h3>
+                                <p class="item-company">Prince Felipe Research Center</p>
+                            </div>
+                            <span class="experience-badge research-badge">
+                                <i class="fas fa-flask"></i>
+                                Research
+                            </span>
+                        </div>
                         <div class="item-details">
                             <span class="item-detail">
                                 <i class="fas fa-calendar"></i>
@@ -1097,14 +1293,23 @@
                                 Valencia, Spain
                             </span>
                         </div>
-                        <p class="item-description">
-                            Conducted Bachelor's Thesis research on proteins involved in lung cancer metastatic processes within the Oncogenic Signaling group. Performed cell culture, western blots, proliferation and wound healing assays to investigate cancer mechanisms.
-                        </p>
+                        <ul class="job-highlights">
+                            <li>Conducted Bachelor's Thesis research on proteins involved in lung cancer metastatic processes within the Oncogenic Signaling group</li>
+                            <li>Performed cell culture, western blots, proliferation and wound healing assays to investigate cancer mechanisms</li>
+                        </ul>
                     </div>
 
                     <div class="timeline-item">
-                        <h3 class="item-title">PIAE+ Coordinator</h3>
-                        <p class="item-company">Polytechnic University of Valencia</p>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="item-title">PIAE+ Coordinator</h3>
+                                <p class="item-company">Polytechnic University of Valencia</p>
+                            </div>
+                            <span class="experience-badge academic-badge">
+                                <i class="fas fa-university"></i>
+                                Academic
+                            </span>
+                        </div>
                         <div class="item-details">
                             <span class="item-detail">
                                 <i class="fas fa-calendar"></i>
@@ -1115,14 +1320,23 @@
                                 Valencia, Spain
                             </span>
                         </div>
-                        <p class="item-description">
-                            Managed team coordination, communication, and database operations for the Comprehensive Student Accompaniment Program (PIAE+) at ETSIAMN. Promoted workshops and supported student success initiatives.
-                        </p>
+                        <ul class="job-highlights">
+                            <li>Managed team coordination, communication, and database operations for the Comprehensive Student Accompaniment Program (PIAE+) at ETSIAMN</li>
+                            <li>Promoted workshops and supported student success initiatives across the program</li>
+                        </ul>
                     </div>
 
                     <div class="timeline-item">
-                        <h3 class="item-title">Scientific Intern</h3>
-                        <p class="item-company">Institute for Plant Molecular and Cellular Biology</p>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="item-title">Scientific Intern</h3>
+                                <p class="item-company">Institute for Plant Molecular and Cellular Biology</p>
+                            </div>
+                            <span class="experience-badge research-badge">
+                                <i class="fas fa-flask"></i>
+                                Research
+                            </span>
+                        </div>
                         <div class="item-details">
                             <span class="item-detail">
                                 <i class="fas fa-calendar"></i>
@@ -1133,14 +1347,23 @@
                                 Valencia, Spain
                             </span>
                         </div>
-                        <p class="item-description">
-                            Isolated genes involved in cell cycle regulation within the Ionic Homeostasis, Cellular Stress and Genomics group. Performed genome extractions, cloning, and gene expression verification techniques.
-                        </p>
+                        <ul class="job-highlights">
+                            <li>Isolated genes involved in cell cycle regulation within the Ionic Homeostasis, Cellular Stress and Genomics group</li>
+                            <li>Performed genome extractions, cloning, and gene expression verification techniques</li>
+                        </ul>
                     </div>
 
                     <div class="timeline-item">
-                        <h3 class="item-title">Student Coordinator</h3>
-                        <p class="item-company">Institute of Molecular Recognition and Technological Development</p>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="item-title">Student Coordinator</h3>
+                                <p class="item-company">Institute of Molecular Recognition and Technological Development</p>
+                            </div>
+                            <span class="experience-badge research-badge">
+                                <i class="fas fa-flask"></i>
+                                Research
+                            </span>
+                        </div>
                         <div class="item-details">
                             <span class="item-detail">
                                 <i class="fas fa-calendar"></i>
@@ -1151,14 +1374,23 @@
                                 Valencia, Spain
                             </span>
                         </div>
-                        <p class="item-description">
-                            Coordinated validation trials for SARS-CoV-2 detection biosensors. Managed project logistics and supported research validation processes for COVID-19 diagnostic technology.
-                        </p>
+                        <ul class="job-highlights">
+                            <li>Coordinated validation trials for SARS-CoV-2 detection biosensors during the COVID-19 pandemic</li>
+                            <li>Managed project logistics and supported research validation processes for diagnostic technology development</li>
+                        </ul>
                     </div>
 
                     <div class="timeline-item">
-                        <h3 class="item-title">Member of the Biotechnology Academic Committee</h3>
-                        <p class="item-company">Polytechnic University of Valencia</p>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="item-title">Member of the Biotechnology Academic Committee</h3>
+                                <p class="item-company">Polytechnic University of Valencia</p>
+                            </div>
+                            <span class="experience-badge academic-badge">
+                                <i class="fas fa-university"></i>
+                                Academic
+                            </span>
+                        </div>
                         <div class="item-details">
                             <span class="item-detail">
                                 <i class="fas fa-calendar"></i>
@@ -1169,14 +1401,23 @@
                                 Valencia, Spain
                             </span>
                         </div>
-                        <p class="item-description">
-                            Collaborated with management on strategic decisions affecting the Biotechnology degree program. Participated in academic policy development and curriculum enhancement initiatives.
-                        </p>
+                        <ul class="job-highlights">
+                            <li>Collaborated with university management on strategic decisions affecting the Biotechnology degree program</li>
+                            <li>Participated in academic policy development and curriculum enhancement initiatives</li>
+                        </ul>
                     </div>
 
                     <div class="timeline-item">
-                        <h3 class="item-title">Speaker at the Open Days</h3>
-                        <p class="item-company">Polytechnic University of Valencia</p>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="item-title">Speaker at the Open Days</h3>
+                                <p class="item-company">Polytechnic University of Valencia</p>
+                            </div>
+                            <span class="experience-badge academic-badge">
+                                <i class="fas fa-university"></i>
+                                Academic
+                            </span>
+                        </div>
                         <div class="item-details">
                             <span class="item-detail">
                                 <i class="fas fa-calendar"></i>
@@ -1187,14 +1428,23 @@
                                 Valencia, Spain
                             </span>
                         </div>
-                        <p class="item-description">
-                            Presented at university recruitment events, sharing academic experiences and addressing prospective student inquiries. Represented the biotechnology program and provided guidance to incoming students.
-                        </p>
+                        <ul class="job-highlights">
+                            <li>Presented at university recruitment events, sharing academic experiences with prospective students</li>
+                            <li>Represented the biotechnology program and provided guidance to incoming students</li>
+                        </ul>
                     </div>
 
                     <div class="timeline-item">
-                        <h3 class="item-title">Private Tutor</h3>
-                        <p class="item-company">Freelance</p>
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="item-title">Private Tutor</h3>
+                                <p class="item-company">Freelance</p>
+                            </div>
+                            <span class="experience-badge mentor-badge">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                Mentorship
+                            </span>
+                        </div>
                         <div class="item-details">
                             <span class="item-detail">
                                 <i class="fas fa-calendar"></i>
@@ -1205,9 +1455,10 @@
                                 Valencia, Spain
                             </span>
                         </div>
-                        <p class="item-description">
-                            Provide personalized academic support for students from secondary school to university level. Specialize in science and mathematics subjects, adapting teaching methods to individual learning styles.
-                        </p>
+                        <ul class="job-highlights">
+                            <li>Provide personalized academic support for students from secondary school to university level</li>
+                            <li>Specialize in science and mathematics subjects, adapting teaching methods to individual learning styles</li>
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -375,10 +375,10 @@ function initTypingEffect() {
     if (!typingElement) return;
     
     const texts = [
-        'Biotech & Data Science Specialist',
-        'Bioinformatics Researcher',
-        'Neural Network Developer',
-        'Cell Migration Analyst'
+        'ML Engineer & Tech Lead',
+        'AI for Healthcare & Life Sciences',
+        'Deep Learning Specialist',
+        'Technical Leader in Biotech'
     ];
     
     let textIndex = 0;
@@ -649,7 +649,7 @@ const utils = {
 
 // ===== INITIALIZATION =====
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🧬 Biotech Portfolio initialized successfully!');
+    console.log('🚀 ML Engineer Portfolio initialized successfully!');
     
     // Initialize all modules
     initScrollReveal();
@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Show welcome notification
     setTimeout(() => {
-        showNotification('🔬 Welcome to my research portfolio!', 'success');
+        showNotification('👋 Welcome! Explore my ML & Healthcare AI projects', 'success');
     }, 2000);
 });
 
@@ -699,9 +699,9 @@ window.trackEvent = trackEvent;
 // ===== PAGE VISIBILITY API =====
 document.addEventListener('visibilitychange', () => {
     if (document.hidden) {
-        document.title = '🧬 Come back to explore more research!';
+        document.title = '💼 Come back to explore ML projects!';
     } else {
-        document.title = 'Javier Boix Campos - Biotech & Data Science';
+        document.title = 'Javier Boix Campos - ML Engineer & Tech Lead | AI for Healthcare';
     }
 });
 
