@@ -1625,7 +1625,10 @@ img {
   /* Hero */
   .hero {
     padding-top: 5rem;
-    min-height: auto;
+    min-height: 100vh;
+    background-size: cover;
+    background-attachment: scroll;
+    background-position: center center;
   }
 
   .hero-title {
