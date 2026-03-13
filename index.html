@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8LLYJS2P0W"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-8LLYJS2P0W');
     </script>
     <meta charset="UTF-8">
@@ -15,19 +14,15 @@
     <title>Javier Boix Campos - AI for Healthcare & Life Sciences</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,400&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" href="https://www.svgrepo.com/show/396310/dna.svg" type="image/svg+xml">
-
 </head>
 <body>
-    <canvas id="background-animation"></canvas>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand gradient-text">Javier Boix Campos</div>
+            <div class="nav-brand">Javier Boix Campos</div>
             <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -47,33 +42,30 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-visual-bg">
-            <canvas id="hero-canvas"></canvas>
-        </div>
         <div class="hero-container">
-            <div class="hero-content glass-card">
-                <div class="glass-reflection"></div>
+            <div class="hero-content ornate-frame">
+                <span class="volume-label" style="text-align:left;">Curriculum Vitae</span>
                 <h1 class="hero-title">
-                    <span class="gradient-text">Javier Boix Campos</span>
+                    <span class="accent-text">Javier Boix Campos</span>
                 </h1>
                 <h2 class="hero-subtitle typing-text">ML Engineer & Tech Lead | AI for Healthcare & Life Sciences</h2>
                 <p class="hero-description">
-                    Building AI systems that transform healthcare. Co-founded Innovare Genetics and developing CNN architectures for biomedical imaging at University Medical Center Hamburg.
+                    Building AI systems that transform healthcare and beyond. ML Engineer at Multiverse Computing and developing CNN architectures for biomedical imaging at University Medical Center Hamburg.
                 </p>
-            <div class="hero-buttons">
-                <a href="https://www.linkedin.com/in/javier-boix-campos" class="btn btn-primary" target="_blank">
-                    <i class="fab fa-linkedin"></i>
-                    View LinkedIn
-                </a>
-                <a href="cv.html" class="btn btn-primary" target="_blank">
-                    <i class="fas fa-file-download"></i>
-                    View CV
-                </a>
-                <a href="https://github.com/JBoixCampos" class="btn btn-secondary" target="_blank">
-                    <i class="fab fa-github"></i>
-                    GitHub
-                </a>
-            </div>
+                <div class="hero-buttons">
+                    <a href="https://www.linkedin.com/in/javier-boix-campos" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                        View LinkedIn
+                    </a>
+                    <a href="cv.html" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-file-download"></i>
+                        View CV
+                    </a>
+                    <a href="https://github.com/JBoixCampos" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                </div>
             </div>
             <div class="hero-floating-elements">
                 <div class="floating-card" data-delay="0">
@@ -95,11 +87,12 @@
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
+            <span class="volume-label">Volume I</span>
             <h2 class="section-title">About Me</h2>
             <div class="about-grid">
-                <div class="about-content glass-card reveal">
-                    <h3>Bridging Biology & Data Science</h3>
-                    <p>
+                <div class="about-content corner-flourish">
+                    <h3>Bridging Biology &amp; Data Science</h3>
+                    <p class="drop-cap">
                         I'm an ML Engineer and Technical Leader specializing in AI applications for healthcare and life sciences.
                     </p>
                     <p>
@@ -110,7 +103,7 @@
                     </p>
                 </div>
                 
-                <div class="stats-container glass-card reveal">
+                <div class="stats-container">
                     <div class="stat-item">
                         <span class="stat-number" data-target="18">0</span>
                         <span class="stat-label">Projects Completed</span>
@@ -135,17 +128,18 @@
     <!-- Featured Projects -->
     <section id="projects" class="projects">
         <div class="container">
+            <span class="volume-label">Volume II</span>
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 
-                <!-- Featured Project - Same layout as others but with badge -->
-                <div class="project-card glass-card reveal">
+                <!-- Featured Project — Cell Migration -->
+                <div class="project-card corner-flourish">
+                    <div class="wax-seal"><i class="fas fa-star"></i></div>
                     <div class="project-image">
                         <img src="https://www.biorxiv.org/content/biorxiv/early/2024/08/07/2024.03.29.585638/F1.large.jpg?width=800&height=600&carousel=1" alt="Cell Migration Research">
-                        <div class="image-overlay"></div>
                     </div>
                     <div class="project-content">
-                        <h3>Shape Dynamics & Cell Migration Analysis</h3>
+                        <h3>Shape Dynamics &amp; Cell Migration Analysis</h3>
                         <p>
                             Developed a comprehensive pipeline for analyzing cell migration using convolutional 
                             neural networks to study branched cell dynamics on complex networks at the Sáez Lab.
@@ -157,22 +151,21 @@
                             <span class="tech-tag">Image Analysis</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://www.biorxiv.org/content/10.1101/2024.03.29.585638v3" class="project-link" target="_blank">
+                            <a href="https://www.science.org/doi/10.1126/sciadv.ads2734" class="project-link" target="_blank">
                                 <i class="fas fa-file-medical"></i>
-                                Paper Preprint
+                                Published on Science Advances
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Second Project - Pain Tracker -->
-                <div class="project-card glass-card reveal">
+                <!-- Second Project — Pain Tracker -->
+                <div class="project-card corner-flourish">
                     <div class="project-image">
                         <img src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=800&h=600&fit=crop" alt="Pain & Nutrition Tracker">
-                        <div class="image-overlay"></div>
                     </div>
                     <div class="project-content">
-                        <h3>Pain & Nutrition Tracker SaaS</h3>
+                        <h3>Pain &amp; Nutrition Tracker SaaS</h3>
                         <p>
                             AI-powered health monitoring platform with AI for meal recognition,
                             advanced nutritional algorithms, and multi-API orchestration.
@@ -195,11 +188,10 @@
                     </div>
                 </div>
 
-                <!-- Third Project - WhatsApp Chat Analyzer -->
-                <div class="project-card glass-card reveal">
+                <!-- Third Project — WhatsApp Chat Analyzer -->
+                <div class="project-card corner-flourish">
                     <div class="project-image">
-                        <img src="https://media.licdn.com/dms/image/v2/D4D22AQEOpSKrHW2BZA/feedshare-shrink_2048_1536/B4DZbJtpsZHQAo-/0/1747140910574?e=1761177600&v=beta&t=ieS5VVn99GJaMq8XgdXoOGHoX9u7-tbagiosfpG35r4" alt="WhatsApp Chat Analyzer">
-                        <div class="image-overlay"></div>
+                        <img src="assets/wsp.jiff" alt="WhatsApp Chat Analyzer">
                     </div>
                     <div class="project-content">
                         <h3>WhatsApp Chat Analyzer</h3>
@@ -225,11 +217,10 @@
                     </div>
                 </div>
 
-                <!-- Fourth Project - Valencia Fallas Route Optimization -->
-                <div class="project-card glass-card reveal">
+                <!-- Fourth Project — Valencia Fallas -->
+                <div class="project-card corner-flourish">
                     <div class="project-image">
                         <img src="https://static.apuntmedia.es/clip/ac2a39f1-7dbd-4e8b-8df2-78934ea1ba19_source-aspect-ratio_1600w_0.webp" alt="Valencia Fallas Festival Route Optimization">
-                        <div class="image-overlay"></div>
                     </div>
                     <div class="project-content">
                         <h3>Valencia Fallas Route Optimization</h3>
@@ -259,6 +250,7 @@
     <!-- Research Portfolio Section -->
     <section id="experience" class="experience">
         <div class="container">
+            <span class="volume-label">Volume III</span>
             <h2 class="section-title">Research Portfolio</h2>
             
             <div class="tabs-container">
@@ -273,7 +265,7 @@
                     </button>
                     <button class="tab-button" data-tab="multivariate">
                         <i class="fas fa-chart-area"></i>
-                        ML & Analysis
+                        ML &amp; Analysis
                     </button>
                     <button class="tab-button" data-tab="image-analysis">
                         <i class="fas fa-image"></i>
@@ -289,14 +281,12 @@
                     </button>
                 </div>
 
-                <div class="tab-content-container glass-card">
+                <div class="tab-content-container">
                     <div class="tab active" id="cell-migration">
                         <h3><i class="fas fa-cell"></i> Cell Migration Data Analysis</h3>
                         <div class="project-list">
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-brain"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-brain"></i></div>
                                 <div class="project-details">
                                     <h4>Neural Network Pipeline for Cell Migration</h4>
                                     <p>Developed an analysis pipeline applying convolutional neural networks to cell migration data</p>
@@ -306,33 +296,24 @@
                                     </a>
                                 </div>
                             </div>
-                            
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-compass"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-compass"></i></div>
                                 <div class="project-details">
                                     <h4>Directionality Analysis Pipeline</h4>
                                     <p>Pipeline for analyzing directionality patterns in cell migration data</p>
                                     <div class="tech-stack">Python, R, VBA</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-tachometer-alt"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 <div class="project-details">
                                     <h4>Speed Analysis Framework</h4>
                                     <p>Analysis pipeline for obtaining mean speed per frame from cell migration data</p>
                                     <div class="tech-stack">R, Statistical Analysis</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
                                 <div class="project-details">
                                     <h4>Interactive Density Visualization</h4>
                                     <p>Interactive density plot per frame for cell migration data visualization</p>
@@ -343,23 +324,18 @@
                     </div>
 
                     <div class="tab" id="fluorescence">
-                        <h3><i class="fas fa-lightbulb"></i> Fluorescence Imaging & Microscopy</h3>
+                        <h3><i class="fas fa-lightbulb"></i> Fluorescence Imaging &amp; Microscopy</h3>
                         <div class="project-list">
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-microscope"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-microscope"></i></div>
                                 <div class="project-details">
                                     <h4>Neural Network for Fluorescence Enhancement</h4>
                                     <p>Developed and validated neural network architecture to improve fluorescence microscopy quality</p>
                                     <div class="tech-stack">Python, R, Deep Learning</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-filter"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-filter"></i></div>
                                 <div class="project-details">
                                     <h4>Mitochondria Analysis Pipeline</h4>
                                     <p>Analysis pipeline for filtering and obtaining average intensities of mitochondria from fluorescence imaging</p>
@@ -370,23 +346,18 @@
                     </div>
 
                     <div class="tab" id="multivariate">
-                        <h3><i class="fas fa-chart-area"></i> Multivariate Data Analysis & Machine Learning</h3>
+                        <h3><i class="fas fa-chart-area"></i> Multivariate Data Analysis &amp; Machine Learning</h3>
                         <div class="project-list">
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-virus"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-virus"></i></div>
                                 <div class="project-details">
                                     <h4>HIV-Infected Cell Migration Analysis</h4>
                                     <p>Multivariate data analysis (PCA, LASSO, ANOVA) on the migration of HIV-infected cells</p>
                                     <div class="tech-stack">R, Statistical Modeling</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-user-times"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-user-times"></i></div>
                                 <div class="project-details">
                                     <h4>Customer Churn Prediction</h4>
                                     <p>Applied machine learning methods to predict and understand telecommunications customer churn</p>
@@ -397,34 +368,26 @@
                     </div>
 
                     <div class="tab" id="image-analysis">
-                        <h3><i class="fas fa-image"></i> Image Analysis & Segmentation</h3>
+                        <h3><i class="fas fa-image"></i> Image Analysis &amp; Segmentation</h3>
                         <div class="project-list">
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-industry"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-industry"></i></div>
                                 <div class="project-details">
                                     <h4>Ceramic Surface Analysis</h4>
                                     <p>Multivariate image analysis for automatic characterization and error detection on ceramic surfaces</p>
                                     <div class="tech-stack">R, Computer Vision</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-cube"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-cube"></i></div>
                                 <div class="project-details">
                                     <h4>Latent Space Segmentation Tool</h4>
                                     <p>Interactive tool for image segmentation in latent space, supporting both 2D and 3D visualization</p>
                                     <div class="tech-stack">R, Interactive Visualization</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-rainbow"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-rainbow"></i></div>
                                 <div class="project-details">
                                     <h4>Hyperspectral Image Analysis</h4>
                                     <p>Applied Multivariate Curve Resolution to hyperspectral images for spectral reconstruction</p>
@@ -435,23 +398,18 @@
                     </div>
 
                     <div class="tab" id="time-series">
-                        <h3><i class="fas fa-clock"></i> Time Series & Predictive Modeling</h3>
+                        <h3><i class="fas fa-clock"></i> Time Series Analysis</h3>
                         <div class="project-list">
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-cloud"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-cloud"></i></div>
                                 <div class="project-details">
                                     <h4>CO2 Atmospheric Prediction Model</h4>
                                     <p>Time series modeling to predict atmospheric CO2 presence and trends</p>
                                     <div class="tech-stack">R, Time Series Analysis</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-building"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-building"></i></div>
                                 <div class="project-details">
                                     <h4>Economic-Keyword Relationship Analysis</h4>
                                     <p>Exploratory and predictive analysis of relationships between economic characteristics and website keywords</p>
@@ -462,12 +420,10 @@
                     </div>
 
                     <div class="tab" id="optimization">
-                        <h3><i class="fas fa-cogs"></i> Optimization & Heuristics</h3>
+                        <h3><i class="fas fa-cogs"></i> Optimization &amp; Heuristics</h3>
                         <div class="project-list">
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-route"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-route"></i></div>
                                 <div class="project-details">
                                     <h4>Valencia Fallas Route Optimization</h4>
                                     <p>Applied metaheuristics to optimize walking paths in Valencia's Fallas festival</p>
@@ -477,33 +433,24 @@
                                     </a>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
                                 <div class="project-details">
                                     <h4>Business Optimization Models</h4>
                                     <p>Mathematical modeling and programming of various business optimization problems</p>
                                     <div class="tech-stack">VBA, Mathematical Modeling</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-search"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-search"></i></div>
                                 <div class="project-details">
                                     <h4>GRASP Heuristics for Maximum Diversity</h4>
                                     <p>Developed and compared two different greedy randomized adaptive search heuristics</p>
                                     <div class="tech-stack">VBA, Algorithm Design</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-tasks"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-tasks"></i></div>
                                 <div class="project-details">
                                     <h4>Flow-shop Scheduling Optimization</h4>
                                     <p>Developed and compared three different metaheuristics for permutation flow-shop scheduling</p>
@@ -520,6 +467,7 @@
     <!-- Developer Portfolio Section -->
     <section id="developer-portfolio" class="experience">
         <div class="container">
+            <span class="volume-label">Volume IV</span>
             <h2 class="section-title">Developer Portfolio</h2>
             
             <div class="tabs-container">
@@ -542,14 +490,12 @@
                     </button>
                 </div>
 
-                <div class="tab-content-container glass-card">
+                <div class="tab-content-container">
                     <div class="tab active" id="web-apps">
                         <h3><i class="fas fa-globe"></i> Web Applications</h3>
                         <div class="project-list">
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-comments"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-comments"></i></div>
                                 <div class="project-details">
                                     <h4>WhatsApp Chat Analyzer</h4>
                                     <p>Interactive web application that analyzes WhatsApp chat history to generate insightful visualizations and behavioral patterns</p>
@@ -559,15 +505,12 @@
                                     </a>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-user"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-user"></i></div>
                                 <div class="project-details">
                                     <h4>Personal Portfolio Website</h4>
-                                    <p>Modern portfolio website with glassmorphism design, Three.js animations, and responsive layout</p>
-                                    <div class="tech-stack">HTML, CSS, JavaScript, Three.js, GSAP</div>
+                                    <p>Academia-styled portfolio website with classical design system, ornate typography, and responsive layout</p>
+                                    <div class="tech-stack">HTML, CSS, JavaScript</div>
                                 </div>
                             </div>
                         </div>
@@ -577,31 +520,23 @@
                         <h3><i class="fas fa-chart-bar"></i> Data Analysis Tools</h3>
                         <div class="project-list">
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-cube"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-cube"></i></div>
                                 <div class="project-details">
                                     <h4>Latent Space Segmentation Tool</h4>
                                     <p>Interactive tool for image segmentation in latent space, supporting both 2D and 3D visualization</p>
                                     <div class="tech-stack">R, Interactive Visualization, Shiny</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
                                 <div class="project-details">
                                     <h4>Interactive Density Visualization Tool</h4>
                                     <p>Interactive density plot tool for cell migration data visualization with real-time frame analysis</p>
                                     <div class="tech-stack">R, Data Visualization, Plotly</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-microscope"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-microscope"></i></div>
                                 <div class="project-details">
                                     <h4>Neural Network for Fluorescence Enhancement</h4>
                                     <p>Deep learning model to improve fluorescence microscopy image quality with validation pipeline</p>
@@ -615,9 +550,7 @@
                         <h3><i class="fas fa-calculator"></i> Optimization Tools</h3>
                         <div class="project-list">
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-route"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-route"></i></div>
                                 <div class="project-details">
                                     <h4>Valencia Fallas Route Optimizer</h4>
                                     <p>Metaheuristics-based tool to optimize walking paths for visiting Valencia's Fallas festival</p>
@@ -627,33 +560,24 @@
                                     </a>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-search"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-search"></i></div>
                                 <div class="project-details">
                                     <h4>GRASP Heuristics Implementation</h4>
                                     <p>Implementation and comparison tool for two different greedy randomized adaptive search heuristics</p>
                                     <div class="tech-stack">VBA, Algorithm Design, Comparative Analysis</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-tasks"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-tasks"></i></div>
                                 <div class="project-details">
                                     <h4>Flow-shop Scheduling Optimizer</h4>
                                     <p>Tool implementing three different metaheuristics for permutation flow-shop scheduling problems</p>
                                     <div class="tech-stack">VBA, Scheduling Algorithms, Performance Analysis</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-chart-line"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-chart-line"></i></div>
                                 <div class="project-details">
                                     <h4>Business Optimization Suite</h4>
                                     <p>Collection of mathematical models and programming tools for various business optimization problems</p>
@@ -667,9 +591,7 @@
                         <h3><i class="fas fa-code-branch"></i> Analysis Pipelines</h3>
                         <div class="project-list">
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-brain"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-brain"></i></div>
                                 <div class="project-details">
                                     <h4>Neural Network Pipeline for Cell Migration</h4>
                                     <p>Complete analysis pipeline applying convolutional neural networks to cell migration data</p>
@@ -679,33 +601,24 @@
                                     </a>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-compass"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-compass"></i></div>
                                 <div class="project-details">
                                     <h4>Directionality Analysis Pipeline</h4>
                                     <p>Automated pipeline for analyzing directionality patterns in cell migration data with statistical validation</p>
                                     <div class="tech-stack">Python, R, VBA, Statistical Analysis</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-tachometer-alt"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 <div class="project-details">
                                     <h4>Speed Analysis Framework</h4>
                                     <p>Automated analysis pipeline for obtaining mean speed per frame from cell migration data</p>
                                     <div class="tech-stack">R, Statistical Analysis, Data Processing</div>
                                 </div>
                             </div>
-
                             <div class="project-item">
-                                <div class="project-icon">
-                                    <i class="fas fa-filter"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-filter"></i></div>
                                 <div class="project-details">
                                     <h4>Mitochondria Analysis Pipeline</h4>
                                     <p>Automated pipeline for filtering and obtaining average intensities of mitochondria from fluorescence imaging</p>
@@ -722,90 +635,88 @@
     <!-- Technologies & Skills Section -->
     <section id="technologies" class="skills-charts-section">
         <div class="container">
-            <h2 class="section-title">Technologies & Skills</h2>
+            <span class="volume-label">Volume V</span>
+            <h2 class="section-title">Technologies &amp; Skills</h2>
             
-            <!-- Technology Categories -->
-                <div class="tech-categories glass-card">
-                    <div class="tech-header">
-                        <h3><i class="fas fa-layer-group"></i> Technology Stack</h3>
-                        
-                        <!-- Skills Legend -->
-                        <div class="skills-legend">
-                            <span class="legend-item">
-                                <span class="legend-color advanced"></span>
-                                Advanced
-                            </span>
-                            <span class="legend-item">
-                                <span class="legend-color intermediate"></span>
-                                Intermediate
-                            </span>
-                            <span class="legend-item">
-                                <span class="legend-color beginner"></span>
-                                Beginner
-                            </span>
+            <div class="tech-categories corner-flourish">
+                <div class="tech-header">
+                    <h3><i class="fas fa-layer-group"></i> Technology Stack</h3>
+                    <div class="skills-legend">
+                        <span class="legend-item">
+                            <span class="legend-color advanced"></span>
+                            Advanced
+                        </span>
+                        <span class="legend-item">
+                            <span class="legend-color intermediate"></span>
+                            Intermediate
+                        </span>
+                        <span class="legend-item">
+                            <span class="legend-color beginner"></span>
+                            Beginner
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="ornate-divider on-alt"></div>
+
+                <div class="tech-grid">
+                    <div class="tech-category">
+                        <h4><i class="fas fa-code"></i> Programming</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag advanced">Python</span>
+                            <span class="tech-tag advanced">R</span>
+                            <span class="tech-tag advanced">VBA</span>
+                            <span class="tech-tag intermediate">JavaScript</span>
+                            <span class="tech-tag intermediate">HTML/CSS</span>
+                            <span class="tech-tag beginner">SQL</span>
                         </div>
                     </div>
                     
-                    <div class="tech-grid">
-
-                        <div class="tech-category">
-                            <h4><i class="fas fa-code"></i> Programming</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag advanced">Python</span>
-                                <span class="tech-tag advanced">R</span>
-                                <span class="tech-tag advanced">VBA</span>
-                                <span class="tech-tag intermediate">JavaScript</span>
-                                <span class="tech-tag intermediate">HTML/CSS</span>
-                                <span class="tech-tag beginner">SQL</span>
-                            </div>
+                    <div class="tech-category">
+                        <h4><i class="fas fa-brain"></i> AI &amp; Data Science</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag advanced">Neural Networks</span>
+                            <span class="tech-tag advanced">Machine Learning</span>
+                            <span class="tech-tag advanced">Statistical Analysis</span>
+                            <span class="tech-tag advanced">Image Processing</span>
+                            <span class="tech-tag intermediate">Optimization</span>
+                            <span class="tech-tag beginner">NLP</span>
                         </div>
-                        
-                        <div class="tech-category">
-                            <h4><i class="fas fa-brain"></i> AI & Data Science</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag advanced">Neural Networks</span>
-                                <span class="tech-tag advanced">Machine Learning</span>
-                                <span class="tech-tag advanced">Statistical Analysis</span>
-                                <span class="tech-tag advanced">Image Processing</span>
-                                <span class="tech-tag intermediate">Optimization</span>
-                                <span class="tech-tag beginner">NLP</span>
-                            </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4><i class="fas fa-fire"></i> Frameworks</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag advanced">TensorFlow/PyTorch</span>
+                            <span class="tech-tag advanced">Plotly</span>
+                            <span class="tech-tag advanced">Shiny</span>
+                            <span class="tech-tag intermediate">Streamlit</span>
+                            <span class="tech-tag beginner">Three.js</span>
+                            <span class="tech-tag beginner">GSAP</span>
                         </div>
-                        
-                        <div class="tech-category">
-                            <h4><i class="fas fa-fire"></i> Frameworks</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag advanced">TensorFlow/PyTorch</span>
-                                <span class="tech-tag advanced">Plotly</span>
-                                <span class="tech-tag advanced">Shiny</span>
-                                <span class="tech-tag intermediate">Streamlit</span>
-                                <span class="tech-tag beginner">Three.js</span>
-                                <span class="tech-tag beginner">GSAP</span>
-                            </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4><i class="fas fa-cloud"></i> Cloud &amp; DevOps</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag intermediate">AWS</span>
+                            <span class="tech-tag intermediate">OVH</span>
+                            <span class="tech-tag intermediate">Git</span>
+                            <span class="tech-tag intermediate">Linux</span>
+                            <span class="tech-tag beginner">Docker</span>
+                            <span class="tech-tag beginner">CI/CD</span>
                         </div>
-                        
-                        <div class="tech-category">
-                            <h4><i class="fas fa-cloud"></i> Cloud & DevOps</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag intermediate">AWS</span>
-                                <span class="tech-tag intermediate">OVH</span>
-                                <span class="tech-tag intermediate">Git</span>
-                                <span class="tech-tag intermediate">Linux</span>
-                                <span class="tech-tag beginner">Docker</span>
-                                <span class="tech-tag beginner">CI/CD</span>
-                            </div>
-                        </div>
-                        
-                        <div class="tech-category">
-                            <h4><i class="fas fa-tools"></i> Tools</h4>
-                            <div class="tech-tags">
-                                <span class="tech-tag advanced">Excel</span>
-                                <span class="tech-tag advanced">Jupyter</span>
-                                <span class="tech-tag advanced">RStudio</span>
-                                <span class="tech-tag advanced">ImageJ/FIJI</span>
-                                <span class="tech-tag intermediate">Power BI</span>
-                                <span class="tech-tag intermediate">GitHub</span>
-                            </div>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h4><i class="fas fa-tools"></i> Tools</h4>
+                        <div class="tech-tags">
+                            <span class="tech-tag advanced">Excel</span>
+                            <span class="tech-tag advanced">Jupyter</span>
+                            <span class="tech-tag advanced">RStudio</span>
+                            <span class="tech-tag advanced">ImageJ/FIJI</span>
+                            <span class="tech-tag intermediate">Power BI</span>
+                            <span class="tech-tag intermediate">GitHub</span>
                         </div>
                     </div>
                 </div>
@@ -816,13 +727,14 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
+            <span class="volume-label">Volume VI</span>
             <h2 class="section-title">Let's Connect</h2>
             <p class="contact-subtitle">
                 I'm currently open to opportunities where I can apply my expertise in ML and healthcare to build impactful products. Whether you're looking for a data analyst, ML engineer, or want to discuss collaboration opportunities, I'd love to hear from you.
             </p>
             
             <div class="contact-content">
-                <div class="contact-info glass-card">
+                <div class="contact-info">
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
@@ -869,10 +781,12 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Javier Boix Campos. All rights reserved.</p>
+            <div class="ornate-divider" style="margin-bottom:1.5rem;"></div>
+            <p>&copy; 2026 Javier Boix Campos. All rights reserved.</p>
         </div>
     </footer>
 
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

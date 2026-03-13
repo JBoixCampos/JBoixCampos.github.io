@@ -6,18 +6,15 @@
     <title>Valencia Fallas Route Optimization Project - Javier Boix Campos</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,400&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" href="https://www.svgrepo.com/show/396310/dna.svg" type="image/svg+xml">
 </head>
 <body>
-    <canvas id="background-animation"></canvas>
 
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-brand gradient-text">Javier Boix Campos</div>
+            <div class="nav-brand">Javier Boix Campos</div>
             <ul class="nav-menu" style="pointer-events: auto;">
                 <li><a href="./index.html" style="pointer-events: auto;">Home</a></li>
                 <li><a href="./index.html#about" style="pointer-events: auto;">About</a></li>
@@ -36,14 +33,15 @@
     </nav>
 
     <!-- Project Introduction -->
-    <section class="about" style="padding-top: 6rem;">
+    <section class="about" style="padding-top: 7rem;">
         <div class="container">
-            <h2 class="section-title gradient-text">Valencia Fallas Route Optimization</h2>
-            <div class="about-content glass-card reveal" style="width: 100%;">
+            <span class="volume-label">Project Study</span>
+            <h2 class="section-title">Valencia Fallas Route Optimization</h2>
+            <div class="about-content ornate-frame reveal" style="width: 100%; max-width: 900px; margin: 0 auto;">
                 <h3 style="text-align: center;">Finding the Perfect Path Through Valencia's Most Beloved Festival</h3>
-                <p style="text-align: justify;">
+                <p class="drop-cap" style="text-align: justify;">
                     A scientific approach to optimizing walking routes for visiting Valencia's Fallas festival,
-                    combining metaheuristics algorithms with cultural heritage preservation.<br><br>
+                    combining metaheuristics algorithms with cultural heritage preservation.
                     Thanks to the experience gained at Sáez Lab in Germany and putting it together with the knowledge acquired during the
                     master's program, this project demonstrates the practical application of advanced optimization
                     techniques to real-world cultural challenges.
@@ -65,17 +63,14 @@
     <!-- Project Details -->
     <section class="projects">
         <div class="container">
-            <!-- About Fallas Section -->
-            <div class="section-block glass-card reveal">
-                <h2><i class="fas fa-fire"></i> Understanding Las Fallas</h2>
 
-                <!-- Image at the top -->
+            <!-- About Fallas Section -->
+            <div class="section-block reveal">
+                <h2><i class="fas fa-fire"></i> Understanding Las Fallas</h2>
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <img src="https://mymodernmet.com/wp/wp-content/uploads/2019/03/pichiavo-fallas-festival-valencia-9.jpg"
                          alt="Valencia Fallas Festival" class="responsive-image" style="max-height: 300px; object-fit: cover;">
                 </div>
-
-                <!-- Content text -->
                 <div style="text-align: justify;">
                     <p>
                         Las Fallas is Valencia's most spectacular festival, celebrated every March in honor of Saint Joseph.
@@ -88,8 +83,6 @@
                         (Special Section) represent the pinnacle of artistic achievement and draw hundreds of thousands of visitors.
                     </p>
                 </div>
-
-                <!-- Challenge section spanning full width -->
                 <div class="highlight-box" style="margin-top: 2rem;">
                     <h4><i class="fas fa-trophy"></i> The Challenge</h4>
                     <p>
@@ -100,7 +93,7 @@
             </div>
 
             <!-- Technical Approach -->
-            <div class="section-block glass-card reveal">
+            <div class="section-block reveal">
                 <h2><i class="fas fa-cogs"></i> Technical Approach</h2>
                 <div class="approach-grid">
                     <div class="approach-item">
@@ -137,7 +130,7 @@
             </div>
 
             <!-- Optimization Results -->
-            <div class="section-block glass-card reveal">
+            <div class="section-block reveal">
                 <h2><i class="fas fa-route"></i> Optimization Results</h2>
                 <p style="text-align: justify; margin-bottom: 2rem;">
                     Our analysis produced three optimized routes tailored to different visitor preferences and time constraints.
@@ -145,77 +138,63 @@
                     the cultural experience.
                 </p>
 
-                <div class="approach-grid">
-                    <div class="approach-item">
-                        <div class="approach-icon">
+                <div class="route-card">
+                    <h3><i class="fas fa-star" style="color: var(--accent);"></i> Route 1: Complete Experience</h3>
+                    <div class="route-details">
+                        <div class="route-detail">
                             <i class="fas fa-walking"></i>
+                            <span>All Special Section Fallas</span>
                         </div>
-                        <h3>🚶🏽 Walking Route</h3>
-                        <p><strong>Distance:</strong> 10.6 kilometers<br>
-                        <strong>Travel Duration:</strong> 2:28 hours</p>
-                        <p style="font-size: 0.9rem; margin-top: 1rem;">
-                            The optimal walking route to visit all Special Section fallas on foot,
-                            designed to minimize walking distance while ensuring you experience
-                            the authentic atmosphere of Valencia's streets during the festival.
-                        </p>
-                        <a href="https://www.datawrapper.de/_/aUUta/" class="btn btn-secondary" target="_blank" style="margin-top: 1rem; display: inline-block;">
-                            <i class="fas fa-map"></i>
-                            View Interactive Map
-                        </a>
-                    </div>
-
-                    <div class="approach-item">
-                        <div class="approach-icon">
-                            <i class="fas fa-bicycle"></i>
+                        <div class="route-detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Optimized for minimum time</span>
                         </div>
-                        <h3>🚴🏻‍♀️ Cycling Route</h3>
-                        <p><strong>Distance:</strong> 13.1 kilometers<br>
-                        <strong>Travel Duration:</strong> 0:44 hours</p>
-                        <p style="font-size: 0.9rem; margin-top: 1rem;">
-                            The fastest way to visit all fallas using Valencia's extensive bike lane network.
-                            Perfect for covering more ground quickly while enjoying the flexibility
-                            to stop and admire each monument at your own pace.
-                        </p>
-                        <a href="https://www.datawrapper.de/_/BWWjX/" class="btn btn-secondary" target="_blank" style="margin-top: 1rem; display: inline-block;">
-                            <i class="fas fa-map"></i>
-                            View Interactive Map
-                        </a>
                     </div>
-
-                    <div class="approach-item">
-                        <div class="approach-icon">
-                            <i class="fas fa-bus"></i>
-                        </div>
-                        <h3>🚌 Public Transport Route</h3>
-                        <p><strong>Distance:</strong> 14.6 kilometers<br>
-                        <strong>Travel Duration:</strong> 1:52 hours</p>
-                        <p style="font-size: 0.9rem; margin-top: 1rem;">
-                            Optimized route using Valencia's metro, bus, and tram network.
-                            Ideal for visitors who prefer comfortable transportation or have
-                            mobility considerations, while still experiencing all the fallas.
-                        </p>
-                        <a href="https://www.datawrapper.de/_/bbl2c/" class="btn btn-secondary" target="_blank" style="margin-top: 1rem; display: inline-block;">
-                            <i class="fas fa-map"></i>
-                            View Interactive Map
-                        </a>
-                    </div>
+                    <p style="margin-bottom: 0;">The comprehensive route visiting every falla in the Special Section, optimized to minimize total walking distance and time.</p>
                 </div>
 
+                <div class="route-card">
+                    <h3><i class="fas fa-bolt" style="color: var(--accent);"></i> Route 2: Express Tour</h3>
+                    <div class="route-details">
+                        <div class="route-detail">
+                            <i class="fas fa-walking"></i>
+                            <span>Top-rated Fallas only</span>
+                        </div>
+                        <div class="route-detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Half-day experience</span>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 0;">A curated selection of the highest-rated monuments for visitors with limited time.</p>
+                </div>
+
+                <div class="route-card">
+                    <h3><i class="fas fa-map" style="color: var(--accent);"></i> Route 3: Neighborhood Focus</h3>
+                    <div class="route-details">
+                        <div class="route-detail">
+                            <i class="fas fa-walking"></i>
+                            <span>Clustered by area</span>
+                        </div>
+                        <div class="route-detail">
+                            <i class="fas fa-clock"></i>
+                            <span>Flexible timing</span>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 0;">Organized by neighborhood clusters, allowing visitors to explore specific areas of Valencia in depth.</p>
+                </div>
             </div>
 
             <!-- Media Coverage -->
-            <div class="section-block glass-card reveal">
+            <div class="section-block reveal">
                 <h2><i class="fas fa-newspaper"></i> Media Coverage</h2>
-                <p class="section-intro">
-                    The project gained significant media attention, being featured across major Spanish news outlets
-                    and generating widespread interest in the practical application of optimization algorithms to cultural events.
+                <p style="text-align: justify; margin-bottom: 2rem;">
+                    The project received widespread media attention from major Spanish news outlets,
+                    highlighting the intersection of academic research and cultural preservation.
                 </p>
 
                 <div class="media-grid">
                     <div class="media-item">
-                        <div class="media-icon">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
+                        <div class="media-icon"><i class="fas fa-newspaper"></i></div>
                         <div class="media-content">
                             <h4>Apunt Mèdia</h4>
                             <p>"The perfect route to visit all Fallas d'Especial according to a scientific study"</p>
@@ -227,9 +206,7 @@
                     </div>
 
                     <div class="media-item">
-                        <div class="media-icon">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
+                        <div class="media-icon"><i class="fas fa-newspaper"></i></div>
                         <div class="media-content">
                             <h4>El País</h4>
                             <p>"The perfect route to see the most outstanding Fallas in the shortest time possible according to an algorithm"</p>
@@ -241,9 +218,7 @@
                     </div>
 
                     <div class="media-item">
-                        <div class="media-icon">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
+                        <div class="media-icon"><i class="fas fa-newspaper"></i></div>
                         <div class="media-content">
                             <h4>Cadena SER</h4>
                             <p>"UPV students trace the perfect route to see the Fallas d'Especial"</p>
@@ -255,9 +230,7 @@
                     </div>
 
                     <div class="media-item">
-                        <div class="media-icon">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
+                        <div class="media-icon"><i class="fas fa-newspaper"></i></div>
                         <div class="media-content">
                             <h4>La Razón</h4>
                             <p>"This is the perfect route to see the Special Section Fallas in Valencia"</p>
@@ -269,9 +242,7 @@
                     </div>
 
                     <div class="media-item">
-                        <div class="media-icon">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
+                        <div class="media-icon"><i class="fas fa-newspaper"></i></div>
                         <div class="media-content">
                             <h4>Valencia Plaza</h4>
                             <p>"UPV students trace perfect route to see Special Fallas in minimum time"</p>
@@ -283,9 +254,7 @@
                     </div>
 
                     <div class="media-item">
-                        <div class="media-icon">
-                            <i class="fas fa-newspaper"></i>
-                        </div>
+                        <div class="media-icon"><i class="fas fa-newspaper"></i></div>
                         <div class="media-content">
                             <h4>Europa Press</h4>
                             <p>"UPV students trace the perfect route to see Special Fallas in the shortest time possible"</p>
@@ -299,7 +268,7 @@
             </div>
 
             <!-- Technical Implementation -->
-            <div class="section-block glass-card reveal">
+            <div class="section-block reveal">
                 <h2><i class="fas fa-tools"></i> Technical Implementation</h2>
                 <div class="tech-details">
                     <div class="tech-category">
@@ -309,7 +278,6 @@
                             <span class="tech-tag advanced">VBA</span>
                         </div>
                     </div>
-
                     <div class="tech-category">
                         <h3><i class="fas fa-brain"></i> Algorithms</h3>
                         <div class="tech-tags">
@@ -318,7 +286,6 @@
                             <span class="tech-tag advanced">Simulated Annealing</span>
                         </div>
                     </div>
-
                     <div class="tech-category">
                         <h3><i class="fas fa-chart-bar"></i> Visualization</h3>
                         <div class="tech-tags">
@@ -330,7 +297,7 @@
             </div>
 
             <!-- Project Significance -->
-            <div class="section-block glass-card reveal">
+            <div class="section-block reveal">
                 <h2><i class="fas fa-lightbulb"></i> Project Significance</h2>
                 <div style="text-align: justify;">
                     <p>
@@ -350,6 +317,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
+            <div class="ornate-divider" style="margin-bottom:1.5rem;"></div>
             <p>&copy; 2025 Javier Boix Campos. All rights reserved.</p>
         </div>
     </footer>
