@@ -402,4 +402,108 @@ document.addEventListener('DOMContentLoaded', () => {
     } catch (e) {
         console.error('Error initializing performance optimizations:', e);
     }
+
+    try {
+        loadPublications();
+        console.log('Publications loaded');
+    } catch (e) {
+        console.error('Error loading publications:', e);
+    }
 });
+
+// ===== LOAD PUBLICATIONS FROM JSON =====
+async function loadPublications() {
+    try {
+        const response = await fetch('publications.json');
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('Publications data loaded:', data);
+
+        // Load journal publications
+        const publicationContainers = document.querySelectorAll('.publication-list');
+        console.log('Found publication containers:', publicationContainers.length);
+
+        if (publicationContainers.length > 0 && data.publications) {
+            const journalContainer = publicationContainers[0];
+            journalContainer.innerHTML = ''; // Clear existing content
+
+            data.publications.forEach(pub => {
+                const pubItem = document.createElement('div');
+                pubItem.className = 'publication-item';
+
+                const authorsHTML = pub.authors.map(author => {
+                    return author === 'Boix-Campos J'
+                        ? `<strong>${author}</strong>`
+                        : author;
+                }).join(', ');
+
+                pubItem.innerHTML = `
+                    <div class="publication-year">${pub.year}</div>
+                    <div class="publication-details">
+                        <h4>${pub.title}</h4>
+                        <p class="authors">${authorsHTML}.</p>
+                        <p class="journal"><em>${pub.journal}</em>. ${pub.date};${pub.volume}(${pub.issue}):${pub.pages}.</p>
+                        <div class="publication-links">
+                            <a href="https://doi.org/${pub.doi}" class="publication-link" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> DOI: ${pub.doi}
+                            </a>
+                        </div>
+                    </div>
+                `;
+
+                journalContainer.appendChild(pubItem);
+            });
+            console.log(`Loaded ${data.publications.length} journal publications`);
+        }
+
+        // Load conference presentations
+        if (publicationContainers.length > 1 && data.conferences) {
+            const conferenceContainer = publicationContainers[1];
+            conferenceContainer.innerHTML = ''; // Clear existing content
+
+            data.conferences.forEach(conf => {
+                const confItem = document.createElement('div');
+                confItem.className = 'publication-item';
+
+                const authorsHTML = conf.authors.map(author => {
+                    return author === 'Boix-Campos J'
+                        ? `<strong>${author}</strong>`
+                        : author;
+                }).join(', ');
+
+                const extraInfo = conf.journal ? `<p class="journal">${conf.journal}</p>` : '';
+
+                confItem.innerHTML = `
+                    <div class="publication-year">${conf.year}</div>
+                    <div class="publication-details">
+                        <h4>${conf.title}</h4>
+                        <p class="authors">${authorsHTML}.</p>
+                        <p class="conference">${conf.conference}. ${conf.date}, ${conf.location}.</p>
+                        ${extraInfo}
+                    </div>
+                `;
+
+                conferenceContainer.appendChild(confItem);
+            });
+            console.log(`Loaded ${data.conferences.length} conference presentations`);
+        }
+    } catch (error) {
+        console.error('Error loading publications:', error);
+        console.error('Error details:', error.message);
+
+        // Show error message to user
+        const containers = document.querySelectorAll('.publication-list');
+        containers.forEach(container => {
+            container.innerHTML = `
+                <div style="padding: 2rem; text-align: center; color: var(--muted-foreground);">
+                    <p><i class="fas fa-exclamation-triangle"></i> Unable to load publications.</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Please ensure you are viewing this page through a web server (e.g., http://localhost) or check the browser console for details.</p>
+                </div>
+            `;
+        });
+    }
+}

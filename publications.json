@@ -1,0 +1,127 @@
+{
+  "publications": [
+    {
+      "type": "journal",
+      "year": 2026,
+      "title": "Trade-off between branching and polarity controls decision-making during cell migration",
+      "authors": ["Liu J", "Boix-Campos J", "Ron JE", "Kux JM", "Oremek MEM", "Rossi AG", "Gov NS", "Sáez PJ"],
+      "journal": "Science Advances",
+      "volume": "12",
+      "issue": "1",
+      "pages": "eads2734",
+      "date": "2026 Jan 2",
+      "doi": "10.1126/sciadv.ads2734"
+    },
+    {
+      "type": "journal",
+      "year": 2026,
+      "title": "Activating PRKG1 Variant Enhances Smooth Muscle Cell Deformability To Cause Aortopathy",
+      "authors": ["Jost ME", "Schweizer M", "Henning P", "Gorzelanny C", "Lehners M", "Ellinger B", "Boix-Campos J", "Kux JM", "Singh S", "Fachinger A", "Martinez Pomier K", "VanSchouwen B", "Billing AM", "Biedenweg D", "Schweizer M", "Siegel S", "Reimer R", "Brandt M", "Priesmeier L", "Fuchs U", "Pflaumenbaum J", "Nikolaev VO", "Newbury-Ecob R", "Wilsdon A", "Rybczynski M", "Gehle P", "Zelarayán LC", "Stafforst T", "Feil R", "Rinschen MM", "Pless O", "Eaton P", "Sáez PJ", "Otto O", "Melacini G", "Demal TJ", "Eschenhagen T", "Herberg FW", "Cuello F"],
+      "journal": "JACC: Basic to Translational Science",
+      "volume": "11",
+      "issue": "2",
+      "pages": "101452",
+      "date": "2026 Jan 15",
+      "doi": "10.1016/j.jacbts.2025.101452"
+    }
+  ],
+  "conferences": [
+    {
+      "year": 2025,
+      "title": "Lysosomal and calcium signaling regulation of leukocyte shape and migration",
+      "authors": ["López-López T", "Boix-Campos J", "Kabilka A", "Sáez PJ"],
+      "conference": "EMBO Workshop – From molecules to organisms: An integrative view of cell biology",
+      "date": "2025 March 16–21",
+      "location": "Radstadt, Austria"
+    },
+    {
+      "year": 2025,
+      "title": "ER stress disrupts membrane and mitochondria dynamics during cell migration",
+      "authors": ["Adler MR", "Boix-Campos J", "Kux JM", "Sáez PJ"],
+      "conference": "EMBO Workshop – From molecules to organisms: An integrative view of cell biology",
+      "date": "2025 March 16–21",
+      "location": "Radstadt, Austria"
+    },
+    {
+      "year": 2025,
+      "title": "ATP-Induced Lysosomal Calcium Signaling Regulates Dendritic Cell Shape and Migration",
+      "authors": ["López-López T", "Kabilka A", "Boix-Campos J", "Sáez PJ"],
+      "conference": "International Calcium Conference 2025",
+      "date": "2025",
+      "location": "Hamburg, Germany"
+    },
+    {
+      "year": 2025,
+      "title": "Mitochondrial dynamics control cancer cell migration",
+      "authors": ["Dutta S", "Boix-Campos J", "Sáez PJ"],
+      "conference": "Annual Congress of the European Association for Cancer Research (EACR 2025)",
+      "journal": "Molecular Oncology, 19(Suppl. 1), 272",
+      "date": "2025",
+      "location": "Location TBD"
+    },
+    {
+      "year": 2025,
+      "title": "MADAM: Metastasis-Associated Dynamics of Actin Movement",
+      "authors": ["Dutta S", "Boix-Campos J", "Sáez PJ"],
+      "conference": "SFB1348 Meeting 2025",
+      "date": "2025",
+      "location": "Münster, Germany"
+    },
+    {
+      "year": 2024,
+      "title": "Danger signal-specific regulation of leukocyte shape and migration",
+      "authors": ["López-López T", "Boix-Campos J", "Sáez PJ"],
+      "conference": "2nd European Purine Meeting",
+      "date": "2024 September 4–6",
+      "location": "Ferrara, Italy"
+    },
+    {
+      "year": 2024,
+      "title": "Decision making during cell migration",
+      "authors": ["Kux JM", "Palii S", "Boix-Campos J", "Gov NS", "Sáez PJ"],
+      "conference": "90th Harden Conference: European Cytoskeletal Forum – BSCB/Biochemical Society Cell Migration Meeting",
+      "date": "2024 April 15–18",
+      "location": "Birmingham, United Kingdom"
+    },
+    {
+      "year": 2024,
+      "title": "ER stress disrupts cytoskeleton and organelle dynamics during cell migration",
+      "authors": ["Adler MR", "Boix-Campos J", "Kux JM", "Sáez PJ"],
+      "conference": "90th Harden Conference: European Cytoskeletal Forum – BSCB/Biochemical Society Cell Migration Meeting",
+      "date": "2024 April 15–18",
+      "location": "Birmingham, United Kingdom"
+    },
+    {
+      "year": 2023,
+      "title": "ER stress disrupts actin and organelle dynamics during cell migration",
+      "authors": ["Adler MR", "López-López T", "Kux JM", "Boix-Campos J", "Sáez PJ"],
+      "conference": "4th Endoplasmic Reticulum International Symposium",
+      "date": "2023 October 4–6",
+      "location": "Paris, France"
+    },
+    {
+      "year": 2023,
+      "title": "New Methods for Image Analysis",
+      "authors": ["Boix-Campos J"],
+      "conference": "Kick-off Meeting Voltare Project HFSP (RGP0032/2022)",
+      "date": "2023 September 13–15",
+      "location": "Hamburg, Germany"
+    },
+    {
+      "year": 2023,
+      "title": "ER stress disruption of mitochondrial dynamics during cell migration",
+      "authors": ["Adler MR", "Boix-Campos J", "Kux JM", "Sáez PJ"],
+      "conference": "Kick-off Meeting Voltare Project HFSP (RGP0032/2022)",
+      "date": "2023 September 13–15",
+      "location": "Hamburg, Germany"
+    },
+    {
+      "year": 2023,
+      "title": "Differential danger signals modulation of cellular shape and motility in leukocytes",
+      "authors": ["López-López T", "Boix-Campos J", "Sáez PJ"],
+      "conference": "EMBL Conference",
+      "date": "2023 September",
+      "location": "Location TBD"
+    }
+  ]
+}
