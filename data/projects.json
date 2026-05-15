@@ -5,7 +5,7 @@
       "tagline": "Open index for interactive scientific publishing",
       "category": "Open Source",
       "status": "active",
-      "startDate": "2025",
+      "startDate": "2026",
       "endDate": null,
       "url": "https://vivum-pub.org",
       "description": "An open registry for interactive, web-native scientific articles with community peer review by threshold and citable DOIs via Zenodo. Authors self-publish at any URL and retain full ownership. The infrastructure Chris Olah identified as missing when Distill went on indefinite hiatus in 2021.",
@@ -60,7 +60,7 @@
       "tagline": "AI-powered health monitoring platform with meal recognition",
       "category": "Software",
       "status": "completed",
-      "startDate": "2024",
+      "startDate": "2025",
       "endDate": "2025",
       "url": "https://hippocrate-care.fr",
       "description": "A full-stack Django application deployed with Docker and Nginx. Features advanced nutritional algorithms, multi-API orchestration, and AI-driven meal recognition for systematic healthcare monitoring.",
@@ -68,14 +68,14 @@
     },
     {
       "name": "WhatsApp Chat Analyzer",
-      "tagline": "NLP-driven visualizations of behavioral chat patterns",
+      "tagline": "Statistics-driven visualizations of chat patterns",
       "category": "Data Science",
       "status": "completed",
       "startDate": "2023",
       "endDate": "2023",
       "url": "https://whatsapp-analysis-tool.streamlit.app/",
-      "description": "An interactive web application that parses WhatsApp chat histories to generate insightful visualizations. Built with Streamlit and Plotly, utilizing NLP techniques to identify communication trends.",
-      "keywords": ["PyTorch", "NLP", "Streamlit", "Plotly", "OpenCV"]
+      "description": "An interactive web application that parses WhatsApp chat histories to generate insightful visualizations. Built with Streamlit and Plotly, utilizing statistics techniques to identify communication trends.",
+      "keywords": ["PyTorch", "Statistics", "Streamlit", "Plotly", "OpenCV"]
     }
   ]
 }
