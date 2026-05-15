@@ -16,6 +16,14 @@
   --nav-h:       56px;
 }
 
+body.dark {
+  --bg:     #141412;
+  --text:   #e8e7e3;
+  --muted:  #6b6b66;
+  --border: #2a2a26;
+  --accent-faint: rgba(42,74,62,0.2);
+}
+
 /* ─────────────────────────────────────────
    RESET
 ───────────────────────────────────────── */
@@ -77,6 +85,23 @@ nav {
 
 .nav-links a:hover,
 .nav-links a.active { color: var(--text); }
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ─────────────────────────────────────────
    LAYOUT
