@@ -6,14 +6,6 @@
   <title>Research — Javier Boix Campos</title>
   <meta name="description" content="Publications, conference presentations, and talks by Javier Boix Campos.">
   <link rel="stylesheet" href="style.css">
-function toggleTheme() {
-  const dark = document.body.classList.toggle('dark');
-  localStorage.setItem('theme', dark ? 'dark' : 'light');
-}
-// Persist across pages
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark');
-}
 </head>
 <body>
 
@@ -145,5 +137,15 @@ if (localStorage.getItem('theme') === 'dark') {
     });
 </script>
 
+
+<script>
+  function toggleTheme() {
+    const dark = document.body.classList.toggle('dark');
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+  }
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+  }
+</script>
 </body>
 </html>
