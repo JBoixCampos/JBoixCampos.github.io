@@ -16,14 +16,6 @@
   --nav-h:       56px;
 }
 
-body.dark {
-  --bg:     #141412;
-  --text:   #e8e7e3;
-  --muted:  #6b6b66;
-  --border: #2a2a26;
-  --accent-faint: rgba(42,74,62,0.2);
-}
-
 /* ─────────────────────────────────────────
    RESET
 ───────────────────────────────────────── */
@@ -710,4 +702,26 @@ footer {
   .cv-dates   { margin-bottom: 4px; }
   .award-item { grid-template-columns: 1fr; }
   .award-cat  { margin-top: 4px; text-align: left; }
+}
+
+/* ── DARK MODE OVERRIDES ─────────────────── */
+body.dark {
+  --bg:           #141412;
+  --text:         #e8e7e3;
+  --muted:        #6b6b66;
+  --border:       #2a2a26;
+  --accent:       #6db89a;
+  --accent-faint: rgba(109,184,154,0.15);
+}
+
+body.dark .hero-name,
+body.dark .cv-name {
+  background: linear-gradient(135deg, #e8e7e3 45%, #6db89a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+body.dark .hero-divider {
+  background: linear-gradient(to right, #6db89a, transparent);
+  opacity: 0.4;
 }
