@@ -59,9 +59,9 @@
       "name": "Pain & Nutrition Tracker SaaS",
       "tagline": "AI-powered health monitoring platform with meal recognition",
       "category": "Software",
-      "status": "active",
+      "status": "completed",
       "startDate": "2024",
-      "endDate": null,
+      "endDate": "2025",
       "url": "https://hippocrate-care.fr",
       "description": "A full-stack Django application deployed with Docker and Nginx. Features advanced nutritional algorithms, multi-API orchestration, and AI-driven meal recognition for systematic healthcare monitoring.",
       "keywords": ["Django", "PostgreSQL", "Docker", "Python", "Healthcare AI"]
