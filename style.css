@@ -95,6 +95,15 @@ nav {
 }
 .theme-toggle:hover { color: var(--accent); border-color: var(--accent); }
 
+@media (max-width: 520px) {
+  .nav-links li:nth-child(4),  /* GitHub */
+  .nav-links li:nth-child(5) { /* Contact */
+    display: none;
+  }
+  
+  .nav-links { gap: 1rem; }
+}
+
 /* ─────────────────────────────────────────
    LAYOUT
 ───────────────────────────────────────── */
