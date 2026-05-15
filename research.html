@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research — Javier Boix Campos</title>
+  <meta name="description" content="Publications, conference presentations, and talks by Javier Boix Campos.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Javier Boix Campos</a>
+  <ul class="nav-links">
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="research.html" class="active">Research</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="https://github.com/JBoixCampos" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="mailto:javierboixcampos@gmail.com">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="page-wrap">
+
+  <section style="margin-bottom:56px">
+    <h1 style="font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);
+               font-weight:300;line-height:1.05;margin-bottom:0.4rem">
+      Research
+    </h1>
+    <p style="font-family:var(--serif);font-style:italic;color:var(--muted);
+              font-size:1.1rem;font-weight:300">
+      Publications, conferences &amp; talks
+    </p>
+  </section>
+
+  <!-- JOURNAL PAPERS -->
+  <section id="journals-section">
+    <p class="section-label">Journal Publications</p>
+    <ul class="pub-list" id="journals-list">
+      <li class="pub-item" style="color:var(--muted);font-size:0.9rem;font-weight:300">Loading…</li>
+    </ul>
+  </section>
+
+  <!-- CONFERENCES -->
+  <section id="conferences-section">
+    <p class="section-label">Conferences &amp; Talks</p>
+    <div id="conferences-list">
+      <p style="color:var(--muted);font-size:0.9rem;font-weight:300">Loading…</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="mailto:javierboixcampos@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/javier-boix-campos" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/JBoixCampos" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://bsky.app/profile/jboixcampos.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+  </div>
+  <span class="footer-copy">© 2026 Javier Boix Campos</span>
+</footer>
+
+<script>
+  const PUB_URL = './data/publications.json';
+
+  function hl(name) {
+    const n = name.trim();
+    return (n === 'Boix-Campos J' || n === 'Boix Campos J')
+      ? `<strong>${name}</strong>` : name;
+  }
+
+  function authors(arr) { return arr.map(hl).join(', '); }
+
+  function render(data) {
+    // ── Journals
+    const journals = data.publications.filter(p => p.type === 'journal');
+    document.getElementById('journals-list').innerHTML = journals.map(p => {
+      const venue = [
+        `<em>${p.journal}</em>`,
+        p.volume ? `${p.volume}` : null,
+        p.issue  ? `(${p.issue})`  : null,
+        p.pages  ? p.pages         : null,
+        p.date
+      ].filter(Boolean).join(', ');
+
+      return `
+        <li class="pub-item">
+          <p class="pub-title">${p.title}</p>
+          <p class="pub-authors">${authors(p.authors)}</p>
+          <p class="pub-venue">${venue}</p>
+          <a class="pub-doi" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">
+            doi:${p.doi}
+          </a>
+        </li>`;
+    }).join('');
+
+    // ── Conferences grouped by year (descending)
+    const byYear = data.conferences.reduce((acc, c) => {
+      (acc[c.year] = acc[c.year] || []).push(c);
+      return acc;
+    }, {});
+
+    const years = Object.keys(byYear).sort((a, b) => b - a);
+
+    document.getElementById('conferences-list').innerHTML = years.map(year => `
+      <div class="conf-year-group">
+        <p class="conf-year-label">${year}</p>
+        ${byYear[year].map(c => {
+          const loc = c.location && c.location !== 'Location TBD' ? ` · ${c.location}` : '';
+          return `
+            <div class="conf-item">
+              <p class="conf-title">${c.title}</p>
+              <p class="conf-authors">${authors(c.authors)}</p>
+              <p class="conf-event">${c.conference}</p>
+              <p class="conf-details">${c.date}${loc}</p>
+            </div>`;
+        }).join('')}
+      </div>
+    `).join('');
+  }
+
+  fetch(PUB_URL)
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(() => {
+      const msg = `<p style="color:var(--muted);font-size:0.9rem;font-weight:300">
+        Unable to load data. Make sure
+        <code style="font-size:0.85rem;background:var(--accent-faint);padding:1px 5px;border-radius:2px">data/publications.json</code>
+        is committed to your repository.
+      </p>`;
+      document.getElementById('journals-list').innerHTML = `<li class="pub-item">${msg}</li>`;
+      document.getElementById('conferences-list').innerHTML = msg;
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Javier Boix Campos</title>
+  <meta name="description" content="Independent projects by Javier Boix Campos — open source, community leadership, research, and freelance work.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-brand">Javier Boix Campos</a>
+  <ul class="nav-links">
+    <li><a href="projects.html" class="active">Projects</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="cv.html">CV</a></li>
+    <li><a href="https://github.com/JBoixCampos" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="mailto:javierboixcampos@gmail.com">Contact</a></li>
+  </ul>
+</nav>
+
+<main class="page-wrap">
+
+  <section style="margin-bottom:56px">
+    <h1 style="font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);
+               font-weight:300;line-height:1.05;margin-bottom:0.4rem">
+      Projects
+    </h1>
+    <p style="font-family:var(--serif);font-style:italic;color:var(--muted);
+              font-size:1.1rem;font-weight:300">
+      Open source, community, research &amp; freelance
+    </p>
+  </section>
+
+  <section>
+    <div class="projects-grid" id="projects-grid">
+      <!-- loaded dynamically -->
+      <p style="color:var(--muted);font-size:0.9rem;font-weight:300">Loading…</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="mailto:javierboixcampos@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/javier-boix-campos" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/JBoixCampos" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://bsky.app/profile/jboixcampos.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+  </div>
+  <span class="footer-copy">© 2026 Javier Boix Campos</span>
+</footer>
+
+<script>
+  const PROJ_URL = './data/projects.json';
+
+  function formatDates(p) {
+    if (!p.endDate) return p.startDate + ' – Present';
+    if (p.startDate === p.endDate) return p.startDate;
+    return `${p.startDate} – ${p.endDate}`;
+  }
+
+  function render(data) {
+    document.getElementById('projects-grid').innerHTML = data.projects.map(p => {
+      const isActive = p.status === 'active';
+      const linkHtml = p.url
+        ? `<a class="project-link" href="${p.url}" target="_blank" rel="noopener">
+             Visit →
+           </a>`
+        : '';
+
+      return `
+        <div class="project-card">
+          <div class="project-top">
+            <span class="project-category">${p.category}</span>
+            <span class="project-status">
+              <span class="project-status-dot ${isActive ? 'active' : ''}"></span>
+              ${isActive ? 'Active' : 'Completed'}
+            </span>
+          </div>
+          <h2 class="project-title">${p.name}</h2>
+          <p class="project-tagline">${p.tagline}</p>
+          <p class="project-dates">${formatDates(p)}</p>
+          <p class="project-desc">${p.description}</p>
+          <div class="project-keywords">
+            ${p.keywords.map(k => `<span class="project-keyword">${k}</span>`).join('')}
+          </div>
+          ${linkHtml}
+        </div>`;
+    }).join('');
+  }
+
+  fetch(PROJ_URL)
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(render)
+    .catch(() => {
+      document.getElementById('projects-grid').innerHTML = `
+        <p style="color:var(--muted);font-size:0.9rem;font-weight:300">
+          Unable to load projects. Make sure
+          <code style="font-size:0.85rem;background:var(--accent-faint);padding:1px 5px;border-radius:2px">data/projects.json</code>
+          is committed to your repository.
+        </p>`;
+    });
+</script>
+
+</body>
+</html>

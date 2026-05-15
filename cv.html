@@ -1,1084 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Javier Boix Campos - CV</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,400&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="https://www.svgrepo.com/show/396310/dna.svg" type="image/svg+xml">
-</head>
-<style>
-        /* ===== CSS VARIABLES ===== */
-        :root {
-            --background: #1C1714;
-            --background-alt: #251E19;
-            --foreground: #E8DFD4;
-            --muted: #3D332B;
-            --muted-foreground: #9C8B7A;
-            --border: #4A3F35;
-            --accent: #C9A962;
-            --accent-hover: #D4B872;
-            --accent-secondary: #8B2635;
-            --accent-foreground: #1C1714;
-            --brass-gradient: linear-gradient(180deg, #D4B872 0%, #C9A962 50%, #B8953F 100%);
-            --font-heading: 'Cormorant Garamond', serif;
-            --font-body: 'Crimson Pro', serif;
-            --font-display: 'Cinzel', serif;
-            --radius: 4px;
-            --base: 300ms ease-out;
-            --slow: 500ms ease-out;
-            --engraved: 1px 1px 1px rgba(0,0,0,0.4), -1px -1px 1px rgba(255,255,255,0.1);
-        }
-
-        /* ===== RESET ===== */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; font-size: 16px; }
-
-        body {
-            font-family: var(--font-body);
-            line-height: 1.625;
-            color: var(--foreground);
-            background: var(--background);
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-
-        /* Paper texture */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: 9998;
-            pointer-events: none;
-            opacity: 0.03;
-            mix-blend-mode: overlay;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-        }
-
-        /* Vignette */
-        body::after {
-            content: '';
-            position: fixed;
-            inset: 0;
-            z-index: 9997;
-            pointer-events: none;
-            background: radial-gradient(ellipse at center, transparent 0%, transparent 50%, rgba(28,23,20,0.4) 100%);
-        }
-
-        a { color: var(--accent); text-decoration: none; transition: color var(--base); }
-        a:hover { color: var(--accent-hover); }
-        a:focus-visible { outline: none; box-shadow: 0 0 0 2px var(--accent), 0 0 0 4px var(--background); border-radius: 2px; }
-
-        /* ===== NAVIGATION ===== */
-        .navbar {
-            position: fixed; top: 0; width: 100%;
-            background: rgba(28, 23, 20, 0.92);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-        }
-
-        .nav-container {
-            max-width: 1152px; margin: 0 auto; padding: 0.85rem 2rem;
-            display: flex; justify-content: space-between; align-items: center;
-        }
-
-        .nav-brand {
-            font-family: var(--font-heading); font-size: 1.35rem; font-weight: 400;
-            color: var(--accent); text-decoration: none;
-        }
-
-        .nav-menu { display: flex; list-style: none; gap: 1.75rem; }
-
-        .nav-menu a {
-            text-decoration: none; color: var(--muted-foreground);
-            font-family: var(--font-display); font-size: 0.575rem; font-weight: 500;
-            text-transform: uppercase; letter-spacing: 0.2em;
-            transition: color var(--base); position: relative;
-        }
-
-        .nav-menu a::after {
-            content: ''; position: absolute; bottom: -4px; left: 0;
-            width: 0; height: 1px; background: var(--accent); transition: width var(--base);
-        }
-
-        .nav-menu a:hover, .nav-menu a.active { color: var(--accent); }
-        .nav-menu a:hover::after, .nav-menu a.active::after { width: 100%; }
-
-        /* ===== CV CONTENT ===== */
-        .cv-container {
-            max-width: 1152px; margin: 0 auto;
-            padding: calc(80px + 3rem) 2rem 3rem;
-        }
-
-        /* ===== HEADER ===== */
-        .cv-header { margin-bottom: 3rem; }
-
-        .header-card {
-            background: var(--background-alt);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            position: relative;
-        }
-
-        .header-card::before, .header-card::after {
-            content: ""; position: absolute; width: 40px; height: 40px;
-            border: 2px solid var(--accent); opacity: 0.5; pointer-events: none; z-index: 2;
-        }
-        .header-card::before { top: -1px; left: -1px; border-right: none; border-bottom: none; }
-        .header-card::after { bottom: -1px; right: -1px; border-left: none; border-top: none; }
-
-        .header-content {
-            display: grid; grid-template-columns: 1fr auto;
-            gap: 3rem; align-items: start; padding: 3rem;
-        }
-
-        .personal-info h1 {
-            font-family: var(--font-heading); font-size: 3.25rem; font-weight: 400;
-            margin-bottom: 1rem; line-height: 1.1; color: var(--accent);
-        }
-
-        .cv-subtitle {
-            font-family: var(--font-body); font-size: 1.3rem;
-            color: var(--foreground); margin-bottom: 1.25rem; font-weight: 400; font-style: italic;
-        }
-
-        .cv-summary {
-            font-size: 1.05rem; color: var(--muted-foreground); line-height: 1.7; max-width: 600px;
-        }
-
-        .contact-info { display: grid; gap: 1rem; min-width: 280px; }
-
-        .contact-item {
-            display: flex; align-items: center; gap: 1rem; padding: 0.75rem;
-            border-radius: var(--radius); background: var(--background);
-            border: 1px solid var(--border); transition: border-color var(--base);
-        }
-
-        .contact-item:hover { border-color: rgba(201, 169, 98, 0.4); }
-
-        .contact-icon {
-            width: 48px; height: 48px;
-            display: flex; align-items: center; justify-content: center;
-            border: 1px solid rgba(201, 169, 98, 0.3);
-            border-radius: 50%;
-            background: var(--background);
-            flex-shrink: 0;
-        }
-
-        .contact-icon i {
-            color: var(--accent);
-            font-size: 1rem;
-        }
-
-        .contact-details { flex: 1; }
-
-        .contact-details strong {
-            font-family: var(--font-display); font-size: 0.55rem;
-            color: var(--accent); text-transform: uppercase; letter-spacing: 0.2em;
-            font-weight: 500; display: block; margin-bottom: 2px;
-        }
-
-        .contact-details a, .contact-details span {
-            color: var(--foreground); font-size: 0.95rem;
-        }
-
-        /* ===== SECTIONS ===== */
-        .cv-section { margin-bottom: 2.5rem; }
-
-        .section-card {
-            background: var(--background-alt); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 3rem;
-        }
-
-        .volume-label {
-            display: none;
-        }
-
-        .section-title {
-            display: flex; align-items: center; gap: 0.75rem;
-            font-family: var(--font-heading); font-size: 1.85rem; font-weight: 400;
-            color: var(--foreground); margin-bottom: 2rem; position: relative;
-            text-align: left;
-        }
-
-        .section-title i { color: var(--accent); font-size: 1.25rem; }
-
-        .section-title::after {
-            content: ''; position: absolute; bottom: -10px; left: 0;
-            width: 60px; height: 1px;
-            background: linear-gradient(90deg, var(--accent), transparent);
-        }
-
-        /* ===== TIMELINE ===== */
-        .timeline { position: relative; padding-left: 2.5rem; }
-
-        .timeline::before {
-            content: ''; position: absolute; left: 12px; top: 0; bottom: 0;
-            width: 1px; background: linear-gradient(180deg, var(--accent), var(--border), transparent);
-        }
-
-        .timeline-item {
-            position: relative; margin-bottom: 2rem;
-            background: var(--background); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 2rem;
-            transition: border-color var(--base), box-shadow var(--slow);
-        }
-
-        .timeline-item:hover {
-            border-color: rgba(201, 169, 98, 0.4);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-
-        .item-title {
-            font-family: var(--font-heading); font-size: 1.35rem; font-weight: 400;
-            color: var(--foreground); margin-bottom: 0.25rem;
-        }
-
-        .item-company {
-            font-family: var(--font-body); font-size: 1.05rem; font-weight: 400;
-            color: var(--accent); margin-bottom: 0.35rem; font-style: italic;
-        }
-
-        .item-details {
-            display: flex; gap: 1.5rem; margin-bottom: 1rem; flex-wrap: wrap;
-        }
-
-        .item-detail {
-            display: flex; align-items: center; gap: 0.4rem;
-            color: var(--muted-foreground); font-size: 0.85rem;
-        }
-
-        .item-detail i { color: var(--accent); font-size: 0.75rem; }
-
-        .item-description { color: var(--muted-foreground); line-height: 1.7; font-size: 1.02rem; }
-
-        /* Job highlights */
-        .job-highlights { list-style: none; margin: 1rem 0; padding: 0; }
-
-        .job-highlights li {
-            position: relative; padding-left: 1.5rem; margin-bottom: 0.75rem;
-            color: var(--muted-foreground); line-height: 1.7; font-size: 1rem;
-        }
-
-        .job-highlights li::before {
-            content: '❧'; position: absolute; left: 0; color: var(--accent);
-            font-size: 0.7rem; top: 0.25rem;
-        }
-
-        /* Experience badges */
-        .experience-header {
-            display: flex; justify-content: space-between;
-            align-items: flex-start; margin-bottom: 0.75rem; flex-wrap: wrap; gap: 0.75rem;
-        }
-
-        .experience-badge {
-            display: inline-flex; align-items: center; gap: 0.4rem;
-            padding: 0.35rem 0.75rem; border-radius: var(--radius);
-            font-family: var(--font-display); font-size: 0.5rem; font-weight: 500;
-            text-transform: uppercase; letter-spacing: 0.15em;
-        }
-
-        .startup-badge { background: rgba(201, 169, 98, 0.15); color: var(--accent); border: 1px solid rgba(201, 169, 98, 0.3); }
-        .industry-badge { background: rgba(139, 92, 246, 0.1); color: #b8a0d8; border: 1px solid rgba(139, 92, 246, 0.2); }
-        .research-badge { background: rgba(201, 169, 98, 0.08); color: var(--muted-foreground); border: 1px solid var(--border); }
-        .mentor-badge { background: rgba(201, 169, 98, 0.08); color: var(--accent); border: 1px solid rgba(201, 169, 98, 0.2); }
-        .academic-badge { background: rgba(139, 38, 53, 0.15); color: #c47a85; border: 1px solid rgba(139, 38, 53, 0.3); }
-        .intern-badge { background: rgba(201, 169, 98, 0.08); color: var(--muted-foreground); border: 1px solid var(--border); }
-
-        /* Tech stack in timeline */
-        .tech-stack-section {
-            display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;
-            margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border);
-        }
-
-        .tech-label {
-            font-family: var(--font-display); font-size: 0.55rem; text-transform: uppercase;
-            letter-spacing: 0.15em; color: var(--foreground);
-        }
-
-        .item-tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-        .item-tech-tags .tech-tag { padding: 0.3rem 0.7rem; font-size: 0.55rem; }
-
-        /* ===== TECH TAGS ===== */
-        .tech-tag {
-            font-family: var(--font-display); font-size: 0.525rem; text-transform: uppercase;
-            letter-spacing: 0.15em; padding: 0.35rem 0.8rem; border-radius: var(--radius);
-            background: var(--background); transition: all var(--base); cursor: default;
-        }
-
-        .tech-tag.advanced { border: 1px solid var(--accent); color: var(--accent); }
-        .tech-tag.intermediate { border: 1px solid var(--muted-foreground); color: var(--muted-foreground); }
-        .tech-tag.beginner { border: 1px solid var(--muted); color: #6B5D52; }
-
-        /* ===== SKILLS LEGEND ===== */
-        .skills-legend {
-            display: flex; justify-content: center; gap: 2rem;
-            padding: 0.75rem 1.5rem; background: var(--background);
-            border-radius: var(--radius); border: 1px solid var(--border);
-            margin-bottom: 2rem;
-        }
-
-        .legend-item {
-            display: flex; align-items: center; gap: 0.5rem;
-            font-family: var(--font-display); font-size: 0.525rem; text-transform: uppercase;
-            letter-spacing: 0.15em; color: var(--muted-foreground);
-        }
-
-        .legend-color { width: 12px; height: 12px; border-radius: 50%; border: 1px solid; }
-        .legend-color.advanced { background: var(--accent); border-color: var(--accent); }
-        .legend-color.intermediate { background: transparent; border-color: var(--muted-foreground); }
-        .legend-color.beginner { background: transparent; border-color: var(--muted); }
-
-        /* Tech grid */
-        .tech-grid {
-            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-        }
-
-        .tech-category {
-            background: var(--background); border: 1px solid var(--border);
-            border-radius: var(--radius); padding: 1.5rem; transition: border-color var(--base);
-        }
-
-        .tech-category:hover { border-color: rgba(201, 169, 98, 0.3); }
-
-        .tech-category h4 {
-            font-family: var(--font-heading); font-size: 1.05rem; font-weight: 400;
-            color: var(--foreground); margin-bottom: 0.75rem;
-            display: flex; align-items: center; gap: 0.5rem;
-        }
-
-        .tech-category h4 i { color: var(--accent); font-size: 0.8rem; }
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
-
-        /* ===== LANGUAGES ===== */
-        .languages-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;
-        }
-
-        .language-item {
-            text-align: center; padding: 2rem;
-            background: var(--background); border: 1px solid var(--border);
-            border-radius: var(--radius); transition: border-color var(--base);
-        }
-
-        .language-item:hover { border-color: rgba(201, 169, 98, 0.4); }
-
-        .language-name {
-            font-family: var(--font-heading); font-size: 1.25rem; font-weight: 400;
-            color: var(--accent); margin-bottom: 0.5rem;
-        }
-
-        .language-level { color: var(--muted-foreground); font-size: 0.95rem; line-height: 1.5; }
-
-        /* ===== CERTIFICATIONS ===== */
-        .certifications-category { margin-bottom: 2rem; }
-
-        .category-title {
-            font-family: var(--font-heading); font-size: 1.3rem; font-weight: 400;
-            color: var(--foreground); margin-bottom: 1rem;
-            display: flex; align-items: center; gap: 0.75rem;
-            padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
-        }
-
-        .category-title i { color: var(--accent); font-size: 1rem; }
-
-        .certifications-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 0.75rem;
-        }
-
-        .certification-item {
-            color: var(--muted-foreground); padding: 1rem; background: var(--background);
-            border: 1px solid var(--border); border-radius: var(--radius);
-            font-size: 0.92rem; transition: border-color var(--base); line-height: 1.5;
-        }
-
-        .certification-item:hover { border-color: rgba(201, 169, 98, 0.3); color: var(--foreground); }
-
-        /* ===== REVEAL ANIMATION ===== */
-        .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .header-content { grid-template-columns: 1fr; gap: 2rem; }
-            .contact-info { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); min-width: auto; }
-            .tech-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 768px) {
-            .cv-container { padding: calc(80px + 2rem) 1rem 2rem; }
-            .header-content, .section-card { padding: 1.5rem; }
-            .personal-info h1 { font-size: 2.25rem; }
-            .section-title { font-size: 1.5rem; }
-            .timeline { padding-left: 1.75rem; }
-            .item-details { flex-direction: column; gap: 0.5rem; }
-            .tech-grid { grid-template-columns: 1fr; }
-            .languages-grid, .certifications-grid { grid-template-columns: 1fr; }
-            .nav-menu { display: none; }
-            .skills-legend { gap: 1rem; padding: 0.5rem 1rem; }
-            .header-card::before, .header-card::after { width: 28px; height: 28px; }
-        }
-
-        /* ===== PRINT ===== */
-        @media print {
-            body { background: white !important; color: #2d3748 !important; }
-            body::before, body::after { display: none; }
-            .navbar { display: none !important; }
-            .cv-container { padding: 0; max-width: none; }
-            .header-card, .section-card { background: white !important; border: 1px solid #e2e8f0 !important; box-shadow: none !important; }
-            .header-card::before, .header-card::after { display: none; }
-            .personal-info h1, .section-title i, .category-title i { color: #1a365d !important; }
-            .item-company, .language-name { color: #2b6cb0 !important; }
-            .timeline::before { background: #cbd5e0 !important; }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV — Javier Boix Campos</title>
+  <meta name="description" content="Full curriculum vitae of Javier Boix Campos, ML Engineer.">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">Javier Boix Campos</div>
-            <ul class="nav-menu">
-                <li><a href="index.html#home">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#projects">Projects</a></li>
-                <li><a href="index.html#experience">Research</a></li>
-                <li><a href="index.html#publications">Publications</a></li>
-                <li><a href="index.html#developer-portfolio">Developer</a></li>
-                <li><a href="index.html#technologies">Skills</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav>
+  <a href="index.html" class="nav-brand">Javier Boix Campos</a>
+  <ul class="nav-links">
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="research.html">Research</a></li>
+    <li><a href="cv.html" class="active">CV</a></li>
+    <li><a href="https://github.com/JBoixCampos" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="mailto:javierboixcampos@gmail.com">Contact</a></li>
+  </ul>
+</nav>
 
-    <!-- CV Content -->
-    <div class="cv-container">
-        <!-- Header -->
-        <div class="cv-header reveal">
-            <div class="header-card">
-                <div class="header-content">
-                    <div class="personal-info">
-                        <h1>Javier Boix Campos</h1>
-                        <p class="cv-subtitle">AI for Healthcare &amp; Life Sciences</p>
-                        <p class="cv-summary">
-                            ML Engineer and Technical Leader specializing in AI applications for healthcare and life sciences. ML Engineer at Multiverse Computing and Bioinformatics Research Scientist at UKE Hamburg. I combine deep learning expertise with biotechnology domain knowledge.
-                        </p>
-                    </div>
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                            <div class="contact-details">
-                                <strong>Email</strong>
-                                <a href="mailto:javierboixcampos@gmail.com">javierboixcampos@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div class="contact-details">
-                                <strong>Location</strong>
-                                <span>Valencia, Spain</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
-                            <div class="contact-details">
-                                <strong>LinkedIn</strong>
-                                <a href="https://www.linkedin.com/in/javier-boix-campos" target="_blank">Javier Boix Campos</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<main class="page-wrap">
+  <div id="cv-root">
+    <p style="color:var(--muted);font-size:0.9rem;font-weight:300">Loading…</p>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-links">
+    <a href="mailto:javierboixcampos@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/javier-boix-campos" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/JBoixCampos" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://bsky.app/profile/jboixcampos.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+  </div>
+  <span class="footer-copy">© 2026 Javier Boix Campos</span>
+</footer>
+
+<script>
+  // ── Update this path if your repo structure differs
+  const CV_URL = './data/cv.json';
+
+  function renderCV(d) {
+    const { basics, work, education, skills, awards } = d;
+
+    const html = `
+      <!-- HEADER -->
+      <div class="cv-header">
+        <h1 class="cv-name">${basics.name}</h1>
+        <p class="cv-role">ML Engineer | Efficient AI &amp; Biomedical Applications</p>
+        <div class="cv-contacts">
+          <a href="mailto:${basics.email}">${basics.email}</a>
+          <a href="${basics.website}" target="_blank" rel="noopener">jboixcampos.github.io</a>
+          <span>${basics.location.address}</span>
+        </div>
+        <p class="cv-summary">${basics.summary}</p>
+        </div>
+
+      <!-- EXPERIENCE -->
+      <section>
+        <p class="section-label">Professional Experience</p>
+        <ul class="cv-items">
+          ${work.map(job => `
+            <li class="cv-item">
+              <div class="cv-dates">${job.startDate} &ndash; ${job.endDate}</div>
+              <div>
+                <p class="cv-institution">${job.company}</p>
+                <p class="cv-position">${job.position}</p>
+                <p class="cv-location">${job.location}</p>
+                <ul class="cv-highlights">
+                  ${job.highlights.map(h => `<li>${h}</li>`).join('')}
+                </ul>
+              </div>
+            </li>
+          `).join('')}
+        </ul>
+      </section>
+
+      <!-- EDUCATION -->
+      <section>
+        <p class="section-label">Education</p>
+        <ul class="cv-items">
+          ${education.map(e => `
+            <li class="cv-item">
+              <div class="cv-dates">${e.startDate} &ndash; ${e.endDate}</div>
+              <div>
+                <p class="cv-institution">${e.institution}</p>
+                <p class="cv-position">${e.studyType}</p>
+                <p class="cv-location">${e.location}</p>
+                <p style="font-size:0.9rem;font-weight:300;line-height:1.7;margin-top:8px">${e.summary}</p>
+              </div>
+            </li>
+          `).join('')}
+        </ul>
+      </section>
+
+      <!-- SKILLS -->
+      <section>
+        <p class="section-label">Technical Skills</p>
+        <div class="skills-grid">
+          ${skills.map(s => `
+            <div>
+              <p class="skill-group-name">${s.name}</p>
+              <div class="skill-tags">
+                ${s.keywords.filter(k => k).map(k => `<span class="skill-tag">${k}</span>`).join('')}
+              </div>
             </div>
+          `).join('')}
         </div>
+      </section>
 
-        <!-- Education -->
-        <div class="cv-section reveal">
-            <div class="section-card">
-                <span class="volume-label">Volume I</span>
-                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <h3 class="item-title">Master's in Data Analysis Engineering, Process Improvement and Decision Making</h3>
-                        <p class="item-company">Polytechnic University of Valencia (UPV)</p>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> Sep 2023 - Sep 2024</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Valencia, Spain</span>
-                            <span class="item-detail"><i class="fas fa-star"></i> Grade: 10.0/10.0</span>
-                        </div>
-                        <p class="item-description">
-                            Advanced study in data analysis engineering with focus on process optimization and decision-making methodologies. Specialized in machine learning, statistical modeling, and business intelligence applications.
-                        </p>
-                        <div style="margin-top: 1rem; padding: 1rem 1.25rem; background: rgba(201,169,98,0.08); border-radius: 4px; border-left: 3px solid var(--accent);">
-                            <p style="color: var(--accent); font-family: var(--font-heading); font-size: 1.05rem; margin-bottom: 0.5rem;">
-                                <i class="fas fa-trophy"></i> Valedictorian - Best Academic Record | Cum Laude in Master's Thesis
-                            </p>
-                            <p style="color: var(--muted-foreground); margin-bottom: 0.75rem; font-style: italic;">
-                                "Design, implantation and validation of neural networks for the retrospective analysis of the cellular world independent of staining."
-                            </p>
-                            <p style="color: var(--muted-foreground); font-size: 0.9rem;">
-                                <strong style="color: var(--foreground);">Academic Co-tutors:</strong><br>
-                                Professor Pablo J. Sáez<br>
-                                Professor Antonio José Sánchez Salmerón<br>
-                                Professor José Manuel Prats Montalbán
-                            </p>
-                        </div>
-                    </div>
+      <!-- AWARDS -->
+      <section>
+        <p class="section-label">${d.headings.awards || 'Certifications & Awards'}</p>
+        <ul class="awards-list">
+          ${awards.map(a => `
+            <li class="award-item">
+              <div>
+                <p class="award-title">${a.title}</p>
+                <p class="award-awarder">${a.awarder}</p>
+              </div>
+              <span class="award-cat">${a.category}</span>
+            </li>
+          `).join('')}
+        </ul>
+      </section>
+    `;
 
-                    <div class="timeline-item">
-                        <h3 class="item-title">Bachelor's in Biotechnology</h3>
-                        <p class="item-company">Polytechnic University of Valencia (UPV)</p>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> Sep 2018 - Jun 2022</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Valencia, Spain</span>
-                            <span class="item-detail"><i class="fas fa-star"></i> Grade: 9.8/10.0</span>
-                        </div>
-                        <p class="item-description">
-                            Comprehensive education in biotechnology encompassing molecular biology, genetics, bioprocessing, and bioengineering. Strong foundation in both theoretical principles and practical laboratory techniques.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    document.getElementById('cv-root').innerHTML = html;
+  }
 
-        <!-- Work Experience -->
-        <div class="cv-section reveal">
-            <div class="section-card">
-                <span class="volume-label">Volume II</span>
-                <h2 class="section-title"><i class="fas fa-briefcase"></i> Professional Experience</h2>
-                <div class="timeline">
-                    <div class="timeline-item">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="item-title">Machine Learning Engineer</h3>
-                                <p class="item-company">Multiverse Computing</p>
-                            </div>
-                            <span class="experience-badge startup-badge"><i class="fas fa-rocket"></i> Industry</span>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> 2025 - Present</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Spain (Hybrid)</span>
-                        </div>
-                        <ul class="job-highlights">
-                            <li>Act as tech lead on multiple client projects, developing tailored ML solutions for diverse industry challenges</li>
-                            <li>Compressed a computer vision model by 95% with no loss in accuracy, delivered one month ahead of deadline, cutting inference energy consumption by more than half</li>
-                        </ul>
-                        <div class="tech-stack-section">
-                            <span class="tech-label">Technologies:</span>
-                            <div class="item-tech-tags">
-                                <span class="tech-tag advanced">Python</span>
-                                <span class="tech-tag advanced">PyTorch</span>
-                                <span class="tech-tag advanced">Computer Vision</span>
-                                <span class="tech-tag advanced">Model Optimization</span>
-                            </div>
-                        </div>
-                    </div>
+  fetch(CV_URL)
+    .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(renderCV)
+    .catch(() => {
+      document.getElementById('cv-root').innerHTML = `
+        <p style="color:var(--muted);font-size:0.95rem;font-weight:300">
+          Unable to load CV data. Make sure
+          <code style="font-size:0.85rem;background:var(--accent-faint);padding:1px 5px;border-radius:2px">data/cv.json</code>
+          is committed to your repository.
+        </p>`;
+    });
+</script>
 
-                    <div class="timeline-item">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="item-title">Tech Lead</h3>
-                                <p class="item-company">Innovare Genetics</p>
-                            </div>
-                            <span class="experience-badge startup-badge"><i class="fas fa-rocket"></i> Startup</span>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> Oct 2024 - 2025</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Madrid, Spain (Hybrid)</span>
-                        </div>
-                        <ul class="job-highlights">
-                            <li>Architected genetic analysis platform from scratch, leading full technical development toward CE-IVD/MDR certification and commercial launch</li>
-                            <li>Designed and directed validation studies while preparing comprehensive technical documentation for CE-IVD/MDR regulatory pathway</li>
-                            <li>Built full-stack solutions including automated analysis pipelines, regulatory documentation systems, and external integrations</li>
-                        </ul>
-                        <div class="tech-stack-section">
-                            <span class="tech-label">Technologies:</span>
-                            <div class="item-tech-tags">
-                                <span class="tech-tag advanced">Python</span>
-                                <span class="tech-tag intermediate">AWS</span>
-                                <span class="tech-tag intermediate">Docker</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="item-title">Bioinformatics Research Scientist (Deep Learning)</h3>
-                                <p class="item-company">University Medical Center Hamburg-Eppendorf (UKE)</p>
-                            </div>
-                            <span class="experience-badge research-badge"><i class="fas fa-flask"></i> Research</span>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> Nov 2022 - Present</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Hamburg, Germany (Hybrid)</span>
-                        </div>
-                        <ul class="job-highlights">
-                            <li>Design and implement custom CNN architectures for automated analysis of cell microscopy images, reducing manual analysis time by 95%+</li>
-                            <li>Develop end-to-end deep learning pipelines for cell dynamics analysis, including image quality enhancement models</li>
-                            <li>Apply multivariate statistical methods (PCA, LASSO, ANOVA) to analyze migration patterns in HIV-infected cells</li>
-                        </ul>
-                        <div class="tech-stack-section">
-                            <span class="tech-label">Technologies:</span>
-                            <div class="item-tech-tags">
-                                <span class="tech-tag advanced">PyTorch</span>
-                                <span class="tech-tag advanced">TensorFlow</span>
-                                <span class="tech-tag advanced">OpenCV</span>
-                                <span class="tech-tag advanced">Python</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="item-title">AI Developer</h3>
-                                <p class="item-company">Elite Sports 17 S.L.</p>
-                            </div>
-                            <span class="experience-badge industry-badge"><i class="fas fa-industry"></i> Industry</span>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> Jul 2024 - Oct 2024</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Valencia, Spain</span>
-                        </div>
-                        <ul class="job-highlights">
-                            <li>Developed advanced machine learning pipelines for automated sports video analysis, implementing computer vision algorithms for player tracking</li>
-                        </ul>
-                        <div class="tech-stack-section">
-                            <span class="tech-label">Technologies:</span>
-                            <div class="item-tech-tags">
-                                <span class="tech-tag advanced">Python</span>
-                                <span class="tech-tag advanced">Computer Vision</span>
-                                <span class="tech-tag advanced">ML Pipelines</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="item-title">AI Mentor &amp; Project Evaluator</h3>
-                                <p class="item-company">Bankinter Innovation Foundation</p>
-                            </div>
-                            <span class="experience-badge mentor-badge"><i class="fas fa-chalkboard-teacher"></i> Mentorship</span>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> Oct 2023 - May 2025</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Remote</span>
-                        </div>
-                        <ul class="job-highlights">
-                            <li>Mentored student teams in Akademia program on AI algorithm development, focusing on systematic problem-solving and model architecture design</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="item-title">Scientific Intern</h3>
-                                <p class="item-company">Prince Felipe Research Center</p>
-                            </div>
-                            <span class="experience-badge research-badge"><i class="fas fa-flask"></i> Research</span>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> Nov 2021 - Jul 2022</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Valencia, Spain</span>
-                        </div>
-                        <ul class="job-highlights">
-                            <li>Conducted Bachelor's Thesis research on proteins involved in lung cancer metastatic processes</li>
-                            <li>Performed cell culture, western blots, proliferation and wound healing assays</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="item-title">PIAE+ Coordinator</h3>
-                                <p class="item-company">Polytechnic University of Valencia</p>
-                            </div>
-                            <span class="experience-badge academic-badge"><i class="fas fa-university"></i> Academic</span>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> Sep 2020 - Jul 2022</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Valencia, Spain</span>
-                        </div>
-                        <ul class="job-highlights">
-                            <li>Managed team coordination and database operations for the Comprehensive Student Accompaniment Program</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="item-title">Scientific Intern</h3>
-                                <p class="item-company">Institute for Plant Molecular and Cellular Biology</p>
-                            </div>
-                            <span class="experience-badge research-badge"><i class="fas fa-flask"></i> Research</span>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> Mar 2021 - Jul 2021</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Valencia, Spain</span>
-                        </div>
-                        <ul class="job-highlights">
-                            <li>Isolated genes involved in cell cycle regulation</li>
-                            <li>Performed genome extractions, cloning, and gene expression verification</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="item-title">Student Coordinator</h3>
-                                <p class="item-company">Institute of Molecular Recognition and Technological Development</p>
-                            </div>
-                            <span class="experience-badge research-badge"><i class="fas fa-flask"></i> Research</span>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> Mar 2021 - Apr 2021</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Valencia, Spain</span>
-                        </div>
-                        <ul class="job-highlights">
-                            <li>Coordinated validation trials for SARS-CoV-2 detection biosensors during the COVID-19 pandemic</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="item-title">Member of the Biotechnology Academic Committee</h3>
-                                <p class="item-company">Polytechnic University of Valencia</p>
-                            </div>
-                            <span class="experience-badge academic-badge"><i class="fas fa-university"></i> Academic</span>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> Oct 2019 - Jul 2022</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Valencia, Spain</span>
-                        </div>
-                        <ul class="job-highlights">
-                            <li>Collaborated on strategic decisions affecting the Biotechnology degree program</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="item-title">Speaker at the Open Days</h3>
-                                <p class="item-company">Polytechnic University of Valencia</p>
-                            </div>
-                            <span class="experience-badge academic-badge"><i class="fas fa-university"></i> Academic</span>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> 2021 - 2022</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Valencia, Spain</span>
-                        </div>
-                        <ul class="job-highlights">
-                            <li>Presented at university recruitment events, sharing academic experiences with prospective students</li>
-                        </ul>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="experience-header">
-                            <div>
-                                <h3 class="item-title">Private Tutor</h3>
-                                <p class="item-company">Freelance</p>
-                            </div>
-                            <span class="experience-badge mentor-badge"><i class="fas fa-chalkboard-teacher"></i> Mentorship</span>
-                        </div>
-                        <div class="item-details">
-                            <span class="item-detail"><i class="fas fa-calendar"></i> 2015 - 2025</span>
-                            <span class="item-detail"><i class="fas fa-map-marker-alt"></i> Valencia, Spain</span>
-                        </div>
-                        <ul class="job-highlights">
-                            <li>Provide personalized academic support for students from secondary school to university level</li>
-                            <li>Specialize in science and mathematics subjects</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Publications -->
-        <div class="cv-section reveal">
-            <div class="section-card">
-                <span class="volume-label">Volume III</span>
-                <h2 class="section-title"><i class="fas fa-book"></i> Publications</h2>
-
-                <div class="certifications-category">
-                    <h3 class="category-title"><i class="fas fa-book-open"></i> Peer-Reviewed Publications</h3>
-                    <div class="timeline-item" style="margin-bottom: 1.5rem;">
-                        <h4 class="item-title" style="font-size: 1.15rem;">Trade-off between branching and polarity controls decision-making during cell migration</h4>
-                        <p style="color: var(--muted-foreground); font-size: 0.95rem; margin-bottom: 0.5rem;">
-                            Liu J, <strong style="color: var(--accent);">Boix-Campos J</strong>, Ron JE, Kux JM, Oremek MEM, Rossi AG, Gov NS, Sáez PJ.
-                        </p>
-                        <p style="color: var(--foreground); font-style: italic; font-size: 0.9rem; margin-bottom: 0.5rem;">
-                            Science Advances. 2026 Jan 2;12(1):eads2734.
-                        </p>
-                        <a href="https://doi.org/10.1126/sciadv.ads2734" target="_blank" style="font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem;">
-                            <i class="fas fa-external-link-alt"></i> DOI: 10.1126/sciadv.ads2734
-                        </a>
-                    </div>
-
-                    <div class="timeline-item">
-                        <h4 class="item-title" style="font-size: 1.15rem;">Activating PRKG1 Variant Enhances Smooth Muscle Cell Deformability To Cause Aortopathy</h4>
-                        <p style="color: var(--muted-foreground); font-size: 0.95rem; margin-bottom: 0.5rem;">
-                            Jost ME, Schweizer M, Henning P, Gorzelanny C, Lehners M, Ellinger B, <strong style="color: var(--accent);">Boix-Campos J</strong>, Kux JM, Singh S, Fachinger A, Martinez Pomier K, VanSchouwen B, Billing AM, Biedenweg D, Schweizer M, Siegel S, Reimer R, Brandt M, Priesmeier L, Fuchs U, Pflaumenbaum J, Nikolaev VO, Newbury-Ecob R, Wilsdon A, Rybczynski M, Gehle P, Zelarayán LC, Stafforst T, Feil R, Rinschen MM, Pless O, Eaton P, Sáez PJ, Otto O, Melacini G, Demal TJ, Eschenhagen T, Herberg FW, Cuello F.
-                        </p>
-                        <p style="color: var(--foreground); font-style: italic; font-size: 0.9rem; margin-bottom: 0.5rem;">
-                            JACC: Basic to Translational Science. 2026 Jan 15;11(2):101452.
-                        </p>
-                        <a href="https://doi.org/10.1016/j.jacbts.2025.101452" target="_blank" style="font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.4rem;">
-                            <i class="fas fa-external-link-alt"></i> DOI: 10.1016/j.jacbts.2025.101452
-                        </a>
-                    </div>
-                </div>
-
-                <div class="certifications-category" style="margin-top: 2.5rem;">
-                    <h3 class="category-title"><i class="fas fa-users"></i> Conference Presentations</h3>
-
-                    <div class="certifications-grid">
-                        <div class="certification-item">
-                            <strong style="color: var(--foreground);">Lysosomal and calcium signaling regulation of leukocyte shape and migration</strong><br>
-                            López-López T, <strong style="color: var(--accent);">Boix-Campos J</strong>, Kabilka A, Sáez PJ.<br>
-                            <em>EMBO Workshop, Radstadt, Austria (2025)</em>
-                        </div>
-
-                        <div class="certification-item">
-                            <strong style="color: var(--foreground);">ER stress disrupts membrane and mitochondria dynamics during cell migration</strong><br>
-                            Adler MR, <strong style="color: var(--accent);">Boix-Campos J</strong>, Kux JM, Sáez PJ.<br>
-                            <em>EMBO Workshop, Radstadt, Austria (2025)</em>
-                        </div>
-
-                        <div class="certification-item">
-                            <strong style="color: var(--foreground);">ATP-Induced Lysosomal Calcium Signaling Regulates Dendritic Cell Shape and Migration</strong><br>
-                            López-López T, Kabilka A, <strong style="color: var(--accent);">Boix-Campos J</strong>, Sáez PJ.<br>
-                            <em>International Calcium Conference, Hamburg, Germany (2025)</em>
-                        </div>
-
-                        <div class="certification-item">
-                            <strong style="color: var(--foreground);">Mitochondrial dynamics control cancer cell migration</strong><br>
-                            Dutta S, <strong style="color: var(--accent);">Boix-Campos J</strong>, Sáez PJ.<br>
-                            <em>EACR 2025 - Molecular Oncology, 19(Suppl. 1), 272</em>
-                        </div>
-
-                        <div class="certification-item">
-                            <strong style="color: var(--foreground);">MADAM: Metastasis-Associated Dynamics of Actin Movement</strong><br>
-                            Dutta S, <strong style="color: var(--accent);">Boix-Campos J</strong>, Sáez PJ.<br>
-                            <em>SFB1348 Meeting, Münster, Germany (2025)</em>
-                        </div>
-
-                        <div class="certification-item">
-                            <strong style="color: var(--foreground);">Danger signal-specific regulation of leukocyte shape and migration</strong><br>
-                            López-López T, <strong style="color: var(--accent);">Boix-Campos J</strong>, Sáez PJ.<br>
-                            <em>2nd European Purine Meeting, Ferrara, Italy (2024)</em>
-                        </div>
-
-                        <div class="certification-item">
-                            <strong style="color: var(--foreground);">Decision making during cell migration</strong><br>
-                            Kux JM, Palii S, <strong style="color: var(--accent);">Boix-Campos J</strong>, Gov NS, Sáez PJ.<br>
-                            <em>90th Harden Conference, Birmingham, UK (2024)</em>
-                        </div>
-
-                        <div class="certification-item">
-                            <strong style="color: var(--foreground);">ER stress disrupts cytoskeleton and organelle dynamics during cell migration</strong><br>
-                            Adler MR, <strong style="color: var(--accent);">Boix-Campos J</strong>, Kux JM, Sáez PJ.<br>
-                            <em>90th Harden Conference, Birmingham, UK (2024)</em>
-                        </div>
-
-                        <div class="certification-item">
-                            <strong style="color: var(--foreground);">ER stress disrupts actin and organelle dynamics during cell migration</strong><br>
-                            Adler MR, López-López T, Kux JM, <strong style="color: var(--accent);">Boix-Campos J</strong>, Sáez PJ.<br>
-                            <em>4th ER International Symposium, Paris, France (2023)</em>
-                        </div>
-
-                        <div class="certification-item">
-                            <strong style="color: var(--foreground);">New Methods for Image Analysis</strong><br>
-                            <strong style="color: var(--accent);">Boix-Campos J</strong>.<br>
-                            <em>Kick-off Meeting Voltare Project HFSP (RGP0032/2022), Hamburg, Germany (2023)</em>
-                        </div>
-
-                        <div class="certification-item">
-                            <strong style="color: var(--foreground);">ER stress disruption of mitochondrial dynamics during cell migration</strong><br>
-                            Adler MR, <strong style="color: var(--accent);">Boix-Campos J</strong>, Kux JM, Sáez PJ.<br>
-                            <em>Kick-off Meeting Voltare Project HFSP, Hamburg, Germany (2023)</em>
-                        </div>
-
-                        <div class="certification-item">
-                            <strong style="color: var(--foreground);">Differential danger signals modulation of cellular shape and motility in leukocytes</strong><br>
-                            López-López T, <strong style="color: var(--accent);">Boix-Campos J</strong>, Sáez PJ.<br>
-                            <em>EMBL Conference (2023)</em>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Technologies & Skills -->
-        <div class="cv-section reveal">
-            <div class="section-card">
-                <span class="volume-label">Volume IV</span>
-                <h2 class="section-title"><i class="fas fa-layer-group"></i> Technologies &amp; Skills</h2>
-                <div class="skills-legend">
-                    <span class="legend-item"><span class="legend-color advanced"></span> Advanced</span>
-                    <span class="legend-item"><span class="legend-color intermediate"></span> Intermediate</span>
-                    <span class="legend-item"><span class="legend-color beginner"></span> Beginner</span>
-                </div>
-                <div class="tech-grid">
-                    <div class="tech-category">
-                        <h4><i class="fas fa-code"></i> Programming</h4>
-                        <div class="tech-tags">
-                            <span class="tech-tag advanced">Python</span>
-                            <span class="tech-tag advanced">R</span>
-                            <span class="tech-tag advanced">VBA</span>
-                            <span class="tech-tag intermediate">JavaScript</span>
-                            <span class="tech-tag intermediate">HTML/CSS</span>
-                            <span class="tech-tag beginner">SQL</span>
-                        </div>
-                    </div>
-                    <div class="tech-category">
-                        <h4><i class="fas fa-brain"></i> AI &amp; Data Science</h4>
-                        <div class="tech-tags">
-                            <span class="tech-tag advanced">Neural Networks</span>
-                            <span class="tech-tag advanced">Machine Learning</span>
-                            <span class="tech-tag advanced">Statistical Analysis</span>
-                            <span class="tech-tag advanced">Image Processing</span>
-                            <span class="tech-tag intermediate">Optimization</span>
-                            <span class="tech-tag beginner">NLP</span>
-                        </div>
-                    </div>
-                    <div class="tech-category">
-                        <h4><i class="fas fa-fire"></i> Frameworks</h4>
-                        <div class="tech-tags">
-                            <span class="tech-tag advanced">TensorFlow/PyTorch</span>
-                            <span class="tech-tag advanced">Plotly</span>
-                            <span class="tech-tag advanced">Shiny</span>
-                            <span class="tech-tag intermediate">Streamlit</span>
-                            <span class="tech-tag beginner">Three.js</span>
-                            <span class="tech-tag beginner">GSAP</span>
-                        </div>
-                    </div>
-                    <div class="tech-category">
-                        <h4><i class="fas fa-cloud"></i> Cloud &amp; DevOps</h4>
-                        <div class="tech-tags">
-                            <span class="tech-tag intermediate">AWS</span>
-                            <span class="tech-tag intermediate">OVH</span>
-                            <span class="tech-tag intermediate">Git</span>
-                            <span class="tech-tag intermediate">Linux</span>
-                            <span class="tech-tag beginner">Docker</span>
-                            <span class="tech-tag beginner">CI/CD</span>
-                        </div>
-                    </div>
-                    <div class="tech-category">
-                        <h4><i class="fas fa-tools"></i> Tools</h4>
-                        <div class="tech-tags">
-                            <span class="tech-tag advanced">Excel</span>
-                            <span class="tech-tag advanced">Jupyter</span>
-                            <span class="tech-tag advanced">RStudio</span>
-                            <span class="tech-tag advanced">ImageJ/FIJI</span>
-                            <span class="tech-tag intermediate">Power BI</span>
-                            <span class="tech-tag intermediate">GitHub</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Languages -->
-        <div class="cv-section reveal">
-            <div class="section-card">
-                <span class="volume-label">Volume V</span>
-                <h2 class="section-title"><i class="fas fa-globe"></i> Languages</h2>
-                <div class="languages-grid">
-                    <div class="language-item">
-                        <div class="language-name">Spanish</div>
-                        <div class="language-level">Native Speaker</div>
-                    </div>
-                    <div class="language-item">
-                        <div class="language-name">Valencian</div>
-                        <div class="language-level">Native Speaker</div>
-                    </div>
-                    <div class="language-item">
-                        <div class="language-name">English</div>
-                        <div class="language-level">TOEFL iBT Score: 105/120<br>[Cambridge Equivalent: C2]</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Certifications -->
-        <div class="cv-section reveal">
-            <div class="section-card">
-                <span class="volume-label">Volume VI</span>
-                <h2 class="section-title"><i class="fas fa-certificate"></i> Licenses and Certifications</h2>
-                
-                <div class="certifications-category">
-                    <h3 class="category-title"><i class="fas fa-robot"></i> AI and Data Science</h3>
-                    <div class="certifications-grid">
-                        <div class="certification-item">Artificial Intelligence and Productivity (Google)</div>
-                        <div class="certification-item">Applicability of AI and Quantum Computing (Akademia Bankinter)</div>
-                        <div class="certification-item">Basic Python Concepts for Data Science (IBM)</div>
-                        <div class="certification-item">Python Essentials (IBM)</div>
-                    </div>
-                </div>
-
-                <div class="certifications-category">
-                    <h3 class="category-title"><i class="fas fa-chart-bar"></i> Business and Productivity</h3>
-                    <div class="certifications-grid">
-                        <div class="certification-item">PowerBI for Business (UPV)</div>
-                        <div class="certification-item">Excel: Fundamentals and Tools (UPV)</div>
-                        <div class="certification-item">Excel: Data Management (UPV)</div>
-                        <div class="certification-item">Word: Formatting and Productivity Tools (UPV)</div>
-                    </div>
-                </div>
-
-                <div class="certifications-category">
-                    <h3 class="category-title"><i class="fas fa-dna"></i> Health and Ethics</h3>
-                    <div class="certifications-grid">
-                        <div class="certification-item">Bioethics: Law, Medicine, and Ethics of Genetics and Reproductive Technologies (Harvard)</div>
-                        <div class="certification-item">Nutrition and Cancer (Wageningen)</div>
-                        <div class="certification-item">Viruses and How to Beat Them. Cells, Immunity, and Vaccines (Tel Aviv)</div>
-                        <div class="certification-item">Scientific Manuscripts Reviewing (American Chemical Society)</div>
-                    </div>
-                </div>
-
-                <div class="certifications-category">
-                    <h3 class="category-title"><i class="fas fa-users"></i> Professional Development</h3>
-                    <div class="certifications-grid">
-                        <div class="certification-item">Attendee at the Annual Biotechnology Congress 2022 (BAC 2022) - FEBiotec</div>
-                        <div class="certification-item">Attendee at the Biomedical Research Congress 2020 (CIB 2020) - CIB</div>
-                        <div class="certification-item">Effective Time Management (UPV)</div>
-                        <div class="certification-item">Teamwork Keys (UPV)</div>
-                        <div class="certification-item">Scientific Information Retrieval (UPV)</div>
-                    </div>
-                </div>
-
-                <div class="certifications-category">
-                    <h3 class="category-title"><i class="fas fa-cogs"></i> Miscellaneous</h3>
-                    <div class="certifications-grid">
-                        <div class="certification-item">Driving License B (DGT)</div>
-                        <div class="certification-item">Cruise Sailing Navigation (GVA)</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Scroll reveal
-        function initScrollReveal() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) entry.target.classList.add('active');
-                });
-            }, { threshold: 0.1 });
-
-            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        }
-
-        document.addEventListener('DOMContentLoaded', initScrollReveal);
-    </script>
 </body>
 </html>

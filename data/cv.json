@@ -1,0 +1,227 @@
+{
+  "selectedTemplate": 1,
+  "headings": {
+    "education": "Education",
+    "awards": "Key Certifications",
+    "work": "Professional Experience",
+    "projects": "Projects",
+    "skills": "Technical Skills"
+  },
+  "basics": {
+    "name": "Javier Boix Campos",
+    "email": "javierboixcampos@gmail.com",
+    "phone": "+34 628653263",
+    "website": "https://jboixcampos.github.io/",
+    "location": {
+      "address": "Spain"
+    },
+    "summary": "As an ML Engineer at Multiverse Computing, I compressed a computer vision model +95% without accuracy loss and created a key commercial asset for the company. Previously a Bioinformatics Research Scientist at UKE Hamburg with publications in Science Advances and JACC, I am the incoming Curator of the WEF Valencia Hub and creator of Vivum. I graduated as Valedictorian of my Master’s in Data Analysis (10.0/10.0) and top of my class in Biotechnology (9.8/10.0) at UPV.",
+    "label": "ML Engineer | Efficient AI & Biomedical Applications"
+  },
+  "education": [
+    {
+      "institution": "Polytechnic University of Valencia (UPV)",
+      "studyType": "Master's in Data Analysis Engineering, Process Improvement and Decision Making",
+      "startDate": "Sep 2023",
+      "endDate": "Sep 2024",
+      "location": "Valencia, Spain",
+      "summary": "Grade: 10.0/10.0 — Valedictorian (Best Academic Record of the Cohort). Advanced study in data analysis engineering with specialisation in machine learning, statistical modelling, optimisation algorithms, and business intelligence. Awarded Best Student by ValgrAI for academic excellence."
+    },
+    {
+      "institution": "Polytechnic University of Valencia (UPV)",
+      "studyType": "Bachelor's in Biotechnology",
+      "startDate": "Sep 2018",
+      "endDate": "Jun 2022",
+      "location": "Valencia, Spain",
+      "summary": "Grade: 9.8/10.0 — Top of Class. Comprehensive education encompassing molecular biology, genetics, bioprocessing, and bioengineering. Thesis on lung cancer metastatic mechanisms conducted at Prince Felipe Research Center."
+    }
+  ],
+  "work": [
+    {
+      "company": "Multiverse Computing",
+      "position": "ML Engineer",
+      "startDate": "Dec 2025",
+      "endDate": "Present",
+      "location": "Madrid, Spain",
+      "website": "",
+      "highlights": [
+        "Compressed a proprietary computer vision model from 258 MB to 8 MB (96.8%) using quantum-inspired tensorization and quantization — 1.91× throughput, 49% less energy per inference, SSIM 0.97 validated on 20,780 samples. Delivered one month ahead of deadline; published on the company blog and became a commercial selling point.",
+        "Developed state-of-the-art ML pipelines for optimising and evaluating neural network models across multiple concurrent projects."
+      ]
+    },
+    {
+      "company": "University Medical Center Hamburg-Eppendorf (UKE)",
+      "position": "Bioinformatics Research Scientist (Deep Learning) — Sáez Lab",
+      "startDate": "Jan 2023",
+      "endDate": "Dec 2025",
+      "location": "Hamburg, Germany (Hybrid)",
+      "website": "",
+      "highlights": [
+        "Designed and implemented custom CNN architectures for automated analysis of cell microscopy images, enabling quantitative study of cell migration patterns in complex biological networks.",
+        "Developed end-to-end deep learning pipelines for cell dynamics analysis, including image quality enhancement models, directional migration tracking, and mitochondria quantification systems.",
+        "Applied multivariate statistical methods (PCA, LASSO, ANOVA) to analyse migration patterns in HIV-infected cells, processing thousands of time-lapse microscopy images to identify significant biological patterns.",
+        "Built automated analysis tools that reduce manual image analysis time by 95%+ while improving measurement consistency and reproducibility across experimental conditions."
+      ]
+    },
+    {
+      "company": "Innovare Genetics",
+      "position": "Tech Lead",
+      "startDate": "Oct 2024",
+      "endDate": "Dec 2025",
+      "location": "Madrid, Spain (Hybrid)",
+      "website": "",
+      "highlights": [
+        "Architected genetic analysis platform from scratch, leading full development lifecycle from research toward CE-IVD/MDR certification and commercial launch.",
+        "Built full-stack solutions including automated analysis pipelines, regulatory documentation systems, and external integrations, establishing the technical foundation for the company's product roadmap.",
+        "Led cross-functional coordination with clinical validators and regulatory bodies to ensure European medical device compliance, managing technical requirements for the CE-IVD/MDR certification process.",
+        "Drove technical strategy and product roadmap planning while managing stakeholder communications and delivery timelines for multi-phase product development."
+      ]
+    },
+    {
+      "company": "Elite Sports 17 S.L.",
+      "position": "AI Developer",
+      "startDate": "Jul 2024",
+      "endDate": "Oct 2024",
+      "location": "Valencia, Spain",
+      "website": "",
+      "highlights": [
+        "Developed machine learning pipelines for automated sports match analysis, implementing computer vision algorithms for player tracking and performance metrics extraction.",
+        "Built data processing infrastructure to handle real-time video analysis, delivering actionable insights to coaching staff and improving team analytics capabilities."
+      ]
+    },
+    {
+      "company": "Prince Felipe Research Center (CIPF)",
+      "position": "Research Intern — Oncogenic Signaling Lab",
+      "startDate": "Nov 2021",
+      "endDate": "Jul 2022",
+      "location": "Valencia, Spain",
+      "website": "",
+      "highlights": [
+        "Conducted Bachelor's Thesis research on proteins involved in lung cancer metastatic processes, investigating molecular mechanisms driving cancer progression on H1395 cells.",
+        "Performed cell culture, western blots, proliferation and wound healing assays across multiple cell lines to characterise protein expression and functional effects."
+      ]
+    },
+    {
+      "company": "Institute for Plant Molecular and Cellular Biology (IBMCP)",
+      "position": "Research Intern — Genomics Lab",
+      "startDate": "Mar 2021",
+      "endDate": "Jul 2021",
+      "location": "Valencia, Spain",
+      "website": "",
+      "highlights": [
+        "Isolated and characterised CYCD3;1 gene from Arabidopsis thaliana for cell cycle regulation studies under acid stress conditions.",
+        "Performed genome extractions, molecular cloning (restriction enzyme and Gateway systems), and qRT-PCR for gene expression verification."
+      ]
+    },
+    {
+      "company": "Polytechnic University of Valencia",
+      "position": "Operations Coordinator (PIAE+ Program)",
+      "startDate": "Sep 2020",
+      "endDate": "Jul 2022",
+      "location": "Valencia, Spain",
+      "website": "",
+      "highlights": [
+        "Managed end-to-end coordination of student accompaniment programme involving 2,000+ students, coordinating workshops, onboarding events, and academic support initiatives.",
+        "Optimised operational workflows and database management systems, improving process efficiency and student satisfaction metrics."
+      ]
+    },
+    {
+      "company": "Polytechnic University of Valencia",
+      "position": "Member of Biotechnology Academic Committee",
+      "startDate": "Oct 2019",
+      "endDate": "Jul 2022",
+      "location": "Valencia, Spain",
+      "website": "",
+      "highlights": [
+        "Collaborated with faculty and administration on strategic decisions affecting the Biotechnology degree programme, including curriculum development and policy enhancement."
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Programming Languages",
+      "level": "",
+      "keywords": ["Python", "R", "SQL", "JavaScript", "VBA", "HTML/CSS"]
+    },
+    {
+      "name": "AI & Machine Learning",
+      "level": "",
+      "keywords": ["Deep Learning", "CNNs", "Computer Vision", "Model Compression", "Statistical Modelling"]
+    },
+    {
+      "name": "ML Frameworks & Libraries",
+      "level": "",
+      "keywords": ["TensorFlow", "PyTorch", "Scikit-learn", "Pandas", "NumPy", "OpenCV"]
+    },
+    {
+      "name": "Data Visualisation & BI",
+      "level": "",
+      "keywords": ["Plotly", "Shiny", "Streamlit", "Power BI", "Matplotlib", "Seaborn"]
+    },
+    {
+      "name": "Cloud & DevOps",
+      "level": "",
+      "keywords": ["AWS", "Docker", "Git/GitHub", "Linux"]
+    },
+    {
+      "name": "Biotech & Research",
+      "level": "",
+      "keywords": ["Bioinformatics", "Genomic Analysis", "Microscopy Image Analysis", "Cell Biology"]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Vivum — Open Index for Interactive Scientific Publishing",
+      "url": "https://vivum-pub.org",
+      "description": "Built the infrastructure Chris Olah identified as missing when Distill went on hiatus: an open registry for web-native scientific articles with community peer review by threshold and citable DOIs via Zenodo. Authors self-publish at any URL and retain full ownership.",
+      "keywords": ["Python", "JavaScript", "Open Source", "Scientific Publishing"]
+    },
+    {
+      "name": "Valencia Fallas Route Optimization",
+      "url": "https://jboixcampos.github.io/fallas-project-details.html",
+      "description": "Applied metaheuristics algorithms to optimise walking routes for visiting Valencia's Fallas festival. Featured in local media coverage.",
+      "keywords": ["Python", "Optimisation", "VBA", "Metaheuristics"]
+    }
+  ],
+  "awards": [
+    {
+      "title": "Best Student Award — Master's Degree (Valedictorian)",
+      "awarder": "ValgrAI & Polytechnic University of Valencia",
+      "category": "Academic Excellence"
+    },
+    {
+      "title": "Scientific Manuscript Reviewing Certification",
+      "awarder": "American Chemical Society",
+      "category": "Research & Academia"
+    },
+    {
+      "title": "Bioethics: Law, Medicine, and Ethics of Genetics and Reproductive Technologies",
+      "awarder": "Harvard University",
+      "category": "Healthcare & Ethics"
+    },
+    {
+      "title": "Python for Data Science",
+      "awarder": "IBM",
+      "category": "Technical Certification"
+    },
+    {
+      "title": "Power BI for Business",
+      "awarder": "UPV",
+      "category": "Business Intelligence"
+    },
+    {
+      "title": "Excel: Advanced Data Management",
+      "awarder": "UPV",
+      "category": "Data Analysis"
+    }
+  ],
+  "sections": [
+    "templates",
+    "profile",
+    "education",
+    "work",
+    "skills",
+    "projects",
+    "awards"
+  ]
+}
