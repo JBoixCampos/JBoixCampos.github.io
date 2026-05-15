@@ -20,6 +20,16 @@
   <meta property="og:type" content="website">
   <link rel="canonical" href="https://jboixcampos.github.io">
   <link rel="stylesheet" href="style.css">
+
+function toggleTheme() {
+  const dark = document.body.classList.toggle('dark');
+  localStorage.setItem('theme', dark ? 'dark' : 'light');
+}
+// Persist across pages
+if (localStorage.getItem('theme') === 'dark') {
+  document.body.classList.add('dark');
+}
+
 </head>
 <body>
 
@@ -32,6 +42,9 @@
     <li><a href="https://github.com/JBoixCampos" target="_blank" rel="noopener">GitHub</a></li>
     <li><a href="mailto:javierboixcampos@gmail.com">Contact</a></li>
   </ul>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+  <span class="theme-icon">◐</span>
+</button>
 </nav>
 
 <main class="page-wrap">
