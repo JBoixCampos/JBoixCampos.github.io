@@ -23,17 +23,6 @@
       "keywords": ["WEF", "Community", "Leadership", "Valencia"]
     },
     {
-      "name": "Valencia Fallas Route Optimization",
-      "tagline": "Metaheuristics for festival route planning, featured in local media",
-      "category": "Scientific Outreach",
-      "status": "completed",
-      "startDate": "2024",
-      "endDate": "2024",
-      "url": null,
-      "description": "Applied metaheuristics algorithms to optimise walking routes for visiting Valencia's Fallas festival — a network of 800+ monuments spread across the city. The project attracted local media coverage and demonstrated how combinatorial optimisation applies to real-world civic problems.",
-      "keywords": ["Python", "Optimisation", "VBA", "Metaheuristics"]
-    },
-    {
       "name": "Bankinter Innovation Foundation",
       "tagline": "AI Mentor & Project Evaluator",
       "category": "Mentorship",
@@ -41,8 +30,19 @@
       "startDate": "Oct 2023",
       "endDate": null,
       "url": "https://www.fundacionbankinter.org",
-      "description": "Mentored student teams in the Akademia programme (2023–2025) on AI algorithm development and model architecture. Currently serving on the 2026 expert panel to evaluate project proposals for innovation potential and technical viability.",
+      "description": "Mentored student teams in the Akademia programme (2023–2025) on AI algorithm development and model architecture. Currently serving on the 2026 expert panel to evaluate project proposals.",
       "keywords": ["AI", "Mentorship", "Innovation", "Evaluation"]
+    },
+    {
+      "name": "Valencia Fallas Route Optimization",
+      "tagline": "Metaheuristics for festival route planning, featured in local media",
+      "category": "Research",
+      "status": "completed",
+      "startDate": "2024",
+      "endDate": "2024",
+      "url": "https://jboixcampos.github.io/fallas-project-details.html",
+      "description": "Applied metaheuristics algorithms to optimise walking routes for visiting Valencia's Fallas festival — a network of 800+ monuments spread across the city. The project attracted local media coverage and demonstrated how combinatorial optimisation applies to real-world civic problems.",
+      "keywords": ["Python", "Optimisation", "VBA", "Metaheuristics"]
     },
     {
       "name": "Freelance AI/ML Consulting",
@@ -52,8 +52,30 @@
       "startDate": "2023",
       "endDate": null,
       "url": null,
-      "description": "Occasional freelance engagements in machine learning, data analysis, and AI development. Projects span model development, custom pipelines, and technical consulting for clients across different industries.",
+      "description": "Occasional freelance engagements in machine learning, data analysis, and AI development. Projects span model development, custom pipelines, and technical consulting.",
       "keywords": ["Python", "Machine Learning", "Data Analysis", "Consulting"]
+    },
+    {
+      "name": "Pain & Nutrition Tracker SaaS",
+      "tagline": "AI-powered health monitoring platform with meal recognition",
+      "category": "Software",
+      "status": "active",
+      "startDate": "2024",
+      "endDate": null,
+      "url": "https://hippocrate-care.fr",
+      "description": "A full-stack Django application deployed with Docker and Nginx. Features advanced nutritional algorithms, multi-API orchestration, and AI-driven meal recognition for systematic healthcare monitoring.",
+      "keywords": ["Django", "PostgreSQL", "Docker", "Python", "Healthcare AI"]
+    },
+    {
+      "name": "WhatsApp Chat Analyzer",
+      "tagline": "NLP-driven visualizations of behavioral chat patterns",
+      "category": "Data Science",
+      "status": "completed",
+      "startDate": "2023",
+      "endDate": "2023",
+      "url": "https://whatsapp-analysis-tool.streamlit.app/",
+      "description": "An interactive web application that parses WhatsApp chat histories to generate insightful visualizations. Built with Streamlit and Plotly, utilizing NLP techniques to identify communication trends.",
+      "keywords": ["PyTorch", "NLP", "Streamlit", "Plotly", "OpenCV"]
     }
   ]
 }
