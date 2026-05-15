@@ -6,15 +6,6 @@
   <title>CV — Javier Boix Campos</title>
   <meta name="description" content="Full curriculum vitae of Javier Boix Campos, ML Engineer.">
   <link rel="stylesheet" href="style.css">
-
-function toggleTheme() {
-  const dark = document.body.classList.toggle('dark');
-  localStorage.setItem('theme', dark ? 'dark' : 'light');
-}
-// Persist across pages
-if (localStorage.getItem('theme') === 'dark') {
-  document.body.classList.add('dark');
-}
 </head>
 <body>
 
@@ -154,5 +145,14 @@ if (localStorage.getItem('theme') === 'dark') {
     });
 </script>
 
+<script>
+  function toggleTheme() {
+    const dark = document.body.classList.toggle('dark');
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+  }
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark');
+  }
+</script>
 </body>
 </html>
