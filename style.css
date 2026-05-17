@@ -162,10 +162,10 @@ section { margin-bottom: 72px; }
   font-family: var(--serif);
   font-size: clamp(2.8rem, 7vw, 5rem);
   font-weight: 300;
-  line-height: 1.0;
+  line-height: 1.15;
   letter-spacing: -0.01em;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, var(--text) 45%, #3a6a5a 100%);
+  background: linear-gradient(135deg, var(--text) 30%, #4a9d7e 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
