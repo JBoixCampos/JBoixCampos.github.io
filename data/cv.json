@@ -15,7 +15,7 @@
     "location": {
       "address": "Spain"
     },
-    "summary": "As an ML Engineer at Multiverse Computing, I compressed a computer vision model +95% without accuracy loss and created a key commercial asset for the company. Previously a Bioinformatics Research Scientist at UKE Hamburg with publications in Science Advances and JACC, I am the incoming Curator of the WEF Valencia Hub and creator of Vivum. I graduated as Valedictorian of my Master’s in Data Analysis (10.0/10.0) and top of my class in Biotechnology (9.8/10.0) at UPV.",
+    "summary": ""ML Engineer with 3+ years of experience across industry and research. Compressed a computer vision model from 258 MB to 8 MB using quantum-inspired tensorization, a result published commercially and validated across 20,780 samples. Previously a Bioinformatics Research Scientist at UKE Hamburg with publications in Science Advances and JACC, I am the incoming Curator of the WEF Valencia Hub and creator of Vivum. I graduated as Valedictorian of my Master’s in Data Analysis and top of my class in Biotechnology.",
     "label": "ML Engineer | Efficient AI & Biomedical Applications"
   },
   "education": [
@@ -46,7 +46,7 @@
       "website": "",
       "highlights": [
         "Compressed a proprietary computer vision model from 258 MB to 8 MB (96.8%) using quantum-inspired tensorization and quantization — 1.91× throughput, 49% less energy per inference, SSIM 0.97 validated on 20,780 samples. Delivered one month ahead of deadline; published on the company blog and became a commercial selling point.",
-        "Developed state-of-the-art ML pipelines for optimising and evaluating neural network models across multiple concurrent projects."
+        "Developed and deployed production ML pipelines across multiple concurrent projects, including experiment tracking with MLflow, containerisation with Docker, and cloud infrastructure on AWS."
       ]
     },
     {
@@ -161,7 +161,7 @@
     {
       "name": "Cloud & DevOps",
       "level": "",
-      "keywords": ["AWS", "Docker", "Git/GitHub", "Linux"]
+      "keywords": ["AWS", "Docker", "MLflow", "Git/GitHub", "Linux"]
     },
     {
       "name": "Biotech & Research",
@@ -198,21 +198,6 @@
       "title": "Bioethics: Law, Medicine, and Ethics of Genetics and Reproductive Technologies",
       "awarder": "Harvard University",
       "category": "Healthcare & Ethics"
-    },
-    {
-      "title": "Python for Data Science",
-      "awarder": "IBM",
-      "category": "Technical Certification"
-    },
-    {
-      "title": "Power BI for Business",
-      "awarder": "UPV",
-      "category": "Business Intelligence"
-    },
-    {
-      "title": "Excel: Advanced Data Management",
-      "awarder": "UPV",
-      "category": "Data Analysis"
     }
   ],
   "sections": [
