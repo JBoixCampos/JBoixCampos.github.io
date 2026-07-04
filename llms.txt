@@ -1,0 +1,204 @@
+# Javier Boix Campos — Portfolio
+
+> This file is generated from the site's JSON data sources:
+> - /data/cv.json (profile, experience, education, skills, awards)
+> - /data/projects.json (projects and leadership roles)
+> - /data/publications.json (journal papers and conference contributions)
+>
+> The main site at https://jboixcampos.github.io renders these dynamically via JavaScript.
+> Fetch this file for a complete, LLM-parseable snapshot of the same content.
+
+---
+
+## Profile
+
+**Name:** Javier Boix Campos
+**Role:** ML Engineer | Efficient AI & Biomedical Applications
+**Location:** Spain
+**Email:** javierboixcampos@gmail.com
+**Website:** https://jboixcampos.github.io/
+
+**Summary:** ML Engineer with 3+ years of experience across industry and research. Compressed a computer vision model from 258 MB to 8 MB using quantum-inspired tensorization, a result published commercially and validated across 20,780 samples. Previously a Bioinformatics Research Scientist at UKE Hamburg with publications in Science Advances and JACC, I am the Curator of the WEF Valencia Hub and creator of Vivum. I graduated as Valedictorian of my Master's in Data Analysis and top of my class in Biotechnology.
+
+---
+
+## Professional Experience
+
+### ML Engineer — Multiverse Computing
+**Period:** Dec 2025 – Present
+**Location:** Madrid, Spain
+- Compressed a proprietary computer vision model from 258 MB to 8 MB (96.8%) using quantum-inspired tensorization and quantization — 1.91× throughput, 49% less energy per inference, SSIM 0.97 validated on 20,780 samples. Delivered one month ahead of deadline; published on the company blog and became a commercial selling point.
+- Developed and deployed production ML pipelines across multiple concurrent projects, including experiment tracking with MLflow, containerisation with Docker, and cloud infrastructure on AWS.
+
+### Bioinformatics Research Scientist (Deep Learning) — Sáez Lab, University Medical Center Hamburg-Eppendorf (UKE)
+**Period:** Jan 2023 – Dec 2025
+**Location:** Hamburg, Germany (Hybrid)
+- Designed and implemented custom CNN architectures for automated analysis of cell microscopy images, enabling quantitative study of cell migration patterns in complex biological networks.
+- Developed end-to-end deep learning pipelines for cell dynamics analysis, including image quality enhancement models, directional migration tracking, and mitochondria quantification systems.
+- Applied multivariate statistical methods (PCA, LASSO, ANOVA) to analyse migration patterns in HIV-infected cells, processing thousands of time-lapse microscopy images to identify significant biological patterns.
+- Built automated analysis tools that reduce manual image analysis time by 95%+ while improving measurement consistency and reproducibility across experimental conditions.
+
+### Tech Lead — Innovare Genetics
+**Period:** Oct 2024 – Dec 2025
+**Location:** Madrid, Spain (Hybrid)
+- Architected genetic analysis platform from scratch, leading full development lifecycle from research toward CE-IVD/MDR certification and commercial launch.
+- Built full-stack solutions including automated analysis pipelines, regulatory documentation systems, and external integrations, establishing the technical foundation for the company's product roadmap.
+- Led cross-functional coordination with clinical validators and regulatory bodies to ensure European medical device compliance, managing technical requirements for the CE-IVD/MDR certification process.
+- Drove technical strategy and product roadmap planning while managing stakeholder communications and delivery timelines for multi-phase product development.
+
+### AI Developer — Elite Sports 17 S.L.
+**Period:** Jul 2024 – Oct 2024
+**Location:** Valencia, Spain
+- Developed machine learning pipelines for automated sports match analysis, implementing computer vision algorithms for player tracking and performance metrics extraction.
+- Built data processing infrastructure to handle real-time video analysis, delivering actionable insights to coaching staff and improving team analytics capabilities.
+
+### Research Intern (Oncogenic Signaling Lab) — Prince Felipe Research Center (CIPF)
+**Period:** Nov 2021 – Jul 2022
+**Location:** Valencia, Spain
+- Conducted Bachelor's Thesis research on proteins involved in lung cancer metastatic processes, investigating molecular mechanisms driving cancer progression on H1395 cells.
+- Performed cell culture, western blots, proliferation and wound healing assays across multiple cell lines to characterise protein expression and functional effects.
+
+### Research Intern (Genomics Lab) — Institute for Plant Molecular and Cellular Biology (IBMCP)
+**Period:** Mar 2021 – Jul 2021
+**Location:** Valencia, Spain
+- Isolated and characterised CYCD3;1 gene from Arabidopsis thaliana for cell cycle regulation studies under acid stress conditions.
+- Performed genome extractions, molecular cloning (restriction enzyme and Gateway systems), and qRT-PCR for gene expression verification.
+
+### Operations Coordinator (PIAE+ Program) — Polytechnic University of Valencia
+**Period:** Sep 2020 – Jul 2022
+**Location:** Valencia, Spain
+- Managed end-to-end coordination of student accompaniment programme involving 2,000+ students, coordinating workshops, onboarding events, and academic support initiatives.
+- Optimised operational workflows and database management systems, improving process efficiency and student satisfaction metrics.
+
+### Member of Biotechnology Academic Committee — Polytechnic University of Valencia
+**Period:** Oct 2019 – Jul 2022
+**Location:** Valencia, Spain
+- Collaborated with faculty and administration on strategic decisions affecting the Biotechnology degree programme, including curriculum development and policy enhancement.
+
+---
+
+## Education
+
+### Master's in Data Analysis Engineering, Process Improvement and Decision Making
+**Institution:** Polytechnic University of Valencia (UPV)
+**Period:** Sep 2023 – Sep 2024
+**Location:** Valencia, Spain
+**Grade:** 10.0/10.0 — Valedictorian (Best Academic Record of the Cohort)
+Advanced study in data analysis engineering with specialisation in machine learning, statistical modelling, optimisation algorithms, and business intelligence. Awarded Best Student by ValgrAI for academic excellence.
+
+### Bachelor's in Biotechnology
+**Institution:** Polytechnic University of Valencia (UPV)
+**Period:** Sep 2018 – Jun 2022
+**Location:** Valencia, Spain
+**Grade:** 9.8/10.0 — Top of Class
+Comprehensive education encompassing molecular biology, genetics, bioprocessing, and bioengineering. Thesis on lung cancer metastatic mechanisms conducted at Prince Felipe Research Center.
+
+---
+
+## Technical Skills
+
+- **Programming Languages:** Python, R, SQL, JavaScript, VBA, HTML/CSS
+- **AI & Machine Learning:** Deep Learning, CNNs, Computer Vision, Model Compression, Statistical Modelling
+- **ML Frameworks & Libraries:** TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, OpenCV
+- **Data Visualisation & BI:** Plotly, Shiny, Streamlit, Power BI, Matplotlib, Seaborn
+- **Cloud & DevOps:** AWS, Docker, MLflow, Git/GitHub, Linux
+- **Biotech & Research:** Bioinformatics, Genomic Analysis, Microscopy Image Analysis, Cell Biology
+
+---
+
+## Projects & Leadership
+
+### Vivum — Open Index for Interactive Scientific Publishing
+**Status:** Active (2026–)
+**URL:** https://vivum-pub.org
+An open registry for interactive, web-native scientific articles with community peer review by threshold and citable DOIs via Zenodo. Authors self-publish at any URL and retain full ownership. The infrastructure Chris Olah identified as missing when Distill went on indefinite hiatus in 2021.
+**Keywords:** Python, JavaScript, Open Source, Scientific Publishing
+
+### Global Shapers Valencia — World Economic Forum Community Hub (Curator)
+**Status:** Active (Jun 2025–)
+**URL:** https://www.globalshapers.org
+The Global Shapers Community is a World Economic Forum network of young leaders under 30, active in 400+ cities worldwide. Joined the Valencia Hub as a Shaper in June 2025; appointed Incoming Curator in December 2025. Took on the Curator role — the Hub's top leadership position — in June 2026.
+**Keywords:** WEF, Community, Leadership, Valencia
+
+### Bankinter Innovation Foundation — AI Mentor & Project Evaluator
+**Status:** Active (Oct 2023–)
+**URL:** https://www.fundacionbankinter.org
+Mentored student teams in the Akademia programme (2023–2025) on AI algorithm development and model architecture. Currently serving on the 2026 expert panel to evaluate project proposals.
+**Keywords:** AI, Mentorship, Innovation, Evaluation
+
+### Valencia Fallas Route Optimization
+**Status:** Completed (2024)
+**URL:** https://www.linkedin.com/posts/javier-boix-campos_quina-%C3%A9s-la-ruta-perfecta-per-a-visitar-totes-activity-7176703931497017344-DU8H
+Applied metaheuristics algorithms to optimise walking routes for visiting Valencia's Fallas festival — a network of 800+ monuments spread across the city. The project attracted local media coverage and demonstrated how combinatorial optimisation applies to real-world civic problems.
+**Keywords:** Python, Optimisation, VBA, Metaheuristics
+
+### Freelance AI/ML Consulting
+**Status:** Active (2023–)
+Occasional freelance engagements in machine learning, data analysis, and AI development. Projects span model development, custom pipelines, and technical consulting.
+**Keywords:** Python, Machine Learning, Data Analysis, Consulting
+
+### Pain & Nutrition Tracker SaaS
+**Status:** Completed (2025)
+**URL:** https://hippocrate-care.fr
+A full-stack Django application deployed with Docker and Nginx. Features advanced nutritional algorithms, multi-API orchestration, and AI-driven meal recognition for systematic healthcare monitoring.
+**Keywords:** Django, PostgreSQL, Docker, Python, Healthcare AI
+
+### WhatsApp Chat Analyzer
+**Status:** Completed (2023)
+**URL:** https://whatsapp-analysis-tool.streamlit.app/
+An interactive web application that parses WhatsApp chat histories to generate insightful visualizations. Built with Streamlit and Plotly, utilizing statistics techniques to identify communication trends.
+**Keywords:** PyTorch, Statistics, Streamlit, Plotly, OpenCV
+
+---
+
+## Journal Publications
+
+### Trade-off between branching and polarity controls decision-making during cell migration
+**Authors:** Liu J, **Boix-Campos J**, Ron JE, Kux JM, Oremek MEM, Rossi AG, Gov NS, Sáez PJ
+**Journal:** Science Advances, Vol. 12, No. 1, pp. eads2734
+**Date:** 2026 Jan 2
+**DOI:** https://doi.org/10.1126/sciadv.ads2734
+
+### Activating PRKG1 Variant Enhances Smooth Muscle Cell Deformability To Cause Aortopathy
+**Authors:** Jost ME, Schweizer M, Henning P, Gorzelanny C, Lehners M, Ellinger B, **Boix-Campos J**, Kux JM, Singh S, Fachinger A, Martinez Pomier K, VanSchouwen B, Billing AM, Biedenweg D, Schweizer M, Siegel S, Reimer R, Brandt M, Priesmeier L, Fuchs U, Pflaumenbaum J, Nikolaev VO, Newbury-Ecob R, Wilsdon A, Rybczynski M, Gehle P, Zelarayán LC, Stafforst T, Feil R, Rinschen MM, Pless O, Eaton P, Sáez PJ, Otto O, Melacini G, Demal TJ, Eschenhagen T, Herberg FW, Cuello F
+**Journal:** JACC: Basic to Translational Science, Vol. 11, No. 2, pp. 101452
+**Date:** 2026 Jan 15
+**DOI:** https://doi.org/10.1016/j.jacbts.2025.101452
+
+---
+
+## Conference Contributions
+
+- **2025** — "Lysosomal and calcium signaling regulation of leukocyte shape and migration" (López-López T, **Boix-Campos J**, Kabilka A, Sáez PJ). EMBO Workshop – From molecules to organisms: An integrative view of cell biology. Radstadt, Austria, March 16–21.
+- **2025** — "ER stress disrupts membrane and mitochondria dynamics during cell migration" (Adler MR, **Boix-Campos J**, Kux JM, Sáez PJ). EMBO Workshop – From molecules to organisms: An integrative view of cell biology. Radstadt, Austria, March 16–21.
+- **2025** — "ATP-Induced Lysosomal Calcium Signaling Regulates Dendritic Cell Shape and Migration" (López-López T, Kabilka A, **Boix-Campos J**, Sáez PJ). International Calcium Conference 2025. Hamburg, Germany.
+- **2025** — "Mitochondrial dynamics control cancer cell migration" (Dutta S, **Boix-Campos J**, Sáez PJ). Annual Congress of the European Association for Cancer Research (EACR 2025). Molecular Oncology, 19(Suppl. 1), 272.
+- **2025** — "MADAM: Metastasis-Associated Dynamics of Actin Movement" (Dutta S, **Boix-Campos J**, Sáez PJ). SFB1348 Meeting 2025. Münster, Germany.
+- **2024** — "Danger signal-specific regulation of leukocyte shape and migration" (López-López T, **Boix-Campos J**, Sáez PJ). 2nd European Purine Meeting. Ferrara, Italy, September 4–6.
+- **2024** — "Decision making during cell migration" (Kux JM, Palii S, **Boix-Campos J**, Gov NS, Sáez PJ). 90th Harden Conference: European Cytoskeletal Forum – BSCB/Biochemical Society Cell Migration Meeting. Birmingham, UK, April 15–18.
+- **2024** — "ER stress disrupts cytoskeleton and organelle dynamics during cell migration" (Adler MR, **Boix-Campos J**, Kux JM, Sáez PJ). 90th Harden Conference: European Cytoskeletal Forum. Birmingham, UK, April 15–18.
+- **2023** — "ER stress disrupts actin and organelle dynamics during cell migration" (Adler MR, López-López T, Kux JM, **Boix-Campos J**, Sáez PJ). 4th Endoplasmic Reticulum International Symposium. Paris, France, October 4–6.
+- **2023** — "New Methods for Image Analysis" (**Boix-Campos J**). Kick-off Meeting Voltare Project HFSP (RGP0032/2022). Hamburg, Germany, September 13–15.
+- **2023** — "ER stress disruption of mitochondrial dynamics during cell migration" (Adler MR, **Boix-Campos J**, Kux JM, Sáez PJ). Kick-off Meeting Voltare Project HFSP (RGP0032/2022). Hamburg, Germany, September 13–15.
+- **2023** — "Differential danger signals modulation of cellular shape and motility in leukocytes" (López-López T, **Boix-Campos J**, Sáez PJ). EMBL Conference. September.
+
+---
+
+## Key Certifications & Awards
+
+- **Best Student Award — Master's Degree (Valedictorian)** — ValgrAI & Polytechnic University of Valencia (Academic Excellence)
+- **Scientific Manuscript Reviewing Certification** — American Chemical Society (Research & Academia)
+- **Bioethics: Law, Medicine, and Ethics of Genetics and Reproductive Technologies** — Harvard University (Healthcare & Ethics)
+
+---
+
+## Links
+
+- Portfolio: https://jboixcampos.github.io/
+- Projects: https://jboixcampos.github.io/projects.html
+- Research: https://jboixcampos.github.io/research.html
+- CV: https://jboixcampos.github.io/cv.html
+- GitHub: https://github.com/JBoixCampos
+- LinkedIn: https://www.linkedin.com/in/javier-boix-campos
+- Bluesky: https://bsky.app/profile/jboixcampos.bsky.social
+- Email: javierboixcampos@gmail.com
