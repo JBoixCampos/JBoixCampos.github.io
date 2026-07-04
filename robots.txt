@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jboixcampos.github.io/sitemap.xml
+Llms-Txt: https://jboixcampos.github.io/llms.txt
