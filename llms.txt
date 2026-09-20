@@ -114,6 +114,12 @@ Comprehensive education encompassing molecular biology, genetics, bioprocessing,
 An open registry for interactive, web-native scientific articles with community peer review by threshold and citable DOIs via Zenodo. Authors self-publish at any URL and retain full ownership. The infrastructure Chris Olah identified as missing when Distill went on indefinite hiatus in 2021.
 **Keywords:** Python, JavaScript, Open Source, Scientific Publishing
 
+### Sentinel — A FICO-like Health Index for Companies, Built Only from Their Treasury Trail
+**Status:** Completed (2026)
+**URL:** https://hack-spain.vercel.app
+Built for HackSpain 2026 with Rubén Godoy and Walter J.T.V. Turns 2.6M bank movements and 0.9M invoices from 1,286 companies into a 0–100 monthly index, explained in euros, with alerts that name an owner and an action, control-chart monitoring, a 6-month forecast fan, and a chat agent that only answers from tool results. Explainable and monitorable by design, not a claim of prediction.
+**Keywords:** Python, DuckDB, Next.js, Postgres, LLM Agents, Explainability
+
 ### Global Shapers Valencia — World Economic Forum Community Hub (Curator)
 **Status:** Active (Jun 2025–)
 **URL:** https://www.globalshapers.org

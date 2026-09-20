@@ -12,6 +12,17 @@
       "keywords": ["Python", "JavaScript", "Open Source", "Scientific Publishing"]
     },
     {
+      "name": "Sentinel",
+      "tagline": "A FICO-like health index for companies, built only from their treasury trail",
+      "category": "Hackathon",
+      "status": "completed",
+      "startDate": "2026",
+      "endDate": "2026",
+      "url": "https://hack-spain.vercel.app",
+      "description": "Built for HackSpain 2026 with Rubén Godoy and Walter J.T.V. Turns 2.6M bank movements and 0.9M invoices from 1,286 companies into a 0–100 monthly index, explained in euros, with alerts that name an owner and an action, control-chart monitoring, a 6-month forecast fan, and a chat agent that only answers from tool results. Explainable and monitorable by design, not a claim of prediction.",
+      "keywords": ["Python", "DuckDB", "Next.js", "Postgres", "LLM Agents", "Explainability"]
+    },
+    {
       "name": "Global Shapers Valencia",
       "tagline": "World Economic Forum community hub — Curator",
       "category": "Community Leadership",
