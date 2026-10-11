@@ -12,6 +12,17 @@
       "keywords": ["Python", "JavaScript", "Open Source", "Scientific Publishing"]
     },
     {
+      "name": "Corrillo",
+      "tagline": "Everyone's socials. One circle.",
+      "category": "Software",
+      "status": "active",
+      "startDate": "2026",
+      "endDate": null,
+      "url": "https://corrillo.app",
+      "description": "Gives every group chat one shared page. Someone makes a circle and drops its link or QR code in the chat, everyone adds their socials once, and each person opens everyone else's profiles in one tap while a progress ring counts how many they have opened. No accounts, no installs, just a link. Circles delete themselves when they end. Built with React, TypeScript and Supabase (Postgres RPCs, realtime broadcast, Edge Functions), with Stripe Checkout for paid Event circles and an installable PWA.",
+      "keywords": ["React", "TypeScript", "Supabase", "PostgreSQL", "Stripe", "PWA"]
+    },
+    {
       "name": "Sentinel",
       "tagline": "A FICO-like health index for companies, built only from their treasury trail",
       "category": "Hackathon",
