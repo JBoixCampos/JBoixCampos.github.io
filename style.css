@@ -14,6 +14,12 @@
   --sans:        'DM Sans', system-ui, -apple-system, sans-serif;
   --max:         720px;
   --nav-h:       56px;
+
+  /* hairline figures, mapped onto the palette */
+  --hairline-edge:   #a6a6a0;
+  --hairline-mid:    #c9c9c3;
+  --hairline-lo:     #e4e4df;
+  --hairline-stroke: 0.8;
 }
 
 /* ─────────────────────────────────────────
@@ -224,7 +230,7 @@ section { margin-bottom: 72px; }
   border-top: 1px solid var(--border);
   padding: 28px 0;
   display: grid;
-  grid-template-columns: 2.5rem 1fr;
+  grid-template-columns: 2.5rem 1fr 168px;
   gap: 0 1.5rem;
   transition: padding-left 0.2s;
 }
@@ -234,6 +240,16 @@ section { margin-bottom: 72px; }
   margin-left: -10px;
 }
 .work-item:last-child { border-bottom: 1px solid var(--border); }
+
+.work-fig {
+  --hairline-plate: var(--bg);
+  --hairline-hi:    var(--accent);
+  width: 168px;
+  align-self: center;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+.work-item:hover .work-fig { opacity: 1; }
 
 .work-n {
   font-family: var(--serif);
@@ -707,6 +723,7 @@ footer {
   footer { padding: 28px 1.25rem 48px; }
   .work-item  { grid-template-columns: 1fr; }
   .work-n     { display: none; }
+  .work-fig   { display: none; }
   .cv-item    { grid-template-columns: 1fr; }
   .cv-dates   { margin-bottom: 4px; }
   .award-item { grid-template-columns: 1fr; }
@@ -721,6 +738,9 @@ body.dark {
   --border:       #2a2a26;
   --accent:       #6db89a;
   --accent-faint: rgba(109,184,154,0.15);
+  --hairline-edge: #5c5c57;
+  --hairline-mid:  #3a3a35;
+  --hairline-lo:   #262622;
 }
 
 body.dark .hero-name,

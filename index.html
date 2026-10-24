@@ -97,6 +97,7 @@
             Read the paper →
           </a>
         </div>
+        <div class="work-fig" data-fig="exploded" data-label="An exploded view of stacked layers, like a model being compressed"></div>
       </li>
 
       <li class="work-item">
@@ -116,6 +117,7 @@
             View in Science Advances →
           </a>
         </div>
+        <div class="work-fig" data-fig="branches" data-label="A graph that forks and merges, like cells choosing a branch"></div>
       </li>
 
       <li class="work-item">
@@ -133,6 +135,7 @@
             vivum-pub.org →
           </a>
         </div>
+        <div class="work-fig" data-fig="hub" data-label="A hub linked to tiles around it, like an index of articles"></div>
       </li>
 
     </ol>
@@ -213,6 +216,13 @@
     .then(r => r.json())
     .then(d => renderJournals(d.publications))
     .catch(() => renderJournals(FALLBACK));
+</script>
+
+<script type="module">
+  import * as hairline from './vendor/hairline.min.js';
+  document.querySelectorAll('.work-fig').forEach(el => {
+    hairline[el.dataset.fig](el, { intensity: 0.6, label: el.dataset.label });
+  });
 </script>
 
 <script>
