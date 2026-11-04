@@ -10,6 +10,7 @@
       "endDate": null,
       "url": "https://aiwareness.vercel.app",
       "description": "A free quiz that asks whether an image is real or AI-generated, followed by a short training on what to look for, in your own language.",
+      "details": "4,000+ answers across 21 hubs, 14 countries and 9 languages. A report on how many people can identify AI-generated content, by age and by country, will be published once data collection ends.",
       "keywords": ["AI literacy", "Quiz", "Multilingual", "Global Shapers"]
     },
     {
@@ -22,6 +23,7 @@
       "endDate": null,
       "url": "https://cami-g.vercel.app",
       "description": "A directory of university admission programmes and scholarships from different countries for Palestinian students, built with Global Shapers Ramallah.",
+      "details": "Shapers from any hub can add programmes. Camí means path in Valencian.",
       "keywords": ["Education", "Scholarships", "Directory", "Global Shapers"]
     },
     {
