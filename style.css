@@ -705,3 +705,14 @@ footer {
   .award-cat  { margin-top: 4px; text-align: left; }
   .projects-grid { grid-template-columns: 1fr; }
 }
+
+/* ─────────────────────────────────────────
+   BRAND: monogram (header, footer, favicon only)
+   The three dots are citation indices in superscript position.
+───────────────────────────────────────── */
+.monogram { height: auto; color: var(--text); overflow: visible; }
+.nav-brand .monogram { width: 84px; }
+.footer-brand { display: inline-flex; color: var(--text); }
+.footer-brand .monogram { width: 52px; }
+.nav-brand:hover .monogram,
+.footer-brand:hover .monogram { color: var(--text); }
