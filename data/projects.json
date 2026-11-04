@@ -89,7 +89,7 @@
       "startDate": "2024",
       "endDate": "2024",
       "url": null,
-      "description": "Applied metaheuristics algorithms to optimise walking routes for visiting Valencia's Fallas festival, a network of 800+ monuments spread across the city. The project attracted local media coverage and demonstrated how combinatorial optimisation applies to real-world civic problems.",
+      "description": "Applied metaheuristics to find the route that visits all the Fallas de Especial, the top category of Valencia's Fallas festival, in the shortest time, on foot, by bike and by public transport. Built with classmates from the Master's in Data Analysis Engineering at UPV. The project attracted local media coverage and demonstrated how combinatorial optimisation applies to real-world civic problems.",
       "press": [
         {"outlet": "El País", "url": "https://elpais.com/espana/comunidad-valenciana/2024-03-18/la-ruta-perfecta-para-ver-las-fallas-mas-destacadas-en-el-menor-tiempo-posible-segun-un-algoritmo.html"},
         {"outlet": "Cadena SER", "url": "https://cadenaser.com/comunitat-valenciana/2024/03/16/un-equipo-de-estudiantes-de-la-upv-traza-la-ruta-perfecta-para-ver-las-fallas-de-especial-radio-valencia/"},
