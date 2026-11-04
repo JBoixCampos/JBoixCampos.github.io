@@ -784,6 +784,11 @@ footer {
   padding-top: 12px;
 }
 .notes li + li { margin-top: 12px; }
+.notes li:target {
+  background: var(--target);
+  outline: 6px solid var(--target);
+  color: var(--text);
+}
 
 .note-n {
   font-family: var(--mono);
@@ -966,70 +971,6 @@ footer {
   fill: var(--muted);
 }
 
-/* ─────────────────────────────────────────
-   SELECTED WORK
-───────────────────────────────────────── */
-.work-list { list-style: none; border-top: 1px solid var(--rule); }
-
-.work-item {
-  display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) auto;
-  gap: 4px 20px;
-  align-items: center;
-  padding: 20px 8px;
-  margin: 0 -8px;
-  border-bottom: 1px solid var(--border);
-  transition: background-color 0.2s;
-}
-.work-item:target { background: var(--target); }
-
-.work-n {
-  font-family: var(--mono);
-  font-size: 28px;
-  font-weight: 500;
-  line-height: 1;
-  color: var(--signal);
-}
-
-.work-title {
-  font-family: var(--serif);
-  font-size: 24px;
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 4px;
-}
-
-.work-meta {
-  font-family: var(--sans);
-  font-size: 14px;
-  color: var(--muted);
-}
-
-.work-fig {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-  text-align: right;
-}
-
-.work-num {
-  font-family: var(--mono);
-  font-size: 0.9375rem;
-  white-space: nowrap;
-}
-
-.mini-bars {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 3px;
-  width: 120px;
-}
-.mini { display: block; height: 5px; }
-.mini-grey   { background: var(--grey); }
-.mini-signal { background: var(--signal); }
-
 /* Compact publication list on the home page */
 .pub-list-compact .pub-item { padding: 16px 0; }
 .pub-list-compact .pub-title { font-size: 1.125rem; }
@@ -1047,22 +988,14 @@ footer {
 
 @media (max-width: 640px) {
   .lead { font-size: 20px; }
-  .work-item { grid-template-columns: 36px minmax(0, 1fr); }
-  .work-n { font-size: 24px; }
-  .work-fig {
-    grid-column: 2;
-    align-items: flex-start;
-    text-align: left;
-  }
   .bar-row { grid-template-columns: 1fr; gap: 6px; }
 }
 
 @media (max-width: 520px) {
-  .work-title { font-size: 21px; }
   .tool-name { font-size: 24px; }
 }
 
 @media print {
   .cell-figure { display: none; }
-  .work-item:target { background: none; }
+  .notes li:target { background: none; }
 }
