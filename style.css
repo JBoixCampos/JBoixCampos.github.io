@@ -692,6 +692,9 @@ footer {
   font-size: 0.85rem;
 }
 
+.notfound-head { margin-bottom: 28px; }
+.notfound-head .page-sub { max-width: 640px; }
+
 .notfound-links {
   list-style: none;
   display: flex;
