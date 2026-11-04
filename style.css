@@ -693,7 +693,7 @@ footer {
 }
 
 .notfound-head { margin-bottom: 28px; }
-.notfound-head .page-sub { max-width: 640px; }
+.notfound-head .page-sub { max-width: 720px; text-wrap: pretty; }
 
 .notfound-links {
   list-style: none;
