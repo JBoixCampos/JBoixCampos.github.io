@@ -1092,6 +1092,93 @@ footer {
 .pub-list-compact .pub-doi { margin-left: 8px; }
 
 /* ─────────────────────────────────────────
+   FIGURE ANIMATIONS
+   Idle animations run everywhere while a figure is on screen.
+   Hover effects only exist on pointer devices. Nothing moves with
+   prefers-reduced-motion (see also the global rule above).
+───────────────────────────────────────── */
+.paper-card .bars { border-top: 0; padding-top: 0; }
+
+/* Fig. 1: route of the cell, hidden until hover */
+.cell-route { opacity: 0; transition: opacity 0.4s ease; }
+
+/* Fig. 2: bars grow in once */
+.bar, .bar-value { transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.4s ease; }
+.bar { transform-origin: left center; }
+.bars.anim-ready:not(.seen) .bar { transform: scaleX(0); }
+.bars.anim-ready:not(.seen) .bar-value { opacity: 0; }
+.bars.anim-ready .bar-row + .bar-row .bar,
+.bars.anim-ready .bar-row + .bar-row .bar-value { transition-delay: 0.35s; }
+
+/* Fig. 3: slow wave through the hubs */
+.hub-dots circle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hub-wave 5.6s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.18s);
+  animation-play-state: paused;
+}
+.tool-fig-hubs.in-view .hub-dots circle { animation-play-state: running; }
+
+@keyframes hub-wave {
+  0%, 30%, 100% { opacity: 1; }
+  15%           { opacity: 0.35; }
+}
+
+/* Fig. 4: drawn path and steps, used on hover */
+.cami-draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.cami-end { transform-box: fill-box; transform-origin: center; }
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  /* Fig. 1: the route lights up (the cell speeds up in cell.js) */
+  .paper-fig:hover .cell-route { opacity: 0.7; }
+
+  /* Fig. 2: the original bar compresses to the compressed size */
+  .bars:hover .bar-grey {
+    transform: scaleX(0.031);
+    transition-duration: 1.1s;
+    transition-delay: 0s;
+  }
+  .bars:hover .bar-row:first-of-type .bar-value { opacity: 0; transition-delay: 0s; }
+
+  /* Fig. 3: the dots pop one by one */
+  .tool-fig-hubs:hover .hub-dots circle {
+    animation: hub-pop 0.5s ease-out both;
+    animation-delay: calc(var(--i, 0) * 35ms);
+    animation-play-state: running;
+  }
+
+  /* Fig. 4: the path draws itself and the steps light up in order */
+  .tool-fig-cami:hover .cami-draw {
+    animation: cami-draw 1.1s ease-out both;
+  }
+  .tool-fig-cami:hover .cami-node {
+    animation: cami-step 0.35s ease-out both;
+    animation-delay: calc(var(--i, 0) * 0.33s);
+  }
+  .tool-fig-cami:hover .cami-end {
+    animation: cami-arrive 0.6s ease-out 1s both;
+  }
+}
+
+@keyframes hub-pop {
+  0%   { transform: scale(1); }
+  45%  { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+@keyframes cami-draw {
+  from { stroke-dashoffset: 1; }
+  to   { stroke-dashoffset: 0; }
+}
+@keyframes cami-step {
+  to { fill: var(--text); }
+}
+@keyframes cami-arrive {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.5); }
+}
+
+/* ─────────────────────────────────────────
    HOME RESPONSIVE
 ───────────────────────────────────────── */
 @media (max-width: 860px) {
@@ -1111,4 +1198,6 @@ footer {
 
 @media print {
   .cell-figure { display: none; }
+  .bars .bar { transform: none !important; }
+  .bars .bar-value { opacity: 1 !important; }
 }

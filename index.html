@@ -115,13 +115,13 @@
   <section id="about" class="row lead-row">
     <div class="main">
       <p class="lead">
-        I work where research meets constraints. With the S&aacute;ez Lab at UKE Hamburg
-        I spent three years building cell microscopy pipelines, work that reached
-        <em>Science Advances</em><sup class="cite"><a href="#uke" aria-label="Note 1, go to UKE Hamburg">1</a></sup>.
+        I work where research meets constraints. I spent three years with the
+        S&aacute;ez Lab at UKE Hamburg building cell microscopy pipelines, work that
+        reached <em>Science Advances</em><sup class="cite"><a href="#uke" aria-label="Note 1, go to UKE Hamburg">1</a></sup>.
         At Multiverse Computing I compressed a vision model from 258&nbsp;MB
         to 8&nbsp;MB<sup class="cite"><a href="#multiverse" aria-label="Note 2, go to Multiverse Computing">2</a></sup>.
-        Outside work, I build tools with Global Shapers Valencia, where I am
-        Curator<sup class="cite"><a href="#global-shapers" aria-label="Note 3, go to Global Shapers Valencia">3</a></sup>.
+        And as Curator of Global Shapers Valencia, I build tools that other
+        people use<sup class="cite"><a href="#global-shapers" aria-label="Note 3, go to Global Shapers Valencia">3</a></sup>.
       </p>
     </div>
     <aside class="margin" aria-label="Notes">
@@ -143,8 +143,9 @@
         <figure class="paper-fig">
           <div class="cell-figure" id="cell-figure"></div>
           <figcaption class="caption">
-            <span class="fig-n">Fig. 1</span> Schematic, not data. A cell follows one path
-            through the network and shows only where it touches the channels.
+            <span class="fig-n">Fig. 1</span> Schematic, not data. A cell crawls along the
+            channels of a hexagonal micropattern. At each junction it pauses, then commits
+            to one branch.
           </figcaption>
         </figure>
 
@@ -166,12 +167,13 @@
     </aside>
   </section>
 
-  <!-- ── 2. FIGURE 1 ─────────────────────── -->
+  <!-- ── 2. MULTIVERSE COMPUTING ─────────── -->
   <section id="multiverse" class="row" aria-labelledby="multiverse-title">
     <div class="main">
       <p class="section-label"><span class="idx">2</span>Multiverse Computing</p>
       <h2 class="action-title" id="multiverse-title">A vision model went from 258&nbsp;MB to 8&nbsp;MB with no loss in accuracy.</h2>
 
+      <div class="paper-card">
       <figure class="bars">
         <p class="visually-hidden">Model size: the original model is 258 MB and the compressed model is 8 MB.</p>
         <div class="bar-row" aria-hidden="true">
@@ -189,13 +191,24 @@
           </span>
         </div>
         <figcaption class="caption">
-          <span class="fig-n">Fig. 2</span> Model size, drawn to scale. 95% compression. Multiverse Computing, 2026.
+          <span class="fig-n">Fig. 2</span> Model size in megabytes, drawn to scale.
+          The compressed model is about one thirtieth of the original.
         </figcaption>
       </figure>
+
+        <div class="paper-cite">
+          <h3 class="paper-title">
+            <a href="https://multiversecomputing.com/papers/from-258mb-to-8mb-answering-the-95-compression-question" target="_blank" rel="noopener">From 258MB to 8MB: Answering the 95% Compression Question</a>
+          </h3>
+          <p class="paper-authors">Tensorization inspired by quantum computing, applied to a proprietary computer vision model.</p>
+          <p class="paper-venue">Multiverse Computing, 2026</p>
+          <a class="paper-doi" href="https://multiversecomputing.com/papers/from-258mb-to-8mb-answering-the-95-compression-question" target="_blank" rel="noopener">Read the paper &rarr;</a>
+        </div>
+      </div>
     </div>
     <aside class="margin" aria-label="Notes on Multiverse Computing">
       <ul class="notes">
-        <li>The compressed model is about one thirtieth of the original. Also: 1.91x the throughput, 49% less energy per inference, and SSIM of 0.97 on 20,780 samples.</li>
+        <li>Beyond size: 1.91x the throughput, 49% less energy per inference, and SSIM of 0.97 on 20,780 samples.</li>
       </ul>
     </aside>
   </section>
@@ -210,8 +223,8 @@
         <article class="tool">
           <h3 class="tool-name"><a href="https://aiwareness.vercel.app" target="_blank" rel="noopener">AIwareness</a></h3>
           <p class="tool-desc">A free quiz that asks whether an image is real or AI-generated, followed by a short training on what to look for, in your own language.</p>
-          <figure class="tool-fig">
-            <p class="big-num">4,000+ <span class="big-num-unit">answers</span></p>
+          <figure class="tool-fig tool-fig-hubs">
+            <p class="big-num"><span class="big-num-value">4,000</span>+ <span class="big-num-unit">answers</span></p>
             <svg class="hub-dots" viewBox="0 0 154 66" width="154" height="66" role="img" aria-label="21 dots, one per hub">
               <g fill="var(--signal)">
                 <circle cx="11" cy="11" r="7"/><circle cx="33" cy="11" r="7"/><circle cx="55" cy="11" r="7"/><circle cx="77" cy="11" r="7"/><circle cx="99" cy="11" r="7"/><circle cx="121" cy="11" r="7"/><circle cx="143" cy="11" r="7"/>
@@ -219,24 +232,26 @@
                 <circle cx="11" cy="55" r="7"/><circle cx="33" cy="55" r="7"/><circle cx="55" cy="55" r="7"/><circle cx="77" cy="55" r="7"/><circle cx="99" cy="55" r="7"/><circle cx="121" cy="55" r="7"/><circle cx="143" cy="55" r="7"/>
               </g>
             </svg>
-            <figcaption class="caption"><span class="fig-n">Fig. 3</span> One dot per hub: 21 hubs, 14 countries, 9 languages.</figcaption>
+            <figcaption class="caption"><span class="fig-n">Fig. 3</span> Each dot is one Global Shapers hub that took part: 21 hubs across 14 countries, with the quiz in 9 languages.</figcaption>
           </figure>
         </article>
 
         <article class="tool">
           <h3 class="tool-name"><a href="https://cami-g.vercel.app" target="_blank" rel="noopener">Cam&iacute;</a></h3>
           <p class="tool-desc">A directory of university admission programmes and scholarships from different countries for Palestinian students, built with Global Shapers Ramallah.</p>
-          <figure class="tool-fig">
+          <figure class="tool-fig tool-fig-cami">
             <svg class="cami-path" viewBox="0 0 252 100" width="252" height="100" role="img" aria-label="Schematic path from a student to a programme">
-              <path d="M16,64 C84,6 150,98 236,30" fill="none" stroke="var(--grey)" stroke-width="2" stroke-linecap="round"/>
-              <circle cx="16" cy="64" r="5" fill="var(--grey)"/>
-              <circle cx="89.7" cy="45.2" r="5" fill="var(--grey)"/>
-              <circle cx="163.4" cy="56.4" r="5" fill="var(--grey)"/>
-              <circle cx="236" cy="30" r="7" fill="var(--signal)"/>
+              <path class="cami-route" d="M16,64 C84,6 150,98 236,30" fill="none" stroke="var(--grey)" stroke-width="2" stroke-linecap="round"/>
+              <path class="cami-draw" d="M16,64 C84,6 150,98 236,30" pathLength="1" fill="none" stroke="var(--text)" stroke-width="2" stroke-linecap="round"/>
+              <circle class="cami-node" style="--i: 0" cx="16" cy="64" r="5" fill="var(--grey)"/>
+              <circle class="cami-node" style="--i: 1" cx="89.7" cy="45.2" r="5" fill="var(--grey)"/>
+              <circle class="cami-node" style="--i: 2" cx="163.4" cy="56.4" r="5" fill="var(--grey)"/>
+              <circle class="cami-end" cx="236" cy="30" r="7" fill="var(--signal)"/>
+              <circle class="cami-traveler" cx="0" cy="0" r="3.5" fill="var(--signal)" opacity="0"/>
               <text x="8" y="90" class="svg-label">Student</text>
               <text x="246" y="12" class="svg-label" text-anchor="end">Programme</text>
             </svg>
-            <figcaption class="caption"><span class="fig-n">Fig. 4</span> Schematic, not data. Cam&iacute; means path in Valencian.</figcaption>
+            <figcaption class="caption"><span class="fig-n">Fig. 4</span> Schematic, not data. Cam&iacute; means path in Valencian: the steps between a student and a university programme.</figcaption>
           </figure>
         </article>
       </div>
@@ -252,7 +267,7 @@
   <!-- ── PUBLICATIONS ────────────────────── -->
   <section id="publications" class="row" aria-labelledby="pubs-title">
     <div class="main">
-      <h2 class="section-label" id="pubs-title">Other journal publications</h2>
+      <h2 class="section-label" id="pubs-title">All journal publications</h2>
       <ul class="pub-list pub-list-compact" id="pub-list">
         <li class="pub-item loading">Loading&hellip;</li>
       </ul>
@@ -305,9 +320,6 @@
       ? `<strong>${name}</strong>` : name;
   }
 
-  // The paper featured in section 1 is not repeated here.
-  const FEATURED_DOI = '10.1126/sciadv.ads2734';
-
   // Long author lists: first authors, then mine, then et al.
   function shortAuthors(authors) {
     if (authors.length <= 8) return authors.map(hl).join(', ');
@@ -318,7 +330,7 @@
   }
 
   function renderJournals(pubs) {
-    const journals = pubs.filter(p => p.type === 'journal' && p.doi !== FEATURED_DOI);
+    const journals = pubs.filter(p => p.type === 'journal');
     document.getElementById('pub-list').innerHTML = journals.map(p => `
       <li class="pub-item">
         <p class="pub-title">${p.title}</p>
@@ -337,6 +349,7 @@
 </script>
 
 <script src="cell.js" defer></script>
+<script src="figures.js" defer></script>
 
 <script>
   function toggleTheme() {

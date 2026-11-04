@@ -5,6 +5,7 @@
  * network and is only visible through the channels (SVG mask). The cell
  * walks along ONE closed path, junction (vertex) to junction, resting
  * briefly at each one. It never splits to cover two paths.
+ * On hover (pointer devices) the route lights up and the cell speeds up.
  */
 (function () {
   'use strict';
@@ -100,7 +101,7 @@
     return 'translate(' + p[0].toFixed(2) + 'px, ' + p[1].toFixed(2) + 'px)';
   }
 
-  function build(host) {
+  function build(host, path) {
     var svg = el('svg', {
       viewBox: '0 0 300 200',
       role: 'img',
@@ -131,6 +132,16 @@
       }
     }
 
+    // The route the cell follows, revealed on hover (see style.css).
+    el('polygon', {
+      'class': 'cell-route',
+      points: path.map(function (p) {
+        return p[0].toFixed(2) + ',' + p[1].toFixed(2);
+      }).join(' '),
+      fill: 'none', stroke: 'var(--signal)', 'stroke-width': 1.5,
+      'stroke-dasharray': '2 4', 'stroke-linecap': 'round'
+    }, svg);
+
     var masked = el('g', { mask: 'url(#channels)' }, svg);
     var cell = el('circle', {
       cx: 0, cy: 0, r: CELL_R, fill: 'var(--signal)', 'class': 'cell-disc'
@@ -158,7 +169,7 @@
     if (!host) return;
 
     var path = perimeter(PATH_HEXES);
-    var parts = build(host);
+    var parts = build(host, path);
     var cell = parts.cell;
     var still = translate(path[0]);
     cell.style.transform = still;
@@ -190,6 +201,16 @@
     } else {
       visible = true;
     }
+
+    // Hover (pointer devices): the cell speeds up along its route.
+    var hover = window.matchMedia('(hover: hover)');
+    function rate(r) {
+      if (!anim || !hover.matches || reduce.matches) return;
+      if (anim.updatePlaybackRate) anim.updatePlaybackRate(r);
+      else anim.playbackRate = r;
+    }
+    host.addEventListener('mouseenter', function () { rate(4); });
+    host.addEventListener('mouseleave', function () { rate(1); });
 
     if (reduce.addEventListener) reduce.addEventListener('change', sync);
     else if (reduce.addListener) reduce.addListener(sync);
