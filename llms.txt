@@ -116,19 +116,47 @@ Grade: 9.8/10.0, Top of Class. Comprehensive education encompassing molecular bi
 
 ## Projects & Leadership
 
+### Global Shapers Valencia · World Economic Forum community hub, Curator
+**Status:** Active (Jun 2025–)
+**Category:** Global Shapers
+**URL:** https://valencia-hub-global-shapers.github.io/
+The Global Shapers Community is a World Economic Forum network of young leaders under 30, active in 400+ cities worldwide. Joined the Valencia Hub as a Shaper in June 2025; appointed Incoming Curator in December 2025. Took on the Curator role, the Hub's top leadership position, in June 2026.
+**Keywords:** WEF, Community, Leadership, Valencia
+
 ### AIwareness · Real or AI-generated? A quiz and a short training
 **Status:** Active
-**Category:** Community (Global Shapers)
+**Category:** Global Shapers (Global Shapers)
 **URL:** https://aiwareness.vercel.app
-A free quiz that asks whether an image is real or AI-generated, followed by a short training on what to look for, in your own language. 4,000+ answers across 21 hubs, 14 countries and 9 languages. A report on how many people can identify AI-generated content, by age and by country, will be published once data collection ends.
+An interactive web app about how hard it has become to tell AI-generated content from real content. You go through a series of images and decide which ones are real; then you see which ones you got right and get a short training on the details to look for, in your own language. 4,000+ answers across 21 hubs, 14 countries and 9 languages. A report on how many people can identify AI-generated content, by age and by country, will be published once data collection ends.
 **Keywords:** AI literacy, Quiz, Multilingual, Global Shapers
 
 ### Camí · University admission programmes and scholarships for Palestinian students
 **Status:** Active
-**Category:** Community (Global Shapers)
+**Category:** Global Shapers (Global Shapers Valencia and Ramallah)
 **URL:** https://cami-g.vercel.app
-A directory of university admission programmes and scholarships from different countries for Palestinian students, built with Global Shapers Ramallah. Shapers from any hub can add programmes. Camí means path in Valencian.
+Part of Bridging Futures, a Ramallah Hub initiative that supports Palestinian students and recent graduates with training, mentoring and access to opportunities. Camí is its shared directory of university admission programmes and scholarships worldwide: what each one covers, who can apply, which documents it asks for and its deadlines, with a link to the official source. Built in Valencia, where the team also reviews every submission before it goes live. Shapers from any hub can add programmes. Camí means path in Valencian.
 **Keywords:** Education, Scholarships, Directory, Global Shapers
+
+### Lloguer · An open map of shared rooms and flats across Spain
+**Status:** Active
+**Category:** Global Shapers (Global Shapers Valencia)
+**URL:** https://lloguer.org
+Brings together rooms and shared flats rented directly between individuals, which today are scattered across WhatsApp groups and Instagram stories. Free and with no sign-up, it filters by neighbourhood, price, number of flatmates and gender, and a person reviews every listing before it is published. Partnerships with universities, the City Council and other institutions are being sought to spread the word, always on a non-profit basis.
+**Keywords:** Housing, Map, Non-profit, Global Shapers
+
+### Size of Pain · Helps visualise the scale of Auschwitz-Birkenau
+**Status:** Active
+**Category:** Global Shapers (Global Shapers Valencia)
+**URL:** https://size-of-pain.vercel.app/
+Built after a visit to Auschwitz-Birkenau, where the sheer size of the camp left a deep impression. The team is working with the Kraków Hub to offer it to the Auschwitz foundation as an additional resource for the memorial, and with history teachers in Valencia so they can use it in class.
+**Keywords:** History, Education, Visualisation, Global Shapers
+
+### Global Shapers Valencia website · The online home of the Valencia Hub
+**Status:** Active
+**Category:** Global Shapers (Global Shapers Valencia)
+**URL:** https://valencia-hub-global-shapers.github.io/
+Designed and built the website of the Valencia Hub of the Global Shapers Community, where the hub presents itself and the projects it runs.
+**Keywords:** Website, Global Shapers
 
 ### Vivum · Open index for interactive scientific publishing
 **Status:** Active (2026–)
@@ -150,13 +178,6 @@ Gives every group chat one shared page. Someone makes a circle and drops its lin
 **URL:** https://hack-spain.vercel.app
 Built for HackSpain 2026 with Rubén Godoy and Walter J.T.V. Turns 2.6M bank movements and 0.9M invoices from 1,286 companies into a 0–100 monthly index, explained in euros, with alerts that name an owner and an action, control-chart monitoring, a 6-month forecast fan, and a chat agent that only answers from tool results. Explainable and monitorable by design, not a claim of prediction.
 **Keywords:** Hackathon, Python, DuckDB, Next.js, Postgres, LLM Agents, Explainability
-
-### Global Shapers Valencia · World Economic Forum community hub, Curator
-**Status:** Active (Jun 2025–)
-**Category:** Community
-**URL:** https://www.globalshapers.org
-The Global Shapers Community is a World Economic Forum network of young leaders under 30, active in 400+ cities worldwide. Joined the Valencia Hub as a Shaper in June 2025; appointed Incoming Curator in December 2025. Took on the Curator role, the Hub's top leadership position, in June 2026.
-**Keywords:** WEF, Community, Leadership, Valencia
 
 ### Bankinter Innovation Foundation · AI Mentor & Project Evaluator
 **Status:** Active (Oct 2023–)

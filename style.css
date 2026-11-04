@@ -89,6 +89,8 @@ strong { font-weight: 600; }
 
 svg { display: block; }
 
+.nowrap { white-space: nowrap; }
+
 .visually-hidden {
   position: absolute !important;
   width: 1px; height: 1px;

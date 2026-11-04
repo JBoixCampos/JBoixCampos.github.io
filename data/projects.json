@@ -1,30 +1,106 @@
 {
   "projects": [
     {
+      "name": "Global Shapers Valencia",
+      "tagline": "World Economic Forum community hub, Curator",
+      "category": "Global Shapers",
+      "status": "active",
+      "startDate": "Jun 2025",
+      "endDate": null,
+      "url": "https://valencia-hub-global-shapers.github.io/",
+      "description": "The Global Shapers Community is a World Economic Forum network of young leaders under 30, active in 400+ cities worldwide. Joined the Valencia Hub as a Shaper in June 2025; appointed Incoming Curator in December 2025. Took on the Curator role, the Hub's top leadership position, in June 2026.",
+      "keywords": [
+        "WEF",
+        "Community",
+        "Leadership",
+        "Valencia"
+      ]
+    },
+    {
       "name": "AIwareness",
       "tagline": "Real or AI-generated? A quiz and a short training",
       "organization": "Global Shapers",
-      "category": "Community",
+      "category": "Global Shapers",
       "status": "active",
       "startDate": null,
       "endDate": null,
       "url": "https://aiwareness.vercel.app",
-      "description": "A free quiz that asks whether an image is real or AI-generated, followed by a short training on what to look for, in your own language.",
+      "description": "An interactive web app about how hard it has become to tell AI-generated content from real content. You go through a series of images and decide which ones are real; then you see which ones you got right and get a short training on the details to look for, in your own language.",
       "details": "4,000+ answers across 21 hubs, 14 countries and 9 languages. A report on how many people can identify AI-generated content, by age and by country, will be published once data collection ends.",
-      "keywords": ["AI literacy", "Quiz", "Multilingual", "Global Shapers"]
+      "keywords": [
+        "AI literacy",
+        "Quiz",
+        "Multilingual",
+        "Global Shapers"
+      ]
     },
     {
       "name": "Camí",
       "tagline": "University admission programmes and scholarships for Palestinian students",
-      "organization": "Global Shapers",
-      "category": "Community",
+      "organization": "Global Shapers Valencia and Ramallah",
+      "category": "Global Shapers",
       "status": "active",
       "startDate": null,
       "endDate": null,
       "url": "https://cami-g.vercel.app",
-      "description": "A directory of university admission programmes and scholarships from different countries for Palestinian students, built with Global Shapers Ramallah.",
+      "description": "Part of Bridging Futures, a Ramallah Hub initiative that supports Palestinian students and recent graduates with training, mentoring and access to opportunities. Camí is its shared directory of university admission programmes and scholarships worldwide: what each one covers, who can apply, which documents it asks for and its deadlines, with a link to the official source. Built in Valencia, where the team also reviews every submission before it goes live.",
       "details": "Shapers from any hub can add programmes. Camí means path in Valencian.",
-      "keywords": ["Education", "Scholarships", "Directory", "Global Shapers"]
+      "keywords": [
+        "Education",
+        "Scholarships",
+        "Directory",
+        "Global Shapers"
+      ]
+    },
+    {
+      "name": "Lloguer",
+      "tagline": "An open map of shared rooms and flats across Spain",
+      "organization": "Global Shapers Valencia",
+      "category": "Global Shapers",
+      "status": "active",
+      "startDate": null,
+      "endDate": null,
+      "url": "https://lloguer.org",
+      "description": "Brings together rooms and shared flats rented directly between individuals, which today are scattered across WhatsApp groups and Instagram stories. Free and with no sign-up, it filters by neighbourhood, price, number of flatmates and gender, and a person reviews every listing before it is published.",
+      "details": "Partnerships with universities, the City Council and other institutions are being sought to spread the word, always on a non-profit basis.",
+      "keywords": [
+        "Housing",
+        "Map",
+        "Non-profit",
+        "Global Shapers"
+      ]
+    },
+    {
+      "name": "Size of Pain",
+      "tagline": "Helps visualise the scale of Auschwitz-Birkenau",
+      "organization": "Global Shapers Valencia",
+      "category": "Global Shapers",
+      "status": "active",
+      "startDate": null,
+      "endDate": null,
+      "url": "https://size-of-pain.vercel.app/",
+      "description": "Built after a visit to Auschwitz-Birkenau, where the sheer size of the camp left a deep impression. The team is working with the Kraków Hub to offer it to the Auschwitz foundation as an additional resource for the memorial, and with history teachers in Valencia so they can use it in class.",
+      "keywords": [
+        "History",
+        "Education",
+        "Visualisation",
+        "Global Shapers"
+      ]
+    },
+    {
+      "name": "Global Shapers Valencia website",
+      "tagline": "The online home of the Valencia Hub",
+      "organization": "Global Shapers Valencia",
+      "category": "Global Shapers",
+      "status": "active",
+      "startDate": null,
+      "endDate": null,
+      "url": "https://valencia-hub-global-shapers.github.io/",
+      "description": "Designed and built the website of the Valencia Hub of the Global Shapers Community, where the hub presents itself and the projects it runs.",
+      "keywords": [
+        "Website",
+        "Global Shapers"
+      ]
     },
     {
       "name": "Vivum",
@@ -35,7 +111,12 @@
       "endDate": null,
       "url": "https://vivum-pub.org",
       "description": "An open registry for interactive, web-native scientific articles with community peer review by threshold and citable DOIs via Zenodo. Authors self-publish at any URL and retain full ownership. The infrastructure Chris Olah identified as missing when Distill went on indefinite hiatus in 2021.",
-      "keywords": ["Python", "JavaScript", "Open Source", "Scientific Publishing"]
+      "keywords": [
+        "Python",
+        "JavaScript",
+        "Open Source",
+        "Scientific Publishing"
+      ]
     },
     {
       "name": "Corrillo",
@@ -46,7 +127,14 @@
       "endDate": null,
       "url": "https://corrillo.app",
       "description": "Gives every group chat one shared page. Someone makes a circle and drops its link or QR code in the chat, everyone adds their socials once, and each person opens everyone else's profiles in one tap while a progress ring counts how many they have opened. No accounts, no installs, just a link. Circles delete themselves when they end. Built with React, TypeScript and Supabase (Postgres RPCs, realtime broadcast, Edge Functions), with Stripe Checkout for paid Event circles and an installable PWA.",
-      "keywords": ["React", "TypeScript", "Supabase", "PostgreSQL", "Stripe", "PWA"]
+      "keywords": [
+        "React",
+        "TypeScript",
+        "Supabase",
+        "PostgreSQL",
+        "Stripe",
+        "PWA"
+      ]
     },
     {
       "name": "Sentinel",
@@ -57,18 +145,15 @@
       "endDate": "2026",
       "url": "https://hack-spain.vercel.app",
       "description": "Built for HackSpain 2026 with Rubén Godoy and Walter J.T.V. Turns 2.6M bank movements and 0.9M invoices from 1,286 companies into a 0–100 monthly index, explained in euros, with alerts that name an owner and an action, control-chart monitoring, a 6-month forecast fan, and a chat agent that only answers from tool results. Explainable and monitorable by design, not a claim of prediction.",
-      "keywords": ["Hackathon", "Python", "DuckDB", "Next.js", "Postgres", "LLM Agents", "Explainability"]
-    },
-    {
-      "name": "Global Shapers Valencia",
-      "tagline": "World Economic Forum community hub, Curator",
-      "category": "Community",
-      "status": "active",
-      "startDate": "Jun 2025",
-      "endDate": null,
-      "url": "https://www.globalshapers.org",
-      "description": "The Global Shapers Community is a World Economic Forum network of young leaders under 30, active in 400+ cities worldwide. Joined the Valencia Hub as a Shaper in June 2025; appointed Incoming Curator in December 2025. Took on the Curator role, the Hub's top leadership position, in June 2026.",
-      "keywords": ["WEF", "Community", "Leadership", "Valencia"]
+      "keywords": [
+        "Hackathon",
+        "Python",
+        "DuckDB",
+        "Next.js",
+        "Postgres",
+        "LLM Agents",
+        "Explainability"
+      ]
     },
     {
       "name": "Bankinter Innovation Foundation",
@@ -79,7 +164,12 @@
       "endDate": null,
       "url": "https://www.fundacionbankinter.org",
       "description": "Mentored student teams in the Akademia programme (2023–2025) on AI algorithm development and model architecture. Currently serving on the 2026 expert panel to evaluate project proposals.",
-      "keywords": ["AI", "Mentorship", "Innovation", "Evaluation"]
+      "keywords": [
+        "AI",
+        "Mentorship",
+        "Innovation",
+        "Evaluation"
+      ]
     },
     {
       "name": "Valencia Fallas Route Optimization",
@@ -91,14 +181,37 @@
       "url": null,
       "description": "Applied metaheuristics to find the route that visits all the Fallas de Especial, the top category of Valencia's Fallas festival, in the shortest time, on foot, by bike and by public transport. Built with classmates from the Master's in Data Analysis Engineering at UPV. The project attracted local media coverage and demonstrated how combinatorial optimisation applies to real-world civic problems.",
       "press": [
-        {"outlet": "El País", "url": "https://elpais.com/espana/comunidad-valenciana/2024-03-18/la-ruta-perfecta-para-ver-las-fallas-mas-destacadas-en-el-menor-tiempo-posible-segun-un-algoritmo.html"},
-        {"outlet": "Cadena SER", "url": "https://cadenaser.com/comunitat-valenciana/2024/03/16/un-equipo-de-estudiantes-de-la-upv-traza-la-ruta-perfecta-para-ver-las-fallas-de-especial-radio-valencia/"},
-        {"outlet": "À Punt", "url": "https://www.apuntmedia.es/noticies/societat/ruta-perfecta-visitar-totes-falles-d-especial-un-estudi-cientific_1_1691666.html"},
-        {"outlet": "Valencia Plaza", "url": "https://valenciaplaza.com/estudiantes-upv-trazan-ruta-perfecta-ver-fallas-especial-menor-tiempo"},
-        {"outlet": "Europa Press", "url": "https://www.europapress.es/comunitat-valenciana/noticia-estudiantes-upv-trazan-ruta-perfecta-ver-fallas-especial-menor-tiempo-posible-20240316114953.html"},
-        {"outlet": "La Razón", "url": "https://www.larazon.es/comunidad-valenciana/esta-ruta-perfecta-ver-fallas-seccion-especial-valencia_2024031665f5647e9e2a440001232c58.html"}
+        {
+          "outlet": "El País",
+          "url": "https://elpais.com/espana/comunidad-valenciana/2024-03-18/la-ruta-perfecta-para-ver-las-fallas-mas-destacadas-en-el-menor-tiempo-posible-segun-un-algoritmo.html"
+        },
+        {
+          "outlet": "Cadena SER",
+          "url": "https://cadenaser.com/comunitat-valenciana/2024/03/16/un-equipo-de-estudiantes-de-la-upv-traza-la-ruta-perfecta-para-ver-las-fallas-de-especial-radio-valencia/"
+        },
+        {
+          "outlet": "À Punt",
+          "url": "https://www.apuntmedia.es/noticies/societat/ruta-perfecta-visitar-totes-falles-d-especial-un-estudi-cientific_1_1691666.html"
+        },
+        {
+          "outlet": "Valencia Plaza",
+          "url": "https://valenciaplaza.com/estudiantes-upv-trazan-ruta-perfecta-ver-fallas-especial-menor-tiempo"
+        },
+        {
+          "outlet": "Europa Press",
+          "url": "https://www.europapress.es/comunitat-valenciana/noticia-estudiantes-upv-trazan-ruta-perfecta-ver-fallas-especial-menor-tiempo-posible-20240316114953.html"
+        },
+        {
+          "outlet": "La Razón",
+          "url": "https://www.larazon.es/comunidad-valenciana/esta-ruta-perfecta-ver-fallas-seccion-especial-valencia_2024031665f5647e9e2a440001232c58.html"
+        }
       ],
-      "keywords": ["Python", "Optimisation", "VBA", "Metaheuristics"]
+      "keywords": [
+        "Python",
+        "Optimisation",
+        "VBA",
+        "Metaheuristics"
+      ]
     },
     {
       "name": "Freelance AI/ML Consulting",
@@ -109,7 +222,12 @@
       "endDate": null,
       "url": null,
       "description": "Occasional freelance engagements in machine learning, data analysis, and AI development. Projects span model development, custom pipelines, and technical consulting.",
-      "keywords": ["Python", "Machine Learning", "Data Analysis", "Consulting"]
+      "keywords": [
+        "Python",
+        "Machine Learning",
+        "Data Analysis",
+        "Consulting"
+      ]
     },
     {
       "name": "Pain & Nutrition Tracker SaaS",
@@ -120,7 +238,13 @@
       "endDate": "2025",
       "url": "https://hippocrate-care.fr",
       "description": "A full-stack Django application deployed with Docker and Nginx. Features advanced nutritional algorithms, multi-API orchestration, and AI-driven meal recognition for systematic healthcare monitoring.",
-      "keywords": ["Django", "PostgreSQL", "Docker", "Python", "Healthcare AI"]
+      "keywords": [
+        "Django",
+        "PostgreSQL",
+        "Docker",
+        "Python",
+        "Healthcare AI"
+      ]
     },
     {
       "name": "WhatsApp Chat Analyzer",
@@ -131,7 +255,12 @@
       "endDate": "2023",
       "url": "https://whatsapp-analysis-tool.streamlit.app/",
       "description": "An interactive web application that parses WhatsApp chat histories to generate insightful visualizations. Built with Streamlit and Plotly, utilizing statistics techniques to identify communication trends.",
-      "keywords": ["Python", "Statistics", "Streamlit", "Plotly"]
+      "keywords": [
+        "Python",
+        "Statistics",
+        "Streamlit",
+        "Plotly"
+      ]
     }
   ]
 }
