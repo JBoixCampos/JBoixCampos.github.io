@@ -377,6 +377,20 @@ footer {
   max-width: 680px;
 }
 
+.print-btn {
+  margin-top: 16px;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--text);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.print-btn:hover { border-color: var(--signal); color: var(--signal-text); }
+
 /* CV timeline: thin --border rule with orange dots */
 .cv-items {
   list-style: none;
@@ -589,15 +603,6 @@ footer {
   margin-bottom: 12px;
 }
 
-.project-category {
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
 .project-status {
   font-family: var(--sans);
   font-size: 0.75rem;
@@ -660,6 +665,26 @@ footer {
   font-size: 0.72rem;
   color: var(--muted);
 }
+
+.project-group { margin-bottom: 56px; }
+.group-count { color: var(--muted); margin-left: 0.4em; font-weight: 400; }
+
+.project-press {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.project-press span {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+.project-press a { color: var(--muted); }
+.project-press a:hover { color: var(--signal-text); }
 
 .project-link {
   align-self: flex-start;

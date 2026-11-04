@@ -42,15 +42,13 @@
 
   <header class="page-head">
     <h1 class="page-title">Projects</h1>
-    <p class="page-sub">Open source, community, research and freelance</p>
+    <p class="page-sub">Community, software, data and research, freelance</p>
   </header>
 
-  <section>
-    <div class="projects-grid" id="projects-grid">
-      <!-- loaded dynamically from data/projects.json -->
-      <p class="loading">Loading&hellip;</p>
-    </div>
-  </section>
+  <div id="projects-root">
+    <!-- loaded dynamically from data/projects.json, grouped by category -->
+    <p class="loading">Loading&hellip;</p>
+  </div>
 
 </main>
 
@@ -64,7 +62,7 @@
     <a href="https://bsky.app/profile/jboixcampos.bsky.social" target="_blank" rel="noopener">Bluesky</a>
   </div>
   </div>
-  <span class="footer-copy">© 2026 Javier Boix Campos</span>
+  <span class="footer-copy">© <span data-year>2026</span> Javier Boix Campos</span>
 </footer>
 
 <script>
@@ -77,34 +75,58 @@
     return `${p.startDate} – ${p.endDate}`;
   }
 
-  function render(data) {
-    document.getElementById('projects-grid').innerHTML = data.projects.map(p => {
-      const isActive = p.status === 'active';
-      const linkHtml = p.url
-        ? `<a class="project-link" href="${p.url}" target="_blank" rel="noopener">
-             Visit &rarr;
-           </a>`
-        : '';
+  // Groups in display order; unknown categories go last.
+  const GROUPS = ['Community', 'Software', 'Data & Research', 'Freelance'];
 
+  function card(p) {
+    const isActive = p.status === 'active';
+    const linkHtml = p.url
+      ? `<a class="project-link" href="${p.url}" target="_blank" rel="noopener">Visit &rarr;</a>`
+      : '';
+    const pressHtml = p.press && p.press.length
+      ? `<p class="project-press"><span>Press</span> ${p.press.map(m =>
+          `<a href="${m.url}" target="_blank" rel="noopener">${m.outlet}</a>`).join(', ')}</p>`
+      : '';
+
+    return `
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-status">
+            <span class="project-status-dot ${isActive ? 'active' : ''}"></span>
+            ${isActive ? 'Active' : 'Completed'}
+          </span>
+        </div>
+        <h3 class="project-title">${p.name}</h3>
+        <p class="project-tagline">${p.tagline}</p>
+        ${p.organization ? `<p class="project-dates">${p.organization}</p>` : ''}
+        ${formatDates(p) ? `<p class="project-dates">${formatDates(p)}</p>` : ''}
+        <p class="project-desc">${p.description}</p>
+        <div class="project-keywords">
+          ${p.keywords.map(k => `<span class="project-keyword">${k}</span>`).join('')}
+        </div>
+        ${pressHtml}
+        ${linkHtml}
+      </article>`;
+  }
+
+  function render(data) {
+    const order = c => {
+      const i = GROUPS.indexOf(c);
+      return i === -1 ? GROUPS.length : i;
+    };
+    const categories = [...new Set(data.projects.map(p => p.category))]
+      .sort((a, b) => order(a) - order(b));
+
+    document.getElementById('projects-root').innerHTML = categories.map(cat => {
+      // Active first, otherwise keep the order of the JSON file.
+      const items = data.projects
+        .filter(p => p.category === cat)
+        .sort((a, b) => (b.status === 'active') - (a.status === 'active'));
       return `
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-category">${p.category}</span>
-            <span class="project-status">
-              <span class="project-status-dot ${isActive ? 'active' : ''}"></span>
-              ${isActive ? 'Active' : 'Completed'}
-            </span>
-          </div>
-          <h2 class="project-title">${p.name}</h2>
-          <p class="project-tagline">${p.tagline}</p>
-          ${p.organization ? `<p class="project-dates">${p.organization}</p>` : ''}
-          ${formatDates(p) ? `<p class="project-dates">${formatDates(p)}</p>` : ''}
-          <p class="project-desc">${p.description}</p>
-          <div class="project-keywords">
-            ${p.keywords.map(k => `<span class="project-keyword">${k}</span>`).join('')}
-          </div>
-          ${linkHtml}
-        </div>`;
+        <section class="project-group">
+          <h2 class="section-label">${cat} <span class="group-count">${items.length}</span></h2>
+          <div class="projects-grid">${items.map(card).join('')}</div>
+        </section>`;
     }).join('');
   }
 
@@ -112,7 +134,7 @@
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(render)
     .catch(() => {
-      document.getElementById('projects-grid').innerHTML =
+      document.getElementById('projects-root').innerHTML =
         '<p class="load-error">Unable to load data. Make sure <code>data/projects.json</code> is committed to your repository.</p>';
     });
 </script>
@@ -123,6 +145,10 @@
     document.documentElement.classList.toggle('dark', dark);
     try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
   }
+  // Keep the copyright year current
+  document.querySelectorAll('[data-year]').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
   // Sync body.dark with the class set by the head script
   // (localStorage('theme'), else prefers-color-scheme).
   if (document.documentElement.classList.contains('dark')) {

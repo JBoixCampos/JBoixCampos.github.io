@@ -45,7 +45,7 @@
       "location": "Madrid, Spain",
       "website": "",
       "highlights": [
-        "Compressed a proprietary computer vision model from 258 MB to 8 MB (96.8%) using quantum-inspired tensorization and quantization: 1.91× throughput, 49% less energy per inference, SSIM 0.97 validated on 20,780 samples. Delivered one month ahead of deadline; published on the company blog and became a commercial selling point.",
+        "Compressed a proprietary computer vision model from 258 MB to 8 MB (95% compression) using quantum-inspired tensorization and quantization: 1.91× throughput, 49% less energy per inference, SSIM 0.97 validated on 20,780 samples. Delivered one month ahead of deadline; published on the company blog and became a commercial selling point.",
         "Developed and deployed production ML pipelines across multiple concurrent projects, including experiment tracking with MLflow, containerisation with Docker, and cloud infrastructure on AWS."
       ]
     },
