@@ -1,0 +1,43 @@
+# Regenerates llms.txt and sitemap.xml from data/*.json whenever the
+# data or the generator change on main, and commits the result.
+name: Build llms.txt and sitemap
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'data/**'
+      - 'scripts/build_meta.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-meta
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Generate llms.txt and sitemap.xml
+        run: python3 scripts/build_meta.py
+
+      - name: Commit if anything changed
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add llms.txt sitemap.xml
+          if git diff --cached --quiet; then
+            echo 'llms.txt and sitemap.xml are up to date.'
+          else
+            git commit -m 'Regenerate llms.txt and sitemap.xml from data'
+            git push
+          fi

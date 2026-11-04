@@ -1,6 +1,8 @@
 """Generate llms.txt and sitemap.xml from the site's JSON data.
 
-Run from the repository root after editing anything in data/:
+The GitHub Action in .github/workflows/build-meta.yml runs this on
+every push to main that changes data/ or this script, and commits the
+result. To run it locally, from the repository root:
 
     python3 scripts/build_meta.py
 
