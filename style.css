@@ -784,11 +784,6 @@ footer {
   padding-top: 12px;
 }
 .notes li + li { margin-top: 12px; }
-.notes li:target {
-  background: var(--target);
-  outline: 6px solid var(--target);
-  color: var(--text);
-}
 
 .note-n {
   font-family: var(--mono);
@@ -810,7 +805,13 @@ footer {
   max-width: 720px;
   margin-bottom: 28px;
 }
-.action-title .cite { font-size: 12px; }
+
+.fig-n {
+  font-family: var(--mono);
+  font-weight: 500;
+  color: var(--text);
+  margin-right: 4px;
+}
 
 .caption {
   font-family: var(--sans);
@@ -997,5 +998,4 @@ footer {
 
 @media print {
   .cell-figure { display: none; }
-  .notes li:target { background: none; }
 }
