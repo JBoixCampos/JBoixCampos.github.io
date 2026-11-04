@@ -77,17 +77,23 @@
 
     const html = `
       <!-- HEADER -->
-      <div class="cv-header">
+      <header class="cv-header">
         <h1 class="cv-name">${basics.name}</h1>
-        <p class="cv-role">ML Engineer | Efficient AI &amp; Biomedical Applications</p>
-        <div class="cv-contacts">
-          <a href="mailto:${basics.email}">${basics.email}</a>
-          <a href="${basics.website}" target="_blank" rel="noopener">jboixcampos.github.io</a>
-          <span>${basics.location.address}</span>
+        <p class="cv-role">${basics.label.replace(' | ', ' · ')}</p>
+        <div class="row cv-intro">
+          <div class="main">
+            <p class="cv-summary">${basics.summary}</p>
+          </div>
+          <aside class="margin cv-meta">
+            <dl class="cv-contacts">
+              <dt>Email</dt><dd><a href="mailto:${basics.email}">${basics.email}</a></dd>
+              <dt>Web</dt><dd><a href="${basics.website}" target="_blank" rel="noopener">jboixcampos.github.io</a></dd>
+              <dt>Based in</dt><dd>${basics.location.address}</dd>
+            </dl>
+            <button class="print-btn no-print" type="button" onclick="window.print()">Print or save as PDF</button>
+          </aside>
         </div>
-        <button class="print-btn no-print" type="button" onclick="window.print()">Print or save as PDF</button>
-        <p class="cv-summary">${basics.summary}</p>
-        </div>
+      </header>
 
       <!-- EXPERIENCE -->
       <section>
