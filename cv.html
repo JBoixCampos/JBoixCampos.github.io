@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CV — Javier Boix Campos</title>
+  <title>CV · Javier Boix Campos</title>
   <meta name="description" content="Full curriculum vitae of Javier Boix Campos, ML Engineer.">
   <link rel="llms-txt" href="/llms.txt">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -30,7 +30,7 @@
 
 <main class="page-wrap">
   <div id="cv-root">
-    <p style="color:var(--muted);font-size:0.9rem;font-weight:300">Loading…</p>
+    <p class="loading">Loading&hellip;</p>
   </div>
 </main>
 
@@ -98,7 +98,7 @@
                 <p class="cv-institution">${e.institution}</p>
                 <p class="cv-position">${e.studyType}</p>
                 <p class="cv-location">${e.location}</p>
-                <p style="font-size:0.9rem;font-weight:300;line-height:1.7;margin-top:8px">${e.summary}</p>
+                <p class="cv-edu-summary">${e.summary}</p>
               </div>
             </li>
           `).join('')}
@@ -144,12 +144,8 @@
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(renderCV)
     .catch(() => {
-      document.getElementById('cv-root').innerHTML = `
-        <p style="color:var(--muted);font-size:0.95rem;font-weight:300">
-          Unable to load CV data. Make sure
-          <code style="font-size:0.85rem;background:var(--accent-faint);padding:1px 5px;border-radius:2px">data/cv.json</code>
-          is committed to your repository.
-        </p>`;
+      document.getElementById('cv-root').innerHTML =
+        '<p class="load-error">Unable to load data. Make sure <code>data/cv.json</code> is committed to your repository.</p>';
     });
 </script>
 

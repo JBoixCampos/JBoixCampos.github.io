@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — Javier Boix Campos</title>
-  <meta name="description" content="Independent projects by Javier Boix Campos — open source, community leadership, research, and freelance work.">
+  <title>Projects · Javier Boix Campos</title>
+  <meta name="description" content="Independent projects by Javier Boix Campos: open source, community tools, leadership, research and freelance work.">
   <link rel="llms-txt" href="/llms.txt">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -30,21 +30,15 @@
 
 <main class="page-wrap">
 
-  <section style="margin-bottom:56px">
-    <h1 style="font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);
-               font-weight:300;line-height:1.05;margin-bottom:0.4rem">
-      Projects
-    </h1>
-    <p style="font-family:var(--serif);font-style:italic;color:var(--muted);
-              font-size:1.1rem;font-weight:300">
-      Open source, community, research &amp; freelance
-    </p>
-  </section>
+  <header class="page-head">
+    <h1 class="page-title">Projects</h1>
+    <p class="page-sub">Open source, community, research and freelance</p>
+  </header>
 
   <section>
     <div class="projects-grid" id="projects-grid">
-      <!-- loaded dynamically -->
-      <p style="color:var(--muted);font-size:0.9rem;font-weight:300">Loading…</p>
+      <!-- loaded dynamically from data/projects.json -->
+      <p class="loading">Loading&hellip;</p>
     </div>
   </section>
 
@@ -67,6 +61,7 @@
   const PROJ_URL = './data/projects.json';
 
   function formatDates(p) {
+    if (!p.startDate) return '';
     if (!p.endDate) return p.startDate + ' – Present';
     if (p.startDate === p.endDate) return p.startDate;
     return `${p.startDate} – ${p.endDate}`;
@@ -77,7 +72,7 @@
       const isActive = p.status === 'active';
       const linkHtml = p.url
         ? `<a class="project-link" href="${p.url}" target="_blank" rel="noopener">
-             Visit →
+             Visit &rarr;
            </a>`
         : '';
 
@@ -92,7 +87,8 @@
           </div>
           <h2 class="project-title">${p.name}</h2>
           <p class="project-tagline">${p.tagline}</p>
-          <p class="project-dates">${formatDates(p)}</p>
+          ${p.organization ? `<p class="project-dates">${p.organization}</p>` : ''}
+          ${formatDates(p) ? `<p class="project-dates">${formatDates(p)}</p>` : ''}
           <p class="project-desc">${p.description}</p>
           <div class="project-keywords">
             ${p.keywords.map(k => `<span class="project-keyword">${k}</span>`).join('')}
@@ -106,12 +102,8 @@
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(render)
     .catch(() => {
-      document.getElementById('projects-grid').innerHTML = `
-        <p style="color:var(--muted);font-size:0.9rem;font-weight:300">
-          Unable to load projects. Make sure
-          <code style="font-size:0.85rem;background:var(--accent-faint);padding:1px 5px;border-radius:2px">data/projects.json</code>
-          is committed to your repository.
-        </p>`;
+      document.getElementById('projects-grid').innerHTML =
+        '<p class="load-error">Unable to load data. Make sure <code>data/projects.json</code> is committed to your repository.</p>';
     });
 </script>
 

@@ -25,7 +25,7 @@
       "startDate": "Sep 2023",
       "endDate": "Sep 2024",
       "location": "Valencia, Spain",
-      "summary": "Grade: 10.0/10.0 — Valedictorian (Best Academic Record of the Cohort). Advanced study in data analysis engineering with specialisation in machine learning, statistical modelling, optimisation algorithms, and business intelligence. Awarded Best Student by ValgrAI for academic excellence."
+      "summary": "Grade: 10.0/10.0, Valedictorian (Best Academic Record of the Cohort). Advanced study in data analysis engineering with specialisation in machine learning, statistical modelling, optimisation algorithms, and business intelligence. Awarded Best Student by ValgrAI for academic excellence."
     },
     {
       "institution": "Polytechnic University of Valencia (UPV)",
@@ -33,7 +33,7 @@
       "startDate": "Sep 2018",
       "endDate": "Jun 2022",
       "location": "Valencia, Spain",
-      "summary": "Grade: 9.8/10.0 — Top of Class. Comprehensive education encompassing molecular biology, genetics, bioprocessing, and bioengineering. Thesis on lung cancer metastatic mechanisms conducted at Prince Felipe Research Center."
+      "summary": "Grade: 9.8/10.0, Top of Class. Comprehensive education encompassing molecular biology, genetics, bioprocessing, and bioengineering. Thesis on lung cancer metastatic mechanisms conducted at Prince Felipe Research Center."
     }
   ],
   "work": [
@@ -45,13 +45,13 @@
       "location": "Madrid, Spain",
       "website": "",
       "highlights": [
-        "Compressed a proprietary computer vision model from 258 MB to 8 MB (96.8%) using quantum-inspired tensorization and quantization — 1.91× throughput, 49% less energy per inference, SSIM 0.97 validated on 20,780 samples. Delivered one month ahead of deadline; published on the company blog and became a commercial selling point.",
+        "Compressed a proprietary computer vision model from 258 MB to 8 MB (96.8%) using quantum-inspired tensorization and quantization: 1.91× throughput, 49% less energy per inference, SSIM 0.97 validated on 20,780 samples. Delivered one month ahead of deadline; published on the company blog and became a commercial selling point.",
         "Developed and deployed production ML pipelines across multiple concurrent projects, including experiment tracking with MLflow, containerisation with Docker, and cloud infrastructure on AWS."
       ]
     },
     {
       "company": "University Medical Center Hamburg-Eppendorf (UKE)",
-      "position": "Bioinformatics Research Scientist (Deep Learning) — Sáez Lab",
+      "position": "Bioinformatics Research Scientist (Deep Learning), Sáez Lab",
       "startDate": "Jan 2023",
       "endDate": "Dec 2025",
       "location": "Hamburg, Germany (Hybrid)",
@@ -91,7 +91,7 @@
     },
     {
       "company": "Prince Felipe Research Center (CIPF)",
-      "position": "Research Intern — Oncogenic Signaling Lab",
+      "position": "Research Intern, Oncogenic Signaling Lab",
       "startDate": "Nov 2021",
       "endDate": "Jul 2022",
       "location": "Valencia, Spain",
@@ -103,7 +103,7 @@
     },
     {
       "company": "Institute for Plant Molecular and Cellular Biology (IBMCP)",
-      "position": "Research Intern — Genomics Lab",
+      "position": "Research Intern, Genomics Lab",
       "startDate": "Mar 2021",
       "endDate": "Jul 2021",
       "location": "Valencia, Spain",
@@ -171,7 +171,7 @@
   ],
   "projects": [
     {
-      "name": "Vivum — Open Index for Interactive Scientific Publishing",
+      "name": "Vivum: Open Index for Interactive Scientific Publishing",
       "url": "https://vivum-pub.org",
       "description": "Built the infrastructure Chris Olah identified as missing when Distill went on hiatus: an open registry for web-native scientific articles with community peer review by threshold and citable DOIs via Zenodo. Authors self-publish at any URL and retain full ownership.",
       "keywords": ["Python", "JavaScript", "Open Source", "Scientific Publishing"]
@@ -185,7 +185,7 @@
   ],
   "awards": [
     {
-      "title": "Best Student Award — Master's Degree (Valedictorian)",
+      "title": "Best Student Award, Master's Degree (Valedictorian)",
       "awarder": "ValgrAI & Polytechnic University of Valencia",
       "category": "Academic Excellence"
     },
