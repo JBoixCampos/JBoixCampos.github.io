@@ -180,7 +180,7 @@ Occasional freelance engagements in machine learning, data analysis, and AI deve
 
 ### Pain & Nutrition Tracker SaaS · AI-powered health monitoring platform with meal recognition
 **Status:** Completed (2025)
-**Category:** Software
+**Category:** Freelance
 **URL:** https://hippocrate-care.fr
 A full-stack Django application deployed with Docker and Nginx. Features advanced nutritional algorithms, multi-API orchestration, and AI-driven meal recognition for systematic healthcare monitoring.
 **Keywords:** Django, PostgreSQL, Docker, Python, Healthcare AI
