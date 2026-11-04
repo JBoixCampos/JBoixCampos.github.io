@@ -1,9 +1,35 @@
 {
   "projects": [
     {
+      "name": "AIwareness",
+      "tagline": "Real or AI-generated? A quiz and a short training",
+      "organization": "Global Shapers",
+      "category": "Community",
+      "status": "active",
+      "startDate": null,
+      "endDate": null,
+      "url": "https://aiwareness.vercel.app",
+      "description": "A free quiz that asks whether an image is real or AI-generated, followed by a short training on what to look for, in your own language.",
+      "details": "4,000+ answers across 21 hubs, 14 countries and 9 languages. A report on how many people can identify AI-generated content, by age and by country, will be published once data collection ends.",
+      "keywords": ["AI literacy", "Quiz", "Multilingual", "Global Shapers"]
+    },
+    {
+      "name": "Camí",
+      "tagline": "University admission programmes and scholarships for Palestinian students",
+      "organization": "Global Shapers",
+      "category": "Community",
+      "status": "active",
+      "startDate": null,
+      "endDate": null,
+      "url": "https://cami-g.vercel.app",
+      "description": "A directory of university admission programmes and scholarships from different countries for Palestinian students, built with Global Shapers Ramallah.",
+      "details": "Shapers from any hub can add programmes. Camí means path in Valencian.",
+      "keywords": ["Education", "Scholarships", "Directory", "Global Shapers"]
+    },
+    {
       "name": "Vivum",
       "tagline": "Open index for interactive scientific publishing",
-      "category": "Open Source",
+      "category": "Software",
       "status": "active",
       "startDate": "2026",
       "endDate": null,
@@ -25,29 +51,29 @@
     {
       "name": "Sentinel",
       "tagline": "A FICO-like health index for companies, built only from their treasury trail",
-      "category": "Hackathon",
+      "category": "Data & Research",
       "status": "completed",
       "startDate": "2026",
       "endDate": "2026",
       "url": "https://hack-spain.vercel.app",
       "description": "Built for HackSpain 2026 with Rubén Godoy and Walter J.T.V. Turns 2.6M bank movements and 0.9M invoices from 1,286 companies into a 0–100 monthly index, explained in euros, with alerts that name an owner and an action, control-chart monitoring, a 6-month forecast fan, and a chat agent that only answers from tool results. Explainable and monitorable by design, not a claim of prediction.",
-      "keywords": ["Python", "DuckDB", "Next.js", "Postgres", "LLM Agents", "Explainability"]
+      "keywords": ["Hackathon", "Python", "DuckDB", "Next.js", "Postgres", "LLM Agents", "Explainability"]
     },
     {
       "name": "Global Shapers Valencia",
-      "tagline": "World Economic Forum community hub — Curator",
-      "category": "Community Leadership",
+      "tagline": "World Economic Forum community hub, Curator",
+      "category": "Community",
       "status": "active",
       "startDate": "Jun 2025",
       "endDate": null,
       "url": "https://www.globalshapers.org",
-      "description": "The Global Shapers Community is a World Economic Forum network of young leaders under 30, active in 400+ cities worldwide. Joined the Valencia Hub as a Shaper in June 2025; appointed Incoming Curator in December 2025. Took on the Curator role — the Hub's top leadership position — in June 2026.",
+      "description": "The Global Shapers Community is a World Economic Forum network of young leaders under 30, active in 400+ cities worldwide. Joined the Valencia Hub as a Shaper in June 2025; appointed Incoming Curator in December 2025. Took on the Curator role, the Hub's top leadership position, in June 2026.",
       "keywords": ["WEF", "Community", "Leadership", "Valencia"]
     },
     {
       "name": "Bankinter Innovation Foundation",
       "tagline": "AI Mentor & Project Evaluator",
-      "category": "Mentorship",
+      "category": "Community",
       "status": "active",
       "startDate": "Oct 2023",
       "endDate": null,
@@ -58,12 +84,20 @@
     {
       "name": "Valencia Fallas Route Optimization",
       "tagline": "Metaheuristics for festival route planning, featured in local media",
-      "category": "Research",
+      "category": "Data & Research",
       "status": "completed",
       "startDate": "2024",
       "endDate": "2024",
-      "url": "https://www.linkedin.com/posts/javier-boix-campos_quina-%C3%A9s-la-ruta-perfecta-per-a-visitar-totes-activity-7176703931497017344-DU8H",
-      "description": "Applied metaheuristics algorithms to optimise walking routes for visiting Valencia's Fallas festival — a network of 800+ monuments spread across the city. The project attracted local media coverage and demonstrated how combinatorial optimisation applies to real-world civic problems.",
+      "url": null,
+      "description": "Applied metaheuristics to find the route that visits all the Fallas de Especial, the top category of Valencia's Fallas festival, in the shortest time, on foot, by bike and by public transport. Built with classmates from the Master's in Data Analysis Engineering at UPV. The project attracted local media coverage and demonstrated how combinatorial optimisation applies to real-world civic problems.",
+      "press": [
+        {"outlet": "El País", "url": "https://elpais.com/espana/comunidad-valenciana/2024-03-18/la-ruta-perfecta-para-ver-las-fallas-mas-destacadas-en-el-menor-tiempo-posible-segun-un-algoritmo.html"},
+        {"outlet": "Cadena SER", "url": "https://cadenaser.com/comunitat-valenciana/2024/03/16/un-equipo-de-estudiantes-de-la-upv-traza-la-ruta-perfecta-para-ver-las-fallas-de-especial-radio-valencia/"},
+        {"outlet": "À Punt", "url": "https://www.apuntmedia.es/noticies/societat/ruta-perfecta-visitar-totes-falles-d-especial-un-estudi-cientific_1_1691666.html"},
+        {"outlet": "Valencia Plaza", "url": "https://valenciaplaza.com/estudiantes-upv-trazan-ruta-perfecta-ver-fallas-especial-menor-tiempo"},
+        {"outlet": "Europa Press", "url": "https://www.europapress.es/comunitat-valenciana/noticia-estudiantes-upv-trazan-ruta-perfecta-ver-fallas-especial-menor-tiempo-posible-20240316114953.html"},
+        {"outlet": "La Razón", "url": "https://www.larazon.es/comunidad-valenciana/esta-ruta-perfecta-ver-fallas-seccion-especial-valencia_2024031665f5647e9e2a440001232c58.html"}
+      ],
       "keywords": ["Python", "Optimisation", "VBA", "Metaheuristics"]
     },
     {
@@ -91,13 +125,13 @@
     {
       "name": "WhatsApp Chat Analyzer",
       "tagline": "Statistics-driven visualizations of chat patterns",
-      "category": "Data Science",
+      "category": "Data & Research",
       "status": "completed",
       "startDate": "2023",
       "endDate": "2023",
       "url": "https://whatsapp-analysis-tool.streamlit.app/",
       "description": "An interactive web application that parses WhatsApp chat histories to generate insightful visualizations. Built with Streamlit and Plotly, utilizing statistics techniques to identify communication trends.",
-      "keywords": ["PyTorch", "Statistics", "Streamlit", "Plotly", "OpenCV"]
+      "keywords": ["Python", "Statistics", "Streamlit", "Plotly"]
     }
   ]
 }

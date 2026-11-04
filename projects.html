@@ -3,15 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — Javier Boix Campos</title>
-  <meta name="description" content="Independent projects by Javier Boix Campos — open source, community leadership, research, and freelance work.">
+  <script>
+    // Apply the theme before first paint to avoid a flash.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      var dark = t ? t === 'dark'
+        : window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
+      if (dark) document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <title>Projects · Javier Boix Campos</title>
+  <meta name="description" content="Projects by Javier Boix Campos: community tools, software, data and research, and freelance work.">
+  <meta property="og:title" content="Projects · Javier Boix Campos">
+  <meta property="og:description" content="Projects by Javier Boix Campos: community tools, software, data and research, and freelance work.">
+  <meta property="og:url" content="https://jboixcampos.github.io/projects.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://jboixcampos.github.io/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Javier Boix Campos, ML Engineer">
+  <meta property="og:site_name" content="Javier Boix Campos">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://jboixcampos.github.io/projects.html">
   <link rel="llms-txt" href="/llms.txt">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="nav-brand">JBC</a>
+  <a href="index.html" class="nav-brand"><svg class="monogram" viewBox="2 6 196 94" width="84" height="40" role="img" aria-label="Home"><g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="M34,10 V70 C34,88 20,96 6,88"/><path d="M54,10 V90 M54,10 H72 C90,10 90,48 72,48 H54 M54,48 H78 C98,48 98,90 78,90 H54"/><path d="M179.1,74.4 A38,38 0 1 1 150,12"/></g><circle cx="168" cy="12" r="5" fill="var(--signal)"/><circle cx="182" cy="12" r="4" fill="var(--signal)"/><circle cx="194" cy="12" r="3" fill="var(--signal)"/></svg></a>
   <ul class="nav-links">
     <li><a href="projects.html" class="active">Projects</a></li>
     <li><a href="research.html">Research</a></li>
@@ -26,72 +51,93 @@
 
 <main class="page-wrap">
 
-  <section style="margin-bottom:56px">
-    <h1 style="font-family:var(--serif);font-size:clamp(2rem,5vw,3rem);
-               font-weight:300;line-height:1.05;margin-bottom:0.4rem">
-      Projects
-    </h1>
-    <p style="font-family:var(--serif);font-style:italic;color:var(--muted);
-              font-size:1.1rem;font-weight:300">
-      Open source, community, research &amp; freelance
-    </p>
-  </section>
+  <header class="page-head">
+    <h1 class="page-title">Projects</h1>
+    <p class="page-sub">Community, software, data and research, freelance</p>
+  </header>
 
-  <section>
-    <div class="projects-grid" id="projects-grid">
-      <!-- loaded dynamically -->
-      <p style="color:var(--muted);font-size:0.9rem;font-weight:300">Loading…</p>
-    </div>
-  </section>
+  <div id="projects-root">
+    <!-- loaded dynamically from data/projects.json, grouped by category -->
+    <p class="loading">Loading&hellip;</p>
+  </div>
 
 </main>
 
 <footer>
+  <div class="footer-start">
+  <a href="index.html" class="footer-brand"><svg class="monogram" viewBox="2 6 196 94" width="52" height="25" role="img" aria-label="Home"><g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="M34,10 V70 C34,88 20,96 6,88"/><path d="M54,10 V90 M54,10 H72 C90,10 90,48 72,48 H54 M54,48 H78 C98,48 98,90 78,90 H54"/><path d="M179.1,74.4 A38,38 0 1 1 150,12"/></g><circle cx="168" cy="12" r="5" fill="var(--signal)"/><circle cx="182" cy="12" r="4" fill="var(--signal)"/><circle cx="194" cy="12" r="3" fill="var(--signal)"/></svg></a>
   <div class="footer-links">
     <a href="mailto:javierboixcampos@gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/javier-boix-campos" target="_blank" rel="noopener">LinkedIn</a>
     <a href="https://github.com/JBoixCampos" target="_blank" rel="noopener">GitHub</a>
     <a href="https://bsky.app/profile/jboixcampos.bsky.social" target="_blank" rel="noopener">Bluesky</a>
   </div>
-  <span class="footer-copy">© 2026 Javier Boix Campos</span>
+  </div>
+  <span class="footer-copy">© <span data-year>2026</span> Javier Boix Campos</span>
 </footer>
 
 <script>
   const PROJ_URL = './data/projects.json';
 
   function formatDates(p) {
+    if (!p.startDate) return '';
     if (!p.endDate) return p.startDate + ' – Present';
     if (p.startDate === p.endDate) return p.startDate;
     return `${p.startDate} – ${p.endDate}`;
   }
 
-  function render(data) {
-    document.getElementById('projects-grid').innerHTML = data.projects.map(p => {
-      const isActive = p.status === 'active';
-      const linkHtml = p.url
-        ? `<a class="project-link" href="${p.url}" target="_blank" rel="noopener">
-             Visit →
-           </a>`
-        : '';
+  // Groups in display order; unknown categories go last.
+  const GROUPS = ['Community', 'Software', 'Data & Research', 'Freelance'];
 
+  function card(p) {
+    const isActive = p.status === 'active';
+    const linkHtml = p.url
+      ? `<a class="project-link" href="${p.url}" target="_blank" rel="noopener">Visit &rarr;</a>`
+      : '';
+    const pressHtml = p.press && p.press.length
+      ? `<p class="project-press"><span>Press</span> ${p.press.map(m =>
+          `<a href="${m.url}" target="_blank" rel="noopener">${m.outlet}</a>`).join(', ')}</p>`
+      : '';
+
+    return `
+      <article class="project-card">
+        <div class="project-top">
+          <span class="project-status">
+            <span class="project-status-dot ${isActive ? 'active' : ''}"></span>
+            ${isActive ? 'Active' : 'Completed'}
+          </span>
+        </div>
+        <h3 class="project-title">${p.name}</h3>
+        <p class="project-tagline">${p.tagline}</p>
+        ${p.organization ? `<p class="project-dates">${p.organization}</p>` : ''}
+        ${formatDates(p) ? `<p class="project-dates">${formatDates(p)}</p>` : ''}
+        <p class="project-desc">${p.description}</p>
+        <div class="project-keywords">
+          ${p.keywords.map(k => `<span class="project-keyword">${k}</span>`).join('')}
+        </div>
+        ${pressHtml}
+        ${linkHtml}
+      </article>`;
+  }
+
+  function render(data) {
+    const order = c => {
+      const i = GROUPS.indexOf(c);
+      return i === -1 ? GROUPS.length : i;
+    };
+    const categories = [...new Set(data.projects.map(p => p.category))]
+      .sort((a, b) => order(a) - order(b));
+
+    document.getElementById('projects-root').innerHTML = categories.map(cat => {
+      // Active first, otherwise keep the order of the JSON file.
+      const items = data.projects
+        .filter(p => p.category === cat)
+        .sort((a, b) => (b.status === 'active') - (a.status === 'active'));
       return `
-        <div class="project-card">
-          <div class="project-top">
-            <span class="project-category">${p.category}</span>
-            <span class="project-status">
-              <span class="project-status-dot ${isActive ? 'active' : ''}"></span>
-              ${isActive ? 'Active' : 'Completed'}
-            </span>
-          </div>
-          <h2 class="project-title">${p.name}</h2>
-          <p class="project-tagline">${p.tagline}</p>
-          <p class="project-dates">${formatDates(p)}</p>
-          <p class="project-desc">${p.description}</p>
-          <div class="project-keywords">
-            ${p.keywords.map(k => `<span class="project-keyword">${k}</span>`).join('')}
-          </div>
-          ${linkHtml}
-        </div>`;
+        <section class="project-group">
+          <h2 class="section-label">${cat} <span class="group-count">${items.length}</span></h2>
+          <div class="projects-grid">${items.map(card).join('')}</div>
+        </section>`;
     }).join('');
   }
 
@@ -99,21 +145,24 @@
     .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(render)
     .catch(() => {
-      document.getElementById('projects-grid').innerHTML = `
-        <p style="color:var(--muted);font-size:0.9rem;font-weight:300">
-          Unable to load projects. Make sure
-          <code style="font-size:0.85rem;background:var(--accent-faint);padding:1px 5px;border-radius:2px">data/projects.json</code>
-          is committed to your repository.
-        </p>`;
+      document.getElementById('projects-root').innerHTML =
+        '<p class="load-error">Unable to load data. Make sure <code>data/projects.json</code> is committed to your repository.</p>';
     });
 </script>
 
 <script>
   function toggleTheme() {
     const dark = document.body.classList.toggle('dark');
-    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    document.documentElement.classList.toggle('dark', dark);
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
   }
-  if (localStorage.getItem('theme') === 'dark') {
+  // Keep the copyright year current
+  document.querySelectorAll('[data-year]').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
+  // Sync body.dark with the class set by the head script
+  // (localStorage('theme'), else prefers-color-scheme).
+  if (document.documentElement.classList.contains('dark')) {
     document.body.classList.add('dark');
   }
 </script>

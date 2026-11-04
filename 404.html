@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Apply the theme before first paint to avoid a flash.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      var dark = t ? t === 'dark'
+        : window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
+      if (dark) document.documentElement.classList.add('dark');
+    })();
+  </script>
+  <title>Don&rsquo;t panic · Javier Boix Campos</title>
+  <meta name="robots" content="noindex">
+  <link rel="llms-txt" href="/llms.txt">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand"><svg class="monogram" viewBox="2 6 196 94" width="84" height="40" role="img" aria-label="Home"><g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="M34,10 V70 C34,88 20,96 6,88"/><path d="M54,10 V90 M54,10 H72 C90,10 90,48 72,48 H54 M54,48 H78 C98,48 98,90 78,90 H54"/><path d="M179.1,74.4 A38,38 0 1 1 150,12"/></g><circle cx="168" cy="12" r="5" fill="var(--signal)"/><circle cx="182" cy="12" r="4" fill="var(--signal)"/><circle cx="194" cy="12" r="3" fill="var(--signal)"/></svg></a>
+  <ul class="nav-links">
+    <li><a href="/projects.html">Projects</a></li>
+    <li><a href="/research.html">Research</a></li>
+    <li><a href="/cv.html">CV</a></li>
+    <li><a href="https://github.com/JBoixCampos" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="mailto:javierboixcampos@gmail.com">Contact</a></li>
+  </ul>
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle dark mode">
+  <span class="theme-icon">◐</span>
+</button>
+</nav>
+
+<main class="page-wrap">
+  <header class="page-head notfound-head">
+    <p class="section-label"><span class="idx">404</span>Page not found</p>
+    <h1 class="page-title">Don&rsquo;t panic.</h1>
+    <p class="page-sub">This page is mostly harmless, and mostly absent. Grab your towel and try one of these:</p>
+  </header>
+  <ul class="notfound-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/projects.html">Projects</a></li>
+    <li><a href="/research.html">Research</a></li>
+    <li><a href="/cv.html">CV</a></li>
+  </ul>
+</main>
+
+<footer>
+  <div class="footer-start">
+  <a href="/" class="footer-brand"><svg class="monogram" viewBox="2 6 196 94" width="52" height="25" role="img" aria-label="Home"><g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="M34,10 V70 C34,88 20,96 6,88"/><path d="M54,10 V90 M54,10 H72 C90,10 90,48 72,48 H54 M54,48 H78 C98,48 98,90 78,90 H54"/><path d="M179.1,74.4 A38,38 0 1 1 150,12"/></g><circle cx="168" cy="12" r="5" fill="var(--signal)"/><circle cx="182" cy="12" r="4" fill="var(--signal)"/><circle cx="194" cy="12" r="3" fill="var(--signal)"/></svg></a>
+  <div class="footer-links">
+    <a href="mailto:javierboixcampos@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/javier-boix-campos" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/JBoixCampos" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://bsky.app/profile/jboixcampos.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+  </div>
+  </div>
+  <span class="footer-copy">© <span data-year>2026</span> Javier Boix Campos</span>
+</footer>
+
+<script>
+  function toggleTheme() {
+    const dark = document.body.classList.toggle('dark');
+    document.documentElement.classList.toggle('dark', dark);
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+  }
+  // Keep the copyright year current
+  document.querySelectorAll('[data-year]').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
+  // Sync body.dark with the class set by the head script
+  // (localStorage('theme'), else prefers-color-scheme).
+  if (document.documentElement.classList.contains('dark')) {
+    document.body.classList.add('dark');
+  }
+</script>
+</body>
+</html>
