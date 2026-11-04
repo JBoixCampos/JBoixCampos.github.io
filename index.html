@@ -12,6 +12,16 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    // Apply the theme before first paint to avoid a flash.
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      var dark = t ? t === 'dark'
+        : window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches;
+      if (dark) document.documentElement.classList.add('dark');
+    })();
+  </script>
   <title>Javier Boix Campos · ML Engineer</title>
   <meta name="description" content="ML Engineer at Multiverse Computing. Efficient AI, biomedical deep learning, and scientific infrastructure.">
   <meta property="og:title" content="Javier Boix Campos · ML Engineer">
@@ -332,9 +342,12 @@
 <script>
   function toggleTheme() {
     const dark = document.body.classList.toggle('dark');
-    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    document.documentElement.classList.toggle('dark', dark);
+    try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
   }
-  if (localStorage.getItem('theme') === 'dark') {
+  // Sync body.dark with the class set by the head script
+  // (localStorage('theme'), else prefers-color-scheme).
+  if (document.documentElement.classList.contains('dark')) {
     document.body.classList.add('dark');
   }
 </script>
