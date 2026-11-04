@@ -54,7 +54,7 @@
     <a href="https://bsky.app/profile/jboixcampos.bsky.social" target="_blank" rel="noopener">Bluesky</a>
   </div>
   </div>
-  <span class="footer-copy">© 2026 Javier Boix Campos</span>
+  <span class="footer-copy">© <span data-year>2026</span> Javier Boix Campos</span>
 </footer>
 
 <script>
@@ -74,6 +74,7 @@
           <a href="${basics.website}" target="_blank" rel="noopener">jboixcampos.github.io</a>
           <span>${basics.location.address}</span>
         </div>
+        <button class="print-btn no-print" type="button" onclick="window.print()">Print or save as PDF</button>
         <p class="cv-summary">${basics.summary}</p>
         </div>
 
@@ -165,6 +166,10 @@
     document.documentElement.classList.toggle('dark', dark);
     try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
   }
+  // Keep the copyright year current
+  document.querySelectorAll('[data-year]').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
   // Sync body.dark with the class set by the head script
   // (localStorage('theme'), else prefers-color-scheme).
   if (document.documentElement.classList.contains('dark')) {

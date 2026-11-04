@@ -111,7 +111,7 @@
     <aside class="margin" aria-label="Notes on UKE Hamburg">
       <ul class="notes">
         <li>Direction is decided by competition between protrusions that oscillate in a seesaw pattern.</li>
-        <li>Coordinates of tips and junctions were extracted with ResNet50 networks (Methods).</li>
+        <li>Coordinates of tips and junctions were extracted with ResNet50 networks (see Methods in <a href="https://www.science.org/doi/10.1126/sciadv.ads2734" target="_blank" rel="noopener">the paper</a>).</li>
       </ul>
     </aside>
   </section>
@@ -202,7 +202,7 @@
   <!-- ── PUBLICATIONS ────────────────────── -->
   <section id="publications" class="row" aria-labelledby="pubs-title">
     <div class="main">
-      <h2 class="section-label" id="pubs-title">Journal publications</h2>
+      <h2 class="section-label" id="pubs-title">Other journal publications</h2>
       <ul class="pub-list pub-list-compact" id="pub-list">
         <li class="pub-item loading">Loading&hellip;</li>
       </ul>
@@ -224,16 +224,10 @@
     <a href="https://bsky.app/profile/jboixcampos.bsky.social" target="_blank" rel="noopener">Bluesky</a>
   </div>
   </div>
-  <span class="footer-copy">© 2026 Javier Boix Campos</span>
+  <span class="footer-copy">© <span data-year>2026</span> Javier Boix Campos</span>
 </footer>
 
 <script>
-  // ── Active nav link
-  document.querySelectorAll('.nav-links a').forEach(a => {
-    if (location.pathname.endsWith('index.html') || location.pathname === '/')
-      if (a.getAttribute('href') === 'index.html') a.classList.add('active');
-  });
-
   // ── Publications: load from data/publications.json, fall back to inline data
   const PUB_URL = './data/publications.json';
 
@@ -261,12 +255,24 @@
       ? `<strong>${name}</strong>` : name;
   }
 
+  // The paper featured in section 1 is not repeated here.
+  const FEATURED_DOI = '10.1126/sciadv.ads2734';
+
+  // Long author lists: first authors, then mine, then et al.
+  function shortAuthors(authors) {
+    if (authors.length <= 8) return authors.map(hl).join(', ');
+    const me = authors.findIndex(a => /^Boix[- ]Campos J$/.test(a.trim()));
+    const head = authors.slice(0, 3).map(hl);
+    if (me >= 3) head.push(me > 3 ? '&hellip;' : '', hl(authors[me]));
+    return head.filter(Boolean).join(', ') + ' et al.';
+  }
+
   function renderJournals(pubs) {
-    const journals = pubs.filter(p => p.type === 'journal');
+    const journals = pubs.filter(p => p.type === 'journal' && p.doi !== FEATURED_DOI);
     document.getElementById('pub-list').innerHTML = journals.map(p => `
       <li class="pub-item">
         <p class="pub-title">${p.title}</p>
-        <p class="pub-authors">${p.authors.map(hl).join(', ')}</p>
+        <p class="pub-authors">${shortAuthors(p.authors)}</p>
         <p class="pub-venue"><em>${p.journal}</em>, ${p.year}
           <a class="pub-doi" href="https://doi.org/${p.doi}" target="_blank" rel="noopener">doi:${p.doi}</a>
         </p>
@@ -288,6 +294,10 @@
     document.documentElement.classList.toggle('dark', dark);
     try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
   }
+  // Keep the copyright year current
+  document.querySelectorAll('[data-year]').forEach(el => {
+    el.textContent = new Date().getFullYear();
+  });
   // Sync body.dark with the class set by the head script
   // (localStorage('theme'), else prefers-color-scheme).
   if (document.documentElement.classList.contains('dark')) {
