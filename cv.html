@@ -79,7 +79,7 @@
       <!-- HEADER -->
       <header class="cv-header">
         <h1 class="cv-name">${basics.name}</h1>
-        <p class="cv-role">${basics.label.replace(' | ', ' · ')}</p>
+        <p class="cv-role">${basics.label.split(' | ').map(part => `<span class="cv-role-line">${part}</span>`).join('')}</p>
         <div class="row cv-intro">
           <div class="main">
             <p class="cv-summary">${basics.summary}</p>
