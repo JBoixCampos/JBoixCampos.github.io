@@ -82,7 +82,7 @@
         <p class="cv-role">${basics.label.split(' | ').map(part => `<span class="cv-role-line">${part}</span>`).join('')}</p>
         <div class="row cv-intro">
           <div class="main">
-            <p class="cv-summary">${basics.summary}</p>
+            ${basics.summary.split('\n\n').map(para => `<p class="cv-summary">${para}</p>`).join('')}
           </div>
           <aside class="margin cv-meta">
             <dl class="cv-contacts">

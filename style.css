@@ -375,6 +375,8 @@ footer {
   text-wrap: pretty;
 }
 
+.cv-summary + .cv-summary { margin-top: 0.75em; }
+
 .cv-contacts {
   display: grid;
   grid-template-columns: 1fr;
