@@ -28,7 +28,7 @@ The home page leads with cited work, one section per organisation. The numbers m
 **Email:** javierboixcampos@gmail.com
 **Website:** https://jboixcampos.github.io/
 
-**Summary:** ML Engineer and biotechnologist with almost 4 years of experience across industry and biomedical research. At Multiverse Computing I lead ML projects end to end, from evaluating proposals to production on AWS: model compression (a vision model from 258 MB to 8 MB with quantum-inspired tensorization), 3D Gaussian Splatting optimization, anomaly detection, RAG systems and harnesses for coding agents. Previously a Bioinformatics Research Scientist at UKE Hamburg with publications in Science Advances and JACC, I am the Curator of the WEF Valencia Hub and creator of Vivum. I graduated as Valedictorian of my Master’s in Data Analysis and top of my class in Biotechnology.
+**Summary:** ML Engineer and biotechnologist with almost 5 years of experience across industry and biomedical research. At Multiverse Computing I lead ML projects end to end, from evaluating proposals to production on AWS: model compression (a vision model from 258 MB to 8 MB with quantum-inspired tensorization), 3D Gaussian Splatting optimization, anomaly detection, RAG systems and harnesses for coding agents. Previously a Bioinformatics Research Scientist at UKE Hamburg with publications in Science Advances and JACC, I am the Curator of the WEF Valencia Hub and creator of Vivum. I graduated as Valedictorian of my Master’s in Data Analysis and top of my class in Biotechnology.
 
 ---
 
