@@ -14,8 +14,8 @@
 
 The home page leads with cited work, one section per organisation. The numbers match the citation indices used on the page.
 
-1. **UKE Hamburg (Science Advances, 2026):** "Trade-off between branching and polarity controls decision-making during cell migration". More arms sense the surroundings better, but get the cell less far. CNN pipelines built with the Sáez Lab at UKE Hamburg; more than 95% less analysis time. https://doi.org/10.1126/sciadv.ads2734
-2. **Multiverse Computing (2026):** 95% compression, no loss in accuracy. A vision model went from 258 MB to 8 MB with tensorization inspired by quantum computing. 1.91x the throughput, 49% less energy per inference, SSIM of 0.97 on 20,780 samples. https://multiversecomputing.com/papers/from-258mb-to-8mb-answering-the-95-compression-question
+1. **UKE Hamburg (Science Advances, 2026):** "Trade-off between branching and polarity controls decision-making during cell migration". More arms sense the surroundings better, but get the cell less far. CNN pipelines built in collaboration with the Sáez Lab at UKE Hamburg; more than 95% less analysis time. https://doi.org/10.1126/sciadv.ads2734
+2. **Multiverse Computing (2026):** 95% compression, no loss in accuracy. A vision model went from 258 MB to 8 MB with tensorization inspired by quantum computing. 1.91x the throughput, 49% less energy per inference, SSIM of 0.97 on 20,780 samples. One of several projects led there, alongside 3D Gaussian Splatting, anomaly detection, RAG systems and harnesses for coding agents. https://multiversecomputing.com/papers/from-258mb-to-8mb-answering-the-95-compression-question
 3. **Global Shapers Valencia (Curator):** AIwareness and Camí, two tools made with the Global Shapers community. AIwareness: 4,000+ answers, 21 hubs, 14 countries, 9 languages.
 
 ---
@@ -23,12 +23,12 @@ The home page leads with cited work, one section per organisation. The numbers m
 ## Profile
 
 **Name:** Javier Boix Campos
-**Role:** ML Engineer | Efficient AI & Biomedical Applications
+**Role:** ML Engineer | Efficient AI, LLM Systems & Production ML
 **Location:** Spain
 **Email:** javierboixcampos@gmail.com
 **Website:** https://jboixcampos.github.io/
 
-**Summary:** ML Engineer with 3+ years of experience across industry and research. Compressed a computer vision model from 258 MB to 8 MB using quantum-inspired tensorization, a result published commercially and validated across 20,780 samples. Previously a Bioinformatics Research Scientist at UKE Hamburg with publications in Science Advances and JACC, I am the Curator of the WEF Valencia Hub and creator of Vivum. I graduated as Valedictorian of my Master’s in Data Analysis and top of my class in Biotechnology.
+**Summary:** ML Engineer with almost 4 years of experience across industry and research. At Multiverse Computing I lead ML projects end to end, from evaluating proposals to production on AWS: model compression (a vision model from 258 MB to 8 MB with quantum-inspired tensorization), 3D Gaussian Splatting optimization, anomaly detection, RAG systems and harnesses for coding agents. Previously a Bioinformatics Research Scientist at UKE Hamburg with publications in Science Advances and JACC, I am the Curator of the WEF Valencia Hub and creator of Vivum. I graduated as Valedictorian of my Master’s in Data Analysis and top of my class in Biotechnology.
 
 ---
 
@@ -37,8 +37,11 @@ The home page leads with cited work, one section per organisation. The numbers m
 ### ML Engineer · Multiverse Computing
 **Period:** Dec 2025 – Present
 **Location:** Madrid, Spain
-- Compressed a proprietary computer vision model from 258 MB to 8 MB (95% compression) using quantum-inspired tensorization and quantization: 1.91× throughput, 49% less energy per inference, SSIM 0.97 validated on 20,780 samples. Delivered one month ahead of deadline; published on the company blog and became a commercial selling point.
-- Developed and deployed production ML pipelines across multiple concurrent projects, including experiment tracking with MLflow, containerisation with Docker, and cloud infrastructure on AWS.
+- Technical lead on most of my projects, owning them from concept to production with a high degree of autonomy and coordinating cross-functional teams of DevOps, software and ML engineers.
+- Compressed a proprietary computer vision model from 258 MB to 8 MB (95% compression) with quantum-inspired tensorization and quantization: 1.91× throughput, 49% less energy per inference, SSIM 0.97 validated on 20,780 samples. Delivered one month ahead of deadline; published on the company blog and became a commercial selling point.
+- Optimized 3D Gaussian Splatting pipelines and designed anomaly detection systems, taking them from prototype to production deployments on AWS.
+- Built LLM systems, including retrieval-augmented generation (RAG) pipelines and harnesses for coding agents.
+- Reviewed incoming project proposals for technical feasibility, scope and risk, informing which ones the company takes on.
 
 ### Bioinformatics Research Scientist (Deep Learning), Sáez Lab · University Medical Center Hamburg-Eppendorf (UKE)
 **Period:** Jan 2023 – Dec 2025
@@ -106,7 +109,7 @@ Grade: 9.8/10.0, Top of Class. Comprehensive education encompassing molecular bi
 ## Technical Skills
 
 - **Programming Languages:** Python, R, SQL, JavaScript, VBA, HTML/CSS
-- **AI & Machine Learning:** Deep Learning, CNNs, Computer Vision, Model Compression, Statistical Modelling
+- **AI & Machine Learning:** Deep Learning, CNNs, Computer Vision, Model Compression, Statistical Modelling, LLMs, RAG, AI Agents, Anomaly Detection, 3D Gaussian Splatting, Tensor Networks, Quantization
 - **ML Frameworks & Libraries:** TensorFlow, PyTorch, Scikit-learn, Pandas, NumPy, OpenCV
 - **Data Visualisation & BI:** Plotly, Shiny, Streamlit, Power BI, Matplotlib, Seaborn
 - **Cloud & DevOps:** AWS, Docker, MLflow, Git/GitHub, Linux

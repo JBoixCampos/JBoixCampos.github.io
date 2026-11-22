@@ -33,12 +33,15 @@ The numbers match the citation indices used on the page.
 1. **UKE Hamburg (Science Advances, 2026):** "Trade-off between \
 branching and polarity controls decision-making during cell migration". \
 More arms sense the surroundings better, but get the cell less far. \
-CNN pipelines built with the Sáez Lab at UKE Hamburg; more than 95% \
+CNN pipelines built in collaboration with the Sáez Lab at UKE Hamburg; \
+more than 95% \
 less analysis time. https://doi.org/10.1126/sciadv.ads2734
 2. **Multiverse Computing (2026):** 95% compression, no loss in \
 accuracy. A vision model went from 258 MB to 8 MB with tensorization \
 inspired by quantum computing. 1.91x the throughput, 49% less energy \
-per inference, SSIM of 0.97 on 20,780 samples. \
+per inference, SSIM of 0.97 on 20,780 samples. One of several \
+projects led there, alongside 3D Gaussian Splatting, anomaly detection, \
+RAG systems and harnesses for coding agents. \
 https://multiversecomputing.com/papers/\
 from-258mb-to-8mb-answering-the-95-compression-question
 3. **Global Shapers Valencia (Curator):** AIwareness and Camí, two \
