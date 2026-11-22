@@ -15,8 +15,8 @@
     "location": {
       "address": "Spain"
     },
-    "summary": "ML Engineer with 3+ years of experience across industry and research. Compressed a computer vision model from 258 MB to 8 MB using quantum-inspired tensorization, a result published commercially and validated across 20,780 samples. Previously a Bioinformatics Research Scientist at UKE Hamburg with publications in Science Advances and JACC, I am the Curator of the WEF Valencia Hub and creator of Vivum. I graduated as Valedictorian of my Master’s in Data Analysis and top of my class in Biotechnology.",
-    "label": "ML Engineer | Efficient AI & Biomedical Applications"
+    "summary": "ML Engineer and biotechnologist with almost 5 years of experience across industry and biomedical research. At Multiverse Computing I lead ML projects end to end, from evaluating proposals to production on AWS: model compression (a vision model from 258 MB to 8 MB with quantum-inspired tensorization), 3D Gaussian Splatting optimization, anomaly detection, RAG systems and harnesses for coding agents. Previously a Bioinformatics Research Scientist at UKE Hamburg with publications in Science Advances and JACC, I am the Curator of the WEF Valencia Hub and creator of Vivum. I graduated as Valedictorian of my Master’s in Data Analysis and top of my class in Biotechnology.",
+    "label": "ML Engineer & Biotechnologist | Bridging Production AI and the Life Sciences"
   },
   "education": [
     {
@@ -45,8 +45,11 @@
       "location": "Madrid, Spain",
       "website": "",
       "highlights": [
-        "Compressed a proprietary computer vision model from 258 MB to 8 MB (95% compression) using quantum-inspired tensorization and quantization: 1.91× throughput, 49% less energy per inference, SSIM 0.97 validated on 20,780 samples. Delivered one month ahead of deadline; published on the company blog and became a commercial selling point.",
-        "Developed and deployed production ML pipelines across multiple concurrent projects, including experiment tracking with MLflow, containerisation with Docker, and cloud infrastructure on AWS."
+        "Technical lead on most of my projects, owning them from concept to production with a high degree of autonomy and coordinating cross-functional teams of DevOps, software and ML engineers.",
+        "Compressed a proprietary computer vision model from 258 MB to 8 MB (95% compression) with quantum-inspired tensorization and quantization: 1.91× throughput, 49% less energy per inference, SSIM 0.97 validated on 20,780 samples. Delivered one month ahead of deadline; published on the company blog and became a commercial selling point.",
+        "Optimized 3D Gaussian Splatting pipelines and designed anomaly detection systems, taking them from prototype to production deployments on AWS.",
+        "Built LLM systems, including retrieval-augmented generation (RAG) pipelines and harnesses for coding agents.",
+        "Reviewed incoming project proposals for technical feasibility, scope and risk, informing which ones the company takes on."
       ]
     },
     {
@@ -146,7 +149,7 @@
     {
       "name": "AI & Machine Learning",
       "level": "",
-      "keywords": ["Deep Learning", "CNNs", "Computer Vision", "Model Compression", "Statistical Modelling"]
+      "keywords": ["Deep Learning", "CNNs", "Computer Vision", "Model Compression", "Statistical Modelling", "LLMs", "RAG", "AI Agents", "Anomaly Detection", "3D Gaussian Splatting", "Tensor Networks", "Quantization"]
     },
     {
       "name": "ML Frameworks & Libraries",
