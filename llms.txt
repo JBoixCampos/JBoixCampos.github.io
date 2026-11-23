@@ -133,35 +133,35 @@ The Global Shapers Community is a World Economic Forum network of young leaders 
 **Keywords:** WEF, Community, Leadership, Valencia
 
 ### AIwareness · Real or AI-generated? A quiz and a short training
-**Status:** Active
+**Status:** Active (2026–)
 **Category:** Global Shapers (Global Shapers)
 **URL:** https://aiwareness.vercel.app
 An interactive web app about how hard it has become to tell AI-generated content from real content. You go through a series of images and decide which ones are real; then you see which ones you got right and get a short training on the details to look for, in your own language. 4,000+ answers across 21 hubs, 14 countries and 9 languages. A report on how many people can identify AI-generated content, by age and by country, will be published once data collection ends.
 **Keywords:** AI literacy, Quiz, Multilingual, Global Shapers
 
 ### Camí · University admission programmes and scholarships for Palestinian students
-**Status:** Active
+**Status:** Active (2026–)
 **Category:** Global Shapers (Global Shapers Valencia and Ramallah)
 **URL:** https://cami-g.vercel.app
 Part of Bridging Futures, a Ramallah Hub initiative that supports Palestinian students and recent graduates with training, mentoring and access to opportunities. Camí is its shared directory of university admission programmes and scholarships worldwide: what each one covers, who can apply, which documents it asks for and its deadlines, with a link to the official source. Built in Valencia, where the team also reviews every submission before it goes live. Shapers from any hub can add programmes. Camí means path in Valencian.
 **Keywords:** Education, Scholarships, Directory, Global Shapers
 
 ### Lloguer · An open map of shared rooms and flats across Spain
-**Status:** Active
+**Status:** Active (2026–)
 **Category:** Global Shapers (Global Shapers Valencia)
 **URL:** https://lloguer.org
 Brings together rooms and shared flats rented directly between individuals, which today are scattered across WhatsApp groups and Instagram stories. Free and with no sign-up, it filters by neighbourhood, price, number of flatmates and gender, and a person reviews every listing before it is published. Partnerships with universities, the City Council and other institutions are being sought to spread the word, always on a non-profit basis.
 **Keywords:** Housing, Map, Non-profit, Global Shapers
 
 ### Size of Pain · Helps visualise the scale of Auschwitz-Birkenau
-**Status:** Active
+**Status:** Active (2026–)
 **Category:** Global Shapers (Global Shapers Valencia)
 **URL:** https://size-of-pain.vercel.app/
 Built after a visit to Auschwitz-Birkenau, where the sheer size of the camp left a deep impression. The team is working with the Kraków Hub to offer it to the Auschwitz foundation as an additional resource for the memorial, and with history teachers in Valencia so they can use it in class.
 **Keywords:** History, Education, Visualisation, Global Shapers
 
 ### Global Shapers Valencia website · The online home of the Valencia Hub
-**Status:** Active
+**Status:** Active (2026–)
 **Category:** Global Shapers (Global Shapers Valencia)
 **URL:** https://valencia-hub-global-shapers.github.io/
 Designed and built the website of the Valencia Hub of the Global Shapers Community, where the hub presents itself and the projects it runs.
