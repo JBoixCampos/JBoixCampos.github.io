@@ -175,25 +175,33 @@
   "projects": [
     {
       "name": "Quorum: Interactive Presentations for People and Coding Agents",
+      "startDate": "2026",
+      "endDate": "Present",
       "url": "https://jboixcampos.github.io/quorum/",
       "description": "Built an open source tool where a talk is a Markdown file that a coding agent writes and checks, a person shapes in an editor, and the audience joins from their phones with a QR code. Live polls, quizzes and questions run from a laptop with no accounts or cloud service, and talks export to editable PowerPoint. Used to give a 90-minute talk to Akademia students.",
       "keywords": ["Node.js", "JavaScript", "Open Source", "AI Agents"]
     },
     {
       "name": "Vivum: Open Index for Interactive Scientific Publishing",
+      "startDate": "2026",
+      "endDate": "Present",
       "url": "https://vivum-pub.org",
       "description": "Built the infrastructure Chris Olah identified as missing when Distill went on hiatus: an open registry for web-native scientific articles with community peer review by threshold and citable DOIs via Zenodo. Authors self-publish at any URL and retain full ownership.",
       "keywords": ["Python", "JavaScript", "Open Source", "Scientific Publishing"]
     },
     {
       "name": "Bankinter Innovation Foundation: Akademia Programme",
+      "startDate": "2022",
+      "endDate": "Present",
       "url": "https://lnkd.in/p/eWbyDYpR",
       "description": "Akademia student (2022), mentor of student teams on AI (2023–2025), member of the 2026 expert panel evaluating project proposals, and invited speaker in November 2026 with a 90-minute interactive talk on modern AI, \"The new era of intelligence\".",
       "keywords": ["AI", "Public Speaking", "Mentorship", "Evaluation"]
     },
     {
       "name": "Valencia Fallas Route Optimization",
-      "url": "https://jboixcampos.github.io/fallas-project-details.html",
+      "startDate": "2024",
+      "endDate": "2024",
+      "url": "https://jboixcampos.github.io/projects.html#valencia-fallas-route-optimization",
       "description": "Applied metaheuristics algorithms to optimise walking routes for visiting Valencia's Fallas festival. Featured in local media coverage.",
       "keywords": ["Python", "Optimisation", "VBA", "Metaheuristics"]
     }

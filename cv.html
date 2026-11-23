@@ -73,7 +73,9 @@
   const CV_URL = './data/cv.json';
 
   function renderCV(d) {
-    const { basics, work, education, skills, awards } = d;
+    const { basics, work, education, skills, awards, projects } = d;
+    const span = p => p.startDate === p.endDate ? p.startDate
+      : `${p.startDate} &ndash; ${p.endDate}`;
 
     const html = `
       <!-- HEADER -->
@@ -109,6 +111,23 @@
                 <ul class="cv-highlights">
                   ${job.highlights.map(h => `<li>${h}</li>`).join('')}
                 </ul>
+              </div>
+            </li>
+          `).join('')}
+        </ul>
+      </section>
+
+      <!-- PROJECTS -->
+      <section>
+        <p class="section-label">${d.headings.projects || 'Projects'}</p>
+        <ul class="cv-items">
+          ${projects.map(p => `
+            <li class="cv-item">
+              <div class="cv-dates">${span(p)}</div>
+              <div>
+                <p class="cv-institution">${p.url ? `<a href="${p.url}" target="_blank" rel="noopener">${p.name}</a>` : p.name}</p>
+                <p class="cv-edu-summary">${p.description}</p>
+                <p class="cv-project-keywords">${p.keywords.join(' &middot; ')}</p>
               </div>
             </li>
           `).join('')}

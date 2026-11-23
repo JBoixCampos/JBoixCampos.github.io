@@ -478,6 +478,16 @@ footer {
   margin-top: 8px;
 }
 
+.cv-institution a { text-decoration: none; }
+.cv-institution a:hover { color: var(--signal-text); }
+
+.cv-project-keywords {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
 .cv-highlights { list-style: none; }
 
 .cv-highlights li {
@@ -873,6 +883,7 @@ footer {
   .cv-highlights { margin-top: 2pt; }
   .cv-highlights li { font-size: 8.75pt; line-height: 1.3; padding: 0.5pt 0 0.5pt 9pt; }
   .cv-edu-summary { font-size: 8.75pt; line-height: 1.3; margin-top: 2pt; }
+  .cv-project-keywords { font-size: 6.5pt; margin-top: 1pt; }
 
   /* Skills as compact lines instead of tags */
   .skills-grid { grid-template-columns: repeat(3, 1fr); gap: 6pt 14pt; }
