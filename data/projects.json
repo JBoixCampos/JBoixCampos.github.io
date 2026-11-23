@@ -103,6 +103,39 @@
       ]
     },
     {
+      "name": "Quorum",
+      "tagline": "Presentations the audience takes part in, made with your coding agent",
+      "category": "Software",
+      "status": "active",
+      "startDate": "2026",
+      "endDate": null,
+      "url": "https://jboixcampos.github.io/quorum/",
+      "description": "Quorum turns a Markdown file into a talk where the audience takes part. You write it or ask a coding agent for it, shape it in a visual editor, and give it live with polls, quizzes, guesses and questions on everyone's phone, or export it to an editable PowerPoint file.\n\nEverything runs from your laptop: no accounts, no cloud service and no app for the audience, who join by scanning a QR code. Quorum has no AI of its own. It is built so that agents such as Claude Code can write and check talks (a schema, JSON checks, a skill) and a person can polish the result.\n\nOpen source under the MIT licence, with a playable showcase talk and a playground in the browser.",
+      "details": "A Node.js server with no dependencies, plain HTTP long polling that works through tunnels and conference wifi, an anonymous audience and tests end to end in a headless browser.",
+      "links": [
+        {
+          "label": "Showcase talk",
+          "url": "https://jboixcampos.github.io/quorum/showcase/"
+        },
+        {
+          "label": "Playground",
+          "url": "https://jboixcampos.github.io/quorum/playground/"
+        },
+        {
+          "label": "GitHub",
+          "url": "https://github.com/JBoixCampos/quorum"
+        }
+      ],
+      "keywords": [
+        "Node.js",
+        "JavaScript",
+        "Open Source",
+        "AI Agents",
+        "Markdown",
+        "Live Polls"
+      ]
+    },
+    {
       "name": "Vivum",
       "tagline": "Open index for interactive scientific publishing",
       "category": "Software",
@@ -163,7 +196,7 @@
       "startDate": "2022",
       "endDate": null,
       "url": "https://www.fundacionbankinter.org",
-      "description": "Went from Akademia student (2022) to mentor of student teams on AI algorithm development and model architecture (2023–2025), and then to the 2026 expert panel evaluating project proposals.\n\nIn November 2026 the foundation invited me back as an AI expert to give a 90-minute talk to the new Akademia cohort, \"The new era of intelligence\".\n\nThe session was fully interactive: students joined anonymously from their phones with a QR code, voted the next word of a sentence as a language model would, estimated the energy of an AI query against real data, and watched a small model on my laptop pick its next word live.\n\nIt covered the energy cost of AI, the move from single chatbots to agents that coordinate with each other, and why understanding what is inside a technology is what lets you innovate with it.",
+      "description": "Went from Akademia student (2022) to mentor of student teams on AI algorithm development and model architecture (2023–2025), and then to the 2026 expert panel evaluating project proposals.\n\nIn November 2026 the foundation invited me back as an AI expert to give a 90-minute talk to the new Akademia cohort, \"The new era of intelligence\".\n\nThe session was fully interactive: students joined anonymously from their phones with a QR code, voted the next word of a sentence as a language model would, estimated the energy of an AI query against real data, and watched a small model on my laptop pick its next word live.\n\nIt covered the energy cost of AI, the move from single chatbots to agents that coordinate with each other, and why understanding what is inside a technology is what lets you innovate with it.\n\nThe session ran on Quorum, the open source tool I built for it.",
       "keywords": [
         "AI",
         "Public Speaking",
@@ -175,6 +208,10 @@
         {
           "label": "Talk recap",
           "url": "https://lnkd.in/p/eWbyDYpR"
+        },
+        {
+          "label": "Quorum",
+          "url": "https://jboixcampos.github.io/quorum/"
         }
       ]
     },

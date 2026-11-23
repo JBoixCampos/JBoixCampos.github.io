@@ -175,6 +175,17 @@ The team is working with the Kraków Hub to offer it to the Auschwitz foundation
 Designed and built the website of the Valencia Hub of the Global Shapers Community, where the hub presents itself and the projects it runs.
 **Keywords:** Website, Global Shapers
 
+### Quorum · Presentations the audience takes part in, made with your coding agent
+**Status:** Active (2026–)
+**Category:** Software
+**URL:** https://jboixcampos.github.io/quorum/
+Quorum turns a Markdown file into a talk where the audience takes part. You write it or ask a coding agent for it, shape it in a visual editor, and give it live with polls, quizzes, guesses and questions on everyone's phone, or export it to an editable PowerPoint file.
+
+Everything runs from your laptop: no accounts, no cloud service and no app for the audience, who join by scanning a QR code. Quorum has no AI of its own. It is built so that agents such as Claude Code can write and check talks (a schema, JSON checks, a skill) and a person can polish the result.
+
+Open source under the MIT licence, with a playable showcase talk and a playground in the browser. A Node.js server with no dependencies, plain HTTP long polling that works through tunnels and conference wifi, an anonymous audience and tests end to end in a headless browser.
+**Keywords:** Node.js, JavaScript, Open Source, AI Agents, Markdown, Live Polls
+
 ### Vivum · Open index for interactive scientific publishing
 **Status:** Active (2026–)
 **Category:** Software
@@ -215,6 +226,8 @@ In November 2026 the foundation invited me back as an AI expert to give a 90-min
 The session was fully interactive: students joined anonymously from their phones with a QR code, voted the next word of a sentence as a language model would, estimated the energy of an AI query against real data, and watched a small model on my laptop pick its next word live.
 
 It covered the energy cost of AI, the move from single chatbots to agents that coordinate with each other, and why understanding what is inside a technology is what lets you innovate with it.
+
+The session ran on Quorum, the open source tool I built for it.
 **Keywords:** AI, Public Speaking, Mentorship, Evaluation, Innovation
 
 ### Valencia Fallas Route Optimization · Metaheuristics for festival route planning, featured in local media

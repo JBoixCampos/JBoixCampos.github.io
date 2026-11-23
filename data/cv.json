@@ -174,6 +174,12 @@
   ],
   "projects": [
     {
+      "name": "Quorum: Interactive Presentations for People and Coding Agents",
+      "url": "https://jboixcampos.github.io/quorum/",
+      "description": "Built an open source tool where a talk is a Markdown file that a coding agent writes and checks, a person shapes in an editor, and the audience joins from their phones with a QR code. Live polls, quizzes and questions run from a laptop with no accounts or cloud service, and talks export to editable PowerPoint. Used to give a 90-minute talk to Akademia students.",
+      "keywords": ["Node.js", "JavaScript", "Open Source", "AI Agents"]
+    },
+    {
       "name": "Vivum: Open Index for Interactive Scientific Publishing",
       "url": "https://vivum-pub.org",
       "description": "Built the infrastructure Chris Olah identified as missing when Distill went on hiatus: an open registry for web-native scientific articles with community peer review by threshold and citable DOIs via Zenodo. Authors self-publish at any URL and retain full ownership.",
