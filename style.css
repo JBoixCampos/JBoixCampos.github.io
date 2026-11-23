@@ -725,6 +725,8 @@ footer {
   animation: fadeUp 0.25s ease;
 }
 
+.proj-desc + .proj-desc { margin-top: 0.7em; }
+
 .proj-desc {
   font-size: 1.0625rem;
   line-height: 1.6;

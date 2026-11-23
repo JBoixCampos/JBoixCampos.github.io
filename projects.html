@@ -126,7 +126,7 @@
           <span class="proj-toggle" aria-hidden="true"></span>
         </summary>
         <div class="proj-body">
-          <p class="proj-desc">${p.description}</p>
+          <div class="proj-text">${p.description.split('\n\n').map(para => `<p class="proj-desc">${para}</p>`).join('')}</div>
           <div class="proj-notes">${notes.join('')}</div>
         </div>
       </details>`;

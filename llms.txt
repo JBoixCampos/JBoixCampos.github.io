@@ -129,7 +129,9 @@ Grade: 9.8/10.0, Top of Class. Comprehensive education encompassing molecular bi
 **Status:** Active (2025–)
 **Category:** Global Shapers
 **URL:** https://valencia-hub-global-shapers.github.io/
-The Global Shapers Community is a World Economic Forum network of young leaders under 30, active in 400+ cities worldwide. Joined the Valencia Hub as a Shaper in June 2025; appointed Incoming Curator in December 2025. Took on the Curator role, the Hub's top leadership position, in June 2026.
+The Global Shapers Community is a World Economic Forum network of young leaders under 30, active in 400+ cities worldwide.
+
+Joined the Valencia Hub as a Shaper in June 2025; appointed Incoming Curator in December 2025. Took on the Curator role, the Hub's top leadership position, in June 2026.
 **Keywords:** WEF, Community, Leadership, Valencia
 
 ### AIwareness · Real or AI-generated? A quiz and a short training
@@ -143,21 +145,27 @@ An interactive web app about how hard it has become to tell AI-generated content
 **Status:** Active (2026–)
 **Category:** Global Shapers (Global Shapers Valencia and Ramallah)
 **URL:** https://cami-g.vercel.app
-Part of Bridging Futures, a Ramallah Hub initiative that supports Palestinian students and recent graduates with training, mentoring and access to opportunities. Camí is its shared directory of university admission programmes and scholarships worldwide: what each one covers, who can apply, which documents it asks for and its deadlines, with a link to the official source. Built in Valencia, where the team also reviews every submission before it goes live. Shapers from any hub can add programmes. Camí means path in Valencian.
+Part of Bridging Futures, a Ramallah Hub initiative that supports Palestinian students and recent graduates with training, mentoring and access to opportunities.
+
+Camí is its shared directory of university admission programmes and scholarships worldwide: what each one covers, who can apply, which documents it asks for and its deadlines, with a link to the official source. Built in Valencia, where the team also reviews every submission before it goes live. Shapers from any hub can add programmes. Camí means path in Valencian.
 **Keywords:** Education, Scholarships, Directory, Global Shapers
 
 ### Lloguer · An open map of shared rooms and flats across Spain
 **Status:** Active (2026–)
 **Category:** Global Shapers (Global Shapers Valencia)
 **URL:** https://lloguer.org
-Brings together rooms and shared flats rented directly between individuals, which today are scattered across WhatsApp groups and Instagram stories. Free and with no sign-up, it filters by neighbourhood, price, number of flatmates and gender, and a person reviews every listing before it is published. Partnerships with universities, the City Council and other institutions are being sought to spread the word, always on a non-profit basis.
+Brings together rooms and shared flats rented directly between individuals, which today are scattered across WhatsApp groups and Instagram stories.
+
+Free and with no sign-up, it filters by neighbourhood, price, number of flatmates and gender, and a person reviews every listing before it is published. Partnerships with universities, the City Council and other institutions are being sought to spread the word, always on a non-profit basis.
 **Keywords:** Housing, Map, Non-profit, Global Shapers
 
 ### Size of Pain · Helps visualise the scale of Auschwitz-Birkenau
 **Status:** Active (2026–)
 **Category:** Global Shapers (Global Shapers Valencia)
 **URL:** https://size-of-pain.vercel.app/
-Built after a visit to Auschwitz-Birkenau, where the sheer size of the camp left a deep impression. The team is working with the Kraków Hub to offer it to the Auschwitz foundation as an additional resource for the memorial, and with history teachers in Valencia so they can use it in class.
+Built after a visit to Auschwitz-Birkenau, where the sheer size of the camp left a deep impression.
+
+The team is working with the Kraków Hub to offer it to the Auschwitz foundation as an additional resource for the memorial, and with history teachers in Valencia so they can use it in class.
 **Keywords:** History, Education, Visualisation, Global Shapers
 
 ### Global Shapers Valencia website · The online home of the Valencia Hub
@@ -171,35 +179,51 @@ Designed and built the website of the Valencia Hub of the Global Shapers Communi
 **Status:** Active (2026–)
 **Category:** Software
 **URL:** https://vivum-pub.org
-An open registry for interactive, web-native scientific articles with community peer review by threshold and citable DOIs via Zenodo. Authors self-publish at any URL and retain full ownership. The infrastructure Chris Olah identified as missing when Distill went on indefinite hiatus in 2021.
+An open registry for interactive, web-native scientific articles with community peer review by threshold and citable DOIs via Zenodo. Authors self-publish at any URL and retain full ownership.
+
+The infrastructure Chris Olah identified as missing when Distill went on indefinite hiatus in 2021.
 **Keywords:** Python, JavaScript, Open Source, Scientific Publishing
 
 ### Corrillo · Everyone's socials. One circle.
 **Status:** Active (2026–)
 **Category:** Software
 **URL:** https://corrillo.app
-Gives every group chat one shared page. Someone makes a circle and drops its link or QR code in the chat, everyone adds their socials once, and each person opens everyone else's profiles in one tap while a progress ring counts how many they have opened. No accounts, no installs, just a link. Circles delete themselves when they end. Built with React, TypeScript and Supabase (Postgres RPCs, realtime broadcast, Edge Functions), with Stripe Checkout for paid Event circles and an installable PWA.
+Gives every group chat one shared page. Someone makes a circle and drops its link or QR code in the chat, everyone adds their socials once, and each person opens everyone else's profiles in one tap while a progress ring counts how many they have opened. No accounts, no installs, just a link. Circles delete themselves when they end.
+
+Built with React, TypeScript and Supabase (Postgres RPCs, realtime broadcast, Edge Functions), with Stripe Checkout for paid Event circles and an installable PWA.
 **Keywords:** React, TypeScript, Supabase, PostgreSQL, Stripe, PWA
 
 ### Sentinel · A FICO-like health index for companies, built only from their treasury trail
 **Status:** Completed (2026)
 **Category:** Data & Research
 **URL:** https://hack-spain.vercel.app
-Built for HackSpain 2026 with Rubén Godoy and Walter J.T.V. Turns 2.6M bank movements and 0.9M invoices from 1,286 companies into a 0–100 monthly index, explained in euros, with alerts that name an owner and an action, control-chart monitoring, a 6-month forecast fan, and a chat agent that only answers from tool results. Explainable and monitorable by design, not a claim of prediction.
+Built for HackSpain 2026 with Rubén Godoy and Walter J.T.V.
+
+Turns 2.6M bank movements and 0.9M invoices from 1,286 companies into a 0–100 monthly index, explained in euros, with alerts that name an owner and an action, control-chart monitoring, a 6-month forecast fan, and a chat agent that only answers from tool results.
+
+Explainable and monitorable by design, not a claim of prediction.
 **Keywords:** Hackathon, Python, DuckDB, Next.js, Postgres, LLM Agents, Explainability
 
 ### Bankinter Innovation Foundation · From Akademia student to AI speaker
 **Status:** Active (2022–)
 **Category:** Community
 **URL:** https://www.fundacionbankinter.org
-Went from Akademia student (2022) to mentor of student teams on AI algorithm development and model architecture (2023–2025), and then to the 2026 expert panel evaluating project proposals. In November 2026 the foundation invited me back as an AI expert to give a 90-minute talk to the new Akademia cohort, "The new era of intelligence". The session was fully interactive: students joined anonymously from their phones with a QR code, voted the next word of a sentence as a language model would, estimated the energy of an AI query against real data, and watched a small model on my laptop pick its next word live. It covered the energy cost of AI, the move from single chatbots to agents that coordinate with each other, and why understanding what is inside a technology is what lets you innovate with it.
+Went from Akademia student (2022) to mentor of student teams on AI algorithm development and model architecture (2023–2025), and then to the 2026 expert panel evaluating project proposals.
+
+In November 2026 the foundation invited me back as an AI expert to give a 90-minute talk to the new Akademia cohort, "The new era of intelligence".
+
+The session was fully interactive: students joined anonymously from their phones with a QR code, voted the next word of a sentence as a language model would, estimated the energy of an AI query against real data, and watched a small model on my laptop pick its next word live.
+
+It covered the energy cost of AI, the move from single chatbots to agents that coordinate with each other, and why understanding what is inside a technology is what lets you innovate with it.
 **Keywords:** AI, Public Speaking, Mentorship, Evaluation, Innovation
 
 ### Valencia Fallas Route Optimization · Metaheuristics for festival route planning, featured in local media
 **Status:** Completed (2024)
 **Category:** Data & Research
 **Press:** El País (https://elpais.com/espana/comunidad-valenciana/2024-03-18/la-ruta-perfecta-para-ver-las-fallas-mas-destacadas-en-el-menor-tiempo-posible-segun-un-algoritmo.html), Cadena SER (https://cadenaser.com/comunitat-valenciana/2024/03/16/un-equipo-de-estudiantes-de-la-upv-traza-la-ruta-perfecta-para-ver-las-fallas-de-especial-radio-valencia/), À Punt (https://www.apuntmedia.es/noticies/societat/ruta-perfecta-visitar-totes-falles-d-especial-un-estudi-cientific_1_1691666.html), Valencia Plaza (https://valenciaplaza.com/estudiantes-upv-trazan-ruta-perfecta-ver-fallas-especial-menor-tiempo), Europa Press (https://www.europapress.es/comunitat-valenciana/noticia-estudiantes-upv-trazan-ruta-perfecta-ver-fallas-especial-menor-tiempo-posible-20240316114953.html), La Razón (https://www.larazon.es/comunidad-valenciana/esta-ruta-perfecta-ver-fallas-seccion-especial-valencia_2024031665f5647e9e2a440001232c58.html)
-Applied metaheuristics to find the route that visits all the Fallas de Especial, the top category of Valencia's Fallas festival, in the shortest time, on foot, by bike and by public transport. Built with classmates from the Master's in Data Analysis Engineering at UPV. The project attracted local media coverage and demonstrated how combinatorial optimisation applies to real-world civic problems.
+Applied metaheuristics to find the route that visits all the Fallas de Especial, the top category of Valencia's Fallas festival, in the shortest time, on foot, by bike and by public transport.
+
+Built with classmates from the Master's in Data Analysis Engineering at UPV. The project attracted local media coverage and demonstrated how combinatorial optimisation applies to real-world civic problems.
 **Keywords:** Python, Optimisation, VBA, Metaheuristics
 
 ### Freelance AI/ML Consulting · Independent machine learning and data projects
