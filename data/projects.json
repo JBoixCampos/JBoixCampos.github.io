@@ -157,18 +157,25 @@
     },
     {
       "name": "Bankinter Innovation Foundation",
-      "tagline": "AI Mentor & Project Evaluator",
+      "tagline": "From Akademia student to AI speaker",
       "category": "Community",
       "status": "active",
-      "startDate": "Oct 2023",
+      "startDate": "2022",
       "endDate": null,
       "url": "https://www.fundacionbankinter.org",
-      "description": "Mentored student teams in the Akademia programme (2023–2025) on AI algorithm development and model architecture. Currently serving on the 2026 expert panel to evaluate project proposals.",
+      "description": "Went from Akademia student (2022) to mentor of student teams on AI algorithm development and model architecture (2023–2025), and then to the 2026 expert panel evaluating project proposals. In November 2026 the foundation invited me back as an AI expert to give a 90-minute talk to the new Akademia cohort, \"The new era of intelligence\". The session was fully interactive: students joined anonymously from their phones with a QR code, voted the next word of a sentence as a language model would, estimated the energy of an AI query against real data, and watched a small model on my laptop pick its next word live. It covered the energy cost of AI, the move from single chatbots to agents that coordinate with each other, and why understanding what is inside a technology is what lets you innovate with it.",
       "keywords": [
         "AI",
+        "Public Speaking",
         "Mentorship",
-        "Innovation",
-        "Evaluation"
+        "Evaluation",
+        "Innovation"
+      ],
+      "links": [
+        {
+          "label": "Talk recap",
+          "url": "https://lnkd.in/p/eWbyDYpR"
+        }
       ]
     },
     {

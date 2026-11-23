@@ -136,7 +136,7 @@
           const loc = c.location && c.location !== 'Location TBD' ? ` · ${c.location}` : '';
           return `
             <div class="conf-item">
-              <p class="conf-title">${c.title}</p>
+              <p class="conf-title">${c.url ? `<a href="${c.url}" target="_blank" rel="noopener">${c.title}</a>` : c.title}</p>
               <p class="conf-authors">${authors(c.authors)}</p>
               <p class="conf-event">${c.conference}</p>
               <p class="conf-details">${c.date}${loc}</p>

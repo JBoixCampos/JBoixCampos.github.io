@@ -188,12 +188,12 @@ Gives every group chat one shared page. Someone makes a circle and drops its lin
 Built for HackSpain 2026 with Rubén Godoy and Walter J.T.V. Turns 2.6M bank movements and 0.9M invoices from 1,286 companies into a 0–100 monthly index, explained in euros, with alerts that name an owner and an action, control-chart monitoring, a 6-month forecast fan, and a chat agent that only answers from tool results. Explainable and monitorable by design, not a claim of prediction.
 **Keywords:** Hackathon, Python, DuckDB, Next.js, Postgres, LLM Agents, Explainability
 
-### Bankinter Innovation Foundation · AI Mentor & Project Evaluator
-**Status:** Active (Oct 2023–)
+### Bankinter Innovation Foundation · From Akademia student to AI speaker
+**Status:** Active (2022–)
 **Category:** Community
 **URL:** https://www.fundacionbankinter.org
-Mentored student teams in the Akademia programme (2023–2025) on AI algorithm development and model architecture. Currently serving on the 2026 expert panel to evaluate project proposals.
-**Keywords:** AI, Mentorship, Innovation, Evaluation
+Went from Akademia student (2022) to mentor of student teams on AI algorithm development and model architecture (2023–2025), and then to the 2026 expert panel evaluating project proposals. In November 2026 the foundation invited me back as an AI expert to give a 90-minute talk to the new Akademia cohort, "The new era of intelligence". The session was fully interactive: students joined anonymously from their phones with a QR code, voted the next word of a sentence as a language model would, estimated the energy of an AI query against real data, and watched a small model on my laptop pick its next word live. It covered the energy cost of AI, the move from single chatbots to agents that coordinate with each other, and why understanding what is inside a technology is what lets you innovate with it.
+**Keywords:** AI, Public Speaking, Mentorship, Evaluation, Innovation
 
 ### Valencia Fallas Route Optimization · Metaheuristics for festival route planning, featured in local media
 **Status:** Completed (2024)
@@ -242,6 +242,7 @@ An interactive web application that parses WhatsApp chat histories to generate i
 
 ## Conference Contributions
 
+- **2026**: "The new era of intelligence" (**Boix-Campos J**). Akademia programme, Fundación Innovación Bankinter (invited talk). November.
 - **2025**: "Lysosomal and calcium signaling regulation of leukocyte shape and migration" (López-López T, **Boix-Campos J**, Kabilka A, Sáez PJ). EMBO Workshop – From molecules to organisms: An integrative view of cell biology. Radstadt, Austria, March 16–21.
 - **2025**: "ER stress disrupts membrane and mitochondria dynamics during cell migration" (Adler MR, **Boix-Campos J**, Kux JM, Sáez PJ). EMBO Workshop – From molecules to organisms: An integrative view of cell biology. Radstadt, Austria, March 16–21.
 - **2025**: "ATP-Induced Lysosomal Calcium Signaling Regulates Dendritic Cell Shape and Migration" (López-López T, Kabilka A, **Boix-Campos J**, Sáez PJ). International Calcium Conference 2025. Hamburg, Germany.

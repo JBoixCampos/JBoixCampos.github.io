@@ -89,35 +89,47 @@
   // Groups in display order; unknown categories go last.
   const GROUPS = ['Global Shapers', 'Software', 'Data & Research', 'Community', 'Freelance'];
 
-  function card(p) {
+  const slug = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/&/g, 'and').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  function row(p) {
     const isActive = p.status === 'active';
-    const linkHtml = p.url
-      ? `<a class="project-link" href="${p.url}" target="_blank" rel="noopener">Visit &rarr;</a>`
-      : '';
-    const pressHtml = p.press && p.press.length
-      ? `<p class="project-press"><span>Press</span> ${p.press.map(m =>
-          `<a href="${m.url}" target="_blank" rel="noopener">${m.outlet}</a>`).join(', ')}</p>`
-      : '';
+    const dates = formatDates(p);
+
+    const notes = [];
+    if (p.url) {
+      notes.push(`<p class="proj-visit"><a href="${p.url}" target="_blank" rel="noopener">Visit ${p.url.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '')} &#8599;</a></p>`);
+    }
+    if (p.details) notes.push(`<p class="proj-detail">${p.details}</p>`);
+    if (p.organization) notes.push(`<p class="proj-note"><span>With</span> ${p.organization}</p>`);
+    if (p.press && p.press.length) {
+      notes.push(`<p class="proj-note"><span>Press</span> ${p.press.map(m =>
+        `<a href="${m.url}" target="_blank" rel="noopener">${m.outlet}</a>`).join(', ')}</p>`);
+    }
+    if (p.links && p.links.length) {
+      notes.push(`<p class="proj-note"><span>See</span> ${p.links.map(l =>
+        `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join(', ')}</p>`);
+    }
+    notes.push(`<p class="proj-keywords">${p.keywords.join(' &middot; ')}</p>`);
 
     return `
-      <article class="project-card">
-        <div class="project-top">
-          <span class="project-status">
-            <span class="project-status-dot ${isActive ? 'active' : ''}"></span>
-            ${isActive ? 'Active' : 'Completed'}
+      <details class="proj" id="${slug(p.name)}">
+        <summary>
+          <span class="proj-meta">
+            <span class="proj-dot ${isActive ? 'active' : ''}" title="${isActive ? 'Active' : 'Completed'}"></span>
+            <span class="proj-dates">${dates || (isActive ? 'Active' : 'Completed')}</span>
           </span>
+          <span class="proj-head">
+            <span class="proj-title">${p.name}</span>
+            <span class="proj-tagline">${p.tagline}</span>
+          </span>
+          <span class="proj-toggle" aria-hidden="true"></span>
+        </summary>
+        <div class="proj-body">
+          <p class="proj-desc">${p.description}</p>
+          <div class="proj-notes">${notes.join('')}</div>
         </div>
-        <h3 class="project-title">${p.name}</h3>
-        <p class="project-tagline">${p.tagline}</p>
-        ${p.organization ? `<p class="project-dates">${p.organization}</p>` : ''}
-        ${formatDates(p) ? `<p class="project-dates">${formatDates(p)}</p>` : ''}
-        <p class="project-desc">${p.description}</p>
-        <div class="project-keywords">
-          ${p.keywords.map(k => `<span class="project-keyword">${k}</span>`).join('')}
-        </div>
-        ${pressHtml}
-        ${linkHtml}
-      </article>`;
+      </details>`;
   }
 
   function render(data) {
@@ -127,18 +139,68 @@
     };
     const categories = [...new Set(data.projects.map(p => p.category))]
       .sort((a, b) => order(a) - order(b));
-
-    document.getElementById('projects-root').innerHTML = categories.map(cat => {
+    const groups = categories.map(cat => ({
+      cat,
+      id: slug(cat),
       // Active first, otherwise keep the order of the JSON file.
-      const items = data.projects
+      items: data.projects
         .filter(p => p.category === cat)
-        .sort((a, b) => (b.status === 'active') - (a.status === 'active'));
-      return `
-        <section class="project-group">
-          <h2 class="section-label">${cat} <span class="group-count">${items.length}</span></h2>
-          <div class="projects-grid">${items.map(card).join('')}</div>
-        </section>`;
-    }).join('');
+        .sort((a, b) => (b.status === 'active') - (a.status === 'active')),
+    }));
+
+    const filterBtn = (id, label, n) =>
+      `<button type="button" class="proj-filter" data-filter="${id}" aria-pressed="false">${label}<span class="group-count">${n}</span></button>`;
+
+    document.getElementById('projects-root').innerHTML = `
+      <div class="proj-filters" role="group" aria-label="Filter projects by area">
+        ${filterBtn('all', 'All', data.projects.length)}
+        ${groups.map(g => filterBtn(g.id, g.cat, g.items.length)).join('')}
+        <button type="button" class="proj-expand" aria-pressed="false">Open all</button>
+      </div>
+      ${groups.map(g => `
+        <section class="project-group" data-group="${g.id}" aria-labelledby="group-${g.id}">
+          <h2 class="section-label" id="group-${g.id}">${g.cat} <span class="group-count">${g.items.length}</span></h2>
+          ${g.items.map(row).join('')}
+        </section>`).join('')}`;
+
+    const ids = groups.map(g => g.id);
+    function apply(id) {
+      if (!ids.includes(id)) id = 'all';
+      document.querySelectorAll('.proj-filter').forEach(b =>
+        b.setAttribute('aria-pressed', String(b.dataset.filter === id)));
+      document.querySelectorAll('.project-group').forEach(s => {
+        s.hidden = id !== 'all' && s.dataset.group !== id;
+      });
+    }
+    document.querySelectorAll('.proj-filter').forEach(b => b.addEventListener('click', () => {
+      const id = b.dataset.filter;
+      history.replaceState(null, '', id === 'all' ? location.pathname : '#' + id);
+      apply(id);
+    }));
+
+    // A hash can name a group (#software) or a single project (#vivum).
+    const hash = decodeURIComponent(location.hash.slice(1));
+    const target = hash && document.getElementById(hash);
+    if (target && target.classList.contains('proj')) {
+      apply('all');
+      target.open = true;
+      // Wait for the web fonts so the layout above does not shift.
+      document.fonts.ready.then(() => target.scrollIntoView());
+    } else {
+      apply(hash);
+    }
+
+    const expand = document.querySelector('.proj-expand');
+    expand.addEventListener('click', () => {
+      const open = expand.getAttribute('aria-pressed') !== 'true';
+      document.querySelectorAll('details.proj').forEach(d => { d.open = open; });
+      expand.setAttribute('aria-pressed', String(open));
+      expand.textContent = open ? 'Close all' : 'Open all';
+    });
+
+    // Print every project in full.
+    window.addEventListener('beforeprint', () =>
+      document.querySelectorAll('details.proj').forEach(d => { d.open = true; }));
   }
 
   fetch(PROJ_URL)
